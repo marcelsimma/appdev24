@@ -6,7 +6,7 @@ namespace MarcelSimma.Week01
     {
         public static void writeA()
         {
-            Console.WriteLine("A");
+            Console.WriteLine("AA");
         }
     }
 }

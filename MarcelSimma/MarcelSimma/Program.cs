@@ -8,7 +8,24 @@ namespace MarcelSimma
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
-            Week01.WriteA.writeA();
+            
+            Console.WriteLine();
+            
+            Console.WriteLine("\\");
+            Console.WriteLine(@" \");
+            Console.WriteLine(@"  \");
+            
+            Console.WriteLine();
+            
+            Console.Write(@"
+            \
+             \
+              \");
+
+            Console.WriteLine();
+
+            Console.Write("\t\\\n\t \\\n\t  \\\n");
+
         }
     }
 }
