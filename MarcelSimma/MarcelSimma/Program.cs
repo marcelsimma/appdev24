@@ -9,7 +9,7 @@ namespace MarcelSimma
         public static void Main(string[] args)
         {
 
-            PrintSquare.Print('*', 7);
+            PrintDeltoid.Print('*', 11);
             
 
         }
