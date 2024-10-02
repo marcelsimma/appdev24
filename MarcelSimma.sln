@@ -7,6 +7,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MarcelSimma", "MarcelSimma"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarcelSimma", "MarcelSimma\MarcelSimma\MarcelSimma.csproj", "{E0F4182B-34FF-4005-8199-A3A0E333F9B5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FlorianBaier", "FlorianBaier", "{1F6E7786-D765-4138-B7E1-59C306C6CEEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlorianBaier", "FlorianBaier\FlorianBaier\FlorianBaier.csproj", "{DD627EAA-81FA-4FE7-A2DD-D3E9A0591FC3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,8 +24,13 @@ Global
 		{E0F4182B-34FF-4005-8199-A3A0E333F9B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E0F4182B-34FF-4005-8199-A3A0E333F9B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E0F4182B-34FF-4005-8199-A3A0E333F9B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD627EAA-81FA-4FE7-A2DD-D3E9A0591FC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD627EAA-81FA-4FE7-A2DD-D3E9A0591FC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD627EAA-81FA-4FE7-A2DD-D3E9A0591FC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD627EAA-81FA-4FE7-A2DD-D3E9A0591FC3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E0F4182B-34FF-4005-8199-A3A0E333F9B5} = {6FECDCE5-57FE-4AF7-89BB-EF003618C953}
+		{DD627EAA-81FA-4FE7-A2DD-D3E9A0591FC3} = {1F6E7786-D765-4138-B7E1-59C306C6CEEB}
 	EndGlobalSection
 EndGlobal
