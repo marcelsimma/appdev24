@@ -1,4 +1,5 @@
 ﻿using System;
+using JulianStroehle;
 using JulianStroehle.Week1;
 namespace JulianStroehle
 {
@@ -6,7 +7,7 @@ namespace JulianStroehle
     {
         static void Main(string[] args)
         {
-            DeltoidA.Deltoid(20,20);
+            TannenbaumA.Tannenbaum();
         }
     }
 }
