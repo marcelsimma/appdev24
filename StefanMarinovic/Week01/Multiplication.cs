@@ -1,13 +1,13 @@
 using System;
 
 
-namespace StefanMarinovic
+namespace StefanMarinovic.Week01
 {
 
     class Multiplication 
     {
 
-        static void Multiplication()
+        static void PrintMultiplication()
         {
             Console.WriteLine("Multiplication by 1:");
             Console.WriteLine();

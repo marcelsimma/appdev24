@@ -1,7 +1,7 @@
 using System;
 
 
-namespace StefanMarinovic
+namespace StefanMarinovic.Week01
 {
 
     class Methods 

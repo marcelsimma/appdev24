@@ -7,7 +7,7 @@ namespace StefanMarinovic.Week01
     class Deltoid 
     {
 
-        static void Deltoid(string[] args)
+        public static void PrintDeltoid(string[] args)
         {
             string response = Console.ReadLine();
             if (int.TryParse(response, out int height))

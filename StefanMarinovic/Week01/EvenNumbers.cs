@@ -1,13 +1,13 @@
 using System;
 
 
-namespace StefanMarinovic
+namespace StefanMarinovic.Week01
 {
 
     class EvenNumbers 
     {
 
-        static void EvenNumberGenerator()
+        public static void EvenNumberGenerator()
         {
             Console.WriteLine("Hello little fella");
             Console.WriteLine("Where do you want to start?");
