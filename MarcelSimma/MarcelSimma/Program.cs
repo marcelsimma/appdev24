@@ -1,30 +1,16 @@
 ﻿using System;
+using MarcelSimma.Week01;
 
 
 namespace MarcelSimma
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
-            
-            Console.WriteLine();
-            
-            Console.WriteLine("\\");
-            Console.WriteLine(@" \");
-            Console.WriteLine(@"  \");
-            
-            Console.WriteLine();
-            
-            Console.Write(@"
-            \
-             \
-              \");
 
-            Console.WriteLine();
-
-            Console.Write("\t\\\n\t \\\n\t  \\\n");
+            PrintSquare.Print('*', 7);
+            
 
         }
     }
