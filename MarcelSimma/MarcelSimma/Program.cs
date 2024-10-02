@@ -1,14 +1,17 @@
 ﻿using System;
+using MarcelSimma.Week01;
 
 
 namespace MarcelSimma
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
-            Week01.WriteA.writeA();
+
+            PrintSquare.Print('*', 7);
+            
+
         }
     }
 }
