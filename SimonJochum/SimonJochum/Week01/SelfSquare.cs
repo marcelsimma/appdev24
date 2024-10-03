@@ -4,7 +4,7 @@ using System;
  {
 class SelfSquare
 {
-    public static void emptysquare()
+    public static void EmptySquare()
     {
    
           PrintEmptySquare1('x', 10);
