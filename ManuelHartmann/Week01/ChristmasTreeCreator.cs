@@ -63,7 +63,7 @@ namespace ManuelHartmann
             do
             {
                 Console.Clear();
-                Console.WriteLine("Insert a number and I'll create a rhombus with it's size:");
+                Console.WriteLine("Insert a number and I'll create a christmastree with it's size:");
                 string response = Console.ReadLine();
                 // Ueberprueft, ob es sich bei der Eingabe um eine GANZE Zahl handelt und ob sie UNGERADE ist!
                 if ((int.TryParse(response, out int result)) && (result % 2 != 0))
