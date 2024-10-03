@@ -7,7 +7,7 @@ namespace JulianStroehle
     {
         static void Main(string[] args)
         {
-            TannenbaumA.Tannenbaum();
+            TannenbaumB.Tannenbaum2();
         }
     }
 }

@@ -4,38 +4,59 @@ namespace JulianStroehle.Week1{
     public class TannenbaumA{
         public static void Tannenbaum()
         {
+            // Nutzereingabe für Größe
             Console.WriteLine("Größe: ");
-            int l = Convert.ToInt32(Console.ReadLine());
-            char c = '*';
-            char d = '0';
-            char e = '+';
-            for (int i = 0; i <= l; i++)
+            int size = Convert.ToInt32(Console.ReadLine());
+
+            // Zuweisung der Variablen
+            char star = '*';
+            char zero = '0';
+            char plus = '+';
+            int GrosseZahlen = 0;
+            double sizeRounded = size/3*2;
+            int rounded = Convert.ToInt32(Math.Round (sizeRounded));
+
+            // Aufbau des Baums
+            for (int counter = 0; counter <= size; counter++)
             {
-                if (i == 0)
+                // Spitze des Baums
+                if (counter == 0)
                 {
-                    Console.Write(new string(' ', l*2) + c + new string(' ', l*2));
+                    Console.Write(new string(' ', size*2) + star + new string(' ', size*2));
                 }
-                if (i < l && i > 0)
+
+                // Unter der Spitze bis zu den nullen
+                if (counter < size && counter > 0)
                 {
-                    Console.Write(new string(' ', l*2-i) + new string(c, i*2+1) + new string(' ', l*2-i));
+                    Console.Write(new string(' ', size*2-counter) + new string(star, counter*2+1) + new string(' ', size*2-counter));
                 }
-                if (i == l)
+
+                // Nullen anschreiben
+                if (counter == size)
                 {
-                    Console.Write(new string(' ', l+1));
-                    for (int k = 0; k < l; k++)
+                    Console.Write(new string(' ', size+1));
+                    for (int k = 0; k < size; k++)
                     {
-                        Console.Write(d + " ");
+                        Console.Write(zero + " ");
                     }
-                    Console.Write(new string(' ', l));
+                    Console.Write(new string(' ', size));
                     Console.WriteLine();
                     int j = 0;
-                    while (j < l/4){
-                        Console.Write(new string(' ', (l*2-i)+l/3*2+1) + new string(e, (l+1)/2) + new string(' ', (l*2-i)+l/3*2+1));
+
+                    // Stamm berechnen
+                    if (counter > 20)
+                    {
+                        GrosseZahlen++;
+                    }
+                    while (j < size/4){
+                        Console.Write(new string('.', size*2-counter+GrosseZahlen+rounded+2) + new string(plus, (size+1)/2) + new string(' ', size*2-counter+rounded+2));
                         Console.WriteLine();
                         j++;
                     }
                    
                 }
+
+                // Zeilenumbruch
                 Console.WriteLine();
             }
         }
