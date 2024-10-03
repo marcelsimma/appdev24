@@ -1,17 +1,14 @@
 ﻿using System;
-using MarcelSimma.Week01;
+using OliverBedogg.Week01;
 
 
-namespace MarcelSimma
+namespace OliverBedogg
 {
     public class Program
     {
         public static void Main(string[] args)
         {
-
-            PrintDeltoid.Print('*', 11);
-            
-
+            PrintSquare.Print('+', 6);
         }
     }
 }

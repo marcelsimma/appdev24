@@ -1,14 +1,44 @@
 using System;
-namespace JulianStroehle.Week1{
-    public class DeltoidA{
-        public static void Deltoid(int l, int h){
-            for (int i = 0; i <=l; i++){
-                for (int j = 0;j<=h;j++){
-                    if (j==(l/2)&i==0||j==(l/2-i)&i==1||j==(l/2+i)&i==1||j==(l/2-i)&i==2||j==(l/2+i)&i==2||j==(l/2-i)&i==3||j==(l/2+i)&i==3||j==(l/2+i)&i==4||j==(l/2-i)&i==4){
-                        Console.Write("x");
+namespace JulianStroehle.Week1
+{
+    public class PrintDeltoidA
+    {
+        public static void PrintDeltoid(int l, char c)
+        {
+            int a = 1;
+            for (int i = 0; i < l; i++)
+            {
+                if (i == 0 || i == l-1)
+                {
+                    Console.Write(new string(' ', l-(a/2)+1) + c + new string(' ', l-(a/2)+1));
+                }
+                if (i > 0 && i < (l-1)/2)
+                {
+                    Console.Write(new string(' ', l-(a/2)) + c + new string(' ', a) + c + new string(' ', l-(a/2)));
+                }
+                if (i == l/2)
+                {
+                    Console.Write(new string(' ', l-(a/2)) + c + new string(' ', l-2) + c + new string(' ', l-(a/2)));
+                }
+                if (i > (l-1)/2 && i < l-1)
+                {
+                    Console.Write(new string(' ', l-(a/2)) + c + new string(' ', a) + c + new string(' ', l-(a/2)));
+                }
+                if (i != 0)
+                {
+                    if (i < l/2)
+                    {
+                        a++ ;
+                        a++ ;
                     }
-                    else {
-                        Console.Write(" ");
+                    else if (a != 1)
+                    {
+                        a--;
+                        a--;
+                    }
+                    else 
+                    {
+                        a--;
                     }
                 }
                 Console.WriteLine();
