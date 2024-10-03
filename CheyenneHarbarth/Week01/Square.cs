@@ -11,20 +11,12 @@ namespace CheyenneHarbarth.Week01
             //Deklaration, wo wir im Rechteck beginnen
             for (int i = 0; i < size; i++)
             {
-                //Jetzt schreiben wir die 1. Zeile
-                if (i == 0)
+                //Hier schreiben wir die 1. und die letzte Zeile
+                if (i == 0 || i == size - 1)
                 {
                     for (int j = 0; j < size; j++)
                     {
                         Console.Write(c);               //wir schreiben nur Console.Write weil WriteLine einen Zeilenumbruch verursachen würde
-                    }
-                }
-                //Jetzt schreiben wir die letzte Zeile, ist nämlich fast gleich wie die 1.
-                else if (i == 6)
-                {
-                    for (int j = 0; j < size; j++)
-                    {
-                        Console.Write(c);
                     }
                 }
                 //Jetzt schreiben wir die Zeilen dazwischen
