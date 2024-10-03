@@ -1,8 +1,8 @@
 using System;
 using System.Runtime.ExceptionServices;
 namespace JulianStroehle.Week1{
-    public class TannenbaumA{
-        public static void Tannenbaum()
+    public class TannenbaumB{
+        public static void Tannenbaum2()
         {
             // Nutzereingabe für Größe
             Console.WriteLine("Größe: ");
@@ -24,12 +24,19 @@ namespace JulianStroehle.Week1{
                 {
                     Console.Write(new string(' ', size*2) + star + new string(' ', size*2));
                 }
-
-                // Unter der Spitze bis zu den Christbaumkugeln
-                if (counter < size && counter > 0)
-                {
-                    Console.Write(new string(' ', size*2-counter) + new string(star, counter*2+1) + new string(' ', size*2-counter));
-                }
+                    Console.Write(new string(' ', size*2-counter));
+                    for (int u = 0; u < 2 * size + 1; u++){
+                        Random random = new();
+                        if (random.NextDouble() < 0.15 && u%2==0)
+                        {
+                            Console.Write(zero);
+                        }
+                        else
+                        {
+                            Console.Write(star);
+                        }
+                    }
+            
 
                 // Kugeln anschreiben
                 if (counter == size)
