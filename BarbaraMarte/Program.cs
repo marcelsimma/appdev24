@@ -10,7 +10,7 @@ namespace BarbaraMarte.Week01
         static void Main(string[] args)
         {
             
-            Christbaum.PrintChristbaum('*', 7);
+            DeltoidAufbau.PrintDeltiodAufbau1('*',7);
             
             
             
