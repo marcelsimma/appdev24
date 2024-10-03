@@ -19,12 +19,12 @@ namespace CheyenneHarbarth.Week01
                 }
 
                 //restliche Baumreihen
-                if (i > 0 && i < size - 5)
+                else if (i > 0 && i < size - half)
                 {
                     Console.Write(new string(' ', half - i) + new string(c, size - (2 * (half - i))) + new string(' ', half - i));
                 }
                 //Christbaumkugeln
-                if (i == size - 5)
+                else if (i == size - half)
                 {
                     for (int j = 0; j < size; j++)
                     {
@@ -39,9 +39,9 @@ namespace CheyenneHarbarth.Week01
                     }
                 }
                 //Baumstamm
-                if (i > size - 5 && i < size - 2)
+                else if (i > size - half && i < size -(size/4))
                 {
-                    Console.Write(new string(' ', (size - 5) / 2) + new string('+', 5) + new string(' ', (size - 5) / 2));
+                    Console.Write(new string(' ', (size-(size/3)) / 2) + new string('+', size/3) + new string(' ', (size-(size/3)) / 2));
                 }
                 Console.WriteLine();
             }
