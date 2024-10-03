@@ -8,7 +8,8 @@ namespace OliverBedogg
     {
         public static void Main(string[] args)
         {
-            PrintSquare.Print('+', 6);
+            //PrintSquare.Print('+', 6);
+            ChristmasTree.Print(12);
         }
     }
 }
