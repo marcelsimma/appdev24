@@ -8,9 +8,8 @@ namespace FlorianBaier
         public static void Main(string[] args)
         {
 
-            Rhombus.PrintRhombus('X', 7);
+            Christmastree.PrintChristmastree(9);
 
-            
         }
 
     }
