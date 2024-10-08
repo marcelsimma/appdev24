@@ -17,9 +17,11 @@ namespace OliverBedogg
             // ChristmasTree.Print(11);
             // FunctionWithReturn.Start();
             // CalcSum.Start(20, 50);
+            // CalcSum.PrintSummeNico();
 
             // Woche 2 ------------------
-            PrimitiveDatatypes.Start();
+            // PrimitiveDatatypes.Start();
+            Operatoren.Start();
 
             Console.WriteLine("\n");
         }
