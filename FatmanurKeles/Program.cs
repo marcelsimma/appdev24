@@ -7,7 +7,7 @@ namespace FatmanurKeles.Week01
     {
            static void Main (string[] args)
         {
-           PrintRhombus.PrintRhombus1('X', 7);
+           PrintTree.PrintTree1(9);
 
         }
     }
