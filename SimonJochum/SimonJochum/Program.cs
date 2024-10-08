@@ -9,7 +9,7 @@ class Program
 {
     static void Main()
     {
-        Divide.DivideDifference();
+        CalcPi.Pi();
     
     }
 }
