@@ -16,5 +16,43 @@ namespace OliverBedogg.Week02
 
     public class Factorial
     {
+        public static void Start()
+        {
+            Solution1();
+            Solution2();
+        }
+
+        public static void Solution1()
+        {
+            long result = 1;
+
+            for (int i = 1; i <= 20; i++)
+            {
+                result *= i;
+                Console.WriteLine($"{i}! = {result}");
+            }
+        }
+
+        public static void Solution2()
+        {
+            long result;
+            int operand;
+
+            for (int i = 1; i <= 20; i++)
+            {
+                // setze Ergebnis und Operand zurück:
+                result = 1;
+                operand = 1;
+
+                do
+                {
+                    result *= operand;
+                    operand++;
+                    // multipliziere so lange bis i erreicht ist
+                } while (operand <= i);
+
+                Console.WriteLine($"{i}! = {result}");
+            }
+        }
     }
 }
