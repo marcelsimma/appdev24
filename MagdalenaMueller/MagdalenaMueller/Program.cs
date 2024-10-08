@@ -9,9 +9,10 @@ namespace MagdalenaMueller
     {
         static void Main()
         {
-           Weihnachtsbaum.DrawTree('*', 5);
+            Weihnachtsbaum.DrawTreeNeedels(8);
+            Weihnachtsbaum.DrawTreeDecoration(8);
+            Weihnachtsbaum.DrawTreeStamp(8);
         }
         
     }
 }
-
