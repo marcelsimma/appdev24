@@ -80,6 +80,7 @@ namespace OliverBedogg.Week02
         {
             // (Boolesche) Logische Operatoren für den logischen Vorgang mit bool-Operanden
             // liefern einen Boolean als Ergebnis
+            // https://learn.microsoft.com/de-at/dotnet/csharp/language-reference/operators/boolean-logical-operators
             Console.WriteLine("+ Logische Operatoren");
 
             int number = 5;
