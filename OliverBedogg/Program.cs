@@ -25,7 +25,8 @@ namespace OliverBedogg
             // Factorial.Start();
             // Pi.Start();
             // Generation.Start();
-            StringMethoden.Start();
+            // StringMethoden.Start();
+            StringMethoden.Exercise();
 
             Console.WriteLine("\n");
         }

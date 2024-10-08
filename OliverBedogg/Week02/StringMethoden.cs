@@ -69,5 +69,45 @@ namespace OliverBedogg.Week02
             Console.WriteLine("Substring ab Index: " + quote.Substring(20));
             Console.WriteLine("--------------------");
         }
+
+        public static void Exercise()
+        {
+            string word = "Random";
+            Console.WriteLine($"Random: {word} --> " + Random(word));
+            Console.WriteLine("--------------------");
+
+            word = "Hello";
+            Console.WriteLine($"Random: {word} --> " + Random(word));
+            Console.WriteLine("--------------------");
+        }
+
+        // Random-Methode mit den bekannten String-Methoden
+        // Zufalls-Character aus vorhandenem String nehmen
+        public static string Random(string word)
+        {
+            string randomString = "";
+            Random rnd = new Random();
+            string tempString = word; // Hilfs-String für Rest des Wortes
+
+            // for-Schleife für die Anzahl Zeichen
+            for (int i = 0; i < word.Length; i++)
+            {
+                // wähle eine Zufällige Position
+                int randomPosition = rnd.Next(0, tempString.Length);
+                char randomCharacter = tempString[randomPosition];
+
+                // ergänze Zufalls-Character
+                randomString += randomCharacter;
+
+                // Schreibe Rest-String
+                tempString = String.Concat(
+                    tempString.Substring(0, randomPosition),
+                    tempString.Substring(randomPosition + 1)
+                );
+                Console.WriteLine($"Rest: {i} --> " + tempString);
+            }
+
+            return randomString;
+        }
     }
 }
