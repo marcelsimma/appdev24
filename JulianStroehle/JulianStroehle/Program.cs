@@ -1,13 +1,14 @@
 ﻿using System;
 using JulianStroehle;
 using JulianStroehle.Week1;
+using JulianStroehle.Week2;
 namespace JulianStroehle
 {
     class Program
     {
         static void Main(string[] args)
         {
-            SummeB.Summen(20,50);
+            FactorialA.Factorial(20);
         }
     }
 }
