@@ -10,7 +10,7 @@ namespace MagdalenaMueller
     {
         static void Main()
         {
-            Fakultät.CalcFacultät();
+            CalcPi.CalcPiProgram();
         }
         
     }

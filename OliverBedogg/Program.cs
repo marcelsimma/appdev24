@@ -21,7 +21,9 @@ namespace OliverBedogg
 
             // Woche 2 ------------------
             // PrimitiveDatatypes.Start();
-            Operatoren.Start();
+            // Operatoren.Start();
+            // Factorial.Start();
+            Pi.Start();
 
             Console.WriteLine("\n");
         }

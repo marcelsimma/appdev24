@@ -28,15 +28,23 @@ namespace OliverBedogg.Week02
             Console.WriteLine($"Zahlenbereich sbyte  : {sbyte.MinValue} to {sbyte.MaxValue}");
             Console.WriteLine($"Zahlenbereich short  : {short.MinValue} to {short.MaxValue}");
             Console.WriteLine("--------------------");
-            Console.WriteLine($"Zahlenbereich byte   : {byte.MinValue} to {byte.MaxValue}");
-            Console.WriteLine($"Zahlenbereich ushort : {ushort.MinValue} to {ushort.MaxValue}");
-            Console.WriteLine($"Zahlenbereich uint   : {uint.MinValue} to {uint.MaxValue}");
-            Console.WriteLine($"Zahlenbereich ulong  : {ulong.MinValue} to {ulong.MaxValue}");
+            // Console.WriteLine($"Zahlenbereich byte   : {byte.MinValue} to {byte.MaxValue}");
+            // Console.WriteLine($"Zahlenbereich ushort : {ushort.MinValue} to {ushort.MaxValue}");
+            // Console.WriteLine($"Zahlenbereich uint   : {uint.MinValue} to {uint.MaxValue}");
+            // Console.WriteLine($"Zahlenbereich ulong  : {ulong.MinValue} to {ulong.MaxValue}");
 
             // double = Dezimalzahl mit bis zu 15 Kommastellen
             double decimalNumber = 56.3;
             Console.WriteLine("Double decimalNumber:  " + decimalNumber);
             Console.WriteLine("--------------------");
+
+            var variable = 20 / 6.0;
+            bool isInt = variable is int;
+            bool isDouble = variable is double;
+            Console.WriteLine(variable + " isInt:  " + isInt);
+            Console.WriteLine(variable + " isDouble:  " + isDouble);
+            Console.WriteLine("--------------------");
+
 
             // Datentypen
             bool isTrue = number > 3; // Boolean: Speichert true oder false
