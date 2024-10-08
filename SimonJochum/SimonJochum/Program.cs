@@ -9,7 +9,7 @@ class Program
 {
     static void Main()
     {
-        SmallSteps.SecondSmallSteps();
+        Divide.DivideDifference();
     
     }
 }
