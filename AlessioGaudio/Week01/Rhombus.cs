@@ -4,42 +4,58 @@ namespace AlessioGaudio.Week01
 {
     class Rhombus
     {
+        private const int or;
+
         public static void Start()
         {
-            PrintRhombus('x', 10);
+            Console.WriteLine("Geben Sie den Monat als Zahl (1-12) ein:");
+            int monat = int.Parse(Console.ReadLine());
+
+            // Aufruf der Methode if
+            string quartalIfElse = BestimmeQuartalMitIfElse(monat);
+            Console.WriteLine($"(If-Else) Der Monat gehört zu: {quartalIfElse}");
+
+            // Aufruf der Methode switch
+            string quartalSwitchCase = BestimmeQuartalMitSwitch(monat);
+            Console.WriteLine($"(Switch-Case) Der Monat gehört zu: {quartalSwitchCase}");
         }
 
-        public static void PrintRhombus(char character, int size)
+        // If else methode
+        static string BestimmeQuartalMitIfElse(int monat)
         {
-            if (size % 2 == 0)
+            if (monat >= 1 && monat <= 3)
             {
-                size++;
+                return "Quartal 1:Frühling";
             }
-
-            int mid = size / 2;
-
-            for (int i = 0; i < size; i++)
+            else if (monat >= 4 && monat <= 6)
             {
-                int outerSpaces = Math.Abs(mid - i);
-                int innerSpaces = size - 2 * outerSpaces - 2;
-
-                for (int j = 0; j < size; j++)
-                {
-                    if (j < outerSpaces)
-                    {
-                        Console.Write(' ');
-                    }
-                    else if (j == outerSpaces || j == size - outerSpaces - 1)
-                    {
-                        Console.Write(character);
-                    }
-                    else if (innerSpaces > 0)
-                    {
-                        Console.Write(' ');
-                    }
-                }
-                Console.WriteLine();
+                return "Quartal 2:Sommer";
             }
+            else if (monat >= 7 && monat <= 9)
+            {
+                return "Quartal 3:Herbst";
+            }
+            else if (monat >= 10 && monat <= 12)
+            {
+                return "Quartal 4:Winter";
+            }
+            else
+            {
+                return "Ungültiger Monat";
+            }
+        }
+
+        // Switch case Methode
+        static string BestimmeQuartalMitSwitch(int monat)
+        {
+            return monat switch
+            {
+                1 or 2 or 3 => "Quartal 1",
+                4 or 5 or 6 => "Quartal 2",
+                7 or 8 or 9 => "Quartal 3",
+                10 or 11 or 12 => "Quartal 4",
+                _ => "Ungültiger Monat",
+            };
         }
     }
 }
