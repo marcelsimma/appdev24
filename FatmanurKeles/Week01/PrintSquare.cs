@@ -11,24 +11,14 @@ namespace FatmanurKeles.Week01
             for (int i = 0; i < size; i++)
             {
 
-                // Schreibt die erste Zeile mit X
-                if (i == 0)
+                // Schreibt die erste und die letzte Zeile mit X
+                if (i == 0 || i == size - 1)
                 {
                     for (int j = 0; j < size; j++)
                     {
                         Console.Write(c);
+                        // console.write(new string('.'), size));
                     }
-                }
-
-
-                // Schreibt die letzte Zeile mit X
-                else if (i == 9)
-                {
-                    for (int j = 0; j < size; j++)
-                    {
-                        Console.Write(c);
-                    }
-
                 }
                 else
                 {
