@@ -1,8 +1,8 @@
 using System;
 using System.Runtime.ExceptionServices;
 namespace JulianStroehle.Week1{
-    public class TannenbaumA{
-        public static void Tannenbaum()
+    public class TannenbaumB{
+        public static void Tannenbaum2()
         {
             // Nutzereingabe für Größe
             Console.WriteLine("Größe: ");
@@ -24,14 +24,21 @@ namespace JulianStroehle.Week1{
                 {
                     Console.Write(new string(' ', size*2) + star + new string(' ', size*2));
                 }
+                    Console.Write(new string(' ', size*2-counter));
+                    for (int u = 0; u < 2 * size + 1; u++){
+                        Random random = new();
+                        if (random.NextDouble() < 0.15 && u%2==0)
+                        {
+                            Console.Write(zero);
+                        }
+                        else
+                        {
+                            Console.Write(star);
+                        }
+                    }
+            
 
-                // Unter der Spitze bis zu den nullen
-                if (counter < size && counter > 0)
-                {
-                    Console.Write(new string(' ', size*2-counter) + new string(star, counter*2+1) + new string(' ', size*2-counter));
-                }
-
-                // Nullen anschreiben
+                // Kugeln anschreiben
                 if (counter == size)
                 {
                     Console.Write(new string(' ', size+1));
@@ -49,7 +56,7 @@ namespace JulianStroehle.Week1{
                         GrosseZahlen++;
                     }
                     while (j < size/4){
-                        Console.Write(new string('.', size*2-counter+GrosseZahlen+rounded+2) + new string(plus, (size+1)/2) + new string(' ', size*2-counter+rounded+2));
+                        Console.Write(new string(' ', size+GrosseZahlen+rounded+2) + new string(plus, (size+1)/2) + new string(' ', size+rounded+2));
                         Console.WriteLine();
                         j++;
                     }

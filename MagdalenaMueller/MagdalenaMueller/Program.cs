@@ -1,5 +1,6 @@
 ﻿using System;
 using MagdalenaMueller.Week01;
+using MagdalenaMueller.Week02;
 
 
 namespace MagdalenaMueller
@@ -9,9 +10,8 @@ namespace MagdalenaMueller
     {
         static void Main()
         {
-           Weihnachtsbaum.DrawTree('*', 5);
+            DriversLicense.CheckLicenses();
         }
         
     }
 }
-

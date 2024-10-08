@@ -6,25 +6,37 @@ namespace NicoDobler.Week01
     {
         public static void Start()
         {
-            PrintChristmasTree(9);
+            PrintChristmasTree(14);
         }
- 
+       
         public static void PrintChristmasTree(int height)
         {
+            Random random = new Random(); // Für zufällige Positionen
             for (int i = 0; i < height; i++)
             {
                 Console.Write(new string(' ', height - i - 1));
-                Console.WriteLine(new string('*', 2 * i + 1));
+               
+                // Hier fügen wir ein paar "O" zufällig in den Baum ein
+                for (int j = 0; j < 2 * i + 1; j++)
+                {
+                    // Bei 15% Wahrscheinlichkeit ein "O" statt eines "*"
+                    if (random.NextDouble() < 0.15 && j % 2 == 0)
+                    {
+                        Console.Write("O");
+                    }
+                    else
+                    {
+                        Console.Write("*");
+                    }
+                }
+                Console.WriteLine();
             }
  
-            Console.WriteLine("O O O O O O O O O");
- 
-            for (int i = 0; i < 2; i++)
-            {
-                Console.WriteLine(new string(' ', height - 3) + "+++++");
-            }
+       
+            Console.WriteLine(new string(' ', height - 3) + "+++++");
+            Console.WriteLine(new string(' ', height - 3) + "+++++");
+            Console.WriteLine(new string(' ', height - 3) + "+++++");
         }
     }
 }
- 
  

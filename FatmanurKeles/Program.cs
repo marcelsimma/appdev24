@@ -1,14 +1,18 @@
 ﻿using System;
 
-
-namespace FatmanurKeles.Week01
+namespace FatmanurKeles.Week02
 {
     public class Program
     {
-           static void Main (string[] args)
+        static void Main(string[] args)
         {
-           PrintRhombus.PrintRhombus1('X', 7);
+            Console.WriteLine("Bitte geben Sie ihr Alter ein: ");
+            int age = Convert.ToInt32(Console.ReadLine());
 
+            if (age >= 16 && age < 18)
+            {
+                
+            }
         }
     }
 }
