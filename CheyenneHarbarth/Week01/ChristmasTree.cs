@@ -11,21 +11,31 @@ namespace CheyenneHarbarth.Week01
         {
             for (int i = 0; i < size; i++)
             {
-                int half = (size-1)/2;
-                //erste Reihe
-                if (i == 0)
+                int half = (size - 1) / 2;
+                //Baumkrone
+                if (i == 0 || i < size - half)
                 {
-                    Console.Write(new string(' ', half) + c + new string(' ', half));
+                    Console.Write(new string(' ', half - i) + new string(c, size - (2 * (half - i))) + new string(' ', half - i));
                 }
-
-                //restliche Baumreihen
-                if (i > 0 && i < size - 3)
+                //Christbaumkugeln, nur jede zweite Kugel soll sichtbar sein
+                else if (i == size - half)
                 {
-                    Console.Write(new string(' ', half - i) + new string(c, size-(2*(half-i))) + new string(' ', half - i));
+                    for (int j = 0; j < size; j++)
+                    {
+                        if (j % 2 == 0)
+                        {
+                            Console.Write('0');
+                        }
+                        else
+                        {
+                            Console.Write(' ');
+                        }
+                    }
                 }
-                //Christbaumkugeln
-                if (i == size-5) {
-                    Console.Write(new string('0', size));
+                //Baumstamm, Breite soll 1/3 der size sein, Stammlänge soll sich proportional zur Größe verhalten
+                else if (i > size - half && i < size - (size / 4))
+                {
+                    Console.Write(new string(' ', (size - (size / 3)) / 2) + new string('+', size / 3) + new string(' ', (size - (size / 3)) / 2));
                 }
                 Console.WriteLine();
             }

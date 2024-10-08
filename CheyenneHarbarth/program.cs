@@ -9,7 +9,7 @@ namespace CheyenneHarbarth
 
         static void Main(string[] args)
         {
-            ChristmasTree.PrintTree('*', 11);
+            ChristmasTree.PrintTree('*', 15);
         }
     }
 }

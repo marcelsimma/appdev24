@@ -10,15 +10,15 @@ namespace JulianStroehle.Week1
             {
                 if (i == 0 || i == l-1)
                 {
-                    Console.Write(new string(' ', (l-(a/2)+1)) + c + new string(' ', (l-(a/2)+1)));
+                    Console.Write(new string(' ', l-(a/2)+1) + c + new string(' ', l-(a/2)+1));
                 }
                 if (i > 0 && i < (l-1)/2)
                 {
-                    Console.Write(new string(' ', (l-(a/2))) + c + new string(' ', a) + c + new string(' ', (l-(a/2))));
+                    Console.Write(new string(' ', l-(a/2)) + c + new string(' ', a) + c + new string(' ', l-(a/2)));
                 }
-                if (i == (l)/2)
+                if (i == l/2)
                 {
-                    Console.Write(new string(' ', (l-(a/2))) + c + new string(' ', (l-2)) + c + new string(' ', (l-(a/2))));
+                    Console.Write(new string(' ', l-(a/2)) + c + new string(' ', l-2) + c + new string(' ', l-(a/2)));
                 }
                 if (i > (l-1)/2 && i < l-1)
                 {

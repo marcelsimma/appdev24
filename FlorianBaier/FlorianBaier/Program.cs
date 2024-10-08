@@ -8,8 +8,7 @@ namespace FlorianBaier
         public static void Main(string[] args)
         {
 
-            Rhombus.PrintRhombus('X', 7);
-
+            FunctionWithReturn.Start(20, 50);
             
         }
 
