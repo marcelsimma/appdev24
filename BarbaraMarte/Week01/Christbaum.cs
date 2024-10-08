@@ -6,38 +6,38 @@ namespace BarbaraMarte.Week01
     class Christbaum
     {
         public static void PrintChristbaum (char c, int size)
-        {   Console.Write("Enter the height of the Chrismas tree:");
-        int height = Convert.ToInt32(Console.ReadLine());
-            for (int i = 0; i < size; i++)
-                      
-            if (i == 0)
-            { //Erste Zeile
-                Console.WriteLine(new string(' ', (size-1)/2) + c + new string(' ', (size-1)/2));
-            }
-            else if (i == size - 3) //Ende
-            {
-                Console.WriteLine(c + new string('*', size - 2) + c);
-            }
-             else if(i > 0 && i < (size-1)/2) //Baum
-            { 
-                 Console.WriteLine(new string(' ',(size/2) - i) + c + new string('*', i * 2 - 1) + c + new string(' ',(size/2) - i));
-            }
-            else if(i == size - 2) // Kugeln/ 00
-            {
-                Console.WriteLine(c + new string('0', size -2));
-            }
-            int trunkWidth = height / 3;
-            int trunkHeight = height / 4;
-            if (trunkWidth < 1) trunkWidth = 1;
-            if (trunkHeight < 1) trunkHeight = 1;
-
-            for(int i = 0; i < height - trunkHeight; i++) //Stamm
-            { 
-                 Console.Write("k");
-            }
-
-          
+       
+        {                         
+            for(int i = 0; i < size; i++)
             
+            {
+                int half = (size - 1) / 2;
+                if(i > 0 && i < (half - 1)) //Tanne
+                {                    
+                Console.WriteLine(new string(' ',half - i) + c + new string('*', i * 2 - 1) + c + new string(' ', half - i));   
+                }
+                else if(i == size - half ) // Kugeln
+                {                   
+                    for(int j = 0; j < size; j++)
+                    {
+                        if (j % 2 == 0)
+                        {
+                            Console.Write('0');
+                        }
+                        else
+                        {
+                            Console.Write(' ');
+                        }
+                    }
+                }
+                else if( i > size - half + 1 && i < size - (size/4)) // Stamm
+                {
+                    Console.WriteLine();
+                    Console.Write(new string(' ', (size - (size / 4)) / 2) + new string ('+', size / 4) + new string(' ',(size-(size/4)) / 2));
+                }
+                         
+            }
+                   
         }
     }
 }

@@ -3,12 +3,13 @@
 
 namespace BarbaraMarte.Week01
 {
-    public class Malreihe
+    public class Mahlreihe
     {
-        static void PrintMalreihe()
+        public static void PrintMahlreihe()
         {
-            for(int i = 0; i <= 5; i++) {
-                Console.WriteLine(i*2);
+            for (int i = 0; i <= 5; i++)
+            {
+                Console.WriteLine(i * 2);
             }
         }
     }

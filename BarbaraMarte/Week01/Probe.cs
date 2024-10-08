@@ -5,13 +5,13 @@ namespace BarbaraMarte.Week01
 {
     class Probe
     {
-        public static void PrintProbe (char c, int size)
- 
-        {
-           
-        }   
+
+
+    public static void PrintProbe()
+    {
+        
     }
-}
+    
 
-
-
+    }
+}    

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Security.Cryptography.X509Certificates;
+using BarbaraMarte.Hausaufgabe;
 using BarbaraMarte.Week01;
 
 
@@ -9,14 +10,14 @@ namespace BarbaraMarte.Week01
     {
         static void Main(string[] args)
         {
-            
-           Christbaum.PrintChristbaum(' ',13);
-            
-            
-            
+            Julgran.PrintJulgran('*',19);
+
+
+
+
+
         }
     }
 }
 
-    
-    
+
