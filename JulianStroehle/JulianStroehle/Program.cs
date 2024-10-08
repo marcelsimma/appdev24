@@ -28,8 +28,10 @@ namespace JulianStroehle
             // TeilenA.Teilen();
             // FactorialA.Factorial(20);
             // CalculatePI.PI();
-            LicenseA.License1();
+            // LicenseA.License1();
+            Generations.Start();
             // DezHexA.DezHex();
+            // DezHexA.HexDez();
         }
     }
 }
