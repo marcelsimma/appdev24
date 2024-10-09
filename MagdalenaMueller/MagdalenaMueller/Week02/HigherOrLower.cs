@@ -20,8 +20,8 @@ namespace MagdalenaMueller.Week02
             {
                 Console.WriteLine("Gib eine Zahl ein:");
        
-            string userInput = Console.ReadLine();
-            int nummber;
+                string userInput = Console.ReadLine();
+                int nummber;
 
                 if  (!int.TryParse(userInput, out nummber) || nummber < 0|| nummber > 100)// falsche eingabe
                 {
