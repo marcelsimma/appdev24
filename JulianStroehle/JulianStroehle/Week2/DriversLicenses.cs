@@ -6,7 +6,7 @@ namespace JulianStroehle.Week2
     {
         public static void License1()
         {
-            string[] names = new string[5];
+            string?[] names = new string[5];
             int[] ages = new int[5];
             for (int i = 0; i < 5; i++)
             {
