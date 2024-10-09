@@ -27,19 +27,37 @@ namespace ManuelHartmann
             }
         }
         // Die Namensdeklarierungen in der Methode muessten nicht Ident den bereits bestehenden sein. (Haben nichts miteindander zu tun)
-        public static void getGenerationByAge (int age, string responseName, string responseAge)
+        public static void getGenerationByAge (int checkAge, string getName)
         {
-            if (age >= 18)
+            checkAge = 2024 - checkAge;
+
+            if (checkAge >= 2011 && checkAge <= 2025)
             {
-                Console.WriteLine($"{responseName} {responseAge}: Moped Yes, Car Yes -> both vehicles: Yes");
+                Console.WriteLine($"{getName} {checkAge}: Alpha");
             }
-            else if (age >= 15)
+            else if (checkAge >= 1997 && checkAge <= 2010)
             {
-                Console.WriteLine($"{responseName} {responseAge}: Moped Yes, Car No -> both vehicles: No");
+                Console.WriteLine($"{getName} {checkAge}: Gen Z");
+            }
+            else if (checkAge >= 1981 && checkAge <= 1996)
+            {
+                Console.WriteLine($"{getName} {checkAge}: Gen Y");
+            }
+            else if (checkAge >= 1965 && checkAge <= 1980)
+            {
+                Console.WriteLine($"{getName} {checkAge}: Gen X");
+            }
+            else if (checkAge >= 1946 && checkAge <= 1964)
+            {
+                Console.WriteLine($"{getName} {checkAge}: Boomer");
+            }
+            else if (checkAge >= 1928 && checkAge <= 1945)
+            {
+                Console.WriteLine($"{getName} {checkAge}: Gen Silent");
             }
             else
             {
-                Console.WriteLine($"{responseName} {responseAge}: You are NOT allowed to ride a moped NOR to drive a car.");
+                Console.WriteLine($"{getName} {checkAge}: You're kidding! You're never that old and able to use that program!");
             }
         }
     }

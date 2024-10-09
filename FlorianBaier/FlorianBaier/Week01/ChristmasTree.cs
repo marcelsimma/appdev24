@@ -25,11 +25,14 @@ namespace FlorianBaier.Week01
                 }
                 Console.WriteLine();
                 
+            }
+            ChristmastreeKugeln(size);
+            ChristmastreeStamm(size);
 
                 // Nullen anschreiben
-                if (i == size)
+                /*if (i == size)
                 {
-                    ChristmastreeKugeln(size);
+                    
                     /*for (int k = 0; k <= size; k++)
                     {
                         Console.Write(zero + " "); // Printet char und Leerzeichen
@@ -37,17 +40,17 @@ namespace FlorianBaier.Week01
                     Console.Write(new string(' ', size)); // Printet oberen Code auf size
                     Console.WriteLine();*/
                     
-                    ChristmastreeStamm(size);
+                    
                     // Stamm berechnen in Relation zum Oberen Teil
                     /*while (j < size / 4)
                     {
                         Console.Write(new string(' ', rounded + 1) + new string(plus, (size + 1) / 2) + new string(' ', rounded + 2));
                         Console.WriteLine();
-                        j++;*/
+                        j++;
                     }
 
                 }
-
+*/
             }
         
 
