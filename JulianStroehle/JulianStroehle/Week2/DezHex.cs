@@ -4,19 +4,29 @@ namespace JulianStroehle.Week2
 {
     public class DezHexA
     {
-        public static void DezHex()
+
+        // Hexadezimal zu Dezimal Rechner
+        public static void HexZuDez()
         {
             do
             {
+
+                // Nutzereingabe Hexadezimalzahl
                 Console.WriteLine("Hexadezimalzahl: ");
                 string? Num = Console.ReadLine();
+
+                // Array für Hexzahl
                 char[] Chars = Num.ToCharArray();
                 Array.Reverse(Chars);
                 int Value = 0;
+
+                // Zähler für stelle der Zahl
                 for (int i = 0; i < Chars.Length; i++)
                 {
                     int Mal = 1;
                     char k = '0';
+
+                    // einzelne chars von der Zahl einlesen und Konvertieren
                     switch (Chars[i])
                     {
                         case '0': k = (char)0; break;
@@ -36,67 +46,109 @@ namespace JulianStroehle.Week2
                         case 'E': k = (char)14; break;
                         case 'F': k = (char)15; break;
                     }
+
+                    // Rechner für die weiteren Stellen der Zahl
                     for (int j = 0; j < i; j++)
                     {
                         Mal *= 16;
                     }
                     Value += k * Mal;
                 }
+
+                // Ausgabe
                 Console.WriteLine(Value);
                 Console.WriteLine("Continue? y/n");
             }
             while (Console.ReadLine() == "y");
         }
-        public static void HexDez()
+
+        // Dezimal zu Hexadezimal Rechner
+        public static void DezZuHex()
         {
             do
             {
+
+                // Nutzereingabe Dezimalzahl
                 Console.WriteLine("Dezimalzahl: ");
                 int Number = Convert.ToInt32(Console.ReadLine());
-                char c;
                 char[] Hexnums = new char[Number];
                 int counter = 0;
-
                 while (Number != 0)
                 {
+
+                    // Ausgabe des Restwertes der Division
+                    if (Number%16 == 0)
+                    {
+                        Hexnums[counter] = '0';
+                    }
+                    else if (Number%16 == 1)
+                    {
+                        Hexnums[counter] = '1';
+                    }
+                    else if (Number%16 == 2)
+                    {
+                        Hexnums[counter] = '2';
+                    }
+                    else if (Number%16 == 3)
+                    {
+                        Hexnums[counter] = '3';
+                    }
+                    else if (Number%16 == 4)
+                    {
+                        Hexnums[counter] = '4';
+                    }        
+                    else if (Number%16 == 5)
+                    {
+                        Hexnums[counter] = '5';
+                    }
+                    else if (Number%16 == 6)
+                    {
+                        Hexnums[counter] = '6';
+                    }
+                    else if (Number%16 == 7)
+                    {
+                        Hexnums[counter] = '7';
+                    }
+                    else if (Number%16 == 8)
+                    {
+                        Hexnums[counter] = '8';
+                    }
+                    else if (Number%16 == 9)
+                    {
+                        Hexnums[counter] = '9';
+                    }              
+                    else if (Number%16 == 10)
+                    {
+                        Hexnums[counter] = 'A';
+                    }
+                    else if (Number%16 == 11)
+                    {
+                        Hexnums[counter] = 'B';
+                    }
+                    else if (Number%16 == 12)
+                    {
+                        Hexnums[counter] = 'C';
+                    }
+                    else if (Number%16 == 13)
+                    {
+                        Hexnums[counter] = 'D';
+                    }
+                    else if (Number%16 == 14)
+                    {
+                        Hexnums[counter] = 'E';
+                    }
+                    else if (Number%16 == 15)
+                    {
+                        Hexnums[counter] = 'F';
+                    }
+
+                    // Division der Zahl für weitere Stellen
+                    Number /= 16;
                     counter++;
-                    Number = Number / 16;
-                    if (Number == 10)
-                    {
-                        c = 'A';
-                        c = Hexnums[counter];
-                    }
-                    else if (Number == 11)
-                    {
-                        c = 'B';
-                        c = Hexnums[counter];
-                    }
-                    else if (Number == 12)
-                    {
-                        c = 'C';
-                        c = Hexnums[counter];
-                    }
-                    else if (Number == 13)
-                    {
-                        c = 'D';
-                        c = Hexnums[counter];
-                    }
-                    else if (Number == 14)
-                    {
-                        c = 'E';
-                        c = Hexnums[counter];
-                    }
-                    else if (Number == 15)
-                    {
-                        c = 'F';
-                        c = Hexnums[counter];
-                    }
-                    else
-                    {
-                        Hexnums[counter] = Convert.ToChar(Number % 16);
-                    }
                 }
                 Array.Reverse(Hexnums);
+
+                // Ausgabe
                 Console.WriteLine(Hexnums);
                 Console.WriteLine("Continue? (y/n)");
             }

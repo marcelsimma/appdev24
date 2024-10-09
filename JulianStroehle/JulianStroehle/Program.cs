@@ -29,9 +29,10 @@ namespace JulianStroehle
             // FactorialA.Factorial(20);
             // CalculatePI.PI();
             // LicenseA.License1();
-            Generations.Start();
-            // DezHexA.DezHex();
-            // DezHexA.HexDez();
+            // Generations.Start();
+            ArrayTestA.Start();
+            // DezHexA.HexZuDez();
+            // DezHexA.DezZuHex();
         }
     }
 }
