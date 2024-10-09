@@ -11,14 +11,11 @@ namespace BarbaraMarte.Week01
     {
         static void Main()
         {
-            ConsoleInput.ReadNextDouble(5, 9);
+            // Console.WriteLine(ConsoleInput.ReadNextInt());
 
-            double ReadNextDouble = 5.0;
+            //Einkaufsliste.PrintEinkaufsliste();
 
-            double result2 = 5.0; double a;
-            double result1 = 9.0;
-            Console.WriteLine($"Result: {result2 + result1}");
-
+            HigherOrLower.PrintHigherOrLower();
 
 
         }
