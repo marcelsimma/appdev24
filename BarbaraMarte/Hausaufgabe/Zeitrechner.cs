@@ -6,10 +6,12 @@ class Zeitrechner
     {
         double num2 = 60;
 
-        Console.WriteLine("Calculate from Minutes to Hour Press /, Calculate from Hours to Minutes Press *");
+        Console.WriteLine("Calculate from Minutes to Hour Press M for calculating from Minutes to Hours, if you press * we will calculate from Hours to Minutes");
         char operation = Console.ReadLine()[0];
 
-        
+        bool Minuten = (operation == 'M' || operation == 'm');
+
+        if (Minuten)
 
         {
             Console.WriteLine("Write amount of Minutes:");
@@ -29,7 +31,8 @@ class Zeitrechner
             }
         }
 
-       
+        else
+
         {
             Console.WriteLine("Write amount of Hours:");
 

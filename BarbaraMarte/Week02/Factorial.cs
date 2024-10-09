@@ -18,14 +18,12 @@ class Factorial
             factorial = factorial * i;
         }
         Console.WriteLine($"Factorial of {number} is {factorial} ");
-
-
-        {
+ {
 
             Console.WriteLine("Enter a number betwen 1 and 20: ");
             int number1 = Convert.ToInt16(Console.ReadLine());
 
-            int Factorial2 = 1;           // the t below measn Tabulator. "Einrückung" \n ist für den Zeilenumbruch
+            int Factorial2 = 1;           // the t below means Tabulator. "Einrückung" \n ist für den Zeilenumbruch
             Console.WriteLine(0 + "!\t" + Factorial2 + "\n");
 
             for (int i = 1; i <= number; i++)
@@ -35,8 +33,6 @@ class Factorial
                 Console.WriteLine(Factorial2 + "\n");
             }
 
-        }
-
-
+        }       
     }
 }

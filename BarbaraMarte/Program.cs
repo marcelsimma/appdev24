@@ -9,10 +9,17 @@ namespace BarbaraMarte.Week01
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Drivinglicence.PrintDrivinglicence();
-            //Probe.PrintProbe();
+            ConsoleInput.ReadNextDouble(5, 9);
+
+            double ReadNextDouble = 5.0;
+
+            double result2 = 5.0; double a;
+            double result1 = 9.0;
+            Console.WriteLine($"Result: {result2 + result1}");
+
+
 
         }
     }

@@ -27,7 +27,7 @@ class Pi
         Console.WriteLine($"Approximated Pi: {pi}");
         Console.WriteLine();
         {
-            // Erster Versuch. Funktioniert nicht wie Vorgesehen
+            // first try. Didn't work as assumed
             double A = 1;
             double b = 3;
 
