@@ -19,7 +19,8 @@ namespace CheyenneHarbarth
             //Reverse.Reverseprogramm();
             //Randomize.start("Hallo");
             //ConsoleInput.Start();
-            Zahlenraten.StartGame(0, 100);
+            //Zahlenraten.StartGame(0, 100);
+            Einkaufsliste.PrintList();
 
         }
     }
