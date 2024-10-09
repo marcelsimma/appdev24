@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Diagnostics.Metrics;
-using JulianStroehle;
 using JulianStroehle.Week1;
 using JulianStroehle.Week2;
 namespace JulianStroehle
@@ -29,9 +27,11 @@ namespace JulianStroehle
             // FactorialA.Factorial(20);
             // CalculatePI.PI();
             // LicenseA.License1();
-            Generations.Start();
-            // DezHexA.DezHex();
-            // DezHexA.HexDez();
+            // Generations.Start();
+            // ArrayTestA.Start();
+            // Einkaufsliste.Einkauf();
+            // HigherLowerA.HigherLower();
+            DualDezHexA.Start();
         }
     }
 }
