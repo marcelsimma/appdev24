@@ -17,7 +17,9 @@ namespace CheyenneHarbarth
             //Führerschein.Check();
             //Generationen.CheckGeneration();
             //Reverse.Reverseprogramm();
-            Randomize.start("Hallo");
+            //Randomize.start("Hallo");
+            //ConsoleInput.Start();
+            Zahlenraten.StartGame(0, 100);
 
         }
     }
