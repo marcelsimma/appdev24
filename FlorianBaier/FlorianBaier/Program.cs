@@ -8,7 +8,7 @@ namespace FlorianBaier
         public static void Main(string[] args)
         {
 
-            FunctionWithReturn.Start(20, 50);
+          Christmastree.PrintChristmastree(9);
             
         }
 

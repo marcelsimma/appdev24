@@ -23,7 +23,10 @@ namespace OliverBedogg
             // PrimitiveDatatypes.Start();
             // Operatoren.Start();
             // Factorial.Start();
-            Pi.Start();
+            // Pi.Start();
+            // Generation.Start();
+            // StringMethoden.Start();
+            StringMethoden.Exercise();
 
             Console.WriteLine("\n");
         }

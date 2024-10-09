@@ -59,6 +59,8 @@ namespace OliverBedogg.Week02
 
             // TODO:
             // Ergänze float und long und Kommentiere den Unterschied zu double und int
+
+            
         }
     }
 }
