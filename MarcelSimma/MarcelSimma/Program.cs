@@ -7,7 +7,11 @@ class Program
 {
     static void Main(string[] args)
     {
-        ShoppingList.Start();
+        //ShoppingList.Start();
+
+        //int test = ConsoleInput.ReadNextInt();
+        //Arrays.Start();
+        RandomNumberArray.Start();
     }
 }
 
