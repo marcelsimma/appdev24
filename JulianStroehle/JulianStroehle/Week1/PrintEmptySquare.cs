@@ -1,6 +1,4 @@
 using System;
-using System.Data;
-
 namespace JulianStroehle.Week1
 {
     public class PrintEmptySquareA
