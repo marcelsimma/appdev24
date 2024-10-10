@@ -41,6 +41,8 @@ class ShoppingList
         } while (addNewItem == 'j');
 
         Console.Write(output);
+
+
         Console.Write(@$"--------------------------
 Anzahl der Elemente: {numOfItems}");
     }

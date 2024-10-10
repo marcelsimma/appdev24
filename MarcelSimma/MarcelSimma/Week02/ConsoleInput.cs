@@ -56,7 +56,6 @@ namespace MarcelSimma.Week02
 
         public static char ReadNextChar()
         {
-            // Überprüfen, ob die Eingabe ein gültiger Integer ist
             do
             {
                 string userInput = Console.ReadLine();
