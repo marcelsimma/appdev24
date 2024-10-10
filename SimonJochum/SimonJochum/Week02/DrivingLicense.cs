@@ -4,7 +4,7 @@ namespace SimonJochum.Week02
 {
     public class DrivingLicense
     {
-        private static string name; //hier werden die Klassen zugänglich für CheckMoped und CheckCar zugänglich gemacht
+        private static string name; //hier werden die Klassen für CheckMoped und CheckCar zugänglich gemacht
         private static int age;
         private static bool check1;
         private static bool check2;
