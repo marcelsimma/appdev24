@@ -9,7 +9,6 @@ namespace CheyenneHarbarth.Week02
 
         public static void PrintArray()
         {
-
             Random random = new Random();
             int[] Numbers = new int[100];                    //Array mit Name Number, Größe ist 100
                                                             //was fehlt? das Number eine random Zahl beinhaltet
@@ -25,8 +24,25 @@ namespace CheyenneHarbarth.Week02
                 sum += Math.Abs(num);           //Math.Abs errechnet die Beträge des von dir vorgegebenen Zahlenbereichs
             }
 
+            //Alternative
+            /*
+
             Numbers.Max();
+            //Alternative
+            /*int max = -50;
+            for (int i = 0, i < array.Length; i++){
+                if(Numbers[i] > max){
+                max = Numbers[i];
+                } 
+            }*/                      
             Numbers.Min();
+            //Alternative
+            /*int min = -50;
+            for (int i = 0, i < array.Length; i++){
+                if(Numbers[i] < min){
+                min = Numbers[i];
+                } 
+            }*/
             int average = Convert.ToInt32(Numbers.Average());
             double BetragAverage = (double)sum / (double)Numbers.Length;
             Console.WriteLine($"Höchster Wert: {Numbers.Max()}");
