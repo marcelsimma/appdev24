@@ -1,17 +1,10 @@
-using System;
-using System.Diagnostics.Metrics;
-using System.Reflection;
-using System.Security.Cryptography.X509Certificates;
-using System.Security.Principal;
-using System.Text.Json.Serialization;
 
-
-namespace ManuelHartmann
+namespace ManuelHartmann.Week02
 {
 
-    public class Program
+    public class Division_Int_Float
     {
-        static void Main(string[] args)
+        static void Start(string[] args)
         {
             int sum = 0;
             float decimale = 0.0f;

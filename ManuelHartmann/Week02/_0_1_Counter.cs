@@ -1,16 +1,10 @@
-using System;
-using System.Diagnostics.Metrics;
-using System.Security.Cryptography.X509Certificates;
-using System.Security.Principal;
-using System.Text.Json.Serialization;
 
-
-namespace ManuelHartmann
+namespace ManuelHartmann.Week02
 {
 
-    public class Counter
+    public class _0_1_Counter
     {
-        static void Counter(string[] args)
+        static void Start(string[] args)
         {
             float count = 0f;
             for (int i = 0; i < 1000; i ++)

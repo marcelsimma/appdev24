@@ -10,7 +10,7 @@ namespace MagdalenaMueller
     {
         static void Main()
         {
-            DriversLicense.CheckLicenses();
+            HigherOrLower.HoRGame();
         }
         
     }
