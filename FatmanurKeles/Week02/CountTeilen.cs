@@ -4,7 +4,7 @@ namespace FatmanurKeles.Week02
 {
     public class CountTeilen
     {
-        static void MainTeilen(string[] args)
+        public static void MainTeilen(string[] args)
         {
 
             for (float i = 0; i <= 20; i++)

@@ -1,15 +1,10 @@
-using System;
-using System.Security.Cryptography.X509Certificates;
-using System.Security.Principal;
-using System.Text.Json.Serialization;
 
-
-namespace ManuelHartmann
+namespace ManuelHartmann.Week01
 {
 
     public class ChristmasTreeCreator
     {
-        static void ChristmasTreeCreator(string[] args)
+        static void Start(string[] args)
         {
             UserInput();
 
