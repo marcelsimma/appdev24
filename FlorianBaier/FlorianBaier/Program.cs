@@ -9,7 +9,7 @@ namespace FlorianBaier
         public static void Main(string[] args)
         {
 
-        ConsoleInput.CI();
+        Arrays.Start();
           
         }
 

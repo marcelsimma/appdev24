@@ -17,29 +17,55 @@ namespace FlorianBaier.Week02
 
         public static int ReadNextInt()
         {
-            do {
-            string input = Console.ReadLine();
-            int input2 = Convert.ToInt32(input);
-            return input2;
+            do
+            {
+                string userInput = Console.ReadLine();
+                if (int.TryParse(userInput, out int result))
+                {
+                    return result;
+                }
+                else
+                {
+                    Console.WriteLine("Bitte geben Sie eine gültige Zahl ein.");
+                }
+
             } while (true);
 
         }
-        public static double ReadNextDouble(){
-            do{
-            string input = Console.ReadLine();
-            double input2 = Convert.ToDouble(input);
-            return input2;
-            }while (true);
+        public static double ReadNextDouble()
+        {
+            do
+            {
+                string userInput = Console.ReadLine();
+                if (double.TryParse(userInput, out double result))
+                {
+                    return result;
+                }
+                else
+                {
+                    Console.WriteLine("Bitte geben Sie eine gültige Zahl ein.");
+                }
+                
+
+            }while (true) ;
         }
 
-        public static char ReadNextChar(){
-            do{
-            string input = Console.ReadLine();
-            char input2 = Convert.ToChar(input);
-            return input2;
+        public static char ReadNextChar()
+        {
+            do
+            {
+                string userInput = Console.ReadLine();
+                if (char.TryParse(userInput, out char result))
+                {
+                    return result;
+                }
+                else
+                {
+                    Console.WriteLine("Bitte geben Sie eine gültige Zahl ein.");
+                }
+                
 
-            }while (true);
-            
+            }while (true) ;
         }
 
     }
