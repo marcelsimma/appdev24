@@ -3,7 +3,7 @@ using System;
 namespace FatmanurKeles.Week02
 {    public class Count100
     {
-        static void MainCount(string[] args)
+        public static void MainCount(string[] args)
         {
             {
                 double counter = 0.0;
