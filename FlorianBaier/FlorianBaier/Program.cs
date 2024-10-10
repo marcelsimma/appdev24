@@ -9,7 +9,7 @@ namespace FlorianBaier
         public static void Main(string[] args)
         {
 
-        Arrays.Start();
+        KaufmaennischesRunden.Start();
           
         }
 
