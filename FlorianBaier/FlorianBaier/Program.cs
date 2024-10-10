@@ -1,5 +1,6 @@
 ﻿using System;
 using FlorianBaier.Week01;
+using FlorianBaier.Week02;
 
 namespace FlorianBaier
 {
@@ -8,8 +9,8 @@ namespace FlorianBaier
         public static void Main(string[] args)
         {
 
-          Christmastree.PrintChristmastree(9);
-            
+        KaufmaennischesRunden.Start();
+          
         }
 
     }

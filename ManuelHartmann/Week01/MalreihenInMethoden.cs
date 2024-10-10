@@ -1,13 +1,10 @@
-using System;
-using System.Text.Json.Serialization;
 
-
-namespace ManuelHartmann
+namespace ManuelHartmann.Week01
 {
 
     class MalreihenInMethoden 
     {
-        static void MalreihenInMethoden(string[] args)
+        static void Start(string[] args)
         {
             for (int i = 1; i <= 3; i++) 
             {

@@ -1,17 +1,10 @@
-using System;
-using System.Diagnostics.Metrics;
-using System.Reflection;
-using System.Security.Cryptography.X509Certificates;
-using System.Security.Principal;
-using System.Text.Json.Serialization;
 
-
-namespace ManuelHartmann
+namespace ManuelHartmann.Week02
 {
 
-    public class Program
+    public class GenerationSpliter
     {
-        static void Main(string[] args)
+        static void Start(string[] args)
         {
             Console.WriteLine("Hey mate, what's your name?");
             string responseName = Console.ReadLine();
@@ -19,7 +12,7 @@ namespace ManuelHartmann
             string responseAge = Console.ReadLine();
             if(int.TryParse(responseAge, out int age) && age > 0)
             {
-                getGenerationByAge(age, responseName, responseAge);
+                GetGenerationByAge(age, responseName);
             }
             else
             {
@@ -27,7 +20,7 @@ namespace ManuelHartmann
             }
         }
         // Die Namensdeklarierungen in der Methode muessten nicht Ident den bereits bestehenden sein. (Haben nichts miteindander zu tun)
-        public static void getGenerationByAge (int checkAge, string getName)
+        public static void GetGenerationByAge (int checkAge, string getName)
         {
             checkAge = 2024 - checkAge;
 

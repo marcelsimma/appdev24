@@ -20,7 +20,9 @@ namespace CheyenneHarbarth
             //Randomize.start("Hallo");
             //ConsoleInput.Start();
             //Zahlenraten.StartGame(0, 100);
-            Einkaufsliste.PrintList();
+            //Einkaufsliste.PrintList();
+            //RandomNumberArray.PrintArray();
+            Kommazahl.PrintKommazahl();
 
         }
     }

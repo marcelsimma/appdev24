@@ -5,7 +5,7 @@ namespace FatmanurKeles.Week02
 {
     public class Factorial
     {
-        static void MainFactorial(string[] args)
+        public static void MainFactorial(string[] args)
         {
             {
             int factorial = 1;
