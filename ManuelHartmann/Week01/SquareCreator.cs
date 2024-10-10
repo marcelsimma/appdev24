@@ -1,14 +1,9 @@
-using System;
-using System.Security.Principal;
-using System.Text.Json.Serialization;
 
-
-namespace ManuelHartmann
+namespace ManuelHartmann.Week01 
 {
-
     public class SquareCreator
     {
-        static void SquareCreator(string[] args)
+        static void Start(string[] args)
         {
             string response = "";
             Console.WriteLine("Please insert a number and i'll produce a square with it.");

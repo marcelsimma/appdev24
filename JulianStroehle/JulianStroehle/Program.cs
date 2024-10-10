@@ -29,9 +29,11 @@ namespace JulianStroehle
             // LicenseA.License1();
             // Generations.Start();
             // ArrayTestA.Start();
-            // Einkaufsliste.Einkauf();
+            Einkaufsliste.Einkauf();
+            // EinkaufslisteB.EinkaufB();
             // HigherLowerA.HigherLower();
-            DualDezHexA.Start();
+            // ConsoleInput.Start();
+            // DualDezHexA.Start();
         }
     }
 }

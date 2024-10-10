@@ -1,17 +1,10 @@
-using System;
-using System.Diagnostics.Metrics;
-using System.Reflection;
-using System.Security.Cryptography.X509Certificates;
-using System.Security.Principal;
-using System.Text.Json.Serialization;
 
-
-namespace ManuelHartmann
+namespace ManuelHartmann.Week02
 {
 
-    public class Counter
+    public class _0_1_Counter_v02
     {
-        static void Counter(string[] args)
+        static void Start(string[] args)
         {
             for (float i = 0.0f; i <= 100.0; i += 0.1f)
             {

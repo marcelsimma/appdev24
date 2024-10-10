@@ -40,14 +40,18 @@ namespace JulianStroehle.Week2
         public static void Arr4()
         {
             Console.WriteLine("Wort eingeben: ");
-            var chars = Console.ReadLine();
-            var output = new StringBuilder();
-            var random = new Random();
-            for (int i = 0; i < chars.Length; i++)
+            string? Text = Console.ReadLine();
+            Random rdm = new Random();
+            while (Text.Length > 0)
             {
-                output.Append(chars[random.Next(chars.Length)]);
+                int rnd = rdm.Next(0, Text.Length -1);
+                string beforeNumber = Text.Substring(0, rnd);
+                string randomLetter = Text.Substring(rnd, 1);
+                string afterNumber = Text.Substring(rnd + 1, Text.Length - rnd - 1);
+
+                Console.Write(randomLetter);
+                Text = beforeNumber + afterNumber;
             }
-            Console.WriteLine(output.ToString());
         }
 
     }

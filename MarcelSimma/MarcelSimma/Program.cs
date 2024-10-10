@@ -1,17 +1,16 @@
 ﻿using System;
-using MarcelSimma.Week01;
 
+using MarcelSimma.Week02;
 
-namespace MarcelSimma
+namespace MarcelSimma {
+class Program
 {
-    public class Program
+    static void Main(string[] args)
     {
-        public static void Main(string[] args)
-        {
-
-            PrintDeltoid.Print('*', 11);
-            
-
-        }
+        ShoppingList.Start();
     }
 }
+
+}
+
+

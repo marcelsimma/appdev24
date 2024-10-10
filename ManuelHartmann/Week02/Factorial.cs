@@ -1,15 +1,10 @@
-using System;
-using System.Security.Cryptography.X509Certificates;
-using System.Security.Principal;
-using System.Text.Json.Serialization;
 
-
-namespace ManuelHartmann
+namespace ManuelHartmann.Week02
 {
 
     public class Factorial
     {
-        static void Factorial(string[] args)
+        static void Start(string[] args)
         {
             long fact = 1;
             string response = "";

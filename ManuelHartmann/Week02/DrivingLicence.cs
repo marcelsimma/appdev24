@@ -1,17 +1,10 @@
-using System;
-using System.Diagnostics.Metrics;
-using System.Reflection;
-using System.Security.Cryptography.X509Certificates;
-using System.Security.Principal;
-using System.Text.Json.Serialization;
 
-
-namespace ManuelHartmann
+namespace ManuelHartmann.Week02
 {
 
     public class DrivingLicence
     {
-        static void DrivingLicence(string[] args)
+        static void Start(string[] args)
         {
             Console.WriteLine("Hey mate, what's your name?");
             string responseName = Console.ReadLine();
