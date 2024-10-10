@@ -1,5 +1,4 @@
 using System;
-using System.Runtime.ExceptionServices;
 namespace JulianStroehle.Week1{
     public class TannenbaumB{
         public static void Tannenbaum2()
