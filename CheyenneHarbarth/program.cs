@@ -21,6 +21,8 @@ namespace CheyenneHarbarth
             //ConsoleInput.Start();
             //Zahlenraten.StartGame(0, 100);
             Einkaufsliste.PrintList();
+            //RandomNumberArray.PrintArray();
+            //Kommazahl.PrintKommazahl();
 
         }
     }
