@@ -1,14 +1,10 @@
-using System;
-using System.Security.Principal;
-using System.Text.Json.Serialization;
 
-
-namespace ManuelHartmann
+namespace ManuelHartmann.Week01
 {
 
     public class MalreihenSchleifen 
     {
-        static void MalreihenSchleifen(string[] args)
+        static void Start(string[] args)
         {
             int lowerNumberInt, higherNumberInt = 0;
             string lowerNumber, higherNumber = "";

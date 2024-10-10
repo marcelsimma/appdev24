@@ -1,17 +1,10 @@
-using System;
-using System.Diagnostics.Metrics;
-using System.Reflection;
-using System.Security.Cryptography.X509Certificates;
-using System.Security.Principal;
-using System.Text.Json.Serialization;
 
-
-namespace ManuelHartmann
+namespace ManuelHartmann.Week02
 {
 
-    public class Pi
+    public class Pi_calculation_LeibnizRow
     {
-        static void Pi(string[] args)
+        static void Start(string[] args)
         {
             double pi = 0.0d;
             const int constante = 4;

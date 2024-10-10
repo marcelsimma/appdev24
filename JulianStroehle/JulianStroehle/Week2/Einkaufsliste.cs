@@ -18,10 +18,13 @@ namespace JulianStroehle.Week2
             }
             for (int j = 0; j < elemente; j++)
             {
-                Console.WriteLine("\n\n" + ThingsCount[j] + " " + Things[j]);
+                Console.Write(string.Format("{0,10}", ThingsCount[j]));
+                Console.Write("\t");
+                Console.Write(string.Format("{0,-10}", Things[j]));
+                Console.WriteLine();
             }
-            Console.WriteLine("---------------------");
-            Console.WriteLine(elemente + " Elemente auf der Liste");
+            Console.WriteLine();
+            Console.WriteLine(string.Format("{0,10}", elemente + " Elemente auf der Liste\n"));
         }
     }
 }
