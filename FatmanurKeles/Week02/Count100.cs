@@ -1,9 +1,10 @@
 using System;
 
 namespace FatmanurKeles.Week02
-{    public class Count100
+{
+    public class Count100
     {
-        public static void MainCount(string[] args)
+        public static void Count()
         {
             {
                 double counter = 0.0;
