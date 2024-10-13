@@ -36,7 +36,8 @@ namespace JulianStroehle
             // ConsoleInput.Start();
             // RandomNumberArray.RandomArray();
             // TwoDimentionalArray.TwoDimArray(7);
-            KaufmaennischRunden.Runden();
+            // KaufmaennischRunden.Runden();
+            BubbleSort.Start();
             // DualDezHexA.Start();
         }
     }
