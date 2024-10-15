@@ -49,7 +49,7 @@ namespace CheyenneHarbarth.Week03
                 while (true);
 
                 //Prüfen ob schon jemand gewonnen hat
-                if (CheckWinner(playground) == false)
+                if (CheckWinner(playground))
                 {
                     Print(playground);
                     Console.WriteLine(currentPlayer + " hat gewonnen!");
@@ -79,9 +79,10 @@ namespace CheyenneHarbarth.Week03
             {
                 for (int j = 0; j < playground.GetLength(1); j++)           //mit 1 gehen wir über die Spalten, die Spalten sind die 1. Dimension
                 {
-                    Console.Write(playground[i, j]);
+                    Console.Write(playground[i, j] + "|");
                 }
                 Console.WriteLine();
+                Console.WriteLine("-------");
             }
         }
 
