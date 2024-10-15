@@ -1,5 +1,4 @@
 using System;
-using System.Security.Cryptography.X509Certificates;
 using MarcelSimma.Week02;
 
 namespace MarcelSimma.Week03
@@ -7,9 +6,6 @@ namespace MarcelSimma.Week03
 
     public class TicTacToe
     {
-
-
-
         public static void Start()
         {
             // Teil 1: Init Playground
@@ -23,9 +19,12 @@ namespace MarcelSimma.Week03
             //playground[1, 2] = '*';
 
             char currentPlayer = 'X'; // oder 'O'
+            int rounds = 0;
 
-            while (true)
+            while (rounds < 9)
             {
+                Print(playground);
+
                 // Teil 2: User Input
                 Console.WriteLine(currentPlayer + " ist an der Reihe.");
 
@@ -73,6 +72,14 @@ namespace MarcelSimma.Week03
                         }
                     }
                 } while (true);
+                
+                // Prüfen, ob der aktuelle Spieler gewonnen hat.
+                if (CheckWinner(playground))
+                {
+                    Print(playground);
+                    Console.WriteLine(currentPlayer + " hat gewonnen!");
+                    break;
+                } 
 
                 // Spieler tauschen für nächste Runde
                 if (currentPlayer == 'X')
@@ -84,8 +91,11 @@ namespace MarcelSimma.Week03
                     currentPlayer = 'X';
                 }
 
-                Print(playground);
+                rounds++;
             }
+
+            Console.WriteLine("Das Spiel ist beendet. Keine Züge mehr möglich.");
+
         }
 
         public static void Print(char[,] playground)
@@ -98,6 +108,49 @@ namespace MarcelSimma.Week03
                 }
                 Console.WriteLine();
             }
+        }
+
+        public static bool CheckWinner(char[,] playground)
+        {
+
+            // Zeilen
+            if (playground[0, 0] != ' ' && playground[0, 0] == playground[0, 1] && playground[0, 1] == playground[0, 2])
+            {
+                return true;
+            }
+            else if (playground[1, 0] != ' ' && playground[1, 1] == playground[1, 2] && playground[1, 1] == playground[1, 0])
+            {
+                return true;
+            }
+            else if (playground[2, 0] != ' ' && playground[2, 0] == playground[2, 1] && playground[2, 1] == playground[2, 2])
+            {
+                return true;
+            }
+            //Spalten
+            else if (playground[0, 0] != ' ' && playground[0, 0] == playground[1, 0] && playground[1, 0] == playground[2, 0])
+            {
+                return true;
+            }
+            else if (playground[0, 1] != ' ' && playground[0, 1] == playground[1, 1] && playground[1, 1] == playground[2, 1])
+            {
+                return true;
+            }
+            else if (playground[0, 2] != ' ' && playground[0, 2] == playground[1, 2] && playground[1, 2] == playground[2, 2])
+            {
+                return true;
+            }
+
+            // Diagonal
+            else if (playground[0, 0] != ' ' && playground[0, 0] == playground[1, 1] && playground[1, 1] == playground[2, 2])
+            {
+                return true;
+            }
+            else if (playground[0, 2] != ' ' && playground[0, 2] == playground[1, 1] && playground[1, 1] == playground[2, 0])
+            {
+                return true;
+            }
+
+            return false; // oder false
         }
     }
 }
