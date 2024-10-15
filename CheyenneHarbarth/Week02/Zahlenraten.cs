@@ -22,7 +22,7 @@ namespace CheyenneHarbarth.Week02
                 }
                 else if (userinput == rand)
                 {
-                    Console.WriteLine($"Prima! Du hast die Zahl erraten. Die Zahl ist {rand}");
+                    Console.WriteLine($"Prima! :D Du hast die Zahl erraten. Die Zahl ist {rand}");
                 }
                 else
                 {

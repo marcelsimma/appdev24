@@ -10,7 +10,7 @@ namespace CheyenneHarbarth.Week02 {
 
             char[] charInput = input.ToCharArray();             //input.ToCharArray wandelt den string "input" in ein Char-Array, Bedeutung von [], damit können wir die Anzahl der chars festlegen, wenn eine Zahl drin steht dann werden nur so viele chars verwendet, wir lassen hier die Zahl der chars durch die Länge des Worts definieren
 
-            for (int i = 0; i < input.Length-2; i++) {
+            for (int i = 0; i < input.Length-2; i++) {          //warum -2? 1 stelle muss sowieso  gestrichen werden weil die Länge 5 beträgt und die stellen nur bis 4 gehen, und die letzte Stelle muss sowieso nicht mehr getauscht werden
                 int rand = random.Next(i+1, input.Length-1);    //random.Next erzeugt eine zufällige Zahl in dem von uns vorgegebenen Wertebereich
 
                 char tmp = charInput[i];                        //wir sagen ihm, nimm H(1.Stelle)

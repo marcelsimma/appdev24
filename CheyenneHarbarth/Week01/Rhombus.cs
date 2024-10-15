@@ -46,3 +46,5 @@ namespace CheyenneHarbarth.Week01
         }
     }
 }
+
+//genaue Beschreibung und Zeichnung --> Onenote
