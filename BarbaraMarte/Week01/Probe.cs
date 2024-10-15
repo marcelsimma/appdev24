@@ -1,4 +1,4 @@
- using System.Threading.Tasks.Dataflow;
+using System.Threading.Tasks.Dataflow;
 
 namespace BarbaraMarte.Week01
 
@@ -7,42 +7,45 @@ namespace BarbaraMarte.Week01
     {
 
 
-    public static void PrintProbe()
-    {
-         {
-            // Ansatz 1: + und - separat durchführen
-            int loop = 1;
-            int limit = 4;
-            bool add = true;
+        public static void PrintProbe()
+        {
+            int a = 5;
+            int b = 6;
 
-            do
-            {
-                // modal
-                if (loop % 2 != 0)
-                {
-                    Console.WriteLine("modal: plus");
-                }
-                else
-                {
-                    Console.WriteLine("modal: minus");
-                }
+            /*{
+                // Ansatz 1: + und - separat durchführen
+                int loop = 1;
+                int limit = 4;
+                bool add = true;
 
-                // bool
-                if (add)
+                do
                 {
-                    Console.WriteLine("add: true");
-                }
-                else
-                {
-                    Console.WriteLine("add: false");
-                }
-                add = !add;
+                    // modal
+                    if (loop % 2 != 0)
+                    {
+                        Console.WriteLine("modal: plus");
+                    }
+                    else
+                    {
+                        Console.WriteLine("modal: minus");
+                    }
 
-                loop++;
-            } while (loop <= limit);
+                    // bool
+                    if (add)
+                    {
+                        Console.WriteLine("add: true");
+                    }
+                    else
+                    {
+                        Console.WriteLine("add: false");
+                    }
+                    add = !add;
+
+                    loop++;
+                } while (loop <= limit);
+            }*/
+
+
         }
     }
-    
-
-    }
-}    
+}

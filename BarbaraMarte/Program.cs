@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Security.Cryptography.X509Certificates;
 using BarbaraMarte.Hausaufgabe;
+using BarbaraMarte.Schule;
 using BarbaraMarte.Week01;
 using BarbaraMarte.Week02;
 
@@ -11,13 +12,12 @@ namespace BarbaraMarte.Week01
     {
         static void Main()
         {
-            // Console.WriteLine(ConsoleInput.ReadNextInt());
-
-            //Einkaufsliste.PrintEinkaufsliste();
-
-            HigherOrLower.PrintHigherOrLower();
-
-
+            Bubbelsort.PrintBubblesort([]);
+            //Methode.Print([]);
+            //Einkaufliste.PrintEinkaufsliste();            
+            //RandomNumberArray.PrintRandomNumberArray();
+            //FizBuzz.Print([]);
+            //PrintMultibleMesseges.Print();
         }
     }
 }
