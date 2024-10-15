@@ -38,9 +38,5 @@ namespace FlorianBaier.Week02
                 Console.WriteLine("----------------------------");
                 Console.WriteLine($"{shoppinglist.Count} Elemente auf der Liste");
             }
-            public static void EinkaufslisteNonDynamic(){
-                int menge = 0;
-                
-            }
     }
 }
