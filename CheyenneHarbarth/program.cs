@@ -1,6 +1,7 @@
 ﻿using System;
 using CheyenneHarbarth.Week01;
 using CheyenneHarbarth.Week02;
+using CheyenneHarbarth.Week03;
 
 namespace CheyenneHarbarth
 {
@@ -20,10 +21,13 @@ namespace CheyenneHarbarth
             //Randomize.start("Hallo");
             //ConsoleInput.Start();
             //Zahlenraten.StartGame(0, 100);
-            Einkaufsliste.PrintList();
+            //Einkaufsliste.PrintList();
             //RandomNumberArray.PrintArray();
             //Kommazahl.PrintKommazahl();
-
+            //Bubblesort.SortBubble();
+            //MehrdimensArray.PrintArrays();
+            //TikTakToe.StartGame();
+            Abwesenheitsliste.PrintList();
         }
     }
 }

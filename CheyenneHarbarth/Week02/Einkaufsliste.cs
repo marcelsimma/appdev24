@@ -20,10 +20,10 @@ namespace CheyenneHarbarth.Week02
 
                 if (item == "Liste")
                 {
-                    break;                                  //bricht die while-Schleife ab
+                    break;                                                  //bricht die while-Schleife ab
                 }
 
-                NumberOfItems++;                            //damit erhöhen wir die Anzahl der Elemente am Schluss der Liste
+                NumberOfItems++;                                            //damit erhöhen wir die Anzahl der Elemente am Schluss der Liste
 
                 while (true)
                 {

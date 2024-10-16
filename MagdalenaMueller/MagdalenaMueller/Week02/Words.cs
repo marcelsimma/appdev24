@@ -22,7 +22,7 @@ namespace MagdalenaMueller.Week02
             string word = Console.ReadLine();
 
             char[] letters = word.ToCharArray();
-
+            
             // Random erstellen
             Random random = new Random();
 

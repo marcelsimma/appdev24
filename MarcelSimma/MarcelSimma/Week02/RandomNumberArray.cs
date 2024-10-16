@@ -23,8 +23,23 @@ namespace MarcelSimma.Week02
             // Den größten Wert ermitteln
             int maxValue = array.Max();
 
+            int maxValue2 = -50;
+            for (int i = 0; i < array.Length; i++) {
+                if (array[i] > maxValue2) {
+                    maxValue2 = array[i];
+                }
+            }
+
+
             // Den kleinsten Wert ermitteln
             int minValue = array.Min();
+
+            int minValue2 = 50;
+            for (int i = 0; i < array.Length; i++) {
+                if (array[i] < minValue2) {
+                    minValue2 = array[i];
+                }
+            }
 
             // Den Durchschnittswert ermitteln
             double averageValue = array.Average();
@@ -49,7 +64,9 @@ namespace MarcelSimma.Week02
 
             // Ausgabe der Ergebnisse
             Console.WriteLine("Größter Wert: " + maxValue);
+            Console.WriteLine("Größter Wert: " + maxValue2);
             Console.WriteLine("Kleinster Wert: " + minValue);
+            Console.WriteLine("Kleinster Wert: " + minValue2);
             Console.WriteLine("Durchschnittswert: " + averageValue);
             Console.WriteLine("Durchschnittswert der Beträge: " + averageAbsValue);
         }
