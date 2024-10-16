@@ -9,7 +9,7 @@ namespace JulianStroehle.Week2
             {
 
                 // Auswahl Zahlenumrechnungsart
-                Console.WriteLine("Dez-Hex, Dez-Dual, Hex-Dez, Hex-Dual, Dual-Dez oder Dual-Dez");
+                Console.WriteLine("Dez-Hex, Dez-Dual, Hex-Dez, Hex-Dual, Dual-Dez oder Dual-Hex");
                 string? placeholder = Console.ReadLine();
                 switch (placeholder)
                 {

@@ -1,6 +1,7 @@
 ﻿using System;
 using JulianStroehle.Week1;
 using JulianStroehle.Week2;
+using JulianStroehle.Week3;
 namespace JulianStroehle
 {
     class Program
@@ -37,8 +38,14 @@ namespace JulianStroehle
             // RandomNumberArray.RandomArray();
             // TwoDimentionalArray.TwoDimArray(7);
             // KaufmaennischRunden.Runden();
-            BubbleSort.Start();
+            // BubbleSort.Start();
             // DualDezHexA.Start();
+
+            // Woche 3
+            // TicTacToe.TicTac();
+            Sort.Start();
+            // Abwesenheitsliste.Start();
+            // ArraySuche.Start();
         }
     }
 }

@@ -7,13 +7,13 @@ namespace JulianStroehle.Week2
         {
             Console.WriteLine("Wie viele Zahlen sollen sortiert werden?");
             int numCount = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Ascending or Descending? (a/d)");
+            Console.WriteLine("Aufsteigend oder Absteigend? (Auf/Ab)");
             string? s = Console.ReadLine();
-            if (s == "a")
+            if (s == "Auf")
             {
                 Asc(numCount);
             }
-            else if (s == "d")
+            else if (s == "Ab")
             {
                 Desc(numCount);
             }
