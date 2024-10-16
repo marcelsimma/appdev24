@@ -26,7 +26,8 @@ namespace CheyenneHarbarth
             //Kommazahl.PrintKommazahl();
             //Bubblesort.SortBubble();
             //MehrdimensArray.PrintArrays();
-            TikTakToe.StartGame();
+            //TikTakToe.StartGame();
+            Abwesenheitsliste.PrintList();
         }
     }
 }
