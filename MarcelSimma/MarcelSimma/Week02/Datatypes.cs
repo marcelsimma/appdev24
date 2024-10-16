@@ -2,7 +2,7 @@ using System;
 
 namespace MarcelSimma.Week01 {
     public class Datatypes {
-        public static void start() {
+        public static void Start() {
    
         int a = -10;
         uint b = (uint)a;

@@ -7,9 +7,9 @@ namespace SimonJochum;
  
 class Program
 {
-    static void Main()
+    public static void Main()
     {
-        Generations.CheckGenerations();
-    
+       //MultiDimensionalArray.Start('*', ' ', 9);
+       Round.Start();
     }
 }
