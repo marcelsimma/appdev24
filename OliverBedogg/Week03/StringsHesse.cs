@@ -18,6 +18,11 @@ namespace OliverBedogg.Week02
             /* Aufgabe: Suche nach "Hesse" --------
             Wie oft kommt das Wort "Hesse" in folgendem Text vor? An welchen Stellen?
             Gib die Anzahl und die Stellen aus.
+
+            Ansatz:
+            textString.IndexOf(...) liefert den ersten Index zurück
+            Der Methode IndexOf können weitere Parameter wie der Startindex für die Suche übergeben werden.
+            https://learn.microsoft.com/de-de/dotnet/api/system.string.indexof?view=net-8.0
             */
         }
 
@@ -27,6 +32,11 @@ namespace OliverBedogg.Week02
             In der folgenden Aufgabe sollen alle Buchstaben und Zeichen eines Texts gezählt werden.
             Um die einzelnen Buchstaben und Zeichen zu zählen soll ein int[] verwendet werden.
             Gib am Schluss die Anzahl der einzelnen Zeichen (zb. A,a,ä,.) aus.
+
+            Ansatz:
+            Es kann die String-Methode IndexOf oder auch IndexOfAny verwendet werden
+            textString.IndexOfAny(...)
+            https://learn.microsoft.com/de-de/dotnet/api/system.string.indexofany?view=net-8.0
             */
         }
 
