@@ -43,9 +43,11 @@ namespace JulianStroehle
 
             // Woche 3
             // TicTacToe.TicTac();
-            Sort.Start();
+            // Sort.Start();
             // Abwesenheitsliste.Start();
             // ArraySuche.Start();
+            // Search.Start();
+            CountLetters.Start();
         }
     }
 }
