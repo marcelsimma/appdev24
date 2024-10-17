@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.InteropServices;
 
 namespace OliverBedogg.Week02
 {
@@ -9,6 +10,7 @@ namespace OliverBedogg.Week02
         {
             // Aufgaben:
             SucheHesse();
+            Console.WriteLine("===================");
             BuchstabenZaehlen();
             // Verwende den Text in getText()
         }
@@ -24,20 +26,91 @@ namespace OliverBedogg.Week02
             Der Methode IndexOf können weitere Parameter wie der Startindex für die Suche übergeben werden.
             https://learn.microsoft.com/de-de/dotnet/api/system.string.indexof?view=net-8.0
             */
+
+            string textString = getText();
+            string searchFor = "Hesse";
+            // TODO Console Readline Suchbegriff
+
+            int startPos = textString.IndexOf(searchFor);
+            Console.WriteLine("First Index: " + startPos);
+            Console.WriteLine("--------------------");
+
+            // mit Hilfe einer Schleife weitersuchen
+            int count = -1;
+            int pos = -1;
+            do
+            {
+                pos = textString.IndexOf(searchFor, pos + 1);
+                Console.WriteLine("Count: " + count + ", Found at Index: " + pos);
+                count++;
+            } while (pos >= 0);
+            // solange bis er nicht mehr gefunden wird
+
+            Console.WriteLine("Anzahl: " + count);
+            Console.WriteLine("--------------------");
+            Console.WriteLine("--------------------");
+
+
+            count = 0;
+            pos = textString.IndexOf(searchFor);
+            Console.WriteLine("Found at Index: " + pos);
+
+            // so lange gefunden...
+            while (pos >= 0)
+            {
+                // mit Hilfe einer Schleife weitersuchen
+                count++;
+                pos = textString.IndexOf(searchFor, pos + 1);
+                Console.WriteLine("Count: " + count + ", Found at Index: " + pos);
+            }
+            // Unterscheidung Feedback
+            if (count > 0)
+                Console.WriteLine("Anzahl: " + count);
+            else
+                Console.WriteLine($"{searchFor} nicht gefunden.");
+
+            Console.WriteLine("--------------------");
         }
 
         public static void BuchstabenZaehlen()
         {
             /* Aufgabe: Buchstaben zählen -------
-            In der folgenden Aufgabe sollen alle Buchstaben und Zeichen eines Texts gezählt werden.
+            In der folgenden Aufgabe sollen alle vorhandenen Buchstaben und Zeichen eines Texts gezählt werden.
+
             Um die einzelnen Buchstaben und Zeichen zu zählen soll ein int[] verwendet werden.
             Gib am Schluss die Anzahl der einzelnen Zeichen (zb. A,a,ä,.) aus.
-
-            Ansatz:
-            Es kann die String-Methode IndexOf oder auch IndexOfAny verwendet werden
-            textString.IndexOfAny(...)
-            https://learn.microsoft.com/de-de/dotnet/api/system.string.indexofany?view=net-8.0
             */
+
+            // alle vorhandenen Zeichen durchgehen
+
+            // und zählen
+
+            // Zähler in int[] hochzählen
+            // counts[]
+            // für A ... counts[65]++
+
+            // Anzahl der einzelnen Zeichen ausgeben
+
+
+            int nbr = (int)'A';
+            int max = char.MaxValue;
+            string textString = getText();
+            Console.WriteLine($"int of char: {nbr}/{max}");
+            Console.WriteLine($"char of int: {nbr}: " + (char)nbr);
+            Console.WriteLine("--------------------");
+
+            for (int i = 0; i < textString.Length; i++)
+            {
+                char c = textString[i];
+                // Console.WriteLine("int of char " + c + ": " + Convert.ToInt32(c));
+
+                // TODO count
+            }
+
+            // TODO Ausgabe der Buchstaben und deren Anzahl
+
+            Console.WriteLine("--------------------");
+
         }
 
         public static string getText()

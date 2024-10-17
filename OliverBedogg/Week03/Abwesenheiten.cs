@@ -27,7 +27,9 @@ namespace OliverBedogg.Week02
 
             // Ergänze Abwesenheit ----
             string[] abwesenheiten = teilnehmerAbwesenheiten[1];
-            // Array verlängern
+            // Array verlängern um ein neues Feld --
+            // Variante 1: neues größeres Array erstellen und über for-Schleife befüllen
+            // Varainte 2: vorhandenes Array durch Resize(...) vergrößern
             Array.Resize(ref abwesenheiten, abwesenheiten.Length + 1);
             // Resultat: neue Länge 3
             // befülle Abwesenheit
