@@ -57,6 +57,10 @@ namespace OliverBedogg.Week02
             int[] age = { 40, 78, 5, 18, 81 };
             String[] place = { "Wien", "Schwarzach", "Wiener Neudorf", "Sankt Pölten", "Sankt Pölten" };
             float[] distanceFromCapital = { 0f, 654.4f, 12.457634366f, 120.0f, 119.9999f };
+
+            // Lösungsansatz
+            Console.WriteLine(string.Format("{0,-12} | {1,-12} | {2,12:N0} | {3,-12} | {4,12:N3}",
+                firstName[0], lastName[0], age[0], place[0], distanceFromCapital[0]));
         }
 
         public static void Print(string[] array)
