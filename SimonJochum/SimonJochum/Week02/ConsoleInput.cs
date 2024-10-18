@@ -18,7 +18,6 @@ namespace SimonJochum.Week02
 
             do
             {
-                Console.WriteLine("Gib deine Zahl an:");
                 input = Console.ReadLine();
 
                 // Überprüfen, ob die Eingabe eine gültige Zahl ist
@@ -42,7 +41,6 @@ namespace SimonJochum.Week02
 
             do
             {
-                Console.WriteLine("Gib deine Zahl an:");
                 input = Console.ReadLine();
 
                 // Überprüfen, ob die Eingabe eine gültige Zahl ist
@@ -66,7 +64,6 @@ namespace SimonJochum.Week02
 
             do
             {
-                Console.WriteLine("Gib dein Zeichen an:");
                 input = Console.ReadLine();
 
                 // Überprüfen, ob die Eingabe ein gültiges Zeichen ist
