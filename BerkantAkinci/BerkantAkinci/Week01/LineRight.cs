@@ -10,7 +10,7 @@ namespace BerkantAkinci.Week01
         {
             for (int i = 0; i < size; i++)
             {
-                Console.WriteLine(new string('.', size - i - 1 ) + c + new string('.', i));
+                Console.WriteLine(new string('.', size - i - 1) + c + new string('.', i));
             }
         }
     }

@@ -3,23 +3,18 @@ using System;
 namespace BerkantAkinci.Week01
 {
 
-
     class Rhombus
     {
-
 
         public static void PrintRhombus(char b, int size)
         {
             for (int i = 0; i < size; i++)
             {
-
                 int half = (size - 1) / 2;
-
 
                 //Erste Zeile
                 if (i == 0)
                 {
-
                     Console.Write(new string(' ', half) + b + new string(' ', half));
                 }
 
@@ -27,14 +22,12 @@ namespace BerkantAkinci.Week01
 
                 if (i > 0 && i < half)
                 {
-
                     Console.Write(new string(' ', half - i) + b + new string(' ', size - 2 - (half - i) * 2) + b + new string(' ', half - i));
                 }
                 //Mittlere Zeile
                 if (i == half)
                 {
                     Console.Write(b + new string(' ', size - 2) + b);
-
                 }
 
                 //Untere Hälfte
@@ -48,7 +41,6 @@ namespace BerkantAkinci.Week01
                     Console.Write(new string(' ', i - half) + b + new string(' ', size - 2 - (i - half) * 2) + b + new string(' ', i - half));
                 }
 
-
                 //Letzte Zeile
                 else if (i == size - 1)
                 {
@@ -56,7 +48,6 @@ namespace BerkantAkinci.Week01
                 }
 
                 Console.WriteLine();
-
             }
         }
     }
