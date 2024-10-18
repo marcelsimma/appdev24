@@ -14,7 +14,7 @@ namespace JulianStroehle.Week3
                 case "w": GuessWords(); break;
             }
         }
-        public static void GuessNumbers()
+        static void GuessNumbers()
         {
             int[] numbers = new int[10];
             Random rdm = new Random();

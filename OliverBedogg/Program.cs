@@ -29,8 +29,10 @@ namespace OliverBedogg
             // StringMethoden.Exercise();
 
             // Woche 3 ------------------
-            StringsVergleich.Start();
+            // StringsVergleich.Start();
             // Abwesenheiten.Start();
+            // StringsHesse.Start();
+            StringMethoden2.Start();
 
             Console.WriteLine("\n");
         }

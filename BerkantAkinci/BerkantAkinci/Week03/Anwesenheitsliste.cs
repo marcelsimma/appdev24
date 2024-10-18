@@ -1,11 +1,45 @@
 using System;
+using System.Runtime.InteropServices;
 
-namespace OliverBedogg.Week02
+namespace BerkantAkinci.Week03
 {
 
-    public class Abwesenheiten
+    class Anwesenheitsliste
     {
-        public static void Start()
+
+        public static void PrintAnwesenheitsliste()
+        {
+            Anwesend();
+
+        }
+
+        public static void Anwesend()
+        {
+            string[][] stand = new string[14][];
+
+
+
+
+        }
+
+        public static void Name()
+        {
+            string[][] teilnehmer = new string[14][];
+
+            System.Console.WriteLine("Anwesenheitsliste:\n");
+
+            for (int i = 0; i <= teilnehmer.Length - 1; i++)
+            {
+                Console.Write("Name: ");
+                teilnehmer[i] =new string [] { Console.ReadLine()};
+            }
+        }
+    }
+}
+
+
+//Lösung vom Lehrer
+ /*public static void Start()
         {
             // Grundlage: Teilnehmerliste
             string[] teilnehmer = new string[2];
@@ -27,9 +61,7 @@ namespace OliverBedogg.Week02
 
             // Ergänze Abwesenheit ----
             string[] abwesenheiten = teilnehmerAbwesenheiten[1];
-            // Array verlängern um ein neues Feld --
-            // Variante 1: neues größeres Array erstellen und über for-Schleife befüllen
-            // Varainte 2: vorhandenes Array durch Resize(...) vergrößern
+            // Array verlängern
             Array.Resize(ref abwesenheiten, abwesenheiten.Length + 1);
             // Resultat: neue Länge 3
             // befülle Abwesenheit
@@ -52,6 +84,4 @@ namespace OliverBedogg.Week02
                 }
                 Console.WriteLine();
             }
-        }
-    }
-}
+        }*/

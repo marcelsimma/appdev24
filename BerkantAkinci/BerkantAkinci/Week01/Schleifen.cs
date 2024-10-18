@@ -1,17 +1,13 @@
 using System;
 
-
 namespace BerkantAkinci.Week01
 {
-
 
     class Schleifen
     {
 
-
         static void PrintSchleifen()
         {
-
             for (int i = 0; i < 5; i++)
             {
 
@@ -33,10 +29,6 @@ namespace BerkantAkinci.Week01
             }
             while (k < 5);
         }
-
-
-
-
     }
 }
 

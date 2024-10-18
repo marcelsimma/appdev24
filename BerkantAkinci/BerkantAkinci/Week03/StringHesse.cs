@@ -1,7 +1,7 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace OliverBedogg.Week02
+namespace BerkantAkinci.Week03
 {
 
     public class StringsHesse
@@ -28,7 +28,7 @@ namespace OliverBedogg.Week02
             */
 
             string textString = getText();
-            string searchFor = "Hesse";
+            string searchFor = Console.ReadLine();
             // TODO Console Readline Suchbegriff
 
             int startPos = textString.IndexOf(searchFor);
@@ -36,7 +36,7 @@ namespace OliverBedogg.Week02
             Console.WriteLine("--------------------");
 
             // mit Hilfe einer Schleife weitersuchen
-            int count = -1;
+            int count = 1;
             int pos = -1;
             do
             {
@@ -65,7 +65,7 @@ namespace OliverBedogg.Week02
             }
             // Unterscheidung Feedback
             if (count > 0)
-                Console.WriteLine("Anzahl: " + count);
+                Console.WriteLine("Anzahl: " + (count +1));
             else
                 Console.WriteLine($"{searchFor} nicht gefunden.");
 
