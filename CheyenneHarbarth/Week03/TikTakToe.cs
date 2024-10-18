@@ -17,7 +17,11 @@ namespace CheyenneHarbarth.Week03
                 { ' ',' ',' '}              //2,0    2,1     2,2
             };
 
-            char currentPlayer = 'X';
+            Console.WriteLine("Wer ist SpielerX?");
+            string SpielerX = Console.ReadLine();
+            Console.WriteLine("Wer ist SpielerO?");
+            string SpielerO = Console.ReadLine();
+            string currentPlayer = SpielerX;
             int rounds = 0;
 
             while (rounds < 9)
@@ -37,7 +41,7 @@ namespace CheyenneHarbarth.Week03
                     {
                         if (playground[zeile, spalte] == ' ')
                         {
-                            playground[zeile, spalte] = currentPlayer;
+                            playground[zeile, spalte] = X oder O;
                             break;
                         }
                         else
@@ -57,13 +61,13 @@ namespace CheyenneHarbarth.Week03
                 }
 
                 //Spieler tauschen für nächste Runde
-                if (currentPlayer == 'X')
+                if (currentPlayer == SpielerX)
                 {
-                    currentPlayer = 'O';
+                    currentPlayer = SpielerO;
                 }
                 else
                 {
-                    currentPlayer = 'X';
+                    currentPlayer = SpielerX;
                 }
 
                 rounds++;

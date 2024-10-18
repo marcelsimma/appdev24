@@ -16,9 +16,15 @@ namespace MarcelSimma.Week03
                 {' ', ' ', ' '}  // 2;0  2;1  2;2
             };
 
-            //playground[1, 2] = '*';
+            //playground[1, 2] = '*'; 
 
-            char currentPlayer = 'X'; // oder 'O'
+            //Spielerabfrage
+            Console.WriteLine("Wer ist SpielerX?");
+            string SpielerX = Console.ReadLine();
+            Console.WriteLine("Wer ist SpielerO?");
+            string SpielerO = Console.ReadLine();
+
+            string currentPlayer = SpielerX; // oder 'O'
             int rounds = 0;
 
             while (rounds < 9)
@@ -82,13 +88,13 @@ namespace MarcelSimma.Week03
                 } 
 
                 // Spieler tauschen für nächste Runde
-                if (currentPlayer == 'X')
+                if (currentPlayer == SpielerX)
                 {
-                    currentPlayer = 'O';
+                    currentPlayer = SpielerO;
                 }
                 else
                 {
-                    currentPlayer = 'X';
+                    currentPlayer = SpielerX;
                 }
 
                 rounds++;

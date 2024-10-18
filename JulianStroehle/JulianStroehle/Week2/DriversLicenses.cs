@@ -16,7 +16,7 @@ namespace JulianStroehle.Week2
             }
             for (int j = 0; j < 5; j++)
             {
-                if (ages[j] >= 16 && ages[j] < 18)
+                if (ages[j] >= 15 && ages[j] < 18)
                 {
                     Console.WriteLine(names[j] + ages[j] + " darf Moped, aber noch kein Auto fahren.");
                 }

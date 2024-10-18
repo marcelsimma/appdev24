@@ -26,7 +26,13 @@ namespace OliverBedogg
             // Pi.Start();
             // Generation.Start();
             // StringMethoden.Start();
-            StringMethoden.Exercise();
+            // StringMethoden.Exercise();
+
+            // Woche 3 ------------------
+            // StringsVergleich.Start();
+            // Abwesenheiten.Start();
+            // StringsHesse.Start();
+            StringMethoden2.Start();
 
             Console.WriteLine("\n");
         }

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Security.Cryptography.X509Certificates;
 using BarbaraMarte.Hausaufgabe;
 using BarbaraMarte.Schule;
 using BarbaraMarte.Week01;
@@ -20,7 +19,8 @@ namespace BarbaraMarte.Week01
             //FizBuzz.Print([]);
             //PrintMultibleMesseges.Print();
             //TicTacToe.Print();
-            TicTacToeZweidimensional.Start();
+            Anwesenheitsliste.Print();
+            // ArraySuche.Print();
         }
     }
 }
