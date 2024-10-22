@@ -21,8 +21,8 @@ namespace BarbaraMarte.Week01
             //Anwesenheitsliste.Print();
             //StringHesses.count();
             // CountNumber.Print();
-
-            DatenTabelle.Print();
+            ReplaceAll.Print();
+            //DatenTabelle.Print();
             //StringMethods.Print();
             //Methode.BMI();
             // WordFinder.Letters();
