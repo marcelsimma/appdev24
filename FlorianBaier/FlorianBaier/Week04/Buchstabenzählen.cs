@@ -66,4 +66,3 @@ namespace FlorianBaier.Week04
         }
     }
 }
-
