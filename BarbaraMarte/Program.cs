@@ -1,9 +1,8 @@
 ﻿using System;
-using BarbaraMarte.Hausaufgabe;
-using BarbaraMarte.Schule;
 using BarbaraMarte.Week01;
 using BarbaraMarte.Week02;
 using BarbaraMarte.Week03;
+using BarbaraMarte.Week04;
 
 
 namespace BarbaraMarte.Week01
@@ -19,8 +18,21 @@ namespace BarbaraMarte.Week01
             //FizBuzz.Print([]);
             //PrintMultibleMesseges.Print();
             //TicTacToe.Print();
-            Anwesenheitsliste.Print();
+            //Anwesenheitsliste.Print();
+            //StringHesses.count();
+            // CountNumber.Print();
+
+            DatenTabelle.Print();
+            //StringMethods.Print();
+            //Methode.BMI();
+            // WordFinder.Letters();
+            //Charater.PrintUsedCharacterAmount();
+            //WordFinder.Print();
             // ArraySuche.Print();
+            //AtendingList.Print();
+            //AgeControll.Print();
+            //Fakultaet.Print();
+
         }
     }
 }
