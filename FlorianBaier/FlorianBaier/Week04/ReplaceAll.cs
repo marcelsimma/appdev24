@@ -13,7 +13,26 @@ namespace FlorianBaier.Week04
             Console.WriteLine(replacedText);
         }
 
-        
+        public static string CountingCharacter()
+    {
+        string textString = GetText();
+
+        char[] textArray = textString.ToCharArray();
+        int[] counter = new int[65536];
+
+        foreach (char c in textArray)
+        {
+            counter[c]++;
+        }
+        for (int i = 0; i < counter.Length; i++)
+        {
+            if (counter[i] > 0)
+            {
+                Console.WriteLine($"Der Character {(char)i} kommt {counter[i]} vor. ");
+            }
+        }
+        return "Ende";
+    }
 
          public static string GetText()
         {
