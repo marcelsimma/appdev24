@@ -1,6 +1,8 @@
 ﻿using System;
 using FlorianBaier.Week01;
 using FlorianBaier.Week02;
+using FlorianBaier.Week03;
+using FlorianBaier.Week04;
 
 namespace FlorianBaier
 {
@@ -8,9 +10,7 @@ namespace FlorianBaier
     {
         public static void Main(string[] args)
         {
-
-        Arrays.Start();
-          
+        Buchstabenzaehlen.Start();
         }
 
     }

@@ -6,6 +6,7 @@ namespace SimonJochum.Week02
     {
         public static void Start()
         {
+            
             int[] number = { 89, 76, 45, 92, 67, 12, 99 };
             int temp;
 

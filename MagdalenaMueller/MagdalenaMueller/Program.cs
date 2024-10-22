@@ -1,6 +1,7 @@
 ﻿using System;
 using MagdalenaMueller.Week01;
 using MagdalenaMueller.Week02;
+using MagdalenaMueller.Week03;
 
 
 namespace MagdalenaMueller
@@ -10,7 +11,7 @@ namespace MagdalenaMueller
     {
         static void Main()
         {
-            HigherOrLower.HoRGame();
+            StringHesse.ReplaceWords();
         }
         
     }
