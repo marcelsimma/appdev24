@@ -11,7 +11,7 @@ namespace MagdalenaMueller
     {
         static void Main()
         {
-            StringHesse.StringHesseProgram();
+            StringHesse.ReplaceWords();
         }
         
     }

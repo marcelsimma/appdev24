@@ -1,4 +1,5 @@
 using System;
+using MagdalenaMueller.Week02;
 
 namespace MagdalenaMueller.Week03
 {
@@ -61,7 +62,55 @@ namespace MagdalenaMueller.Week03
             }
             
         }
-        
+        public static void ReplaceWords()
+        {
+            bool again = true;
+            string text = Text();
+
+            string hesse = "Hesse";
+
+            string[] words = text.Split(new char[] { ' ', ',', '.', ';', ':', '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+
+            for (int i = 0; i < words.Length; i++)
+            {
+                if (hesse.Equals(words[i], StringComparison.OrdinalIgnoreCase)) 
+                {
+                    words[i] = words[i].ToUpper();
+                }
+            }
+
+            while (again)
+            {
+                Console.WriteLine("Wort ersetzen(1)\nText anzeigen(2)\n");
+                string? task = Console.ReadLine();
+
+                if (task == "1")
+                {
+                    Console.WriteLine("Wort das ersetzt werden soll: ");
+                    string? wordGetReplaced = Console.ReadLine();
+                    Console.WriteLine("Wort: ");
+                    string? replaceWord = Console.ReadLine();
+
+                    for (int i = 0; i < words.Length; i++) // i < words.Length, nicht -1
+                    {
+                        if (words[i].Equals(wordGetReplaced, StringComparison.OrdinalIgnoreCase)) // Hier vergleichen wir das Wort im Array
+                        {
+                            words[i] = replaceWord; // Ersetzen
+                        }
+                    }
+                }
+
+                if (task == "2")
+                {
+                    // Den Text nach der Bearbeitung wieder zusammensetzen
+                    string updatedText = string.Join(" ", words);
+                    Console.WriteLine(updatedText);
+                    again = false;
+                }
+            }
+            
+        }
+
         public static string Text()
         {
             return "Geboren am 2.7.1877 in Calw, gestorben am 9.8.1962 in Montagnola. Thematik der frühen Romane: Widerstand gegen konventionelle Normen, geistige Unruhe und Zweifel, Gegensatz zwischen kontemplativer und „sinnlicher“ Lebensweise," +
