@@ -12,6 +12,8 @@ namespace NicoDobler
             Rhombus.Start();
             Diagonal.Start();
             Baum.Start();
+            Summe.PrintSumme();
+            
         }
  
      

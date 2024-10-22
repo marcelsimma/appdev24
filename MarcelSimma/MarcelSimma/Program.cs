@@ -1,17 +1,24 @@
 ﻿using System;
-using MarcelSimma.Week01;
 
+using MarcelSimma.Week02;
+using MarcelSimma.Week03;
 
-namespace MarcelSimma
+namespace MarcelSimma {
+class Program
 {
-    public class Program
+    static void Main(string[] args)
     {
-        public static void Main(string[] args)
-        {
+        //ShoppingList.Start();
 
-            PrintDeltoid.Print('*', 11);
-            
-
-        }
+        //int test = ConsoleInput.ReadNextInt();
+        //Arrays.Start();
+        //RandomNumberArray.Start();
+        //MehrdimensionaleArrays.Start();
+        TicTacToe.Start();
     }
+
 }
+
+}
+
+

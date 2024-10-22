@@ -41,6 +41,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NicoDobler", "NicoDobler\Ni
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FatmanurKeles", "FatmanurKeles\FatmanurKeles.csproj", "{325119E0-0EBE-49E1-BB46-EA3D50F4255C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OliverBedogg", "OliverBedogg\OliverBedogg.csproj", "{3D1F6572-3099-4E53-B5DF-05B03590801F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BarbaraMarte", "BarbaraMarte\BarbaraMarte.csproj", "{DCD6E97F-7E63-46F3-8859-B4101CD4C28F}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LucasSchiemann", "LucasSchiemann\LucasSchiemann.csproj", "{9A7F9CC1-318F-4AB8-A511-3404CCDE4E92}"
 EndProject
 Global
@@ -73,6 +77,10 @@ Global
 		{4204E3FA-E120-41ED-B5B3-693D368C1F8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4204E3FA-E120-41ED-B5B3-693D368C1F8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4204E3FA-E120-41ED-B5B3-693D368C1F8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D1F6572-3099-4E53-B5DF-05B03590801F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D1F6572-3099-4E53-B5DF-05B03590801F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D1F6572-3099-4E53-B5DF-05B03590801F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D1F6572-3099-4E53-B5DF-05B03590801F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9A7F9CC1-318F-4AB8-A511-3404CCDE4E92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9A7F9CC1-318F-4AB8-A511-3404CCDE4E92}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A7F9CC1-318F-4AB8-A511-3404CCDE4E92}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -80,6 +88,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+		{DCD6E97F-7E63-46F3-8859-B4101CD4C28F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCD6E97F-7E63-46F3-8859-B4101CD4C28F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCD6E97F-7E63-46F3-8859-B4101CD4C28F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCD6E97F-7E63-46F3-8859-B4101CD4C28F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E0F4182B-34FF-4005-8199-A3A0E333F9B5} = {6FECDCE5-57FE-4AF7-89BB-EF003618C953}

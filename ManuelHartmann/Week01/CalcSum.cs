@@ -1,15 +1,10 @@
-using System;
-using System.Security.Cryptography.X509Certificates;
-using System.Security.Principal;
-using System.Text.Json.Serialization;
 
-
-namespace ManuelHartmann
+namespace ManuelHartmann.Week01
 {
 
     public class CalcSum
     {
-        static void CalcSum(string[] args)
+        static void Start(string[] args)
         {
             int sum = 20;
             Console.WriteLine("Sum of 20 to 50 added together");

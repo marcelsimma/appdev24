@@ -1,13 +1,11 @@
-using System;
 
-
-namespace ManuelHartmann
+namespace ManuelHartmann.Week01
 {
 
     class Malreihen 
     {
 
-        static void Malreihen(string[] args)
+        static void Start(string[] args)
         {
             Console.WriteLine("We use the multiplicator: 1");
             for (int i = 0; i <= 10; i++) 

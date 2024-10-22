@@ -1,4 +1,6 @@
 using System;
+using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 
 namespace SimonJochum.Week01
 {
@@ -6,14 +8,14 @@ namespace SimonJochum.Week01
     {
 
 
-        public static void Calc()
+        public static void Calc(int min, int max)
         {
             int sum = 0;
 
             Console.WriteLine("Summe von 20 bis 50 addiert:");
 
 
-            for (int i = 20; i <= 50; i++)
+            for (int i = min; i <= max; i++)
             {
                 // Wird ausgeführt wenn die Summe (sum) 0 beträgt, was in diesem Fall nur beim 1. mal zutrifft
                 if (sum == 0)
@@ -23,13 +25,12 @@ namespace SimonJochum.Week01
                 else
                 {
                     Console.WriteLine($"Rechenweg: {sum} + {i} = {sum + i}");
-                    sum += i; // Aktuelle Zahl wird zur Summe hinzugefügt (mit =+ wird der Wert der sum nicht überschrieben!)
+                    sum += i; // Aktuelle Zahl wird zur Summe hinzugefügt
                 }
 
                 // Ausgabe der Gesamtsumme nach jeder Rechnung
                 Console.WriteLine($"Die Gesamtsumme ist: {sum}");
             }
         }
-
     }
 }

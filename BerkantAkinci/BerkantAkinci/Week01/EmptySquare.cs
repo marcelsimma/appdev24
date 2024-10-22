@@ -1,13 +1,10 @@
 using System;
 
-
 namespace BerkantAkinci
 {
 
-
     class EmptySquare
     {
-
 
         public static void PrintEmptySquare(char c, int size)
         {
@@ -16,17 +13,16 @@ namespace BerkantAkinci
                 // Schreibt die erste Zeile mit Sternen.
                 if (i == 0)
                 {
-
                     for (int j = 0; j < size; j++)
                     {
 
                         Console.Write(c);
                     }
                 }
-                // Schreibt die letzte Zeile mit Sternen.
-                else if (i == 6)
-                {
 
+                // Schreibt die letzte Zeile mit Sternen.
+                else if (i == size - 1)
+                {
                     for (int j = 0; j < size; j++)
                     {
 
@@ -47,10 +43,7 @@ namespace BerkantAkinci
                 }
                 Console.WriteLine();
 
-
             }
-
-
         }
     }
 }
