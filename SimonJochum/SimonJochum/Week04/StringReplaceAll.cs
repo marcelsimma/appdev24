@@ -6,11 +6,11 @@ namespace SimonJochum.Week04
     {
         public static void Start()
         {
-            // ReplaceWord();
-            // DeleteLowercase();
-            // DeleteUppercase();
-            // DeleteWhitespaces();
-            // DeleteExclamationMark();
+            ReplaceWord();
+            DeleteLowercase();
+            DeleteUppercase();
+            DeleteWhitespaces();
+            DeleteExclamationMark();
             DeleteAllDigits();
             DeleteDigitsExclusive0();
             DeleteDigitsFrom2To4();
@@ -103,7 +103,7 @@ namespace SimonJochum.Week04
         {
             Console.WriteLine(GetText2() + " ursprüngliche Zahlenkette");
 
-            string stringExample = GetText2();     // "Lambda-Ausdruck" wird bei LINQ verwendet =>
+            string stringExample = GetText2();     // "Lambda-Ausdruck =>" wird bei LINQ verwendet
             string output = new string(stringExample.Where(c => !Char.IsDigit(c)).ToArray()); //da !Char.IsDigit negiert ist, werden keine Zahlen aufgeschrieben.
             Console.WriteLine("1. " + output);
         }
@@ -118,7 +118,7 @@ namespace SimonJochum.Week04
         public static void DeleteDigitsFrom2To4()
         {
             string stringExample = GetText2();
-            string output = new string(stringExample.Where(c => c == '0' || c == '1' || c == '5' || c == '6' || c == '7' || c == '8' || c == 9).ToArray());
+            string output = new string(stringExample.Where(c => c == '0' || c == '1' || c == '5' || c == '6' || c == '7' || c == '8' || c == '9').ToArray());
             Console.WriteLine("3. " + output);
         }
 
