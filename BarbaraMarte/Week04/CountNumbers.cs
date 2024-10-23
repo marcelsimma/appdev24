@@ -5,7 +5,7 @@ class CountNumber
 
     public static void Print()
     {
-        // Console.WriteLine("Please enter a sentense: ");
+       
         string letters = GetText();
 
         int numberOfLetters = 0;
