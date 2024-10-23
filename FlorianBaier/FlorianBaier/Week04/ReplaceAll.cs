@@ -36,7 +36,7 @@ namespace FlorianBaier.Week04
         public static void Numbers()
         {
             Console.WriteLine("Enter numbers: ");
-            string? numberArray = Console.ReadLine();
+            string numberArray = Console.ReadLine();
 
             if (string.IsNullOrEmpty(numberArray))
             {
@@ -44,17 +44,16 @@ namespace FlorianBaier.Week04
                 return;
             }
 
-            int[] counter = new int[10]; // Only need 10 for digits 0-9
+            int[] counter = new int[10];
 
             foreach (char c in numberArray)
             {
-                if (char.IsDigit(c)) // Check if the character is a digit
+                if (char.IsDigit(c))
                 {
-                    counter[c - '0']++; // Increment the count for the corresponding digit
+                    counter[c - '0']++;
                 }
             }
 
-            // Display the counts of each digit
             for (int i = 0; i < counter.Length; i++)
             {
                 Console.WriteLine($"{i}: {counter[i]}");

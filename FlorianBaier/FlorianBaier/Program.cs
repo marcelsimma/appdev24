@@ -10,7 +10,7 @@ namespace FlorianBaier
     {
         public static void Main(string[] args)
         {
-        ReplaceAll.Numbers();
+        Telefonnummer.TelefonnummerStart();
         }
 
     }
