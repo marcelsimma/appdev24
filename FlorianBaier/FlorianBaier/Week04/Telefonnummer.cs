@@ -49,7 +49,7 @@ namespace FlorianBaier.Week04
             { "34", "Spanien"},
             { "33", "Frankreich"},
         };
-            return countryCodes.ContainsKey(code) ? countryCodes[code] : "Unbekanntes Land";
+            return countryCodes.ContainsKey(code) ? countryCodes[code] : "Unbekanntes Land.";
         }
     }
 }
