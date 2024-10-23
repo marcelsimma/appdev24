@@ -39,6 +39,45 @@ class ReplaceAll
         return "Ende";
     }
 
+    public static void Numbers()
+    {
+        Console.WriteLine("Enter numbers: ");
+        string? numbers = Console.ReadLine();
+
+        string withoutAllNumbers = numbers;
+        for (int i = 0; i <= 9; i++)
+        {
+            withoutAllNumbers = withoutAllNumbers.Replace(i.ToString(), "");
+        }
+        Console.WriteLine($"Without Numbers 0-9 {withoutAllNumbers}");
+
+        string without1to9 = numbers;
+        for (int i = 1; i <= 9; i++)
+        {
+            without1to9 = without1to9.Replace(i.ToString(), "");
+        }
+        Console.WriteLine($"Without 1-9 {without1to9}");
+
+        string without2to4 = numbers;
+        for (int i = 2; i <= 4; i++)
+        {
+            without2to4 = without2to4.Replace(i.ToString(), "");
+        }
+        Console.WriteLine($"Without Numbers 2-4 {without2to4}");
+
+        string without1to3and6to9 = numbers;
+        for (int i = 1; i <= 3; i++)
+        {
+            without1to3and6to9 = without1to3and6to9.Replace(i.ToString(), "");
+        }
+        for (int i = 6; i <= 9; i++)
+        {
+            without1to3and6to9 = without1to3and6to9.Replace(i.ToString(), "");
+        }
+        Console.WriteLine($"Without Numbers 1-3 and 6-9 {without1to3and6to9}");
+    }
+
+
     public static string GetText()
     {
         return "Pluck this little flower and take it, delay not! I fear lest it droop and drop into the dust." +
