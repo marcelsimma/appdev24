@@ -11,7 +11,7 @@ namespace FlorianBaier
     {
         public static void Main(string[] args)
         {
-        RegexEmail.EmailStart();
+        ReplaceAllRegex.DeleteNumber1To3And6To9();
         }
 
     }

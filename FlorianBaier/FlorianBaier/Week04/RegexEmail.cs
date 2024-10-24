@@ -9,25 +9,25 @@ namespace FlorianBaier.Week04
 
         public static void EmailStart()
         {
-             Console.WriteLine("Bitte geben Sie eine E-Mail-Adresse ein:");
-        string? email = Console.ReadLine();
+            Console.WriteLine("Bitte geben Sie eine E-Mail-Adresse ein:");
+            string? email = Console.ReadLine();
 
-        if (IsValidEmail(email))
-        {
-            Console.WriteLine("Die E-Mail-Adresse ist gültig.");
+            if (IsValidEmail(email))
+            {
+                Console.WriteLine("Die E-Mail-Adresse ist gültig.");
+            }
+            else
+            {
+                Console.WriteLine("Die E-Mail-Adresse ist ungültig.");
+            }
         }
-        else
+
+        public static bool IsValidEmail(string email)
         {
-            Console.WriteLine("Die E-Mail-Adresse ist ungültig.");
-        }
-    }
 
-    public static bool IsValidEmail(string email)
-    {
+            string pattern = @"^(?!.*\.\.)([a-z0-9._]{1,64})@([a-z0-9.-]{1,255})\.([a-z]{2,6})$";
 
-        string pattern = @"^(?!.*\.\.)([a-z0-9._]{1,64})@([a-z0-9.-]{1,255})\.([a-z]{2,6})$";
-        
-        return Regex.IsMatch(email, pattern);
+            return Regex.IsMatch(email, pattern);
         }
     }
 }
