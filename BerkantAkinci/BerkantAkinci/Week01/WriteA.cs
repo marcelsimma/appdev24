@@ -1,15 +1,10 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using System;
-
+﻿using System;
 
 namespace BerkantAkinci.Week01
 {
 
-
     class WriteA
     {
-
 
         static void PrintWriteA()
         {
@@ -23,9 +18,7 @@ namespace BerkantAkinci.Week01
             Console.WriteLine(" /  ========  \\");
             Console.WriteLine("/_/          \\_\\");
             Console.WriteLine(" ");
-
         }
-
     }
 }
 

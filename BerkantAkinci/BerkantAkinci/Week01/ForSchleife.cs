@@ -1,13 +1,10 @@
 using System;
 
-
 namespace BerkantAkinci.Week01
 {
 
-
     class ForSchleife
     {
-
 
         static void PrintForSchleife()
         {
@@ -15,8 +12,6 @@ namespace BerkantAkinci.Week01
             {
                 Console.WriteLine(i);
             }
-
         }
-
     }
 }
