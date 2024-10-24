@@ -54,14 +54,14 @@ namespace SimonJochum.Week04
         public static void DeleteLowercase()
         {
             string stringExample = GetText(); //.Where fungiert ähnlich einer foreach Schleife
-            string output = new string(stringExample.Where(Char.IsUpper).ToArray());
+            string output = new string(stringExample.Where(c => !Char.IsLower(c)).ToArray());
             Console.WriteLine("1." + output);
         }
 
         public static void DeleteUppercase()
         {
             string stringExample = GetText();
-            string output = new string(stringExample.Where(Char.IsLower).ToArray());
+            string output = new string(stringExample.Where(c => !Char.IsUpper(c)).ToArray());
             Console.WriteLine("2." + output);
         }
 
@@ -104,7 +104,7 @@ namespace SimonJochum.Week04
             Console.WriteLine(GetText2() + " ursprüngliche Zahlenkette");
 
             string stringExample = GetText2();     // "Lambda-Ausdruck =>" wird bei LINQ verwendet
-            string output = new string(stringExample.Where(c => !Char.IsDigit(c)).ToArray()); //da !Char.IsDigit negiert ist, werden keine Zahlen aufgeschrieben.
+            string output = new string(stringExample.Where(c => !Char.IsDigit(c)).ToArray()); // da !Char.IsDigit negiert ist, werden keine Zahlen aufgeschrieben.
             Console.WriteLine("1. " + output);
         }
 
