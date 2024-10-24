@@ -13,7 +13,7 @@ class DatenTabelle
         int i = 0;
 
         /*
-        for (int j = 0; j < distanceFromCapital.Length; j++)                    you don't need this formel if you put a :F2 behind the position
+        for (int j = 0; j < distanceFromCapital.Length; j++)            you don't need this formel if you put a :F2 behind the position
         {
             distanceFromCapital[j] = (double)Math.Round(distanceFromCapital[j], 2);        // auf zwei Kommastellen Runden.
         }
