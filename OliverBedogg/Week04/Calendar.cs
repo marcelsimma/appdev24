@@ -32,6 +32,11 @@ namespace OliverBedogg.Week02
             Console.WriteLine(moment.ToString());
             Console.WriteLine("\n--------------------");
 
+            // Kultureller Kontext
+            // de ... Sprachkürzel nach ISO-639-1
+            // https://de.wikipedia.org/wiki/Liste_der_ISO-639-Sprachcodes
+            // AT ... Ländercode nach ISO-3166-2
+            // https://de.wikipedia.org/wiki/ISO-3166-1-Kodierliste
             CultureInfo austrian = new CultureInfo("de-AT");
             DayOfWeek dow = austrian.DateTimeFormat.FirstDayOfWeek;
             Console.WriteLine(dow);
