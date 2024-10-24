@@ -1,5 +1,5 @@
 ﻿using System;
-
+using OliverBedogg.Week02;
 using SimonJochum.Week01;
 using SimonJochum.Week02;
 using SimonJochum.Week03;
@@ -54,5 +54,9 @@ class Program
         RecognizePhoneNumber.Start();
         // RecognizeEmail.Start();
         // RegexDeleteNumbers.Start();
+        // Calendar.Start();
+        // CalendarCopy.Start();
+        // WhenAndWhere.Start();
+        // DisplayCalendar.Start();
     }
 }
