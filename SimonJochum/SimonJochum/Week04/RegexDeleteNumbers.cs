@@ -35,41 +35,41 @@ public class RegexDeleteNumbers
 
     public static void DeleteLowercase()
     {
-        string signToDelete = GetText();
+        string textToDelete = GetText();
         string pattern = "[a-z]"; // Pattern für die Kleinbuchstaben
 
         // Entfernt alle Kleinbuchstaben aus dem String
-        string finalString = Regex.Replace(signToDelete, pattern, "");
+        string finalString = Regex.Replace(textToDelete, pattern, "");
         Console.WriteLine("Task 2: " + finalString);
     }
 
     public static void DeleteUppercase()
     {
-        string signToDelete = GetText();
+        string textToDelete = GetText();
         string pattern = "[A-Z]"; // Pattern für die Großbuchstaben
 
         // Entfernt alle Großbuchstaben aus dem String
-        string finalString = Regex.Replace(signToDelete, pattern, "");
+        string finalString = Regex.Replace(textToDelete, pattern, "");
         Console.WriteLine("Task 3: " + finalString);
     }
 
     public static void DeleteWhiteSpaces()
     {
-        string signToDelete = GetText();
+        string textToDelete = GetText();
         string pattern = @"\ "; // Pattern für das Leerzeichen
 
         // Entfernt alle Leerzeichen aus dem String
-        string finalString = Regex.Replace(signToDelete, pattern, "");
+        string finalString = Regex.Replace(textToDelete, pattern, "");
         Console.WriteLine("Task 4: " + finalString);
     }
 
     public static void DeleteExclamationMark()
     {
-        string signToDelete = GetText();
+        string textToDelete = GetText();
         string pattern = @"\!"; // Pattern für das !
 
         // Entfernt alle ! aus dem String
-        string finalString = Regex.Replace(signToDelete, pattern, "");
+        string finalString = Regex.Replace(textToDelete, pattern, "");
         Console.WriteLine("Task 5: " + finalString);
     }
 

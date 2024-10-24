@@ -51,8 +51,8 @@ class Program
 
         // Week04
         // StringReplaceAll.Start();
-        // RecognizePhoneNumber.Start();
+        RecognizePhoneNumber.Start();
         // RecognizeEmail.Start();
-        RegexDeleteNumbers.Start();
+        // RegexDeleteNumbers.Start();
     }
 }
