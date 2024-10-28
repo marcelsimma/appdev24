@@ -30,15 +30,30 @@ namespace ManuelHartmann.Week04
         }
         static void BuildCalendar(int year, int month)
         {
+            // Benutzereingabe
             DateTime start = new DateTime(year, month, 1);          // Bestimmt den Ersten des Monats.
             int daysInMonth = DateTime.DaysInMonth(year, month);    // Anzahl Tage im Monat.
             DayOfWeek dayOfWeek = start.DayOfWeek;                  // Mit welchem Wochentag startet der Monat.
-            DateTime atm = DateTime.Today;                          // Bestimmt den heutigen Tag.
 
-            int[,] calendarList = new int[5,32];    // Array fuer die erstellung des Kalenders.
+            // Systemspezifisiche Abfragen
+            DateTime atm = DateTime.Today;                          // Bestimmt den heutigen Tag.
+            int today = atm.Day;                                    // Heutiger Tag als (int).
+            int atmMonth = atm.Month;                               // Derzeitiger Monat als (int).
+            // Macht im Kalender nur ein Stern, wenn es sich um den derzeitigen Monat handelt.
+            if (month == atmMonth)  
+            {
+                today = atm.Day;
+            }
+            else
+            {
+                today = 0;
+            }
+
+            int[,] calendarList = new int[6, 32];   // Array fuer die erstellung des Kalenders.
             int weeks = 0;                          // Ist die jeweilige Zeile des Arrays.
             int startTmp = 0;                       // Gibt die start Spalte des Arrays an.
             int tmp = 0;                            // Ueberpruft wie viele Eintraege bereits geschrieben wurden. -> Zeilen switch.
+            int ending = 0;                         // Ergaenzt die leeren Eintraege am KalenderEnde.
 
             if ((int)dayOfWeek == 0)
             {
@@ -51,7 +66,7 @@ namespace ManuelHartmann.Week04
 
             Console.Clear();
             Console.Write(start.ToString("yyyy ")); // 'yyyy' -> Gibt das Jahr vierstellig an.
-            string yearMonth = new DateTime(year, month, 1).ToString("MMMM", new CultureInfo("de-AT")); // Gibt Monat auf Deutsch aus.
+            string yearMonth = new DateTime(year, month, 1).ToString("MMMM", new CultureInfo("de-AT")); // Gibt den Monat auf Deutsch aus.
             Console.WriteLine(yearMonth);
             Console.WriteLine("| MO | DI | MI | DO | FR | SA | SO |");
             Console.WriteLine("+----+----+----+----+----+----+----+");
@@ -66,41 +81,85 @@ namespace ManuelHartmann.Week04
             // for (int i = startTmp; i <= (int)daysInMonth - (int)dayOfWeek + 1; i++)
             for (int i = 1; i <= (int)daysInMonth; i++)                 // Anzahl Tage im Monat
             {
-                if (tmp == 6 || tmp == 13 || tmp == 20 || tmp == 27)    // Zeilenwechsel
+                if (tmp == 6 || tmp == 13 || tmp == 20 || tmp == 27 || tmp == 34)    // Zeilenwechsel
                 {
                     if (i > 9)  // Benoetigt es 1 oder 2 Leerzeichen.
                     {
-                        calendarList[weeks,i] = i;
-                        Console.Write($"| {calendarList[weeks,i]} ");
-                        tmp++;  // Geschriebene Eintrage++.
+                        if (i == today)
+                        {
+                            calendarList[weeks, i] = i;
+                            Console.Write($"| *{calendarList[weeks, i]} ");
+                            tmp++;  // Geschriebene Eintrage++.
+                            ending++;
+                        }
+                        else
+                        {
+                            calendarList[weeks, i] = i;
+                            Console.Write($"| {calendarList[weeks, i]} ");
+                            tmp++;  // Geschriebene Eintrage++.
+                            ending++;
+                        }
                     }
                     else
                     {
-                        calendarList[weeks,i] = i;
-                        Console.Write($"|  {calendarList[weeks,i]} ");
-                        tmp++;  // Geschriebene Eintrage++.
+                        if (i == today)
+                        {
+                            calendarList[weeks, i] = i;
+                            Console.Write($"| *{calendarList[weeks, i]} ");
+                            tmp++;  // Geschriebene Eintrage++.
+                            ending++;
+                        }
+                        else
+                        {
+                            calendarList[weeks, i] = i;
+                            Console.Write($"|  {calendarList[weeks, i]} ");
+                            tmp++;  // Geschriebene Eintrage++.
+                            ending++;
+                        }
                     }
                     Console.WriteLine("|");
                     weeks++;    // Zeilenwechsel im Array. (wird eigentlich nicht benoetigt -> Zeilenwechsel ueber tmp).
+                    ending = 0;
                 }
                 else
                 {
                     if (i > 9)  // Benoetigt es 1 oder 2 Leerzeichen.
                     {
-                        calendarList[weeks,i] = i;
-                        Console.Write($"| {calendarList[weeks,i]} ");
-                        tmp++;  // Geschriebene Eintrage++.
+                        if (i == today)
+                        {
+                            calendarList[weeks, i] = i;
+                            Console.Write($"|*{calendarList[weeks, i]} ");
+                            tmp++;  // Geschriebene Eintrage++.
+                            ending++;
+                        }
+                        else
+                        {
+                            calendarList[weeks, i] = i;
+                            Console.Write($"| {calendarList[weeks, i]} ");
+                            tmp++;  // Geschriebene Eintrage++.
+                            ending++;
+                        }
                     }
                     else
                     {
-                        calendarList[weeks,i] = i;
-                        Console.Write($"|  {calendarList[weeks,i]} ");
-                        tmp++;  // Geschriebene Eintrage++.
+                        if (i == today)
+                        {
+                            calendarList[weeks, i] = i;
+                            Console.Write($"| *{calendarList[weeks, i]} ");
+                            tmp++;  // Geschriebene Eintrage++.
+                            ending++;
+                        }
+                        else
+                        {
+                            calendarList[weeks, i] = i;
+                            Console.Write($"|  {calendarList[weeks, i]} ");
+                            tmp++;  // Geschriebene Eintrage++.
+                            ending++;
+                        }
                     }
                 }
             }
-            tmp = 35 - tmp;                 // Fuellt die letzten leeren Eintraege des Kalenders auf.
-            for (int i = 0; i < tmp; i++)
+            for (int i = ending; i < 7; i++)    // Ergaenzt die leeren Eintraege am KalenderEnde.
             {
                 Console.Write("|    ");
             }
