@@ -165,7 +165,10 @@ namespace ManuelHartmann.Week04
                 Console.Write("|    ");
             }
             Console.Write("|");
-            Console.WriteLine("\n\n");
+            Console.WriteLine("\n");
+            Console.WriteLine("Current day: ");
+            Console.Write(atm.ToString("D"));
+            Console.WriteLine("\n");
         }
     }
 }
