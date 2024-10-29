@@ -10,34 +10,39 @@ namespace CheyenneHarbarth.Week04
         public static void PrintCalendar(int year, int month)
         {
             DateTime start = new DateTime(year, month, 1);
+            DateTime heute = DateTime.Now;
+            int[,] Monat = new int[5, 7];
+
+            //Monat, Jahr und Kalenderstruktur ausgeben
             Console.WriteLine($" {year} {start.ToString("MMMM")}");
             Console.WriteLine($" | Mo | Di | Mi | Do | Fr | Sa | So |");
-            DateTime heute = DateTime.Now;
 
-            int[,] Monat = new int[5, 7];
+            //Console.WriteLine($"{start.ToString("dddd")} {(int)start.DayOfWeek}");
 
             for (int i = 0; i < Monat.GetLength(0); i++)
             {
                 for (int j = 0; j < Monat.GetLength(1); j++)
                 {
                     //1. Tag festgelegt und restliche Zeile geschrieben
-                    Monat[0, (int)start.Day] = (int)start.Day;
-                    if (j > (int)start.Day && j < Monat.GetLength(1))
+
+                    //des o in "if" setzen sunsch wirds vo else überschrieben
+
+                    if (j == ((int)start.DayOfWeek - 1))
+                    {
+                        Monat[i, ((int)start.DayOfWeek - 1)] = start.Day;
+                    }
+                    else if (j > ((int)start.DayOfWeek - 1) && j < Monat.GetLength(1))
                     {
                         start = start.AddDays(1);
-                        Monat[0, j] = (int)start.Day;
+                        Monat[i, j] = start.Day;
                     }
-                    if (j < (int)start.Day && j >= 0)
-                    {
-                        Monat[0,j] = 2;
-                    }
-                    Console.Write(" |  " + Monat[0, j]);
+                    Console.Write($" | {Monat[i, j],2}");
 
                     //2. Woche festlegen
-                    Console.WriteLine("Hilfe");
                 }
                 Console.Write(" |" + "\n");
             }
+
         }
 
 
