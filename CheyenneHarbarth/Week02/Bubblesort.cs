@@ -6,7 +6,7 @@ namespace CheyenneHarbarth.Week02
     {
         public static void SortBubble()
         {
-            int[] zahlenreihe = {1, 2, 3, 4, 5, 6, 7, 8};               //Array wird deklariert und initialisiert
+            int[] zahlenreihe = [1, 2, 3, 4, 5, 6, 7, 8];               //Array wird deklariert und initialisiert
             Random random = new Random();                               //Random-Generator wird erstellt
 
             for (int i = 0; i < zahlenreihe.Length; i++)

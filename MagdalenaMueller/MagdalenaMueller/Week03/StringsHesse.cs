@@ -84,23 +84,23 @@ namespace MagdalenaMueller.Week03
                 Console.WriteLine("Wort ersetzen(1)\nText anzeigen(2)\n");
                 string? task = Console.ReadLine();
 
-                if (task == "1")
+                if(task == "1")
                 {
                     Console.WriteLine("Wort das ersetzt werden soll: ");
                     string? wordGetReplaced = Console.ReadLine();
                     Console.WriteLine("Wort: ");
                     string? replaceWord = Console.ReadLine();
 
-                    for (int i = 0; i < words.Length; i++) // i < words.Length, nicht -1
+                    for (int i = 0; i < words.Length; i++) 
                     {
-                        if (words[i].Equals(wordGetReplaced, StringComparison.OrdinalIgnoreCase)) // Hier vergleichen wir das Wort im Array
+                        if (words[i].Equals(wordGetReplaced, StringComparison.OrdinalIgnoreCase)) 
                         {
                             words[i] = replaceWord; // Ersetzen
                         }
                     }
                 }
 
-                if (task == "2")
+                if(task == "2")
                 {
                     // Den Text nach der Bearbeitung wieder zusammensetzen
                     string updatedText = string.Join(" ", words);
@@ -108,8 +108,10 @@ namespace MagdalenaMueller.Week03
                     again = false;
                 }
             }
-            
         }
+    
+            
+         
 
         public static string Text()
         {
