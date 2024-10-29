@@ -37,16 +37,17 @@ namespace ManuelHartmann.Week04
 
             // Systemspezifisiche Abfragen
             DateTime atm = DateTime.Today;                          // Bestimmt den heutigen Tag.
-            int today = atm.Day;                                    // Heutiger Tag als (int).
+            int today = 0;                                          // Heutiger Tag als (int). (default '0')
             int atmMonth = atm.Month;                               // Derzeitiger Monat als (int).
-            // Macht im Kalender nur ein Stern, wenn es sich um den derzeitigen Monat handelt.
-            if (month == atmMonth)  
+            int atmYear = atm.Year;                                 // Derzeitiges Jahr als (int)
+
+            // Macht im Kalender nur ein Stern, wenn es sich um das aktuelle Datum handelt.
+            if (year == atmYear)
             {
-                today = atm.Day;
-            }
-            else
-            {
-                today = 0;
+                if (month == atmMonth)
+                {
+                    today = atm.Day;
+                }
             }
 
             int[,] calendarList = new int[6, 32];   // Array fuer die erstellung des Kalenders.
@@ -57,7 +58,7 @@ namespace ManuelHartmann.Week04
 
             if ((int)dayOfWeek == 0)
             {
-                startTmp = 7;   // Kann die (int)dayOfWeek leider nicht auf '7', setzten, weil die Woche nur (int)0-6 annehmen kann.
+                startTmp = 7;   // Kann die (int)dayOfWeek leider nicht auf '7' setzten, weil die Woche nur (int)0-6 annehmen kann.
             }
             else
             {
