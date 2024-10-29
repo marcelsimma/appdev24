@@ -76,7 +76,7 @@ namespace ManuelHartmann.Week04
             {
                 calendarList[weeks, j] = 0;
                 Console.Write("|    ");
-                tmp++;  //  Merkt sich wie viele leere Eintraege bereits beruecksichtig wurden.
+                tmp++;  //  Merkt sich wie viele leere Eintraege bereits beruecksichtigt wurden.
             }
 
             // for (int i = startTmp; i <= (int)daysInMonth - (int)dayOfWeek + 1; i++)
@@ -120,7 +120,7 @@ namespace ManuelHartmann.Week04
                     }
                     Console.WriteLine("|");
                     weeks++;    // Zeilenwechsel im Array. (wird eigentlich nicht benoetigt -> Zeilenwechsel ueber tmp).
-                    ending = 0;
+                    ending = 0; // Restet nach jedem Zeilenwechsel.
                 }
                 else
                 {
