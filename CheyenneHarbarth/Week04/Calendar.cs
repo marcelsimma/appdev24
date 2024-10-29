@@ -34,8 +34,8 @@ namespace CheyenneHarbarth.Week04
                     Console.Write(" |  " + Monat[0, j]);
 
                     //2. Woche festlegen
-                    /* Monat[1, j] = (int)start.Day;
-                    Console.Write(" |  " + Monat[1, j]); */
+                    Monat[1, j] = (int)start.Day;
+                    Console.Write(" |  " + Monat[1, j]);
                 }
                 Console.Write(" |" + "\n");
             }
