@@ -89,6 +89,7 @@ namespace ManuelHartmann.Week04
                         if (i == today)
                         {
                             calendarList[weeks, i] = i;
+                            Console.ForegroundColor = ConsoleColor.Yellow;  //  Heutige Tag gelb einfaerben.
                             Console.Write($"| *{calendarList[weeks, i]} ");
                             tmp++;  // Geschriebene Eintrage++.
                             ending++;
@@ -97,7 +98,7 @@ namespace ManuelHartmann.Week04
                         {
                             calendarList[weeks, i] = i;
                             Console.Write($"| {calendarList[weeks, i]} ");
-                            tmp++;  // Geschriebene Eintrage++.
+                            tmp++;
                             ending++;
                         }
                     }
@@ -106,21 +107,23 @@ namespace ManuelHartmann.Week04
                         if (i == today)
                         {
                             calendarList[weeks, i] = i;
+                            Console.ForegroundColor = ConsoleColor.Yellow;
                             Console.Write($"| *{calendarList[weeks, i]} ");
-                            tmp++;  // Geschriebene Eintrage++.
+                            tmp++;
                             ending++;
                         }
                         else
                         {
                             calendarList[weeks, i] = i;
                             Console.Write($"|  {calendarList[weeks, i]} ");
-                            tmp++;  // Geschriebene Eintrage++.
+                            tmp++;
                             ending++;
                         }
                     }
                     Console.WriteLine("|");
-                    weeks++;    // Zeilenwechsel im Array. (wird eigentlich nicht benoetigt -> Zeilenwechsel ueber tmp).
-                    ending = 0; // Restet nach jedem Zeilenwechsel.
+                    weeks++;                // Zeilenwechsel im Array. (wird eigentlich nicht benoetigt -> Zeilenwechsel ueber tmp).
+                    ending = 0;             // Restet nach jedem Zeilenwechsel.
+                    Console.ResetColor();   // Farbe auf default zuruecksetzten.
                 }
                 else
                 {
@@ -129,15 +132,16 @@ namespace ManuelHartmann.Week04
                         if (i == today)
                         {
                             calendarList[weeks, i] = i;
+                            Console.ForegroundColor = ConsoleColor.Yellow;
                             Console.Write($"|*{calendarList[weeks, i]} ");
-                            tmp++;  // Geschriebene Eintrage++.
+                            tmp++;
                             ending++;
                         }
                         else
                         {
                             calendarList[weeks, i] = i;
                             Console.Write($"| {calendarList[weeks, i]} ");
-                            tmp++;  // Geschriebene Eintrage++.
+                            tmp++;
                             ending++;
                         }
                     }
@@ -146,18 +150,20 @@ namespace ManuelHartmann.Week04
                         if (i == today)
                         {
                             calendarList[weeks, i] = i;
+                            Console.ForegroundColor = ConsoleColor.Yellow;
                             Console.Write($"| *{calendarList[weeks, i]} ");
-                            tmp++;  // Geschriebene Eintrage++.
+                            tmp++;
                             ending++;
                         }
                         else
                         {
                             calendarList[weeks, i] = i;
                             Console.Write($"|  {calendarList[weeks, i]} ");
-                            tmp++;  // Geschriebene Eintrage++.
+                            tmp++;
                             ending++;
                         }
                     }
+                    Console.ResetColor();
                 }
             }
             for (int i = ending; i < 7; i++)    // Ergaenzt die leeren Eintraege am KalenderEnde.
