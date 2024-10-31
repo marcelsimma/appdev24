@@ -4,12 +4,11 @@ namespace BarbaraMarte.Week02;
 
 class Bubbelsort
 {
-    public static void PrintBubblesort(int[] array)
+    public static void PrintBubblesort()
     {
         int[] numbers = new int[10];
         //Console.WriteLine("Enter 10 Numbers:");
         int temp;
-
         //numbers[i] = Convert.ToInt32(Console.ReadLine());
 
         for (int i = 0; i < numbers.Length - 1; i++)

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 using FlorianBaier.Week01;
 using FlorianBaier.Week02;
 using FlorianBaier.Week03;
@@ -10,7 +11,7 @@ namespace FlorianBaier
     {
         public static void Main(string[] args)
         {
-        Buchstabenzaehlen.Start();
+        Sonntag.Start();
         }
 
     }

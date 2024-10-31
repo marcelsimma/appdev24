@@ -1,9 +1,11 @@
 using System;
 using System.ComponentModel;
 using BerkantAkinci;
+using BerkantAkinci.Basics;
 using BerkantAkinci.Week01;
 using BerkantAkinci.Week02;
 using BerkantAkinci.Week03;
+using BerkantAkinci.Week04;
 
 
 namespace BerkantAkinci
@@ -14,6 +16,7 @@ namespace BerkantAkinci
 
         public static void Main(string[] args)
         {
+            //WriteA.PrintWriteA();
             //Teilen.PrintTeilen();
             //Pi.PrintPi();
             //KleineSchritte.PrintKleineSchritte(0,100);
@@ -36,7 +39,19 @@ namespace BerkantAkinci
             //TicTacToe.PrintTicTacToe();
             //EindimensionalesArray.PrintEinArray();
             //Anwesenheitsliste.PrintAnwesenheitsliste();
-            StringsHesse.SucheHesse();           
+            //StringsHesse.Start();           
+            //CountLetter.PrintLetter();
+            //ReplaceAll.PrintAll();
+            //Tabelle.PrintTabelle();
+            //StringMethoden.String();
+            //Kalender.Zeitpunkt();
+            //WannUndWo.PrintWannUndWo();
+            //MeinGebi.PrintMeinGebi();
+            //WannSonntag.PrintSonntag();
+            //Arbeitstage.Start();
+            BonusKalender.PrintKalender(2024,08);
+
+        
 
         
       

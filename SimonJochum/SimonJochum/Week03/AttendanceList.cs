@@ -69,7 +69,7 @@ namespace SimonJochum.Week03
             {
                 for (int j = 0; j < attendanceList[i].Length; j++)
                 {
-                    Console.Write(attendanceList[i][j] + " ");
+                    Console.Write(attendanceList[i][j] + " | ");
                 }
                 Console.WriteLine();
             }

@@ -22,5 +22,6 @@ namespace FlorianBaier.Week04
                 Console.WriteLine($"| {firstName[i].PadRight(17)} | {lastName[i].PadRight(17)} | {age[i].ToString().PadLeft(5)} | {city[i].PadRight(17)} | {distanceFromCapital[i].ToString("F2").PadLeft(35)} |");
             }
         }
+    
     }
 }

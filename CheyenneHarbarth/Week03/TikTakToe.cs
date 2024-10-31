@@ -17,11 +17,11 @@ namespace CheyenneHarbarth.Week03
                 { ' ',' ',' '}              //2,0    2,1     2,2
             };
 
-            Console.WriteLine("Wer ist SpielerX?");
+            /*Console.WriteLine("Wer ist SpielerX?");
             string SpielerX = Console.ReadLine();
             Console.WriteLine("Wer ist SpielerO?");
-            string SpielerO = Console.ReadLine();
-            string currentPlayer = SpielerX;
+            string SpielerO = Console.ReadLine();*/
+            char currentPlayer = 'X';
             int rounds = 0;
 
             while (rounds < 9)
@@ -41,7 +41,7 @@ namespace CheyenneHarbarth.Week03
                     {
                         if (playground[zeile, spalte] == ' ')
                         {
-                            playground[zeile, spalte] = X oder O;
+                            playground[zeile, spalte] = currentPlayer;
                             break;
                         }
                         else
@@ -61,13 +61,13 @@ namespace CheyenneHarbarth.Week03
                 }
 
                 //Spieler tauschen für nächste Runde
-                if (currentPlayer == SpielerX)
+                if (currentPlayer == 'X')
                 {
-                    currentPlayer = SpielerO;
+                    currentPlayer = 'O';
                 }
                 else
                 {
-                    currentPlayer = SpielerX;
+                    currentPlayer = 'X';
                 }
 
                 rounds++;
@@ -83,10 +83,10 @@ namespace CheyenneHarbarth.Week03
             {
                 for (int j = 0; j < playground.GetLength(1); j++)           //mit 1 gehen wir über die Spalten, die Spalten sind die 1. Dimension
                 {
-                    Console.Write(playground[i, j] + "|");
+                    Console.Write(playground[i, j] + " | ");
                 }
                 Console.WriteLine();
-                Console.WriteLine("-------");
+                Console.WriteLine("-----------");
             }
         }
 

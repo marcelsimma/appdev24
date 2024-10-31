@@ -8,7 +8,7 @@ class Anwesenheitsliste()
         int anz = Convert.ToInt32(Console.ReadLine());
         string[,] Anwesenheit = new string[anz + 1, 6];
         string? again;
-        Anwesenheit[0, 0] = "  ";
+        Anwesenheit[0, 0] = "  "; 
         Anwesenheit[0, 1] = "Mo";
         Anwesenheit[0, 2] = "Di";
         Anwesenheit[0, 3] = "Mi";

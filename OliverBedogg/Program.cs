@@ -12,12 +12,16 @@ namespace OliverBedogg
             Console.WriteLine("\n");
             // weitere: https://learn.microsoft.com/de-de/cpp/c-language/escape-sequences
 
-            // Woche 1 ------------------
-            // PrintSquare.Print('+', 6);
-            // ChristmasTree.Print(11);
-            // FunctionWithReturn.Start();
-            // CalcSum.Start(20, 50);
-            // CalcSum.PrintSummeNico();
+
+            // Woche 4 ------------------
+            // Calendar.Start();
+            KalenderAufgaben.Start();
+
+            // Woche 3 ------------------
+            // StringsVergleich.Start();
+            // Abwesenheiten.Start();
+            // StringsHesse.Start();
+            // StringMethoden2.Start();
 
             // Woche 2 ------------------
             // PrimitiveDatatypes.Start();
@@ -28,11 +32,13 @@ namespace OliverBedogg
             // StringMethoden.Start();
             // StringMethoden.Exercise();
 
-            // Woche 3 ------------------
-            // StringsVergleich.Start();
-            // Abwesenheiten.Start();
-            // StringsHesse.Start();
-            StringMethoden2.Start();
+            // Woche 1 ------------------
+            // PrintSquare.Print('+', 6);
+            // ChristmasTree.Print(11);
+            // FunctionWithReturn.Start();
+            // CalcSum.Start(20, 50);
+            // CalcSum.PrintSummeNico();
+
 
             Console.WriteLine("\n");
         }
