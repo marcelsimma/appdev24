@@ -38,6 +38,11 @@ namespace FatmanurKeles.Week02
             {
                 Console.WriteLine("Generation Alpha");
             }
+
+            else 
+            {
+                Console.WriteLine("Dieser Jahrgang hat keinen Namen :( ");
+            }
         }
     }
 }

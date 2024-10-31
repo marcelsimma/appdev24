@@ -4,7 +4,7 @@ namespace FatmanurKeles.Week02
 {
     public class Einkaufsliste
     {
-        public static void Liste(string[] args)
+        public static void main()
         {
             Console.WriteLine("\nGeben Sie die Menge dann die Ware ein. \nWenn Sie Fertig sind--> Fertig \n\nEINKAUFSLISTE: \n\n");
 
