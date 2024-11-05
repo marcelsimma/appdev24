@@ -14,7 +14,7 @@ namespace CheyenneHarbarth.Week04
             DateTime start = new DateTime(year, month, 1);
             DateTime end = start.AddMonths(1);
             DateTime heute = DateTime.Now;
-            int[,] Monat = new int[6, 7];
+            int[,] Monat = new int[6, 8];
             int counter = 0;
 
             TimeSpan days = end - start;
@@ -22,14 +22,18 @@ namespace CheyenneHarbarth.Week04
             //Monat, Jahr und Kalenderstruktur ausgeben
             Console.WriteLine($"\n{year} {start.ToString("MMMM")}");
             Console.WriteLine("------------------------------------");
-            Console.WriteLine("| Mo | Di | Mi | Do | Fr | Sa | So |");
+            Console.WriteLine("| KW | Mo | Di | Mi | Do | Fr | Sa | So |");
 
             for (int i = 0; i < Monat.GetLength(0); i++)
             {
                 for (int j = 0; j < Monat.GetLength(1); j++)
                 {
+                    /* if (i < 7 && i >= 0 && j == 0)
+                    {
+                        Console.Write(".");
+                    } */
                     //1. Tag festgelegt
-                    if (i == 0 && (int)start.DayOfWeek == 0)      //Umrechnung falls der 1. auf einen Sonntag fällt
+                    if (i == 0 && (int)start.DayOfWeek == 0)        //Umrechnung falls der 1. auf einen Sonntag fällt
                     {
                         Monat[0, 6] = start.Day;
                         counter = 0;
@@ -61,7 +65,12 @@ namespace CheyenneHarbarth.Week04
                         Console.Write($"| {Monat[i, j],2} ");
                     }
                     counter++;
-                    
+
+                    if (Monat[6, j] == 0)
+                    {
+
+                    }
+
                 }
                 Console.Write("|" + "\n");
             }
