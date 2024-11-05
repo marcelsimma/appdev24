@@ -2,14 +2,18 @@
 using System;
 //using LucasSchiemann.Week02;
 using LucasSchiemann.Week03;
-
+using LucasSchiemann.Week04;
+using LucasSchiemann.Week05;
 namespace LucasSchiemann;
 
     class Program
     {
     static void Main()
     {
-        AlgorithmTester.excecuteSelectionSort();
+        EmailRecogniser.Start();
+        //AlgorithmTester.ChoseSortAlgorythm();
+        //Tabellensorter.Start();
+        //AlgorithmTester.excecuteSelectionSort();
         //TikTakToe.Processor();
         //SearchingInArray.Processor();
         //Week02.AgeCalc.Calc();
