@@ -1,8 +1,8 @@
 using System;
 namespace JulianStroehle.Week1
 {
-    public class SummeB{
-        public static void Summen(int n1, int n2){
+    public class Summe2{
+        public static void Start(int n1, int n2){
             int result = 0;
             for (int i = n1 + 1; i <= n2; i++)
             {

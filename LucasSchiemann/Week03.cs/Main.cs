@@ -7,7 +7,8 @@ public static class MainWeek03
 {
     static void Start()
     {
+        AlgorithmTester.ChoseSortAlgorythm();
         //BubbleSorter.Processor();
-        SearchingInArray.Processor();
+        //SearchingInArray.Processor();
     }
 }

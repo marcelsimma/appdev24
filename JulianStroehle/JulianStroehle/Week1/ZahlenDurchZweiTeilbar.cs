@@ -2,9 +2,9 @@ using System;
 
 namespace JulianStroehle.Week1
 {
-    public class DurchZweiB
+    public class DurchZwei
     {
-        public static void DurchZwei()
+        public static void Start()
         {
             Console.WriteLine("Zahl 1: ");
             int  n1 = Convert.ToInt32(Console.ReadLine());

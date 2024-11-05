@@ -3,7 +3,7 @@ namespace JulianStroehle.Week2
 {
     public class Einkaufsliste
     {
-        public static void Einkauf()
+        public static void Start()
         {
             Console.WriteLine("Wie viele Sachen wollen Sie einkaufen?");
             int elemente = Convert.ToInt32(Console.ReadLine());

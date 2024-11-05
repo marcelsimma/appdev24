@@ -1,9 +1,9 @@
 using System;
 namespace JulianStroehle.Week2
 {
-    public class EinkaufslisteB
+    public class EinkaufslisteMitBezeichnung
     {
-        public static void EinkaufB()
+        public static void Start()
         {
             Console.WriteLine("Wie viele Sachen wollen Sie einkaufen?");
             int elemente = Convert.ToInt32(Console.ReadLine());

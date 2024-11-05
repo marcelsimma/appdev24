@@ -33,7 +33,7 @@ class StringHesses
         Console.WriteLine("Found at Index" + pos);
 
         while (pos >= 0)
-        { 
+        {
             count++;
             pos = textString.IndexOf(searchFor, pos + 1);
             Console.WriteLine($"Count: {count}, Found at Index {pos}");

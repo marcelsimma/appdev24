@@ -3,7 +3,7 @@ namespace JulianStroehle.Week2
 {
     public class CalculatePI
     {
-        public static void PI()
+        public static void Start()
         {
             char op = '+';
             double Num = 0;

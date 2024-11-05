@@ -24,7 +24,9 @@ class TicTacToe
             }
             string choice = Console.ReadLine();
 
-            if (grid.Contains(choice) && choice != "X" && choice != "O") // && the choice is not the caracter where we are using to represent crosses which we represent with a "X" and the choice is also not the character which we are using to represent the 
+            if (grid.Contains(choice) && choice != "X" && choice != "O") 
+            /* && the choice is not the caracter where we are using to represent crosses which we 
+            represent with a "X" and the choice is also not the character which we are using to represent the*/ 
             {
                 int gridIndex = Convert.ToInt32(choice) - 1;
 
@@ -38,7 +40,8 @@ class TicTacToe
                 }
                 numTurns++;
             }
-            isPlayer1Turn = !isPlayer1Turn; // if it is Player 1 turn is true it negate its turn to fals and if its fals it convert it to true. It means we switch now between the players.         
+            isPlayer1Turn = !isPlayer1Turn; 
+            // if it is Player 1 turn is true it negate its turn to fals and if its fals it convert it to true. It means we switch now between the players.         
 
         }
 
