@@ -18,6 +18,8 @@ namespace FatmanurKeles.Week02
                 Array.Reverse(charInput);
 
                 return new string(charInput);
+                
+                Reverse.ReverseHallo("Hallo");
 */
             }
         }

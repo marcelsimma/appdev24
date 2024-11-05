@@ -42,7 +42,7 @@ namespace CheyenneHarbarth
             //Zeitspielchen.DreiSonntage();
             //Zeitspielchen.Practice();
             //Workdays.Start();
-            Calendar.PrintCalendar(2024, 10);
+            Calendar.PrintCalendar(2024, 12);
 
             //Basics
             //Arrays.ArrayMethoden();

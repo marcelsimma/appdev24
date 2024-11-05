@@ -1,7 +1,7 @@
 using System;
 namespace JulianStroehle.Week2
 {
-    public class ArrayTestA
+    public class ArrayTest
     {
         public static void Start()
         {

@@ -4,10 +4,9 @@ namespace FatmanurKeles.Week02
 {
     public class CountTeilen
     {
-        public static void MainTeilen(string[] args)
+        public static void Teilen()
         {
-
-            for (float i = 0; i <= 20; i++)
+            for (int i = 0; i <= 20; i++)
             {
                 if (i <= 20)
                 {
@@ -16,7 +15,6 @@ namespace FatmanurKeles.Week02
                     Console.WriteLine(i + " / 5.0 = " + i / 5.0);
                 }
             }
-
         }
     }
 }

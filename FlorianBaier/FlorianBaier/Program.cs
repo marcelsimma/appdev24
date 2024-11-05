@@ -11,7 +11,7 @@ namespace FlorianBaier
     {
         public static void Main(string[] args)
         {
-        Sonntag.Start();
+        DisplayCalendar.Start();
         }
 
     }

@@ -18,14 +18,11 @@ namespace FatmanurKeles.Week02
                 charInput [i] = charInput[rand]; //H mit a ersetzen
                 charInput [rand] = tmp; // alten Speicherort von a mit H aus tmp ersetzen.
 
-                Console.WriteLine(rand);
             }
 
             string result = new string (charInput);
             Console.WriteLine(result);
-
         }
     }
 }
 
-// Randomize.start("Hallo");

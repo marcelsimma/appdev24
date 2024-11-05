@@ -1,9 +1,9 @@
 using System;
 namespace JulianStroehle.Week1
 {
-    public class PrintEmptySquareA
+    public class PrintEmptySquare
     {
-        public static void PrintEmptySquare()
+        public static void Start()
         {
             Console.WriteLine("Reihen: ");
             int n1 = Convert.ToInt32(Console.ReadLine());

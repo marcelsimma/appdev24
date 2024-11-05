@@ -28,7 +28,7 @@ namespace BerkantAkinci.Week02
                 // Eingabe der Einheit (z.B. "Stück", "kg", "l")
                 Console.Write("Einheit: ");
                 string einheit = Console.ReadLine();
-                output += $"{einheit,-5}";
+                output += $"{einheit,-6}";
 
                 // Eingabe der Bezeichnung (z.B. "Äpfel", "Milch")
                 Console.Write("Bezeichnung: ");

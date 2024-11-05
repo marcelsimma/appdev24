@@ -1,9 +1,9 @@
 using System;
 namespace JulianStroehle.Week2
 {
-    public class FactorialA
+    public class Factorial
     {
-        public static void Factorial(int Factor)
+        public static void Start(int Factor)
         {
             long Num = 1;
             Console.WriteLine(0 + "!\t" + Num + "\n");

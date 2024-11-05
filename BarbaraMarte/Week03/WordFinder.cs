@@ -18,7 +18,7 @@ class WordFinder
             pos = textString.IndexOf(searchFor, pos + 1);
             Console.WriteLine($"Count {count}, Next Index: {pos}");
             count++;
-        } while (pos >= 0); 
+        } while (pos >= 0);
     }
 
     public static string getText()
@@ -27,10 +27,10 @@ class WordFinder
         string? text;
         return text = Console.ReadLine();
     }
-    public static void Letters() 
+    public static void Letters()
     {
         Console.WriteLine("Please enter a Text:");
-        string? letters = Convert.ToString(Console.ReadLine());
+        string? letters = Console.ReadLine();
 
         Console.WriteLine("Enter the Letter you are looking for:");
         char searchFor = Convert.ToChar(Console.ReadLine());
@@ -57,6 +57,6 @@ class WordFinder
 
         Console.WriteLine($"You have {letters.Count(char.IsLetter)} letters and {numberOfLetters} chars in your text.");
 
-        
+
     }
 }
