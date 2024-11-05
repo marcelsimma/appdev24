@@ -18,8 +18,9 @@ namespace BarbaraMarte.Week01
             //CalenderBlueprint.Zeitpunkt();
             // Workdays.Start();
             //  CalendarDays.Print();
-            AttendingList2.Print();
+            AttendingList1.Print();
 
+            //Calendar.Print();
             //WordFinder.Letters();
             //RegexMail.Print();
             // MyBirthday.Print();

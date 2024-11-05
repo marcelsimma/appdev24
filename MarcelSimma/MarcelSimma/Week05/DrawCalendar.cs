@@ -19,7 +19,7 @@ namespace MarcelSimma.Week05
 
         public static void Start()
         {
-            
+
             // 3. heutiger Tag
             DateTime today = DateTime.Today;
             Console.WriteLine(today.ToString());
@@ -47,7 +47,7 @@ namespace MarcelSimma.Week05
 
             // Tabellenkopf
             Console.WriteLine("| Mo | Di | Mi | Do | Fr | Sa | So |");
-            
+
             // negative Felder werden übersprungen und leer ausgegeben
             int counter = (int)firstDayOfMonthLong * -1 + 2;
 
@@ -55,24 +55,30 @@ namespace MarcelSimma.Week05
             {
                 for (int j = 0; j < 7; j++)
                 {
-                    if (counter == today.Day) {
-                        Console.Write($"| {counter, 2}*");
-                        
-                    } else if (counter > tageImMonat || counter < 1) {
+                    if (counter == today.Day)
+                    {
+                        Console.Write($"| {counter,2}*");
+
+                    }
+                    else if (counter > tageImMonat || counter < 1)
+                    {
                         Console.Write($"|    ");
-                       
-                    } else {
-                        Console.Write($"| {counter, 2} ");
-                    
+
+                    }
+                    else
+                    {
+                        Console.Write($"| {counter,2} ");
+
                     }
                     counter++;
-                    
+
                 }
                 Console.WriteLine("|");
-                if (counter > tageImMonat) {
-                        break;
-                       
-                    }
+                if (counter > tageImMonat)
+                {
+                    break;
+
+                }
             }
 
 

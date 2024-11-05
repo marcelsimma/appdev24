@@ -5,7 +5,7 @@ namespace BarbaraMarte.Week05;
 
 class AttendingList1
 {
-    public static void ReadFile()
+    public static void Print()
     {
         using (StreamReader streamWriter = new StreamReader("C:/AttendingList1/Input.txt"))
         {
