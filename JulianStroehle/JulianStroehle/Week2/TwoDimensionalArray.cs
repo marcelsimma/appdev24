@@ -3,7 +3,7 @@ namespace JulianStroehle.Week2
 {
     public class TwoDimentionalArray
     {
-        public static void TwoDimArray(int l)
+        public static void Start(int l)
         {
             char[,] chars= new char[l,l];
             for (int i=0; i<l; i++)

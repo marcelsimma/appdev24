@@ -1,9 +1,9 @@
 using System;
 namespace JulianStroehle.Week1
 {
-    public class PrintDeltoidA
+    public class PrintDeltoid
     {
-        public static void PrintDeltoid(int l, char c)
+        public static void Start(int l, char c)
         {
             int a = 1;
             for (int i = 0; i < l; i++)

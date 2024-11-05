@@ -2,9 +2,9 @@ using System;
 
 namespace JulianStroehle.Week1
 {
-    public class MalreiheA
+    public class Malreihe
     {
-        public static void Malreihe()
+        public static void Start()
         {
             Console.WriteLine("Zahl fuer Malreihe: ");
             int s = Convert.ToInt32(Console.ReadLine());
