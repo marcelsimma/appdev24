@@ -59,8 +59,8 @@ namespace SimonJochum.Week04
 
         public static void PhoneNumbersTryToShorten() //Regex Ausdruck zur besseren Lesbarkeit verfeinert
         {
-            string[] mobileNumbers = ["+43 676 59253671", "0664 1378769", "06607183662", "0170 1234567", "+491475707710", "05573 85062", "030 12345678", "0711 12345678", "+423 2345678", "00436641378769", "+43 5512 12345", "0043 660 1378769"];
-            string pattern = @"^(\+43|06|05|0043)( ?\d{1,3})( ?\d{4,8})";
+            string[] mobileNumbers = ["+43 676 59253671", "0664 1378769", "06607183662", "0170 1234567", "+491475707710", "05573 85062", "030 12345678", "0711 12345678", "+423 2345678", "00436641378769", "+43 5512 12345", "0043 660 137 8769"];
+            string pattern = @"^(\+43|06|05|0043)( ?\d{1,3})( ?\d{3,8})( ?\d{3,8})";
 
             foreach (string number in mobileNumbers)
             {
