@@ -5,6 +5,7 @@ using BarbaraMarte.Week03;
 using BarbaraMarte.Week04;
 using BarbaraMarte.Schule;
 using BarbaraMarte.Work;
+using BarbaraMarte.Week05;
 
 
 namespace BarbaraMarte.Week01
@@ -14,9 +15,10 @@ namespace BarbaraMarte.Week01
         static void Main()
         {
             //BinaryRechner.Print();
-            Kontaktverwaltung.Print();
             //CalenderBlueprint.Zeitpunkt();
-
+            // Workdays.Start();
+            CalendarDays.Print();
+            
             //WordFinder.Letters();
             //RegexMail.Print();
             // MyBirthday.Print();
@@ -27,6 +29,8 @@ namespace BarbaraMarte.Week01
             //CashChange.InputAndConvertToCent();
             // MoneyCounter.Print(400);
             // TicTacToe.Print();
+
+
         }
     }
 }
