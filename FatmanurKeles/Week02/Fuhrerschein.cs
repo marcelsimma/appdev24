@@ -4,7 +4,7 @@ namespace FatmanurKeles.Week02
 {
     public class Fuhrerschein
     {
-       public static void FuhrerscheinBerechtigung()
+        public static void Start()
         {
             Console.WriteLine("Bitte geben Sie Ihr Alter ein: ");
             int age = Convert.ToInt32(Console.ReadLine());

@@ -16,10 +16,9 @@ namespace FatmanurKeles.Week02
         }
         public static int ReadNextInt()
         {
-            //Übnerprüfen ob Eingabe ein int ist
+            //Überprüfen ob die Eingabe ein int ist
             do
             {
-
                 string unserInput = Console.ReadLine();
                 if (int.TryParse(unserInput, out int result))
                 {
@@ -32,8 +31,6 @@ namespace FatmanurKeles.Week02
                 }
             } while (true);
         }
-
-
         public static double ReadNextDouble()
 
         {
@@ -50,11 +47,9 @@ namespace FatmanurKeles.Week02
                     Console.WriteLine("Bitte geben Sie eine gültige Zahl ein.");
                 }
             } while (true);
-
         }
-
         public static char ReadNextChar()
-
+        
         {
             do
             {

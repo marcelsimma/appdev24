@@ -1,4 +1,6 @@
 using System;
+using System.Diagnostics.Metrics;
+using System.Reflection;
 using Microsoft.VisualBasic;
 
 namespace CheyenneHarbarth.Week04
@@ -10,42 +12,60 @@ namespace CheyenneHarbarth.Week04
         public static void PrintCalendar(int year, int month)
         {
             DateTime start = new DateTime(year, month, 1);
-            Console.WriteLine($" {year} {start.ToString("MMMM")}");
-            Console.WriteLine($" | Mo | Di | Mi | Do | Fr | Sa | So |");
+            DateTime end = start.AddMonths(1);
             DateTime heute = DateTime.Now;
+            int[,] Monat = new int[6, 7];
+            int counter = 0;
 
-            int[,] Monat = new int[5, 7];
+            TimeSpan days = end - start;
+
+            //Monat, Jahr und Kalenderstruktur ausgeben
+            Console.WriteLine($"\n{year} {start.ToString("MMMM")}");
+            Console.WriteLine("------------------------------------");
+            Console.WriteLine("| Mo | Di | Mi | Do | Fr | Sa | So |");
 
             for (int i = 0; i < Monat.GetLength(0); i++)
             {
                 for (int j = 0; j < Monat.GetLength(1); j++)
                 {
-                    //1. Tag festgelegt und restliche Zeile geschrieben
-                    Monat[0, (int)start.Day] = (int)start.Day;
-                    if (j > (int)start.Day && j < Monat.GetLength(1))
+                    //1. Tag festgelegt
+                    if (i == 0 && (int)start.DayOfWeek == 0)      //Umrechnung falls der 1. auf einen Sonntag fällt
+                    {
+                        Monat[0, 6] = start.Day;
+                        counter = 0;
+                    }
+                    else if (i == 0 && j == ((int)start.DayOfWeek - 1))
+                    {
+                        Monat[0, ((int)start.DayOfWeek - 1)] = start.Day;
+                        counter = 0;
+                    }
+
+                    //restliche Tage festgelegt
+                    else if (j > ((int)start.DayOfWeek - 1) && j < Monat.GetLength(1))
                     {
                         start = start.AddDays(1);
-                        Monat[0, j] = (int)start.Day;
+                        Monat[i, j] = start.Day;
                     }
-                    if (j < (int)start.Day && j >= 0)
+                    //Ende des Monats festgelegt
+                    if (counter >= days.Days)
                     {
-                        Monat[0,j] = 2;
+                        Monat[i, j] = 0;
                     }
-                    Console.Write(" |  " + Monat[0, j]);
-
-                    //2. Woche festlegen
-                    /* Monat[1, j] = (int)start.Day;
-                    Console.Write(" |  " + Monat[1, j]); */
+                    //* für heutigen Tag definiert
+                    if (Monat[i, j] == heute.Day)
+                    {
+                        Console.Write($"| {Monat[i, j],2}*");
+                    }
+                    else
+                    {
+                        Console.Write($"| {Monat[i, j],2} ");
+                    }
+                    counter++;
+                    
                 }
-                Console.Write(" |" + "\n");
+                Console.Write("|" + "\n");
             }
-        }
-
-
-        public static void Calculate()
-        {
-
-
+            Console.WriteLine("------------------------------------");
         }
     }
 }
