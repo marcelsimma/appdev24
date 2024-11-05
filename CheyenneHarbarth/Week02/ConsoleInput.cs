@@ -18,7 +18,7 @@ namespace CheyenneHarbarth.Week02
         {
             while (true)
             {
-                Console.WriteLine("Tippe eine Zahl ein!");
+                //Console.WriteLine("Tippe eine Zahl ein!");
                 string tmp = Console.ReadLine();
 
                 // Versuche, die Eingabe als Integer zu konvertieren

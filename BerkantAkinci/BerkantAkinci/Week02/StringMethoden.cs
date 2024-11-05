@@ -3,7 +3,7 @@ using System;
 namespace BerkantAkinci.Week02
 {
 
-    class StringMethoden
+    class StringMethodenU
     {
 
         public static void PrintStringMethoden()

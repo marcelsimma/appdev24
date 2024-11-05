@@ -8,8 +8,8 @@ namespace OliverBedogg.Week02
     {
         public static void Start()
         {
-            // Zeitpunkt();
-            Zeitspanne();
+            Zeitpunkt();
+            // Zeitspanne();
         }
 
         public static void Zeitpunkt()
@@ -32,9 +32,19 @@ namespace OliverBedogg.Week02
             Console.WriteLine(moment.ToString());
             Console.WriteLine("\n--------------------");
 
+            // Kultureller Kontext
+            // de ... Sprachkürzel nach ISO-639-1
+            // https://de.wikipedia.org/wiki/Liste_der_ISO-639-Sprachcodes
+            // AT ... Ländercode nach ISO-3166-2
+            // https://de.wikipedia.org/wiki/ISO-3166-1-Kodierliste
             CultureInfo austrian = new CultureInfo("de-AT");
             DayOfWeek dow = austrian.DateTimeFormat.FirstDayOfWeek;
             Console.WriteLine(dow);
+
+            DayOfWeek day = DayOfWeek.Sunday;
+            DateTimeFormatInfo dtfi = austrian.DateTimeFormat;
+            Console.WriteLine(dtfi.GetDayName(day));
+            Console.WriteLine(austrian.DateTimeFormat.GetDayName(day));
 
             // ToString mit vordefinierten Formaten
             // https://learn.microsoft.com/en-us/dotnet/api/system.datetime.tostring?view=net-8.0#system-datetime-tostring
@@ -50,6 +60,7 @@ namespace OliverBedogg.Week02
             // + Gib ein Datum im Format Donnerstag, 24. Oktober 2024 aus
             // + Welche Kürzel gibt es für Jahr, Monat, Tag, Stunde, Minute, Sekunde
         }
+
 
         public static void Zeitspanne()
         {

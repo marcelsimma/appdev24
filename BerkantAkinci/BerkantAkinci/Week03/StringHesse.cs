@@ -28,7 +28,8 @@ namespace BerkantAkinci.Week03
             */
 
             string textString = getText();
-            string searchFor = Console.ReadLine();
+            System.Console.Write("Gebe das gesuchte Wort ein: ");
+            string searchFor =Console.ReadLine();
             // TODO Console Readline Suchbegriff
 
             int startPos = textString.IndexOf(searchFor);
@@ -102,7 +103,7 @@ namespace BerkantAkinci.Week03
             for (int i = 0; i < textString.Length; i++)
             {
                 char c = textString[i];
-                // Console.WriteLine("int of char " + c + ": " + Convert.ToInt32(c));
+                //Console.WriteLine("int of char " + c + ": " + Convert.ToInt32(c));
 
                 // TODO count
             }

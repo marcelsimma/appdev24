@@ -4,7 +4,7 @@ namespace FatmanurKeles.Week02
 {
     public class HigherOrLower
     {
-        static void HigherOr(string[] args)
+        public static void HigherOr()
         {
             int guess;
             int random;
@@ -36,4 +36,5 @@ namespace FatmanurKeles.Week02
         }
     }
 }
+
 
