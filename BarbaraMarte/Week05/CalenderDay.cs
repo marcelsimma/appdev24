@@ -19,6 +19,6 @@ class CalendarDays
     {
         DateTime dayTime = new DateTime(24, 10, 2024);
         Console.WriteLine(dayTime.ToString("dd.MM.yy"));
-        DateTime moment = DateTime.Now();
+       // DateTime moment = DateTime.Now();
     }
 }

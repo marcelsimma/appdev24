@@ -17,8 +17,9 @@ namespace BarbaraMarte.Week01
             //BinaryRechner.Print();
             //CalenderBlueprint.Zeitpunkt();
             // Workdays.Start();
-            CalendarDays.Print();
-            
+            //  CalendarDays.Print();
+            AttendingList2.Print();
+
             //WordFinder.Letters();
             //RegexMail.Print();
             // MyBirthday.Print();
