@@ -1,9 +1,9 @@
 using System;
 namespace JulianStroehle.Week2
 {
-    public class EinkaufC
+    public class EinkaufslisteOhneArray
     {
-        public static void Einkauf()
+        public static void Start()
         {
             string output = "Einkaufsliste:\n\n";
             char addNewItem;

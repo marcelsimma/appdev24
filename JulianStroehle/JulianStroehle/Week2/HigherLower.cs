@@ -1,9 +1,9 @@
 using System;
 namespace JulianStroehle.Week2
 {
-    public class HigherLowerA
+    public class HigherLower
     {
-        public static void HigherLower()
+        public static void Start()
         {
             do
             {

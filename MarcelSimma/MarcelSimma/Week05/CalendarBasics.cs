@@ -2,7 +2,7 @@ using System;
 
 namespace MarcelSimma.week05
 {
-    public class Calendar
+    public class CalendarBasics
     {
         public void Start()
         {

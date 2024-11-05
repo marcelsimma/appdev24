@@ -4,7 +4,7 @@ namespace JulianStroehle.Week2
 {
     public class KaufmaennischRunden
     {
-        public static void Runden()
+        public static void Start()
         {
             Console.WriteLine("Zahl zum Runden eingeben:");
             double Zahl = Convert.ToDouble(Console.ReadLine());

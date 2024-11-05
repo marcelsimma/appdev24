@@ -3,7 +3,7 @@ namespace JulianStroehle.Week2
 {
     public class RandomNumberArray
     {
-        public static void RandomArray()
+        public static void Start()
         {
 
             // Array und Randomizer erstellen

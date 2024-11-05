@@ -8,6 +8,7 @@ namespace MarcelSimma.Week03
     {
         public static void Start()
         {
+            
             // Teil 1: Init Playground
 
             char[,] playground = new char[3, 3] {
@@ -69,8 +70,11 @@ namespace MarcelSimma.Week03
                         // Prüfung, ob Feld bereits besetzt
                         if (playground[zeile, spalte] == ' ')
                         {
+                            /*
                             playground[zeile, spalte] = currentPlayer;
                             break;
+
+                            */
                         }
                         else
                         {
@@ -158,5 +162,6 @@ namespace MarcelSimma.Week03
 
             return false; // oder false
         }
+        
     }
 }
