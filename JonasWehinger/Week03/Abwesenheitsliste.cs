@@ -1,21 +1,21 @@
 using System;
 
-namespace LucasSchiemann.Week03;
-
-public class Abwesenheitsliste
+namespace JonasWehinger.Week03
+{
+    public class Abwesenheitsliste
     {
- 
+
       public static void Liste(){
- 
+
         const int anzahlTage = 3;
-        string[] teilnehmer = { "Max Mustermann", "Erika Mustermann" };
+        string[] teilnehmer = { "Max Mustermann", "Nico Mustermann" };
         bool[,] abwesenheitsDaten = new bool[teilnehmer.Length, anzahlTage];
- 
-       
-        abwesenheitsDaten[0, 1] = true;
-        abwesenheitsDaten[1, 0] = true;
- 
-       
+
+        
+        abwesenheitsDaten[0, 1] = true; 
+        abwesenheitsDaten[1, 0] = true; 
+
+        
         Console.WriteLine("Abwesenheitsliste:");
         for (int i = 0; i < teilnehmer.Length; i++)
         {
@@ -28,3 +28,5 @@ public class Abwesenheitsliste
         }
     }
 }
+}  
+    

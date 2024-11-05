@@ -14,9 +14,10 @@ namespace BerkantAkinci.Week04
             DayOfWeek heuteMonatsTag = heute.DayOfWeek;                         // heutiges Datum in den Tag umwandeln
             CultureInfo austrian = new CultureInfo("de-AT");                    // Übersetzen auf Deutsch
             string tag = austrian.DateTimeFormat.GetDayName(heuteMonatsTag);    // Zeile 13 und 14 verknüpfen
-            string JahrMonat = heute.ToString("yyyy MMMM");                     // jetziges Jahr und jetziger Monat ausgeschrieben 
             string heuteTagString = heute.ToString("dd");                       //  deutige Datum abgekürt nur das es die Zahl vom heutigen Tag anzeigt
             int heuteTag = Convert.ToInt32(heuteTagString);                     // den string zu einem integer konvertieren dass es auch als Zahl wahrnimmt
+            DateTime monat = new DateTime(year, month, 1);
+            int kalenderwoche = 22;
 
             int montag = Convert.ToInt32(DayOfWeek.Monday);
             int dienstag = Convert.ToInt32(DayOfWeek.Tuesday);
@@ -29,16 +30,6 @@ namespace BerkantAkinci.Week04
 
             string[] tage = { "Mo", "Di", "Mi", "Do", "Fr", "Sa", "So" };
 
-            System.Console.WriteLine(JahrMonat);
-
-            for (int i = 0; i < tage.Length; i++)
-            {
-                System.Console.Write($"|{tage[i],3} ");
-            }
-            System.Console.Write("|");
-            System.Console.WriteLine();
-            //System.Console.WriteLine($"|{montag,3} |{dienstag,3} |{mittwoch,3} |{donnerstag,3} |{freitag,3} |{samstag,3} |{sonntag,3} |");
-
             DateTime start = new DateTime(year, month, 1);
             DateTime ende = start.AddMonths(1);
             DayOfWeek startTagString = start.DayOfWeek;
@@ -47,49 +38,95 @@ namespace BerkantAkinci.Week04
 
             TimeSpan days = ende - start;
 
-            for (int i = 0; i <= days.Days; i++)
-            {
+            int counter = 0;
+            int zähler = 1;
 
-                if (startTag -1  > i )
+            System.Console.Write($"{year} {monat.ToString("MMMM")}\n");
+            System.Console.Write("     ");
+
+            for (int i = 0; i < tage.Length; i++)
+            {
+                System.Console.Write($"|{tage[i],3} ");
+            }
+            System.Console.Write("|");
+            System.Console.Write($"\n");
+            System.Console.Write($"KW{kalenderwoche} ");
+
+            while (zähler <= days.Days)
+            {
+                if (startTag == 0)
+                {
+                    startTag = sonntag;
+
+                    System.Console.Write("|" + "   ");
+                }
+
+                else if (counter >= startTag - 1)
+                {
+                    System.Console.Write($"|{zähler,3}");
+                }
+
+                else
                 {
                     System.Console.Write("|" + "   ");
                 }
-                else
-                {
-                    System.Console.Write($"|{i,3}");
-                }
 
-                if (i == heuteTag)
+                if (zähler == heuteTag)                     //
                 {
                     System.Console.Write("*");
                 }
                 else { System.Console.Write(" "); }
 
-                if (i == 6)
+                if (counter == sonntag - 1)
                 {
                     System.Console.Write("|");
                     System.Console.Write($"\n");
+                    System.Console.Write($"KW{kalenderwoche} ");
                 }
 
-                if (i == 13)
+                if (counter == (sonntag * 2) - 1)
                 {
                     System.Console.Write("|");
                     System.Console.Write($"\n");
+                    System.Console.Write($"KW{kalenderwoche} ");
                 }
 
-                if (i == 20)
+                if (counter == (sonntag * 3) - 1)
                 {
                     System.Console.Write("|");
                     System.Console.Write($"\n");
+                    System.Console.Write($"KW{kalenderwoche} ");
                 }
 
-                if (i == 27)
+                if (counter == (sonntag * 4) - 1)
                 {
                     System.Console.Write("|");
                     System.Console.Write($"\n");
+                    System.Console.Write($"KW{kalenderwoche} ");
+                }
+                if (counter == (sonntag * 5) - 1)
+                {
+                    System.Console.Write("|");
+                    System.Console.Write($"\n");
+                    System.Console.Write($"KW{kalenderwoche} ");
                 }
 
-                if (i == 31)
+                if (counter == (sonntag * 6) - 1)
+                {
+                    System.Console.Write("|");
+                    System.Console.Write($"\n");
+                    System.Console.Write($"KW{kalenderwoche} "); ;
+
+                }
+
+                if (counter >= startTag - 1)
+                {
+                    zähler++;
+                }
+
+                counter++;
+
+                if (zähler > days.Days)
                 {
                     System.Console.Write("|");
                 }
