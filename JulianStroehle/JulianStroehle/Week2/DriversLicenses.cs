@@ -1,9 +1,9 @@
 using System;
 namespace JulianStroehle.Week2
 {
-    public class LicenseA
+    public class License
     {
-        public static void License1()
+        public static void Start()
         {
             string?[] names = new string[5];
             int[] ages = new int[5];

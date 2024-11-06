@@ -4,7 +4,7 @@ namespace JulianStroehle.Week1
 {
     class Tree
     {
-        public static void RandomTree()
+        public static void Start()
         {
             //Nutzeragfrage über Größe und Zeichen für Blätter, Kugeln und Stamm
             Console.WriteLine("Bitte größe des Baums eingeben: ");

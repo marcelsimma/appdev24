@@ -1,7 +1,7 @@
 using System;
 namespace JulianStroehle.Week2
 {
-    public class DualDezHexA
+    public class DualDezHex
     {
         public static void Start()
         {
