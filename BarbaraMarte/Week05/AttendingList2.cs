@@ -4,7 +4,6 @@ namespace BarbaraMarte.Week05;
 
 class AttendingList2
 {
-    //string line;
     public static void Print()
     {
         string line;
@@ -13,14 +12,12 @@ class AttendingList2
         {
             using (StreamWriter streamWriter = new StreamWriter("C:/AttendingList1/Output.txt"))
             {
-                do
+                while ((line = stream.ReadLine()) != null)
                 {
-                    line = stream.ReadLine();
+                    streamWriter.WriteLine(count + ": " + line);
                     count++;
-                } while (stream.ReadLine != null);
+                }
 
-                streamWriter.Write(line);
-                streamWriter.WriteLine(count + " Number");
             }
 
         }
