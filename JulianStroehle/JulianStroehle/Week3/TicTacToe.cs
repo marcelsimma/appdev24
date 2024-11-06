@@ -3,7 +3,7 @@ namespace JulianStroehle.Week3
 {
     public class TicTacToe
     {
-        public static void TicTac()
+        public static void Start()
         {
             char[,] TicTacToe = new char[3, 3];
             bool winner = false;

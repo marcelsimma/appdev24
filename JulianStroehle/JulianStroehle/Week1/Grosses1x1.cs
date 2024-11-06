@@ -1,8 +1,8 @@
 ﻿using System;
 
 namespace JulianStroehle.Week1{
-    public class GrossesEinMalEinsA{
-        public static void GrossesEinMalEins(){
+    public class GrossesEinMalEins{
+        public static void Start(){
             for(int i = 1; i < 11; i++)
             {
                 Console.Write(i*1 + "\t");

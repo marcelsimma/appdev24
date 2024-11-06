@@ -1,0 +1,40 @@
+using System;
+using System.IO;
+
+namespace MarcelSimma.Week05.Streams {
+
+    public static class StreamsExample {
+
+        public static void Start() {
+            ReadFile();
+            WriteFile();
+            
+
+        }
+
+        public static void ReadFile() {
+//jlasncasc
+			using (StreamReader sr = new StreamReader("/Users/marcel/Documents/assets/input.txt"))
+			{
+				//zum zeile lesen
+				string line = sr.ReadToEnd();
+				//wenn zeile NICHT Leer ist dann ....
+				while (line != null)
+				{
+					
+					Console.WriteLine(line);
+					
+					line = sr.ReadLine();
+				}
+			}
+        }
+
+        public static void WriteFile()
+		{
+			using (StreamWriter sw = new StreamWriter("/Users/marcel/Documents/assets/output.txt", true))
+			{
+				sw.WriteLine("Hello World 2!");
+			}
+		}
+    }
+}

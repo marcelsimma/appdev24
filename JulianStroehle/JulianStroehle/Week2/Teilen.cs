@@ -1,9 +1,9 @@
 using System;
 namespace JulianStroehle.Week2
 {
-    public class TeilenA
+    public class Teilen
     {
-        public static void Teilen()
+        public static void Start()
         {
             for (int x = 0; x <= 20; x++)
             {

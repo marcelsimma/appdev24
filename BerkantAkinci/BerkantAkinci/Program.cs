@@ -6,6 +6,7 @@ using BerkantAkinci.Week01;
 using BerkantAkinci.Week02;
 using BerkantAkinci.Week03;
 using BerkantAkinci.Week04;
+using BerkantAkinci.Week05;
 
 
 namespace BerkantAkinci
@@ -49,7 +50,9 @@ namespace BerkantAkinci
             //MeinGebi.PrintMeinGebi();
             //WannSonntag.PrintSonntag();
             //Arbeitstage.Start();
-            BonusKalender.PrintKalender(2024,08);
+            //BonusKalender.PrintKalender(2024,12);
+            Datenstroeme.PrintDatenstroeme();
+            
 
         
 
