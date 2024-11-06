@@ -1,9 +1,10 @@
 ﻿using System;
-
+using OliverBedogg.Week02;
 using SimonJochum.Week01;
 using SimonJochum.Week02;
 using SimonJochum.Week03;
 using SimonJochum.Week04;
+using SimonJochum.Week05;
 
 namespace SimonJochum;
  
@@ -50,9 +51,22 @@ class Program
         // TicTacToeTogether.Start();
 
         // Week04
+        // GetWorkday.Start();
         // StringReplaceAll.Start();
-        RecognizePhoneNumber.Start();
+        // RecognizePhoneNumber.Start();
         // RecognizeEmail.Start();
         // RegexDeleteNumbers.Start();
+        // CalendarCopy.Start();
+        // WhenAndWhere.Start();
+        // DisplayCalendar.Start(2024, 10);
+        // DisplayCalendar.Start2WithCalendarWeeks(2024, 10);
+
+        //Week05
+        // OutputTextOnConsole.Start();
+        // OutputToTextfile.Start();
+        // OutputToTextfileCalculation.Start();
+        // OutputToTextfileCalculation.Start2();
+        // OutputFormatedTextfile.Start();
+        OutputArticleList.Start();
     }
 }
