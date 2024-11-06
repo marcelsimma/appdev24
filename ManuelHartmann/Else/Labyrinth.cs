@@ -4,26 +4,71 @@ using System.Globalization;
 namespace ManuelHartmann.Else
 {
     public class Labyrinth
-    {   
+    {
         // Aufbau des Labyrinth
         public static int[][] lab =
         {
-            new int[] {0,0,1,1,1,1,1,1,1,1},
+            new int[] {0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
 
-            new int[] {1,0,1,1,1,1,1,1,1,1},
+            new int[] {1,0,1,0,0,0,0,0,1,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
 
-            new int[] {1,0,1,0,0,0,1,1,1,1},
+            new int[] {1,0,1,1,1,1,1,0,0,0,0,1,1,0,1,0,1,1,1,0,1,1,1,1,1,1,0,1,1},
 
-            new int[] {1,0,0,0,1,0,1,1,1,1},
+            new int[] {1,0,1,0,0,0,1,0,1,1,0,1,1,0,1,0,0,0,1,0,1,1,0,0,0,1,0,1,1},
 
-            new int[] {1,0,1,0,1,0,1,1,1,1},
+            new int[] {1,0,0,0,1,0,1,0,0,1,0,0,1,0,1,1,1,1,1,0,1,1,0,1,0,0,0,1,1},
 
-            new int[] {1,1,1,1,1,0,1,1,1,1}
+            new int[] {1,0,1,0,1,0,1,1,0,1,0,1,1,0,1,1,0,0,0,0,1,1,0,1,1,1,1,1,1},
+
+            new int[] {1,0,1,0,1,0,0,0,0,1,0,0,0,0,1,1,0,1,1,1,1,1,0,0,0,0,0,0,1},
+
+            new int[] {1,1,1,1,0,1,1,1,1,1,1,1,1,0,1,1,0,1,0,0,0,0,0,1,1,1,1,0,1},
+
+            new int[] {1,0,0,0,0,0,1,0,0,0,0,0,0,0,1,1,0,1,1,1,1,1,1,0,0,0,0,1,1},
+
+            new int[] {1,1,1,1,1,0,0,0,1,1,0,1,1,1,1,0,0,0,0,0,0,0,1,0,1,1,0,0,1},
+
+            new int[] {1,0,0,0,0,0,1,1,1,0,0,0,0,0,1,0,1,0,1,1,1,0,1,0,0,1,0,1,1},
+
+            new int[] {1,0,1,1,1,1,1,0,1,0,1,1,1,1,1,0,1,0,1,1,1,1,1,1,1,1,0,1,1},
+
+            new int[] {1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,1},
+
+            new int[] {1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+
+            new int[] {1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
+
+            new int[] {1,0,1,0,0,0,0,0,1,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1},
+
+            new int[] {1,0,1,1,1,1,1,0,0,0,0,1,1,0,1,0,1,1,1,0,1,1,1,1,1,1,0,1,1},
+
+            new int[] {1,0,1,0,0,0,1,0,1,1,0,1,1,0,1,0,0,0,1,0,1,1,0,0,0,1,0,1,1},
+
+            new int[] {1,0,0,0,1,0,1,0,0,1,0,0,1,0,1,1,1,1,1,0,1,1,0,1,0,0,0,1,1},
+
+            new int[] {1,0,1,0,1,0,1,1,0,1,0,1,1,0,1,1,0,0,0,0,1,1,0,1,1,1,1,1,1},
+
+            new int[] {1,0,1,0,1,0,0,0,0,1,0,0,0,0,1,1,0,1,1,1,1,1,0,0,0,0,0,0,1},
+
+            new int[] {1,1,1,1,0,1,1,1,1,1,1,1,1,0,1,1,0,1,0,0,0,0,0,1,1,1,1,0,0},
+
+            new int[] {1,0,0,0,0,0,1,0,0,0,0,0,0,0,1,1,0,1,1,1,1,1,1,0,0,0,0,1,1},
+
+            new int[] {1,1,1,1,1,0,0,0,1,1,0,1,1,1,1,0,0,0,0,0,0,0,1,0,1,1,0,0,1},
+
+            new int[] {1,0,0,0,0,0,1,1,1,0,0,0,0,0,1,0,1,0,1,1,1,0,1,0,0,1,0,1,1},
+
+            new int[] {1,0,1,1,1,1,1,0,1,0,1,1,1,1,1,0,1,0,1,1,1,1,1,1,1,1,0,1,1},
+
+            new int[] {1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,1},
+
+            new int[] {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
         };
-        
+
         static int rows = lab.Length;      // Anzahl Zeilen 'Y' in (int).
         static int cols = lab[0].Length;   // Anzahl Spalten 'X' in (int).
-        static int steps = 0;           // Schritte Zaehler.
+        static int steps = 0;              // Schritte Zaehler. (sum)
+        static int correctSteps = 0;       // Schritte Zaehler, ohne falsche Schritte.
 
         public static void Start()
         {
@@ -31,7 +76,8 @@ namespace ManuelHartmann.Else
             if (FindExit(0, 0))
             {
                 Console.WriteLine("Ausgang gefunden!");
-                Console.WriteLine($"Anzahl benoetigter Schritte: {steps}");
+                Console.WriteLine($"Anzahl benoetigter Schritte: {steps - correctSteps}");  // Gesamt Schritte - falsche Schritte
+                Console.WriteLine($"Anzahl Schritte gesamt: {steps}");
             }
             else
             {
@@ -40,10 +86,23 @@ namespace ManuelHartmann.Else
         }
         static bool FindExit(int y, int x)
         {
+            //// Ausgangspunkt erreicht (letztes Feld)
+            //if (y == rows || x == cols)
+            //{
+            //    lab[y][x] = 4; // Markiere den Endpunkt
+            //    PrintLabyrinth();
+            //    return true;
+            //}
             // Ausgangspunkt erreicht (letztes Feld)
-            if (y == rows || x == cols)
+            if (y == rows)
             {
-                lab[y][x] = 4; // Markiere den Endpunkt
+                lab[y - 1][x] = 4; // Markiere den Endpunkt
+                PrintLabyrinth();
+                return true;
+            }
+            else if (x == cols)
+            {
+                lab[y][x - 1] = 4; // Markiere den Endpunkt
                 PrintLabyrinth();
                 return true;
             }
@@ -51,13 +110,16 @@ namespace ManuelHartmann.Else
             // Überprüfe, ob die aktuelle Position gültig ist
             if (IsValidMove(y, x))
             {
-                // Markiere den aktuellen Schritt
-                if (y == rows - 1 || x == cols - 1 && lab[y][x] != 1)
-                {
-                    lab[x][y] = 4; // Markiere den Endpunkt
-                    PrintLabyrinth();
-                    return true;
-                }
+                //// Markiere den aktuellen Schritt
+                //if (y == rows || x == cols && lab[y][x] != 1)
+                //{
+                //    lab[x][y] = 4; // Markiere den Endpunkt
+                //    PrintLabyrinth();
+                //    Console.WriteLine("rows-1: " + y);
+                //    Console.WriteLine("cols-1: " + x + "\n");
+                //    return true;
+                //}
+
                 lab[y][x] = 2;
                 steps++;
                 PrintLabyrinth();
@@ -80,11 +142,13 @@ namespace ManuelHartmann.Else
                 {
                     return true;
                 }
-                
+
+                // Backtracking!
                 /* In einer Sackgasse waeren alle Bedingungen 'false', weil er in einem bereits ueberschriebenen Feld steht. ->
                    Zurückgehen, da der Weg nicht erfolgreich war    */
                 lab[y][x] = 3;
-                //steps--;
+                //steps--;  // Ohne die falschen Schritte
+                correctSteps++; // Falsche Schritte ++.
             }
             return false;
         }
@@ -103,12 +167,12 @@ namespace ManuelHartmann.Else
             {
                 for (int xx = 0; xx < cols; xx++)
                 {
-                    if      (lab[yy][xx] == 1)
-                        Console.Write("░ "); // Wand
+                    if (lab[yy][xx] == 1)
+                        Console.Write("▒ "); // Wand
                     else if (lab[yy][xx] == 2)
                         Console.Write("+ "); // Besuchte Zelle
                     else if (lab[yy][xx] == 3)
-                        Console.Write("- "); // Zurückgegangen (Sackgasse)
+                        Console.Write("- "); // Zurückgegangen
                     else if (lab[yy][xx] == 4)
                         Console.Write("* "); // Ausgangspunkt/Ziel
                     else
