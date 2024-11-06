@@ -1,7 +1,7 @@
 
 namespace ConsoleApp1.Week05
 {
-    public static class StreamsExample
+    public static class StreamExample
     {
         static string split = new string('-', 12);
         static string[,] multiDimString =
