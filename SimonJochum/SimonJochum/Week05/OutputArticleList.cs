@@ -63,10 +63,6 @@ namespace SimonJochum.Week05
                     writer.WriteLine("Der teuerste Artikel auf der Liste ist: {0,30}{1,12:N2}€", mostExpensiveArticleName, mostExpensiveArticlePrice / 100);
                     writer.WriteLine("Der Durchschnittspreis aller {0} Artikel liegt bei: {1,31:N2}€", counter, averagePrice / 100 / 30);
                     writer.WriteLine("Der Gesamtpreis aller Artikel ({0}) beträgt: {1,37:N2}€", fullAmountOfList, fullPriceOfList / 100);
-                    /*writer.WriteLine("Der günstigste Artikel auf der Liste ist: " + cheapestArticleName + " " + cheapestArticlePrice/100 + "€");
-                    writer.WriteLine("Der teuerste Artikel auf der Liste ist: " + mostExpensiveArticleName + " " + mostExpensiveArticlePrice/100 + "€");
-                    writer.WriteLine("Der Durchschnittspreis aller " + counter + " Artikel liegt bei: " + Math.Round(averagePrice/100/counter, 2) + "€");
-                    writer.WriteLine($"Der Gesamtpreis aller Artikel ({fullAmountOfList}) beträgt: {fullPriceOfList/100}€");*/
                 }
             }
         }
