@@ -15,7 +15,8 @@ namespace FlorianBaier
             //Teilnehmerliste1.Start();
             //Teilnehmerliste2.Start();
             //Quadrieren.Start();
-            Formatierung.Start();
+            //Formatierung.Start();
+            Inventur.Start();
         }
 
     }
