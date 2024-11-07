@@ -11,7 +11,7 @@ namespace OliverBedogg.Week05
 		int _Height;
 		int _Weight;
 
-		public string Name
+		public string Name 
 		{
 			get => "\"" + _Name + "\"";
 		}
