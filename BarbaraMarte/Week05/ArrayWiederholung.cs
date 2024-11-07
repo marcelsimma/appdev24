@@ -2,7 +2,6 @@ using System;
 
 namespace BarbaraMarte.Week05
 {
-
     class ArrayWiederholung
     {
         public static void Print()
@@ -19,8 +18,11 @@ namespace BarbaraMarte.Week05
             {
                 Console.WriteLine(article[i]);
             }
-            totalArticles = [article.Length +];
-            Console.WriteLine(newArticle);
         }
+
     }
+
 }
+
+
+

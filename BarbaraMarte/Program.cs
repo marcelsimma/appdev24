@@ -20,7 +20,10 @@ namespace BarbaraMarte.Week01
             //  CalendarDays.Print();
             //AttendingList2.Print();
             //Quadrieren.Print();
-            ArrayWiederholung.Print();
+            //ArrayWiederholung.Print();
+            Wiederholung2dArray.Print();
+
+
             //Calendar.Print();
             //WordFinder.Letters();
             //RegexMail.Print();
