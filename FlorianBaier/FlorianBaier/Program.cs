@@ -16,7 +16,10 @@ namespace FlorianBaier
             //Teilnehmerliste2.Start();
             //Quadrieren.Start();
             //Formatierung.Start();
-            Inventur.Start();
+            //Inventur.Start();
+            //Objektorientierung.StartPerson();
+            //Objektorientierung.StartCar();
+            Datenklasse.Print(); 
         }
 
     }

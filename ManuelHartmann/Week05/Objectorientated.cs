@@ -1,9 +1,8 @@
 using System;
 
-namespace OliverBedogg.Week05
+namespace ManuelHartmann.Week05 
 {
-
-    public class Objektorientierung
+    public class Objektorientated
     {
         public static void Start()
         {
@@ -24,7 +23,7 @@ namespace OliverBedogg.Week05
             Console.WriteLine(Anna);
 
             // Attribut über getter abfragen:
-            Console.WriteLine("Person 2 heißt " + p2._Name);
+            Console.WriteLine("Person 2 heißt " + p2.Name);
             Console.WriteLine($"Person 2 ist {p2.Height} cm groß.");
 
             // Attribut über setter schreiben:
@@ -37,21 +36,21 @@ namespace OliverBedogg.Week05
 
         public static void aufgabeMotorrad()
         {
-            Motorrad motorrad1 = new Motorrad(1000);
-            Motorrad motorrad2 = new Motorrad(5000);
+            Motorcycle motorcycle1 = new Motorcycle(1000);
+            Motorcycle motorcycle2 = new Motorcycle(5000);
 
             Console.WriteLine("Motorrad 1:");
-            motorrad1.fahre(40);
-            Console.WriteLine("Motorrad ist in Bewegung: " + motorrad1.faehrt());
-            motorrad1.stop();
-            Console.WriteLine("Motorrad 1: " + motorrad1);
+            motorcycle1.fahre(40);
+            Console.WriteLine("Motorrad ist in Bewegung: " + motorcycle1.faehrt());
+            motorcycle1.stop();
+            Console.WriteLine("Motorrad 1: " + motorcycle2);
             Console.WriteLine("---------");
 
             Console.WriteLine("Motorrad 2:");
-            Console.WriteLine("Motorrad ist in Bewegung: " + motorrad2.faehrt());
-            motorrad2.fahre(70);
-            motorrad1.stop();
-            Console.WriteLine("Motorrad 2: " + motorrad2);
+            Console.WriteLine("Motorrad ist in Bewegung: " + motorcycle2.faehrt());
+            motorcycle2.fahre(70);
+            motorcycle1.stop();
+            Console.WriteLine("Motorrad 2: " + motorcycle2);
             Console.WriteLine("---------");
         }
     }

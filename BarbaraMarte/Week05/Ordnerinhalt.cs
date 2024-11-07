@@ -8,7 +8,7 @@ namespace BarbaraMarte.Week05
         {
             using (StreamReader streamReader = new StreamReader("C:/AttendingList1"))
             {
-
+                
             }
         }
     }
