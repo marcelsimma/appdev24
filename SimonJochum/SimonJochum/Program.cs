@@ -67,6 +67,10 @@ class Program
         // OutputToTextfileCalculation.Start();
         // OutputToTextfileCalculation.Start2();
         // OutputFormatedTextfile.Start();
-        OutputArticleList.Start();
+        // OutputArticleList.Start();
+        // DirectoryValueTest.Start();
+        // DirectoryValue.Start();
+        // OutputSortedCSV.Start();
+        ExerciseOOP.Start();
     }
 }

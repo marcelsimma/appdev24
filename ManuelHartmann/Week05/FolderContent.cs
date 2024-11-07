@@ -51,6 +51,7 @@ namespace ConsoleApp1.Week05
                     ordnerAnzahl++;
                     Console.WriteLine($"Ordner: {ordnerPfad}"); // Hierbei wird der OrdnerName mit dem gesamten Pfad angegeben.
 
+                    // String anpassung koennte auch mit 'ordnerPfad.Substring()' gemacht werden. (nicht dynamisch)
                     string[] tmp = ordnerPfad.Split('\\');      // Hierbei wird nur der OrdnerName, ohne Pfad angegeben.
                     Console.WriteLine($"Ordner: {tmp[tmp.Length-1]}");
 
@@ -66,6 +67,7 @@ namespace ConsoleApp1.Week05
                     dateienAnzahl++;
                     Console.WriteLine($"Datei: {dateiPfad}");   // Hierbei wird der DateiName mit dem gesamten Pfad angegeben.
 
+                    // String anpassung koennte auch mit 'ordnerPfad.Substring()' gemacht werden. (nicht dynamisch)
                     string[] tmp1 = dateiPfad.Split('\\');      // Hierbei wird nur der DateiName, ohne Pfad angegeben.
                     Console.WriteLine($"Ordner: {tmp1[tmp1.Length - 1]}");
                 }

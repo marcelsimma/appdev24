@@ -1,6 +1,6 @@
 using System;
 
-namespace OliverBedogg.Week05
+namespace ManuelHartmann.Week05
 {
     // Klasse
     public class Person
@@ -20,8 +20,8 @@ namespace OliverBedogg.Week05
         // getter und setter für die Größe
         public int Height
         {
-            get => _Height;
-            set => _Height = value;
+            get => _Height; // Ueber 'get' wird eine Leseberechtigung/Moeglichkeit fuer andere Klassen etc. geschaffen.
+            set => _Height = value; // Ueber 'set' wird eine Schreibeberechtigung/Moeglichkeit fuer andere Klasse etc. geschaffen.
         }
 
         // Konstruktor
