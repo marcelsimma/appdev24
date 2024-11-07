@@ -4,6 +4,7 @@ using FlorianBaier.Week01;
 using FlorianBaier.Week02;
 using FlorianBaier.Week03;
 using FlorianBaier.Week04;
+using FlorianBaier.Week05;
 
 namespace FlorianBaier
 {
@@ -11,7 +12,11 @@ namespace FlorianBaier
     {
         public static void Main(string[] args)
         {
-        DisplayCalendar.Start();
+            //Teilnehmerliste1.Start();
+            //Teilnehmerliste2.Start();
+            //Quadrieren.Start();
+            //Formatierung.Start();
+            Inventur.Start();
         }
 
     }

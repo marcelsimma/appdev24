@@ -1,9 +1,12 @@
 ﻿using System;
 using CheyenneHarbarth.Basics;
+using CheyenneHarbarth.MeProjects;
 using CheyenneHarbarth.Week01;
 using CheyenneHarbarth.Week02;
 using CheyenneHarbarth.Week03;
 using CheyenneHarbarth.Week04;
+using CheyenneHarbarth.Week05;
+using CheyenneHarbarth.Week05.Streams;
 
 namespace CheyenneHarbarth
 {
@@ -42,10 +45,19 @@ namespace CheyenneHarbarth
             //Zeitspielchen.DreiSonntage();
             //Zeitspielchen.Practice();
             //Workdays.Start();
-            Calendar.PrintCalendar(2024, 12);
+            //Calendar.PrintCalendar(2024, 11);
+            //Streams.Aufgabe1();
+            //Streams.Aufgabe2();
+            //Streams.Aufgabe3();
+            Streams.Aufgabe4();
+            //Arraywiederholung.PrintSortiment();
+
 
             //Basics
             //Arrays.ArrayMethoden();
+
+            //MeProjects
+            //Rationsberechner.Start();
         }
     }
 }
