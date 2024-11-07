@@ -6,23 +6,31 @@ namespace SimonJochum.Week05
     {
         public static void Start()
         {
-            Camera camera1 = new Camera("Canon", "MX1000", 50, 500, 50.0);
-            Console.WriteLine(camera1.ToString());
-            camera1.Megapixel = 100.5;
-            Console.WriteLine(camera1.takePhoto());
-            Console.WriteLine(camera1.CameraWhoTookPhoto());
-            Console.WriteLine(new string('-', 24));
-            camera1.Brand = "Nikon";
-            camera1.Model = "ZRY-955";
-            camera1.BrennweiteMin = 100;
-            camera1.BrennweiteMax = 1000;
-            Console.WriteLine(camera1.CameraWhoTookPhoto());
-            Console.WriteLine(camera1.ToString());
-            Console.WriteLine(camera1.takePhoto());
-             camera1.Brand = "Sony";
-            camera1.Model = "Snapshot";
-            camera1.BrennweiteMin = 100;
-            camera1.BrennweiteMax = 1000;
+            Camera camera = new Camera("Canon", "Y-1000", 10);
+            Objektiv objektiv = new Objektiv("Obj-1234", 70);
+            Speicherkarte karte = new Speicherkarte("Samsung", 32, 4);
+
+            Console.WriteLine(camera.ToString() + objektiv.ToString() + karte.ToString());
+            Console.WriteLine(camera.takePhoto());
+            karte.SpeicherVolumenVerbraucht += 1;
+            Console.WriteLine(camera.CameraWhoTookPhoto());
+            Console.WriteLine(camera.ToString() + objektiv.ToString() + karte.ToString());
+            Console.WriteLine(new string('-', 30));
+            camera.Brand = "Leica";
+            camera.Model = "Zoom3000";
+            camera.Megapixel = 100;
+            objektiv.Name = "Obj-4321";
+            objektiv.Brennweite = 120;
+            karte.Name = "San Disk";
+            karte.SpeicherVolumenInsgesamt = 64;
+            karte.SpeicherVolumenVerbraucht = 0;
+            Console.WriteLine(camera.ToString() + objektiv.ToString() + karte.ToString());
+            Console.WriteLine(camera.takeBiggerPhoto());
+            karte.SpeicherVolumenVerbraucht += 2;
+            Console.WriteLine(camera.CameraWhoTookPhoto());
+            Console.WriteLine(camera.ToString() + objektiv.ToString() + karte.ToString());
+            Console.WriteLine(new string('-', 30));
+            
 
         }
 
@@ -66,6 +74,29 @@ namespace SimonJochum.Week05
             Console.WriteLine(Motorrad2.ToString());
             Motorrad2.Stop();
             Console.WriteLine(Motorrad2.ToString());
+        }
+
+        public static void ExerciseCamera()
+        {
+            Camera camera1 = new Camera("Canon", "MX1000", 50, 500, 50.0);
+            Console.WriteLine(camera1.ToString());
+            camera1.Megapixel = 100.5;
+            Console.WriteLine(camera1.takePhoto());
+            Console.WriteLine(camera1.CameraWhoTookPhoto());
+            Console.WriteLine(new string('-', 24));
+            camera1.Brand = "Nikon";
+            camera1.Model = "ZRY-955";
+            camera1.BrennweiteMin = 100;
+            camera1.BrennweiteMax = 1000;
+            Console.WriteLine(camera1.CameraWhoTookPhoto());
+            Console.WriteLine(camera1.ToString());
+            Console.WriteLine(camera1.takePhoto());
+             camera1.Brand = "Sony";
+            camera1.Model = "Snapshot";
+            camera1.BrennweiteMin = 100;
+            camera1.BrennweiteMax = 1000;
+            Console.WriteLine(camera1.ToString());
+
         }
     }
 }
