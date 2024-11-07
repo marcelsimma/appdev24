@@ -13,6 +13,12 @@ namespace OliverBedogg.Week05
             Console.WriteLine(p);
             Console.WriteLine(p.ToString());
             Console.WriteLine(p2);
+
+            Person Anna = new Person("Anna", 24, 165, 60);
+            Console.WriteLine(Anna);
+
+            Anna.hasABirthday();
+            Console.WriteLine(Anna);
         }
     }
 }
