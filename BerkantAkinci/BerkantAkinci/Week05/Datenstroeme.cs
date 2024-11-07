@@ -17,16 +17,14 @@ namespace BerkantAkinci.Week05
 
         public static void Teilnehmerliste1()
         {
-            using (StreamReader str1 = new StreamReader("\\Users\\BAU26336\\OneDrive - Julius Blum GmbH\\Allgemeines\\Dokumente\\input.txt"))
+            using (StreamReader read1 = new StreamReader("\\Users\\BAU26336\\OneDrive - Julius Blum GmbH\\Allgemeines\\Dokumente\\input.txt"))
             {
-                int zahl = 0;
-                string wholefile = str1.ReadToEnd();
-
-                foreach (char tmp in wholefile)
-                {
-                    System.Console.Write(tmp);
-                }
+                string wholefile = read1.ReadToEnd();
+                System.Console.Write(wholefile);
             }
+
+            using (StreamWriter wrt1 = new StreamWriter("\\Users\\BAU26336\\OneDrive - Julius Blum GmbH\\Allgemeines\\Dokumente\\output.txt")) ;
+
         }
 
         public static void Teilnehmerliste2()
@@ -37,7 +35,7 @@ namespace BerkantAkinci.Week05
 
         public static void Teilnehmerliste3()
         {
-
+            
 
         }
     }
