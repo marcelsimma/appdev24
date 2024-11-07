@@ -10,6 +10,7 @@ namespace LucasSchiemann;
     {
     static void Main()
     {
+
         Teilnehmerliste.Start();
         //AlgorithmTester.ChoseSortAlgorythm();
         //Tabellensorter.Start();
