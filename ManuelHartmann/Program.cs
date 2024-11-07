@@ -1,7 +1,4 @@
-﻿using System.Reflection;
-using ManuelHartmann.Week03;
-
-
+﻿
 namespace ManuelHartmann
 {
 
@@ -9,7 +6,7 @@ namespace ManuelHartmann
     {
         static void Main(string[] args)
         {
-			SortArrayAscending_noDefaultFunktion.Start();
+			Week05.Objektorientated.Start();
 		}
     }
 }
