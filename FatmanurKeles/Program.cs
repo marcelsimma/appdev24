@@ -1,4 +1,6 @@
 ﻿using System;
+using FatmanurKeles.Week01;
+using FatmanurKeles.Week04;
 
 namespace FatmanurKeles.Week02
 {
@@ -7,30 +9,20 @@ namespace FatmanurKeles.Week02
         static void Main(string[] args)
         {
 
-
-        Console.WriteLine("\nGeben Sie die Menge dann die Ware ein. \nWenn Sie Fertig sind--> Fertig \n\nEINKAUFSLISTE: \n\n");
-            
-            string input = Console.ReadLine();
-            int menge;
-            string ware;
-          
-            do
-            {
-                menge = Convert.ToInt32(Console.ReadLine());
-                ware = Console.ReadLine();
-
-                if (input == "Fertig" )
-                break;
-
-                else 
-                {
-                Console.WriteLine(menge + ware);
-                }
-                
-
-            }
-
-            while (true);
+            //  HigherOrLower.HigherOr();
+            //  Generationen.GenerationenAusgabe();
+            //  Randomize.start("Norman ist cool");
+            //  Fuhrerschein.Start();
+            //  CountTeilen.Teilen();
+            //  Count100.Count();
+              // Factorial.start();
+            //  ArraySucheEindimensional.Start();
+            //  ArraySucheChar.Start();
+             // AbwesenheitsListe.Start();
+           //  PrintSquare.Print('0',3);
+           //TicTacToe.Start();
+           //CountLetterArray.Start();
+           Kalender.Start();
         }
     }
 }

@@ -1,6 +1,8 @@
 ﻿using System;
 using MagdalenaMueller.Week01;
 using MagdalenaMueller.Week02;
+using MagdalenaMueller.Week03;
+using MagdalenaMueller.Week04;
 
 
 namespace MagdalenaMueller
@@ -10,7 +12,7 @@ namespace MagdalenaMueller
     {
         static void Main()
         {
-            HigherOrLower.HoRGame();
+            Calendar2024.CalenderProgramm();
         }
         
     }

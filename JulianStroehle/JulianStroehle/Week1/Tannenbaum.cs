@@ -1,7 +1,7 @@
 using System;
 namespace JulianStroehle.Week1{
-    public class TannenbaumA{
-        public static void Tannenbaum()
+    public class Tannenbaum{
+        public static void Start()
         {
             // Nutzereingabe für Größe
             Console.WriteLine("Größe: ");

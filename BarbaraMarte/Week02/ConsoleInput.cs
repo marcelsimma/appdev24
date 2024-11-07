@@ -35,9 +35,7 @@ class ConsoleInput
             {
                 Console.WriteLine("Du hast keine Zahl eingegeben");
             }
-
         }
-
     }
 
     public static char ReadNextChar()
@@ -55,8 +53,6 @@ class ConsoleInput
             {
                 Console.WriteLine("Du hast kein Zeichen eingegeben");
             }
-
         }
-
     }
 }

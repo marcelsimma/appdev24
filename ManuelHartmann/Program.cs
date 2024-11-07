@@ -1,6 +1,4 @@
-﻿using ManuelHartmann.Week02;
-
-
+﻿
 namespace ManuelHartmann
 {
 
@@ -8,7 +6,7 @@ namespace ManuelHartmann
     {
         static void Main(string[] args)
         {
-			int saldfjsd = Different_Operations.ReadNextInt();
+			Week05.Objektorientated.Start();
 		}
     }
 }

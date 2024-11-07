@@ -1,7 +1,12 @@
 ﻿using System;
+using CheyenneHarbarth.Basics;
+using CheyenneHarbarth.MeProjects;
 using CheyenneHarbarth.Week01;
 using CheyenneHarbarth.Week02;
 using CheyenneHarbarth.Week03;
+using CheyenneHarbarth.Week04;
+using CheyenneHarbarth.Week05;
+using CheyenneHarbarth.Week05.Streams;
 
 namespace CheyenneHarbarth
 {
@@ -27,7 +32,32 @@ namespace CheyenneHarbarth
             //Bubblesort.SortBubble();
             //MehrdimensArray.PrintArrays();
             //TikTakToe.StartGame();
-            Abwesenheitsliste.PrintList();
+            //Abwesenheitsliste.PrintList();
+            //StringHesse.BuchstabenZaehlen();
+            //StringHesse.BuchstabenZaehlenMarcel();
+            //ArraySearch.Start();
+            //Datatabelle.Start();
+            //ASCITabelle.Start();
+            //ReplaceAll.Start();
+            //ReplaceAll.Zahlenlöschen(2, 6);
+            //Zeitspielchen.Start();
+            //Zeitspielchen.AskBirthday();
+            //Zeitspielchen.DreiSonntage();
+            //Zeitspielchen.Practice();
+            //Workdays.Start();
+            //Calendar.PrintCalendar(2024, 11);
+            //Streams.Aufgabe1();
+            //Streams.Aufgabe2();
+            //Streams.Aufgabe3();
+            Streams.Aufgabe4();
+            //Arraywiederholung.PrintSortiment();
+
+
+            //Basics
+            //Arrays.ArrayMethoden();
+
+            //MeProjects
+            //Rationsberechner.Start();
         }
     }
 }

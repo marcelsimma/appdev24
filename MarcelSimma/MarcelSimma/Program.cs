@@ -1,7 +1,9 @@
 ﻿using System;
-
+using MarcelSimma.Week01;
 using MarcelSimma.Week02;
 using MarcelSimma.Week03;
+using MarcelSimma.Week04;
+using MarcelSimma.Week05;
 
 namespace MarcelSimma {
 class Program
@@ -14,7 +16,10 @@ class Program
         //Arrays.Start();
         //RandomNumberArray.Start();
         //MehrdimensionaleArrays.Start();
-        TicTacToe.Start();
+        //TicTacToe.Start();
+        //PhoneNumbers.Start();
+
+        WiederholungJaggedArrays.Start();
     }
 
 }

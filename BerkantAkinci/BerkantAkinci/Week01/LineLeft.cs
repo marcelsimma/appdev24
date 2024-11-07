@@ -3,10 +3,8 @@ using System;
 namespace BerkantAkinci.Week01
 {
 
-
     class LineLeft
     {
-
 
         public static void PrintLineLef(char c, int size)
         {
@@ -15,7 +13,5 @@ namespace BerkantAkinci.Week01
                 Console.WriteLine(new string('.', i) + c + new string('.', size - i - 1));
             }
         }
-
-
     }
 }

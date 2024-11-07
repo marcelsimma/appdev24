@@ -1,28 +1,20 @@
 using System;
 
-
 namespace FatmanurKeles.Week02
 {
     public class Factorial
     {
-        public static void MainFactorial(string[] args)
+        public static void start()
         {
             {
-            int factorial = 1;
-            for (int i = 1; i <= 20; i++)
-            {
-                factorial = factorial * i;
-            }
-            Console.Write($"Factorial of 20  is: {factorial}");
+                long factorial = 1;
+                for (int i = 1; i <= 20; i++)
+                {
+                    factorial = factorial * i;
+                    // factorial *= i;
+                    Console.Write($"{i}!= {factorial}\n");
+                }
             }
         }
     }
 }
-
-
-              /*  for (long i = 0; i <= 20; i++)
-                {
-                    i = 20!;
-                }
-                Console.WriteLine();
-                */
