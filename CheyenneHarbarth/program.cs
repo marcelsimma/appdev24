@@ -46,9 +46,11 @@ namespace CheyenneHarbarth
             //Zeitspielchen.Practice();
             //Workdays.Start();
             //Calendar.PrintCalendar(2024, 11);
-            //treams.Aufgabe1();
+            //Streams.Aufgabe1();
             //Streams.Aufgabe2();
-            Arraywiederholung.PrintSortiment();
+            //Streams.Aufgabe3();
+            Streams.Aufgabe4();
+            //Arraywiederholung.PrintSortiment();
 
 
             //Basics
