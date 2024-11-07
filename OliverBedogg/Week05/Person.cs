@@ -6,19 +6,22 @@ namespace OliverBedogg.Week05
     public class Person
     {
         // Attribute
-        string _Name;
-        int _Age;
+        public string _Name;
+        public int _Age;
         int _Height;
         int _Weight;
 
+        // getter mit erweiterter Rückgabe des Attributwerts
         public string Name
         {
             get => "\"" + _Name + "\"";
         }
 
+        // getter und setter für die Größe
         public int Height
         {
             get => _Height;
+            set => _Height = value;
         }
 
         // Konstruktor
