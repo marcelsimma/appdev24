@@ -1,6 +1,6 @@
 using System;
 
-namespace OliverBedogg.Week05
+namespace ManuelHartmann.Week05
 {
     // Klasse
     public class Person
