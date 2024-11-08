@@ -7,6 +7,7 @@ using CheyenneHarbarth.Week03;
 using CheyenneHarbarth.Week04;
 using CheyenneHarbarth.Week05;
 using CheyenneHarbarth.Week05.Streams;
+using CheyenneHarbarth.Week05.OOP;
 
 namespace CheyenneHarbarth
 {
@@ -16,26 +17,32 @@ namespace CheyenneHarbarth
 
         static void Main(string[] args)
         {
+
             //ChristmasTree.PrintTree('*', 15);
             //Calculator.CalcSum(21, 50);
+
+            //Bubblesort.SortBubble();
+            //ConsoleInput.Start();
+            //Einkaufsliste.PrintList();
             //Faktorial.Fakultät(1, 20);
-            //Zähler.CountTo100();
             //Führerschein.Check();
             //Generationen.CheckGeneration();
-            //Reverse.Reverseprogramm();
-            //Randomize.start("Hallo");
-            //ConsoleInput.Start();
-            //Zahlenraten.StartGame(0, 100);
-            //Einkaufsliste.PrintList();
-            //RandomNumberArray.PrintArray();
             //Kommazahl.PrintKommazahl();
-            //Bubblesort.SortBubble();
-            //MehrdimensArray.PrintArrays();
-            //TikTakToe.StartGame();
+            //Randomize.start("Hallo");
+            //RandomNumberArray.PrintArray();
+            //Reverse.Reverseprogramm();
+            //Zahlenraten.StartGame(0, 100);
+            //Zähler.CountTo100();
+
+
             //Abwesenheitsliste.PrintList();
+            //ArraySearch.Start();  
+            //MehrdimensArray.PrintArrays();
             //StringHesse.BuchstabenZaehlen();
             //StringHesse.BuchstabenZaehlenMarcel();
-            //ArraySearch.Start();
+            //TikTakToe.StartGame();
+
+
             //Datatabelle.Start();
             //ASCITabelle.Start();
             //ReplaceAll.Start();
@@ -46,18 +53,17 @@ namespace CheyenneHarbarth
             //Zeitspielchen.Practice();
             //Workdays.Start();
             //Calendar.PrintCalendar(2024, 11);
+
+
             //Streams.Aufgabe1();
             //Streams.Aufgabe2();
             //Streams.Aufgabe3();
-            Streams.Aufgabe4();
+            //Streams.Aufgabe4();
             //Arraywiederholung.PrintSortiment();
+            //Datenklassen.Start();
+            FotoapparatOOP.Start();
+            //AufgabeMotorrad.Start();
 
-
-            //Basics
-            //Arrays.ArrayMethoden();
-
-            //MeProjects
-            //Rationsberechner.Start();
         }
     }
 }
