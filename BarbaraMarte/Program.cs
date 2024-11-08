@@ -40,8 +40,8 @@ namespace BarbaraMarte.Week01
             //PrintClass.PrintPerson();
             // PrintClass.PrintCar();
             // PrintClass.PrintBank();
-            PrintClass.PrintMotorcycle();
-
+            // PrintClass.PrintMotorcycle();
+            PrintClass.PrintPhoto();
         }
     }
 }

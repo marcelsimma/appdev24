@@ -4,25 +4,41 @@ namespace BarbaraMarte.Week05
 
     class Motorcycle
     {
-        bool _Drive;
-        int _KM;
+        bool _Drive = false;
+        int _kmStand;
 
         public int KM
         {
-            get => _KM;
+            get => _kmStand;
         }
-        public bool drive
+        public Motorcycle(int kmStand)
         {
-
+            _kmStand = kmStand;
         }
-        public Motorcycle(string motorcycleName, int km)
+        public void Drive(int km)
         {
-            _MotorcycleName = motorcycleName;
-            _KM = km;
+            _kmStand += km;
+            _Drive = true;
+            Console.WriteLine("The motorcycle drives " + km + " km");
+        }
+        public void Stop()
+        {
+            _Drive = false;
+        }
+        public string Drives()
+        {
+            if (_Drive)
+            {
+                return "Yes";
+            }
+            else
+            {
+                return "No";
+            }
         }
         public override string ToString()
         {
-            return string.Format("Motorcycle Name: {0}, KM {2}", _MotorcycleName, _KM);
+            return string.Format("{0} km" + _kmStand);
         }
 
     }

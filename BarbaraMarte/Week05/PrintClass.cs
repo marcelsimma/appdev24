@@ -26,8 +26,20 @@ namespace BarbaraMarte.Week05
         }
         public static void PrintMotorcycle()
         {
-            Motorcycle motorcycle = new Motorcycle("Ninja", 350);
-            Console.WriteLine(motorcycle);
+            Motorcycle motorcycle = new Motorcycle(350);
+            Console.WriteLine("Motorcycle 1: ");
+            motorcycle.Drive(200);
+            Console.WriteLine("The Motorcycle is moving: " + motorcycle.Drives());
+            motorcycle.Stop();
+            Console.WriteLine("Motorcycle 1: " + motorcycle);
+        }
+        public static void PrintPhoto()
+        {
+            Photo photo = new Photo("Professional", "Philips", 2);
+            Console.WriteLine(photo);
+            photo.Amount += 1;
+            Console.WriteLine(photo);
+
         }
     }
 }
