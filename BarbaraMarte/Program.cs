@@ -14,6 +14,29 @@ namespace BarbaraMarte.Week01
     {
         static void Main()
         {
+            //Work
+            // PrimeNumber.Print();
+
+            // Schule
+            // ContactsArray.Start(); 
+            // ContactsList.Start();
+            ContactsNewList.Start();
+
+
+
+            // Week 05
+            //ArrayWiederholung.Print();
+            // Wiederholung2dArray.Print();
+            //PrintClass.PrintPerson();
+            // PrintClass.PrintCar();
+            // PrintClass.PrintBank();
+            // PrintClass.PrintMotorcycle();
+            // PrintClass.PrintPhoto();
+
+            // Week 01
+            // Christbaum.PrintChristbaum('*', 19);
+            // Julgran.PrintJulgran('*', 19);
+
             //BinaryRechner.Print();
             //CalenderBlueprint.Zeitpunkt();
             // Workdays.Start();
@@ -21,7 +44,7 @@ namespace BarbaraMarte.Week01
             //AttendingList2.Print();
             //Quadrieren.Print();
 
-
+            // ContactsArray.Start();
             //Calendar.Print();
             //WordFinder.Letters();
             //RegexMail.Print();
@@ -34,14 +57,6 @@ namespace BarbaraMarte.Week01
             // MoneyCounter.Print(400);
             // TicTacToe.Print();
 
-            // Week 05
-            //ArrayWiederholung.Print();
-            // Wiederholung2dArray.Print();
-            //PrintClass.PrintPerson();
-            // PrintClass.PrintCar();
-            // PrintClass.PrintBank();
-            // PrintClass.PrintMotorcycle();
-            PrintClass.PrintPhoto();
         }
     }
 }
