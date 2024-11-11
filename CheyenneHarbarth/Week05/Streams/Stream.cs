@@ -85,51 +85,6 @@ namespace CheyenneHarbarth.Week05.Streams
 
         public static void Aufgabe4()
         {
-            /* using (StreamReader str = new StreamReader("/Users/BAU28365/Documents/Liste.txt"))
-            {
-
-                Console.WriteLine("Teilnehmer  |  Größe   | Alter  ");
-                Console.WriteLine("--------------------------------");
-                //char strich = '|';
-                //int counter = 0;
-                int Länge = ;
-                char[] Infos = new char[];
-                string Name = null;
-
-                while (true)
-                {
-                    for (int i = 0; i < Infos.Length; i++)
-                    {
-                        Infos[i] = Convert.ToChar(str.Read());
-                    }
-
-                    for (int j = 0; j < Infos.Length; j++)
-                    {
-                        Name += Infos[j];
-                    }
-
-                    Console.Write($"{Name,-12}|");
-                    Name = null;
-                }
-
-                /* while (true)
-                {
-                    char aktuell = 
-
-                    if (aktuell == ' ')
-                    {
-                        Console.Write($"{strich,10} ");
-                    }
-                    else
-                    {
-                        Console.Write(aktuell);
-                    }
-
-                }
-            } */
-
-
-            //Vorschlag Blumi
             string inputFile = "Liste.txt";
             string outputFile = "Listeformatiert.txt";
 
