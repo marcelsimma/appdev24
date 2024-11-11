@@ -56,12 +56,12 @@ namespace CheyenneHarbarth
 
 
             //Streams.Aufgabe1();
-            //Streams.Aufgabe2();
+            Streams.Aufgabe2();
             //Streams.Aufgabe3();
             //Streams.Aufgabe4();
             //Arraywiederholung.PrintSortiment();
             //Datenklassen.Start();
-            FotoapparatOOP.Start();
+            //FotoapparatOOP.Start();
             //AufgabeMotorrad.Start();
 
         }

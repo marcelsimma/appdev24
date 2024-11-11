@@ -31,19 +31,22 @@ namespace CheyenneHarbarth.Week05.Streams
             {
                 string FirstRow = str.ReadLine();
                 int counter = 1;
+                string[] Names = new string[12];
 
                 for (int i = 0; i < 11; i++)
                 {
-                    string[] Names = new string[12];
                     Names[i] = str.ReadLine();
-
-                    using (StreamWriter stro = new StreamWriter("/Users/BAU28365/Documents/output.txt"))
-                    {
-                        stro.WriteLine($"{counter,3}. {Names[i]}");
-                        stro.WriteLine($"{counter} Teilnehmer");
-                    }
                     Console.WriteLine($"{counter,3}. {Names[i]}");
                     counter++;
+                }
+
+                for (int j = 1; j < 12; j++)
+                {
+                    using (StreamWriter stro = new StreamWriter("/Users/BAU28365/Documents/output.txt"))
+                    {
+                        stro.WriteLine($"{j,3}. {Names[j]}");
+                        stro.WriteLine($"{j} Teilnehmer");
+                    }
                 }
             }
             Console.WriteLine("fertig");
