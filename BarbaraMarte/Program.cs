@@ -20,8 +20,6 @@ namespace BarbaraMarte.Week01
             //  CalendarDays.Print();
             //AttendingList2.Print();
             //Quadrieren.Print();
-            //ArrayWiederholung.Print();
-            Wiederholung2dArray.Print();
 
 
             //Calendar.Print();
@@ -36,7 +34,14 @@ namespace BarbaraMarte.Week01
             // MoneyCounter.Print(400);
             // TicTacToe.Print();
 
-
+            // Week 05
+            //ArrayWiederholung.Print();
+            // Wiederholung2dArray.Print();
+            //PrintClass.PrintPerson();
+            // PrintClass.PrintCar();
+            // PrintClass.PrintBank();
+            // PrintClass.PrintMotorcycle();
+            PrintClass.PrintPhoto();
         }
     }
 }
