@@ -1,6 +1,7 @@
 using System;
 using System.Diagnostics.Metrics;
 using System.IO;                //IO = Input Output
+using System.Linq;
 
 namespace CheyenneHarbarth.Week05.Streams
 {
@@ -21,7 +22,6 @@ namespace CheyenneHarbarth.Week05.Streams
                     Console.WriteLine($"{counter,3}. {Names}");
                     counter++;
                 }
-
             }
         }
 
@@ -30,23 +30,24 @@ namespace CheyenneHarbarth.Week05.Streams
             using (StreamReader str = new StreamReader("/Users/BAU28365/Documents/input.txt"))                         //mit using () gibst du dem Programm eine Resource mit der dann nur aktiv er in diesem Moment arbeitet, niemand sonst kann diese Datei dann momentan verwenden
             {
                 string FirstRow = str.ReadLine();
-                int counter = 1;
+                int counter = 0;
                 string[] Names = new string[12];
 
                 for (int i = 0; i < 11; i++)
                 {
                     Names[i] = str.ReadLine();
-                    Console.WriteLine($"{counter,3}. {Names[i]}");
                     counter++;
+                    Console.WriteLine($"{counter,3}. {Names[i]}");
                 }
 
-                for (int j = 1; j < 12; j++)
+                using (StreamWriter stro = new StreamWriter("/Users/BAU28365/Documents/output.txt"))
                 {
-                    using (StreamWriter stro = new StreamWriter("/Users/BAU28365/Documents/output.txt"))
+                    for (int j = 0; j < 11; j++)
                     {
-                        stro.WriteLine($"{j,3}. {Names[j]}");
-                        stro.WriteLine($"{j} Teilnehmer");
+                        stro.WriteLine($"{j + 1,3}. {Names[j]}");
+
                     }
+                    stro.WriteLine($"{counter} Teilnehmer");
                 }
             }
             Console.WriteLine("fertig");
@@ -81,15 +82,81 @@ namespace CheyenneHarbarth.Week05.Streams
             }
             Console.WriteLine("fertig");
         }
+
         public static void Aufgabe4()
         {
-            int i = 2;
-            using (StreamReader str = new StreamReader("/Users/BAU28365/Documents/Liste.txt"))
+            /* using (StreamReader str = new StreamReader("/Users/BAU28365/Documents/Liste.txt"))
             {
+
                 Console.WriteLine("Teilnehmer  |  Größe   | Alter  ");
                 Console.WriteLine("--------------------------------");
-                Console.WriteLine(str.Read());
+                //char strich = '|';
+                //int counter = 0;
+                int Länge = ;
+                char[] Infos = new char[];
+                string Name = null;
+
+                while (true)
+                {
+                    for (int i = 0; i < Infos.Length; i++)
+                    {
+                        Infos[i] = Convert.ToChar(str.Read());
+                    }
+
+                    for (int j = 0; j < Infos.Length; j++)
+                    {
+                        Name += Infos[j];
+                    }
+
+                    Console.Write($"{Name,-12}|");
+                    Name = null;
+                }
+
+                /* while (true)
+                {
+                    char aktuell = 
+
+                    if (aktuell == ' ')
+                    {
+                        Console.Write($"{strich,10} ");
+                    }
+                    else
+                    {
+                        Console.Write(aktuell);
+                    }
+
+                }
+            } */
+
+
+            //Vorschlag Blumi
+            string inputFile = "Liste.txt";
+            string outputFile = "Listeformatiert.txt";
+
+            // Lies die Eingabedatei
+            string[] lines = File.ReadAllLines(inputFile);
+
+            // Öffne die Ausgabedatei
+            using (StreamWriter stro = new StreamWriter(outputFile))
+            {
+                stro.WriteLine("Teilnehmer  |  Größe   | Alter");
+                stro.WriteLine("--------------------------------");
+
+                // Iteriere durch jede Zeile der Eingabedatei
+                foreach (var line in lines)
+                {
+                    var parts = line.Split(' ');                //Teile die Zeile anhand von den gewünschten Markierungen, hier sind es ja Leerzeichen
+
+                    string teilnehmer = parts[0];
+                    string groesse = double.Parse(parts[1]).ToString("F2");
+                    string alter = parts[2];
+
+                    // Schreibe die formatierte Zeile in die Ausgabedatei
+                    stro.WriteLine($"{teilnehmer,-11} | {groesse,7} | {int.Parse(alter),6}");
+                    stro.WriteLine("--------------------------------");
+                }
             }
+            Console.WriteLine("Die Daten wurden erfolgreich in die Output-Datei geschrieben.");
         }
     }
 }
