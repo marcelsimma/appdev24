@@ -57,8 +57,9 @@ namespace CheyenneHarbarth
 
             //Streams.Aufgabe1();
             //Streams.Aufgabe2();
-            //Streams.Aufgabe3();
-            Streams.Aufgabe4();
+            //Quadrieren.Start();
+            //Streams.Aufgabe4();
+            Artikelliste.Start();
             //Arraywiederholung.PrintSortiment();
             //Datenklassen.Start();
             //FotoapparatOOP.Start();
