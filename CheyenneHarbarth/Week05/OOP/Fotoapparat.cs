@@ -11,7 +11,7 @@ namespace CheyenneHarbarth.Week05.OOP
             fotoapparat1._Hersteller = "Cannon";
             fotoapparat1._Modell = "EOS R10";
             fotoapparat1._Megapixel = 24.2;
-            fotoapparat1._BrennweiteMin = 20;
+            fotoapparat1._BrennweiteMin = 100;
             fotoapparat1._BrennweiteMax = 400;
 
             Console.WriteLine(fotoapparat1.toString());
@@ -93,6 +93,5 @@ namespace CheyenneHarbarth.Week05.OOP
         {
             return string.Format($"Hersteller: {_Hersteller}, Modell: {Modell}\nMegapixel: {Megapixel:F1}\nBrennweite Min. & Max.: {BrennweiteMin} mm - {BrennweiteMax} mm");
         }
-
     }
 }
