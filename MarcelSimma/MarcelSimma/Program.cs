@@ -8,6 +8,7 @@ using MarcelSimma.Week06.FotoapparatObjektivSpeicherkarte;
 using MarcelSimma.Week06;
 using MarcelSimma.Week05;
 using MarcelSimma.Week06.FOS;
+using MarcelSimma.Week06.Datenklasse;
 
 namespace MarcelSimma {
 class Program
@@ -49,7 +50,9 @@ class Program
         System.Console.WriteLine(vwpolo.ToString());
         */
 
-        Start.Launch();
+        //Start.Launch();
+
+        Datenklasse.Start();
 
 
     }

@@ -11,11 +11,13 @@ namespace MarcelSimma.Week06.FOS
     
     */
 
-    public class Fotoapparat : Hardware
+    public class Fotoapparat : Hardware, IGegenstand
     {
 
         //Instanzattribute
         public string Bezeichnung { get; set; }
+
+        public string Inventarnummer { get; set;}
 
         public Speicherkarte Speicher;
 
@@ -27,6 +29,11 @@ namespace MarcelSimma.Week06.FOS
 
         public override string WriteSeriennummer() {
             return "Fotoapparat-" + base.WriteSeriennummer();
+        }
+
+        public string PrintInventarnummer() {
+            return "";
+
         }
     }
 }

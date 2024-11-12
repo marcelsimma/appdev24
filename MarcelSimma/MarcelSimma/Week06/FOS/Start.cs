@@ -16,7 +16,8 @@ namespace MarcelSimma.Week06.FOS
     public class Start
     {
 
-        public static void Launch() {
+        public static void Launch()
+        {
 
             Speicherkarte s1 = new Speicherkarte("Toshiba 500 gb", "BDSDFE1234", 500);
             Fotoapparat f1 = new Fotoapparat("Sony Megapixel", "ASDF1234", s1);
@@ -35,9 +36,11 @@ namespace MarcelSimma.Week06.FOS
             System.Console.WriteLine(c);
         }
 
-    }
 
-    public static int add(int a, int b) {
-        return a + b; 
+
+        public static int add(int a, int b)
+        {
+            return a + b;
+        }
     }
 }
