@@ -57,11 +57,13 @@ namespace CheyenneHarbarth
 
             //Streams.Aufgabe1();
             //Streams.Aufgabe2();
-            //Streams.Aufgabe3();
+            //Quadrieren.Start();
             //Streams.Aufgabe4();
+            Artikelliste.Start();
             //Arraywiederholung.PrintSortiment();
             //Datenklassen.Start();
-            AufgabeMotorrad.Start();
+            //FotoapparatOOP.Start();
+            //AufgabeMotorrad.Start();
 
         }
     }
