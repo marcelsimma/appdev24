@@ -16,7 +16,7 @@ namespace BarbaraMarte.Week05
         {
             get => _Height;
         }
-        public int Age
+        public int Age 
         {
             get => _Age;
         }
