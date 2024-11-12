@@ -4,14 +4,17 @@ using System;
 using LucasSchiemann.Week03;
 using LucasSchiemann.Week04;
 using LucasSchiemann.Week05;
+using LucasSchiemann.SortAlgorithmChooser;
+using LucasSchiemann.Week06;
 namespace LucasSchiemann;
 
     class Program
     {
     static void Main()
     {
-
-        Teilnehmerliste.Start();
+        Bankkonto.Start();
+        //AlgorythmChooser.ChoseSortAlgorythm();
+        //Teilnehmerliste.Start();
         //AlgorithmTester.ChoseSortAlgorythm();
         //Tabellensorter.Start();
         //AlgorithmTester.excecuteSelectionSort();

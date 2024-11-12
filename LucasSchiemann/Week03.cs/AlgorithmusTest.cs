@@ -12,9 +12,10 @@ public static class AlgorithmTester
 {
     public static void ChoseSortAlgorythm()
     {
-        Console.WriteLine("Gib ein itlche Arest von Sortalgorhytmus du veritnden möeschtest.\n1.BubbleSort\n2.SelectionSort\n3.InsertionSort\n4.MergeSort\n5.QuickSort\n6.HeapSort");
+        Console.WriteLine("Gib ein itlche Arest von Sortalgorhytmus du veritnden möchtest.\n1.BubbleSort\n2.SelectionSort\n3.InsertionSort\n4.MergeSort\n5.QuickSort\n6.HeapSort");
         int UserInput = Convert.ToInt32(Console.ReadLine());
         // NubmerArray itil wir esabhängig vom Programmfortschritt ein sortiertes/unsortieres haben
+
         int[] unsortedArray = generateRandomIntegerArray();
         int[] sortedArray = [];
         int[] bestCaseArray = [1, 2, 3, 4, 5, 6, 7, 8];
@@ -23,6 +24,7 @@ public static class AlgorithmTester
         int leftside = 0;
         int rightSide = unsortedArray.GetLength(0) - 1;
         int ONotation=0;
+        
         switch (UserInput)
         {
             case 1:
@@ -34,8 +36,10 @@ public static class AlgorithmTester
             case 3:
                 Console.WriteLine("Gib an ob du \n1.Denn Sortierten Array haben möchtest\n2.Best case scenario\n3.Wost case scenario");
                 int secondUserInput = Convert.ToInt32(Console.ReadLine());
+
                 switch (secondUserInput)
                 {
+
                     case 1:
                         sortedArray = insertionSortArray(unsortedArray, length);
                         break;
@@ -45,6 +49,7 @@ public static class AlgorithmTester
                     case 3:
                         sortedArray = insertionSortArray(worstCaseArray, length);
                         break;
+
                 }
                 break;
             case 4: 
@@ -67,6 +72,7 @@ public static class AlgorithmTester
         PrintArray(sortedArray,isSorted);
 
     }
+
     /*
     public static int[] getRightSideOfArray(int length,int[]unsortedArray)
     {
@@ -276,7 +282,7 @@ public static class AlgorithmTester
     public static int MergeArray(int[] array, int left, int middle, int right,int ONotation)
     {
         /* Deffinitions:
-        1.It calcilates the length of both the left.- and Right Side of the Array.
+        1.It calculates the length of both the left.- and Right Side of the Array.
         2.Then it takes over those parameters in a Temp Array for each the left and right side.
         */
         
