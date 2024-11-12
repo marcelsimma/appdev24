@@ -1,15 +1,18 @@
 using System;
-namespace BarbaraMarte.Week01{
-    public class PrintA{
-        public static void Print(){
+namespace BarbaraMarte.Week01
+{
+    public class PrintA
+    {
+        public static void Print()
+        {
             Console.WriteLine("Hello, World!");
-            Console.WriteLine(@"      __"); 
+            Console.WriteLine(@"      __");
             Console.WriteLine(@"     /  \");
             Console.WriteLine(@"    / /\ \");
-            Console.WriteLine(@"   / /  \ \"); 
+            Console.WriteLine(@"   / /  \ \");
             Console.WriteLine(@"  / /    \ \");
             Console.WriteLine(@" /  ======  \");
-            Console.WriteLine(@"/_/        \_\");   
+            Console.WriteLine(@"/_/        \_\");
 
             Console.WriteLine(@"
                   __
@@ -20,9 +23,7 @@ namespace BarbaraMarte.Week01{
              /_/      \_\ ");
 
 
-             Console.Write("\t\\\n\t \\\n\t  \\\n");
-
-
+            Console.Write("\t\\\n\t \\\n\t  \\\n");
         }
     }
 }
