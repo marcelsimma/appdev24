@@ -56,11 +56,11 @@ namespace BerkantAkinci.Week02
         {
             while (true)
             {
-                System.Console.WriteLine("Tippe einen Charakter deiner Wahl ein: ");
                 string tmp = Console.ReadLine();
 
                 if (char.TryParse(tmp, out char tmp2))
                 {
+                    
                     return tmp2;
                 }
 

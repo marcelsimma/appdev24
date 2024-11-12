@@ -23,7 +23,10 @@ namespace BerkantAkinci.Week05
                 System.Console.Write(wholefile);
             }
 
-            using (StreamWriter wrt1 = new StreamWriter("\\Users\\BAU26336\\OneDrive - Julius Blum GmbH\\Allgemeines\\Dokumente\\output.txt")) ;
+            using (StreamWriter wrt1 = new StreamWriter("\\Users\\BAU26336\\OneDrive - Julius Blum GmbH\\Allgemeines\\Dokumente\\output.txt"))
+            {
+
+            }
 
         }
 
@@ -35,7 +38,7 @@ namespace BerkantAkinci.Week05
 
         public static void Teilnehmerliste3()
         {
-            
+
 
         }
     }

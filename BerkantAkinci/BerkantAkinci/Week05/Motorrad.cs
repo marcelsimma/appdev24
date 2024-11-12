@@ -11,9 +11,6 @@ namespace BerkantAkinci.Week05
         int _Fahren;
         int _KilometerstandNeu;
 
-
-
-
         public Motorrad(string name, int kilometerstand, int fahren, string bewegung)
         {
             _Name = name;
@@ -21,8 +18,6 @@ namespace BerkantAkinci.Week05
             _Fahren = fahren;
             _Bewegung = bewegung;
             _KilometerstandNeu = kilometerstand + fahren;
-
-
         }
 
         public override string ToString()
