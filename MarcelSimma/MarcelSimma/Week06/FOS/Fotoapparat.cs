@@ -17,7 +17,7 @@ namespace MarcelSimma.Week06.FOS
         //Instanzattribute
         public string Bezeichnung { get; set; }
 
-        public string Inventarnummer { get; set;}
+        public string Inventarnummer { get; set; }
 
         public Speicherkarte Speicher;
 
@@ -32,7 +32,7 @@ namespace MarcelSimma.Week06.FOS
         }
 
         public string PrintInventarnummer() {
-            return "";
+            return "Inventarnummer der Fotoapparates.";
 
         }
     }
