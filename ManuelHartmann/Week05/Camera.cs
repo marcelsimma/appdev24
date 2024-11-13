@@ -50,10 +50,10 @@ namespace ManuelHartmann.Week05
         }
 
         // Methode
-        public void hasABirthday()
-        {
-            _Age++;
-        }
+        // public void hasABirthday()
+        // {
+        //     _Age++;
+        // }
 
         /* besprochene Beispiel-Methoden für ein Auto:
         public void fahren() {
@@ -69,9 +69,9 @@ namespace ManuelHartmann.Week05
         }
         */
 
-        public override string ToString()
-        {
-            return string.Format("Person: {0}, age: {1}", _Name, _Age);
-        }
+        // public override string ToString()
+        // {
+        //     return string.Format("Person: {0}, age: {1}", _Name, _Age);
+        // }
     }
 }
