@@ -1,7 +1,7 @@
 
 namespace MarcelSimma.Week06.FOS {
 
-    public class Hardware {
+    public abstract class Hardware {
 
         //Instanzattribute
         public string Seriennummer;
