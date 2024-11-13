@@ -7,6 +7,7 @@ using BarbaraMarte.Week03;
 using BarbaraMarte.Week04;
 using BarbaraMarte.Week05;
 using BarbaraMarte.Week06;
+using BarbaraMarte.Week06.Vererbung;
 
 
 namespace BarbaraMarte.Week01
@@ -21,11 +22,12 @@ namespace BarbaraMarte.Week01
             // Schule
             // ContactsArray.Start(); 
             // ContactsList.Start();
-            // ContactsNewList.Start();
+            ContactsNewList.Start();
 
             // Week06
             // Test.Print();
-            PrintFotoObjekt.Print();
+            // PrintFotoObjekt.Print();
+            // Print.Start();
 
 
             // Week 05

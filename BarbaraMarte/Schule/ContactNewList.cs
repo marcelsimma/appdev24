@@ -7,30 +7,38 @@ class ContactsNewList
     public static List<string> lastName = new List<string>();
     public static List<string> phoneNumber = new List<string>();
     public static int count = 0;
+
     /// <summary>
     /// Start position where you choice what you want to do
     /// </summary>
     public static void Start()
     {
-        Console.WriteLine("If you want to add a new contact press 1. If you want to search a contact press 2. If you want to delete a contact press 3. If you want to leave the program press 4.");
-        string choice = Console.ReadLine();
+        Console.WriteLine(@"
+        Add Contact => 1
+        Search Contact => 2
+        Delete Contact => 3
+        Print out al your contacts => 4
+        Leave the Program => E
+        ");
+        string? choice = Console.ReadLine();
 
-        if (choice == "1" || choice == "2" || choice == "3")
+        if (choice == "1")
         {
-            if (choice == "1")
-            {
-                AddContact();
-            }
-            else if (choice == "2")
-            {
-                SearchContact();
-            }
-            else if (choice == "3")
-            {
-
-            }
+            AddContact();
+        }
+        else if (choice == "2")
+        {
+            SearchContact();
+        }
+        else if (choice == "3")
+        {
+            DeleteContact();
         }
         else if (choice == "4")
+        {
+            PrintOutContacts();
+        }
+        else if (choice == "E" || choice == "e")
         {
             Console.WriteLine("You are leaving the program now. Have a lovely day!");
             return;
@@ -40,13 +48,14 @@ class ContactsNewList
             Start();
         }
     }
-    public static string RemoveContact()
+    public static void PrintOutContacts()
     {
-        Console.WriteLine("Which contact do you want to remove?");
-        return "";
-
+        for (int i = 0; i < firstName.Count; i++)
+        {
+            Console.WriteLine($"First name: {firstName[i]}, family name: {lastName[i]}, phone number: {phoneNumber[i]}");
+        }
+        Start();
     }
-
     /// <summary>
     /// Adding contacts
     /// </summary>
@@ -62,46 +71,72 @@ class ContactsNewList
         phoneNumber.Add(Console.ReadLine());
         Start();
     }
+    /// <summary>
+    /// You put in the search for your contact
+    /// </summary>
     public static void SearchContact()
     {
         Console.WriteLine("Which contact are you looking for?");
-        Console.WriteLine(Search());
-
+        Console.WriteLine(SearchInList());
+        Start();
     }
-    public static string Search()
+    /// <summary>
+    /// you search in here the contact list
+    /// </summary>
+    /// <returns></returns>
+    public static string SearchInList()     //  use a string instead a void that I can use a return in the if part. Makes it easier to return value
     {
         string? input = Console.ReadLine();
-        bool contactFound = false;
+        List<string> foundContacts = new List<string>();
         for (int i = 0; i < firstName.Count; i++)
         {
             if (firstName[i] == input)
             {
-                return $"{firstName[i]}s last name is: {lastName[i]} and the telephone number from  is: {phoneNumber[i]}";
+                foundContacts.Add($"{firstName[i]} {lastName[i]} - Phone number: {phoneNumber}");
+            }
+            else if (lastName[i] == input)
+            {
+                foundContacts.Add($"{firstName[i]} {lastName[i]} - Phone number: {phoneNumber}");
+            }
+            else if (phoneNumber[i] == input)
+            {
+                return ($"{firstName[i]} {lastName[i]} - Phone number: {phoneNumber}");
             }
         }
-        if (!contactFound)
+        if (foundContacts.Count == 0)
         {
-            return "The name you entered is not in your contact list.";
+            return "The contact detail you entered is not in your contact list.";
+        }
+        Console.WriteLine("Found contacts:");
+        foreach (var contact in foundContacts)
+        {
+            Console.WriteLine(contact);
         }
         return "";
     }
 
-    public static void SearchContact1()
+    /// <summary>
+    /// Deletes the contact with all the information attached to it 
+    /// </summary>
+    public static void DeleteContact()
     {
         Console.WriteLine("Which contact are you looking for?");
         string? input = Console.ReadLine();
-        bool contacFound = false;
+        bool contactFound = false;
 
         for (int i = 0; i < firstName.Count; i++)
         {
             if (firstName[i] == input)
             {
-                Console.WriteLine("{0}s last name is: {1} and the telephone number from  is: {2}", firstName[i], lastName[i], phoneNumber[i]);
-                contacFound = true;
+                Console.WriteLine("{0} is now removed from your list", firstName[i]);
+                firstName.RemoveAt(i);
+                lastName.RemoveAt(i);       // .RemoveAt(i) removes the input ( the contact information ) at the position i
+                phoneNumber.RemoveAt(i);
+                contactFound = true;
                 break;
             }
         }
-        if (!contacFound)
+        if (!contactFound)
         {
             Console.WriteLine($"The name you entered is not in your contact list.");
         }
