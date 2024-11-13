@@ -21,7 +21,7 @@ namespace BarbaraMarte.Week05
             _Drive = true;
             Console.WriteLine("The motorcycle drives " + km + " km");
         }
-        public void Stop()
+        public void Stop() 
         {
             _Drive = false;
         }
