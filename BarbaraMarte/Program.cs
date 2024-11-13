@@ -1,11 +1,13 @@
 ﻿using System;
+using BarbaraMarte.Work;
+using BarbaraMarte.Schule;
 using BarbaraMarte.Week01;
 using BarbaraMarte.Week02;
 using BarbaraMarte.Week03;
 using BarbaraMarte.Week04;
-using BarbaraMarte.Schule;
-using BarbaraMarte.Work;
 using BarbaraMarte.Week05;
+using BarbaraMarte.Week06;
+using BarbaraMarte.Week06.Vererbung;
 
 
 namespace BarbaraMarte.Week01
@@ -22,6 +24,10 @@ namespace BarbaraMarte.Week01
             // ContactsList.Start();
             ContactsNewList.Start();
 
+            // Week06
+            // Test.Print();
+            // PrintFotoObjekt.Print();
+            // Print.Start();
 
 
             // Week 05
