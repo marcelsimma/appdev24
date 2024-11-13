@@ -1,12 +1,12 @@
 
 namespace MarcelSimma.Week06.FOS {
 
-    public abstract class Hardware {
+    public class Hardware {
 
         //Instanzattribute
-        public string Seriennummer;
-        public string Modell;
-        public string Hersteller;
+        internal string Seriennummer;
+        private string Modell;
+        private string Hersteller;
 
         public Hardware(string seriennummer) {
             Seriennummer = seriennummer;

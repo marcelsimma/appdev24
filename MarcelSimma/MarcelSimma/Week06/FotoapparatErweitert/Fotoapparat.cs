@@ -2,10 +2,10 @@
 using System.ComponentModel;
 using System.Data.Common;
 
-namespace MarcelSimma.Week06.FotoapparatEinfach
+namespace MarcelSimma.Week06.FotoapparatErweitert
 {
 
-    public class Fotoapparat
+    public class Fotoapparat : IObjekt
     {
 
         // In diesen Feld wird der Wert für Modell gespeichert.
@@ -46,72 +46,44 @@ namespace MarcelSimma.Week06.FotoapparatEinfach
             }
         }
 
-
-        // Alternativvariante zu Model mit => Operator
-        private double _focalWidthMin;
-        internal double FocalWidthMin
-        {
-            get => _focalWidthMin;
-            set => _focalWidthMin = value;
-            // richtigerweise müsste hier eine Prüfung eingesetzt werden
-            // set => _focalWidthMin = (value > 0 && value < _focalWidthMax) ? value : _focalWidthMin;
-        }
-
-
-        private double _focalWidthMax;
-        // Alternativvariante zu Megapixel mit => Operator
-        public double FocalWidthMax
-        {
-            get => _focalWidthMax;
-            // Es sollen nur positive Werte geschrieben werden können
-            set => _focalWidthMax = (value > 0 && value > _focalWidthMin) ? value : _focalWidthMax;
-
-            // Exkurs: Verschachtelte Abfragen mit dem Bedingungsoperator
-            // set => _focalWidthMax = value > 0 ? value > _focalWidthMin ? value : _focalWidthMin : _focalWidthMin;
-            //                      Bedingung 1 ?               wahr 1                 : falsch 1
-            //                      Bedingung 1 ? Bedingung 2 ? wahr : falsch          : falsch 1
-        }
-
-
-
         public string Manufacturer;
-        // Erzeugt im Hintergrund ein Feld _manufacturer vom Typ string. 
 
-        // Weitere Infos zum Bedingungsoperator: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/conditional-operator
+        public Speicherkarte MemoryCard;
 
+        public Objektiv Lense;
 
-        public double MemoryLeft { get; private set; }
-        public int AmountOfPictures;
+        public string Inventorynumber { get; }
+        public double Price { get; set; }
+
 
         // Konstruktor
-        public Fotoapparat(string model, double megapixel, double focalWidthMin, double focalWidthMax, string manufacturer, double memoryLeft)
+        public Fotoapparat(string model, double megapixel, string manufacturer, Speicherkarte memoryCard, Objektiv lense, string inventoryNumber, double price)
         {
             _model = model;
             _megapixel = megapixel;
-            _focalWidthMin = focalWidthMin;
-            _focalWidthMax = focalWidthMax;
             Manufacturer = manufacturer;
-            MemoryLeft = memoryLeft;
-            AmountOfPictures = 0;
+            MemoryCard = memoryCard;
+            Lense = lense;
+            Inventorynumber = inventoryNumber;
+            Price = price;
         }
 
         public void TakePhoto()
         {
 
-
             // restlichen verfügbaren Speicherplatz nach dem Erstellen des Fotos berechnen. Hierfür verwenden wir die CaclulcateMemoryForPicture() Methode.
 
             double memoryUsage = CaclulcateMemoryForPicture();
 
-            if (MemoryLeft - memoryUsage > 0)
+            if (MemoryCard.MemoryLeft - memoryUsage > 0)
             {
                 // schöne Ausgabe
                 System.Console.WriteLine("Es wird ein schönes Foto gemacht.");
 
                 // Ein Bild speichern
-                AmountOfPictures++;
+                MemoryCard.AmountOfPictures++;
 
-                MemoryLeft -= memoryUsage;
+                MemoryCard.MemoryLeft -= memoryUsage;
             }
             else
             {
@@ -133,17 +105,13 @@ namespace MarcelSimma.Week06.FotoapparatEinfach
 
             String.Format(
             @"
-            Datenblatt: 
+            Datenblatt Kamera: 
             
             Modell: {0}
             Hersteller: {1}
             Megapixel: {2}
-            Brennweite Min.: {3}
-            Brennweite Max.: {4}
-            Speicherplatz: {5}
-            Anzahl der gespeicherten Bilder: {6}
 
-            ", _model, Manufacturer, _megapixel, _focalWidthMin, _focalWidthMax, MemoryLeft, AmountOfPictures);
+            ", _model, Manufacturer, _megapixel) + MemoryCard.ToString() + Lense.ToString();
 
         }
 
