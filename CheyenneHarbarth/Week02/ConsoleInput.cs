@@ -56,7 +56,7 @@ namespace CheyenneHarbarth.Week02
         public static char ReadChar() {
              while (true)
             {
-                Console.WriteLine("Tippe ein Zeichen ein!");
+                //Console.WriteLine("Tippe ein Zeichen ein!");
                 string ctmp = Console.ReadLine();
 
                 // Versuche, die Eingabe als Integer zu konvertieren

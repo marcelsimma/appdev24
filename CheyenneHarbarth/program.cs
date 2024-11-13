@@ -17,6 +17,7 @@ namespace CheyenneHarbarth
 
         static void Main(string[] args)
         {
+            //Testaufgabe.Start();
 
             //ChristmasTree.PrintTree('*', 15);
             //Calculator.CalcSum(21, 50);
