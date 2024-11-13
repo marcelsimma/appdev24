@@ -68,8 +68,54 @@ namespace BarbaraMarte.Week06
             return string.Format($"Der Produzent der Kamera {_CameraName} ist {_Producer}.  Die Min. Brennweite ist: {_BrennweiteMin}, die Max. Brennweite ist: {_BrennweiteMax}");
         }
     }
-    
-    class Objective{
+
+    /*
+        class Objektiv
+        {
+            double _BrennweiteMin;
+
+            double _BrennweiteMax;
+            string? _Producer;
+            double _Megapixel;
+            string _CameraName;
+            public string CameraName
+            {
+                get => _CameraName;
+                set => _CameraName = value;
+            }
+
+            public double BrennweiteMin
+            {
+                get => _BrennweiteMin;
+                set => _BrennweiteMin = value;
+            }
+            public double BrennweiteMax
+            {
+                get => _BrennweiteMax;
+                set => _BrennweiteMax = value;
+            }
+            public string Producer
+            {
+                get => _Producer;
+                set => _Producer = value;
+            }
+            public double Megapixel
+            {
+                get => _Megapixel;
+                set => _Megapixel = value;
+            }
+
+            public Camera(double brennweiteMin, double brennweiteMax, string producer, double megapixel, string cameraName)
+            {
+                _BrennweiteMax = brennweiteMax;
+                _BrennweiteMin = brennweiteMin;
+                _Producer = producer;
+                _Megapixel = megapixel;
+                _CameraName = cameraName;
+            }
+        }*/
+    class Speicherkarte
+    {
 
     }
 }

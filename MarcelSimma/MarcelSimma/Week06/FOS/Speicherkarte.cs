@@ -11,9 +11,10 @@ namespace MarcelSimma.Week06.FOS
     
     */
 
-    public class Speicherkarte : Hardware
+    public class Speicherkarte : Hardware, IGegenstand
     {
 
+        public string Inventarnummer { get; set; }
         //Instanzattribute
         public string Bezeichnung { get; set; }
 
@@ -23,6 +24,10 @@ namespace MarcelSimma.Week06.FOS
         {
             Bezeichnung = bezeichnung;
             Speicherplatz = speicherplatz;
+        }
+
+        public string PrintInventarnummer() {
+            return "Inventarnummer der Speicherkarte.";
         }
 
     }
