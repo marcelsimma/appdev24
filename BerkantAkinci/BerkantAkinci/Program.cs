@@ -57,7 +57,7 @@ namespace BerkantAkinci
             //ZweiDArray.PrintZweiArray();
             //JaggedArray.PrintJaggedArray();
             //Objektorientierung.PrintObjektorientierung();
-            Bankomat.PrintBakomat();
+            //Bankomat.PrintBakomat();
             
             
 
