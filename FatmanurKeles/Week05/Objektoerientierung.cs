@@ -23,8 +23,9 @@ namespace FatmanurKeles.Week05
             Schule Gisingen = new Schule(23, "Frau Bachmann", "Englisch");
             Schule Tosters = new Schule(25, "Herr Müller", "Deutsch");
             Schule Tisis = new Schule(19, "Frau Schwarzmann", "Mathe");
-           
+
             Console.WriteLine($"{Gisingen}\n{Tosters}\n{Tisis}\n");
         }
     }
 }
+

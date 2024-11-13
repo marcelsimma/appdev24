@@ -2,6 +2,7 @@
 using FatmanurKeles.Week01;
 using FatmanurKeles.Week04;
 using FatmanurKeles.Week05;
+using FatmanurKeles.Week06;
 
 namespace FatmanurKeles.Week02
 {
@@ -22,11 +23,12 @@ namespace FatmanurKeles.Week02
             //  AbwesenheitsListe.Start();
             //  PrintSquare.Print('0',3);
             //  TicTacToe.Start();
-           //   CountLetterArray.Start();
-           //   Kalender.Start();
-           //   ArraySortiment.Start();
-             //   Array2d.Start();
-             Objektorientierung.Start();
+            //  CountLetterArray.Start();
+            //  Kalender.Start();
+            //  ArraySortiment.Start();
+            //  Array2d.Start();
+            //  Objektorientierung.Start();
+            // Bankomat.Start();
         }
     }
 }
