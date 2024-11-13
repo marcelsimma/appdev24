@@ -29,8 +29,8 @@ namespace MarcelSimma.Week06.FOS
 
             
 
+            //System.Console.WriteLine(f1.Seriennummer);
             System.Console.WriteLine(f1.Seriennummer);
-            System.Console.WriteLine(f1.WriteSeriennummer());
 
             System.Console.WriteLine(f1.Speicher.Speicherplatz);
             s1.Speicherplatz = 1000;

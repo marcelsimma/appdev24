@@ -7,7 +7,7 @@ using MarcelSimma.Week04;
 using MarcelSimma.Week06.FotoapparatObjektivSpeicherkarte;
 using MarcelSimma.Week06;
 using MarcelSimma.Week05;
-using MarcelSimma.Week06.FotoapparatEinfach;
+using MarcelSimma.Week06.FotoapparatErweitert;
 using MarcelSimma.Week06.Datenklasse;
 
 namespace MarcelSimma
@@ -54,7 +54,6 @@ namespace MarcelSimma
             Start.Launch();
 
             //Datenklasse.Start();
-
 
         }
 
