@@ -34,8 +34,8 @@ namespace BerkantAkinci.Week05
 
         public static void PrintAuto()
         {
-            Auto a = new Auto("Mercedes", "dunkelgrau", 2019, 34678);
-            Auto a2 = new Auto("Audi", "silber", 2015, 163993);
+            Auto a = new Auto("Mercedes", 2018, "ABC0012");
+            Auto a2 = new Auto("Audi", 2024, "ABC00123");
 
             System.Console.WriteLine("-----------------------------------------------------------------------------------------");
             System.Console.WriteLine(a);

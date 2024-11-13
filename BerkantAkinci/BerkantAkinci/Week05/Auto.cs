@@ -1,6 +1,6 @@
 using System;
 
-namespace MarcelSimma.Week06
+namespace BerkantAkinci.Week05
 {
 
     /*

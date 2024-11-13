@@ -1,7 +1,7 @@
 
 using System.ComponentModel;
 
-namespace MarcelSimma.Week06.Zugriffsmodifizierer
+namespace BerkantAkinci.Week06.Zugriffsmodifizierer
 {
     /*
     Offizielle Tabelle mit den Zugriffsmodifizierern
