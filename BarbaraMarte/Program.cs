@@ -8,6 +8,8 @@ using BarbaraMarte.Week04;
 using BarbaraMarte.Week05;
 using BarbaraMarte.Week06;
 using BarbaraMarte.Week06.Vererbung;
+using BarbaraMarte.Week06.CameraEasy;
+using BarbaraMarte.Week06.CameraExtended;
 
 
 namespace BarbaraMarte.Week01
@@ -22,12 +24,14 @@ namespace BarbaraMarte.Week01
             // Schule
             // ContactsArray.Start(); 
             // ContactsList.Start();
-            ContactsNewList.Start();
+            // ContactsNewList.Start();
 
             // Week06
             // Test.Print();
             // PrintFotoObjekt.Print();
             // Print.Start();
+            // Start.Launch();
+            OutPut.Print();
 
 
             // Week 05
