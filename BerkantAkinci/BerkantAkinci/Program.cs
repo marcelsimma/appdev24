@@ -2,6 +2,7 @@ using System;
 using System.ComponentModel;
 using BerkantAkinci;
 using BerkantAkinci.Basics;
+using BerkantAkinci.Ubueng;
 using BerkantAkinci.Week01;
 using BerkantAkinci.Week02;
 using BerkantAkinci.Week03;
@@ -51,7 +52,13 @@ namespace BerkantAkinci
             //WannSonntag.PrintSonntag();
             //Arbeitstage.Start();
             //BonusKalender.PrintKalender(2024,12);
-            Datenstroeme.PrintDatenstroeme();
+            //Datenstroeme.PrintDatenstroeme();
+            //EinDimenArray.PrintArray();
+            //ZweiDArray.PrintZweiArray();
+            //JaggedArray.PrintJaggedArray();
+            //Objektorientierung.PrintObjektorientierung();
+            //Bankomat.PrintBakomat();
+            
             
 
         

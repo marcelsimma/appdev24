@@ -23,11 +23,26 @@ namespace CheyenneHarbarth.Week05.OOP.Fotoapparat
         public string Inventorynumber { get; }
 
         public double Price { get; set; }
-        public Speicherkarte(string model, string manufacterer, double memoryLeft)
+        public Speicherkarte(string manufacterer, string model, double memoryLeft, string inventorynumber, double price)
         {
-            _model = model;
             Manufacterer = manufacterer;
+            _model = model;
             MemoryLeft = memoryLeft;
+            Inventorynumber = inventorynumber;
+            Price = price;
+        }
+
+        public override string ToString()
+        {
+            return String.Format(@"
+            Datenblatt:
+
+            Hersteller {0}
+            Modell: {1}
+            Übriger Speicherplatz: {2} MB
+            Anzahl der Bilder: {3}
+            ",
+            Manufacterer, _model, MemoryLeft, AmountOfPictures);
         }
     }
 }

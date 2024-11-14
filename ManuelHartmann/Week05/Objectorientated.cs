@@ -2,7 +2,7 @@ using System;
 
 namespace ManuelHartmann.Week05 
 {
-    public class Objektorientated
+    public class Objectorientated
     {
         public static void Start()
         {
@@ -31,10 +31,10 @@ namespace ManuelHartmann.Week05
             Console.WriteLine($"Person 2 ist {p2.Height} cm groß.");
             Console.WriteLine("---------\n\n\n");
 
-            aufgabeMotorrad();
+            AufgabeMotorrad();
         }
 
-        public static void aufgabeMotorrad()
+        public static void AufgabeMotorrad()
         {
             Motorcycle motorcycle1 = new Motorcycle(1000);
             Motorcycle motorcycle2 = new Motorcycle(5000);
