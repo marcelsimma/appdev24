@@ -4,10 +4,10 @@ namespace LucasSchiemann.Week06.Foto;
 
 public interface InventarVerwaltung
 {
-    public int Stückzahl {get;set;}
+    public float Preis {get;set;}
 
-    public[] string InventarsList;
+    public string InventarNummer{get;set;}
 
-    public 
+  
 
 }
