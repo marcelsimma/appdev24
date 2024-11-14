@@ -37,17 +37,20 @@ namespace CheyenneHarbarth.Week05.OOP.Fotoapparat
         public string Inventorynumber { get; }
 
         public double Price { get; set; }
+        public Objektiv Lense;
 
-        public FotoapparatAdvanced(string model, double megapixel, string manufacterer)      //weil der Übergabeparameter an sich nichts mit der Klasse sondern nur mit dem Konstruktor, nachdem das Objekt erstellt wurde, werden die Variablen des Konstruktors gelöscht
+        public Speicherkarte MemoryCard;
+
+        public FotoapparatAdvanced(string manufacterer, string model, double megapixel, Objektiv lense, Speicherkarte memorycard, string inventorynumber, double price)
         {
+            Manufacterer = manufacterer;
             _model = model;
             _megapixel = megapixel;
-            Manufacterer = manufacterer;
+            Lense = lense;
+            MemoryCard = memorycard;
+            Inventorynumber = inventorynumber;
+            Price = price;
         }
-
-        Objektiv Lense = new Objektiv("Sony", "3000x", 60, 300);
-
-        Speicherkarte MemoryCard = new Speicherkarte("TB600", "Sony", 1000);
 
         public void TakePhoto()
         {
@@ -81,7 +84,7 @@ namespace CheyenneHarbarth.Week05.OOP.Fotoapparat
             Modell: {1}
             Megapixel: {2}
             ",
-            Manufacterer, _model, _megapixel);
+            Manufacterer, _model, _megapixel) + MemoryCard.ToString() + Lense.ToString();
         }
     }
 }
