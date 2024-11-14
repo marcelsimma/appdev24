@@ -1,4 +1,6 @@
 ﻿
+using ManuelHartmann.Week06.FotoapparatEinfach;
+
 namespace ManuelHartmann
 {
 
@@ -6,7 +8,7 @@ namespace ManuelHartmann
     {
         static void Main(string[] args)
         {
-			Week05.Objektorientated.Start();
+			Week06.FotoapparatErweitert.Start.Launch();
 		}
     }
 }

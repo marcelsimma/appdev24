@@ -3,7 +3,7 @@ using System;
 namespace CheyenneHarbarth.Week05.OOP.Fotoapparat
 {
 
-    public class Objektiv
+    public class Objektiv : IObjekt
     {
         private double _focalwidthmin;
         public double FocalWidthMin
@@ -35,12 +35,27 @@ namespace CheyenneHarbarth.Week05.OOP.Fotoapparat
 
         public double Price { get; set; }
 
-        public Objektiv(string manufacterer, string model, double focalwidthmin, double focalwidthmax)
+        public Objektiv(string manufacterer, string model, double focalwidthmin, double focalwidthmax, string inventorynumber, double price)
         {
             Manufacterer = manufacterer;
             _model = model;
             _focalwidthmax = focalwidthmax;
             _focalwidthmin = focalwidthmin;
+            Inventorynumber = inventorynumber;
+            Price = price;
+        }
+
+        public override string ToString()
+        {
+            return String.Format(@"
+            Datenblatt:
+
+            Hersteller {0}
+            Modell: {1}
+            Minimale Brennweite: {2}
+            Maximale Brennweite: {3}
+            ",
+            Manufacterer, _model, _focalwidthmin, _focalwidthmax);
         }
     }
 }
