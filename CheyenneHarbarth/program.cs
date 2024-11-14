@@ -8,6 +8,7 @@ using CheyenneHarbarth.Week04;
 using CheyenneHarbarth.Week05;
 using CheyenneHarbarth.Week05.Streams;
 using CheyenneHarbarth.Week05.OOP;
+using CheyenneHarbarth.Week05.OOP.Fotoapparat;
 
 namespace CheyenneHarbarth
 {
@@ -17,6 +18,7 @@ namespace CheyenneHarbarth
 
         static void Main(string[] args)
         {
+            //Testaufgabe.Start();
 
             //ChristmasTree.PrintTree('*', 15);
             //Calculator.CalcSum(21, 50);
@@ -59,10 +61,10 @@ namespace CheyenneHarbarth
             //Streams.Aufgabe2();
             //Quadrieren.Start();
             //Streams.Aufgabe4();
-            Artikelliste.Start();
+            //Artikelliste.Start();
             //Arraywiederholung.PrintSortiment();
             //Datenklassen.Start();
-            //FotoapparatOOP.Start();
+            Start.Launch();
             //AufgabeMotorrad.Start();
 
         }

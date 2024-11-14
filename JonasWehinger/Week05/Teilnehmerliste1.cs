@@ -3,17 +3,17 @@ using System.IO;
 
 namespace JonasWehinger.Week05
 {
- 
-    public  class Teilnehmerliste1()
+    public class Teilnehmerliste1
     {
         public static void Streams()
         {
+            
+            string[] lines = File.ReadAllLines(@"C:\Digital Campus\Streams\Teilnehmer.txt");
 
-            using (StreamReader str = new StreamReader(@"C:\Digital Campus\Streams\Teilnehmer.txt"))
+            
+            for (int i = 0; i < lines.Length; i++)
             {
-
-                string wholeFile = str.ReadToEnd();
-                Console.WriteLine(wholeFile);
+                Console.WriteLine($"{i + 1}. {lines[i]}");
             }
         }
     }
