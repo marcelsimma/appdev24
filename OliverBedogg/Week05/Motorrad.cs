@@ -20,7 +20,7 @@ namespace OliverBedogg.Week05
         {
             _kmStand += kilometer;
             _inBewegung = true;
-            
+
             Console.WriteLine($"Motorrad fährt {kilometer}km.");
         }
         public void stop()
