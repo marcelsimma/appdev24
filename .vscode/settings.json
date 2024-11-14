@@ -1,6 +1,7 @@
 {
     "dotnet.defaultSolution": "MarcelSimma.sln",
     "cSpell.words": [
-        "Brennweite"
+        "Brennweite",
+        "Vererbung"
     ]
 }
