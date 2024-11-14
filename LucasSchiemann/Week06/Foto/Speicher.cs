@@ -14,6 +14,8 @@ namespace LucasSchiemann.Week06.Foto
             Speicherplatz = speicherPlatz;
             
         }
+
+        
         
     
 

@@ -15,13 +15,14 @@ namespace LucasSchiemann.Week06.Foto
         _SerienNummer = serienNummer;
     }
     
-    
+    public virtual 
 
 
     public virtual string WriteSeriennummer()
     {
         return"Deine Seriennummer ist: "+ _SerienNummer;
     } 
+    
     }
 
 }

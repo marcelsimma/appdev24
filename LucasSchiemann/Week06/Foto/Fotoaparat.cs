@@ -16,8 +16,13 @@ public class FotoAparat:Hardware
             Speicher = speicherPlatz;
         }
 
-        public override string WriteSeriennummer() {
+        public override string PrintSeriennummer() {
             return "Fotoapparat-" + base.WriteSeriennummer();
+        }
+        public override string ToString()
+        {
+
+            
         }
     }
 
