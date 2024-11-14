@@ -9,6 +9,8 @@ using CheyenneHarbarth.Week05;
 using CheyenneHarbarth.Week05.Streams;
 using CheyenneHarbarth.Week05.OOP;
 using CheyenneHarbarth.Week05.OOP.Fotoapparat;
+using CheyenneHarbarth.Week05.OOP.FahrzeugVererbung;
+using OverrideAndNew;
 
 namespace CheyenneHarbarth
 {
@@ -64,8 +66,11 @@ namespace CheyenneHarbarth
             //Artikelliste.Start();
             //Arraywiederholung.PrintSortiment();
             //Datenklassen.Start();
-            Start.Launch();
+            //Start.Launch();
             //AufgabeMotorrad.Start();
+
+            TestNewOverride.Start();
+            //FahrzeugStart.Launch();
 
         }
     }
