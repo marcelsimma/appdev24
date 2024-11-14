@@ -8,6 +8,13 @@ using BerkantAkinci.Week02;
 using BerkantAkinci.Week03;
 using BerkantAkinci.Week04;
 using BerkantAkinci.Week05;
+using BerkantAkinci.Week06;
+using BerkantAkinci.Week06.FOS;
+using BerkantAkinci.Week06.FotoapparatEinfach;
+using BerkantAkinci.Week06.FotoapparatErweitert;
+using BerkantAkinci.Week06.FotoapparatErweitert;
+using BerkantAkinci.Week06.PKW;
+using BerkantAkinci.Week06.Zoo;
 
 
 namespace BerkantAkinci
@@ -58,6 +65,10 @@ namespace BerkantAkinci
             //JaggedArray.PrintJaggedArray();
             //Objektorientierung.PrintObjektorientierung();
             //Bankomat.PrintBakomat();
+            //PKWMain.Start();
+            ZooMain.Start();
+            
+            
             
             
 

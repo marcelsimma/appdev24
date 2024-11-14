@@ -2,7 +2,7 @@
 namespace BerkantAkinci.Week06.FotoapparatEinfach
 {
 
-    public class Start
+    public class FotoEinfachMain
     {
 
 
@@ -15,7 +15,7 @@ namespace BerkantAkinci.Week06.FotoapparatEinfach
         3. Klassen programmieren
         */
 
-        public static void Launch1()
+        public static void Launch()
         {
             System.Console.WriteLine("Hallo");
 
