@@ -2,14 +2,27 @@ using System;
 
 namespace FlorianBaier.Week05
 {
-    // Klasse für Objektiv
-    class Objektiv
+
+    abstract class Hardware
+    {
+        public string Seriennummer { get; set; }
+
+        public Hardware(string seriennummer)
+        {
+            Seriennummer = seriennummer;
+        }
+
+        public abstract override string ToString();
+    }
+
+    class Objektiv : Hardware
     {
         public int MinBrennweite { get; set; }
         public int MaxBrennweite { get; set; }
 
         // Konstruktor
         public Objektiv(int minBrennweite, int maxBrennweite)
+            : base($"Objektiv {minBrennweite}mm - {maxBrennweite}mm")
         {
             MinBrennweite = minBrennweite;
             MaxBrennweite = maxBrennweite;
@@ -17,18 +30,19 @@ namespace FlorianBaier.Week05
 
         public override string ToString()
         {
-            return $"Brennweite: {MinBrennweite}mm - {MaxBrennweite}mm";
+            return Seriennummer;
         }
     }
 
-    // Klasse für Speicherkarte
-    class Speicherkarte
+    // Klasse für Speicherkarte, erbt von Hardware
+    class Speicherkarte : Hardware
     {
         public int Kapazitaet { get; set; }
         public string Typ { get; set; }
 
         // Konstruktor
         public Speicherkarte(int kapazitaet, string typ)
+            : base($"{kapazitaet} GB {typ}")
         {
             Kapazitaet = kapazitaet;
             Typ = typ;
@@ -36,14 +50,13 @@ namespace FlorianBaier.Week05
 
         public override string ToString()
         {
-            return $"{Kapazitaet} GB {Typ}";
+            return Seriennummer;
         }
     }
 
-    // Klasse für Fotoapparat
-    class Fotoapparat
+    // Klasse für Fotoapparat, erbt von Hardware
+    class Fotoapparat : Hardware
     {
-        // Attribute
         private string model;
         private string hersteller;
         private double megapixel;
@@ -52,6 +65,7 @@ namespace FlorianBaier.Week05
 
         // Konstruktor
         public Fotoapparat(string model, string hersteller, double megapixel)
+            : base($"Fotoapparat {model} ({hersteller})")
         {
             this.model = model;
             this.hersteller = hersteller;
@@ -112,7 +126,7 @@ namespace FlorianBaier.Week05
         {
             string objektivInfo = objektiv != null ? objektiv.ToString() : "Kein Objektiv";
             string speicherkarteInfo = speicherkarte != null ? speicherkarte.ToString() : "Keine Speicherkarte";
-            return $"Fotoapparat {model} ({hersteller})\n" +
+            return $"{Seriennummer}\n" +
                    $"Megapixel: {megapixel} MP\n" +
                    $"Objektiv: {objektivInfo}\n" +
                    $"Speicherkarte: {speicherkarteInfo}";

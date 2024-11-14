@@ -15,6 +15,8 @@ namespace ManuelHartmann.Week06.FotoapparatErweitert
 
         public static void Launch()
         {
+            int countObjects = 0;
+            double sumPrices = 0;
             Speicherkarte memory2 = new Speicherkarte("SD Karte", "Samsung", 1000, "ABCD0001", 19.99, "Seriennummber_ABC");
             Objektiv lense2 = new Objektiv("Megaojektiv", "Canon", 50, 200, "ABCD002", 3000, "Seriennummber_SADF");
 
@@ -50,10 +52,12 @@ namespace ManuelHartmann.Week06.FotoapparatErweitert
 
             foreach (IObjekt gegenstand in inventarliste)
             {
+                countObjects++;
+                sumPrices += gegenstand.Price;
                 Console.WriteLine($"{gegenstand.Inventorynumber,-15} | {gegenstand.Price,-8:F2} EUR");
             }
-
-
+            Console.WriteLine("Anzahl der Inventargegenstaenden:           " + countObjects);
+            Console.WriteLine("Gesamtwert der Inventargegenstaenden: " + sumPrices + " EUR");
         }
         public static int add(int a, int b)
         {
