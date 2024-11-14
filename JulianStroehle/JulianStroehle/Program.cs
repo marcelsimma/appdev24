@@ -65,7 +65,12 @@ namespace JulianStroehle
             // AbwesenheitslisteV2.Start();
             // Inventur.Start();
             // Ordnerinhalt.Start();
-            OrdnerinhaltExtended.Start();
+            // OrdnerinhaltExtended.Start();
+            // ReadFormatWrite.Start();
+            // OOP.Start();
+            // Datenklasse.Start();
+            // KeyboardTest.Start();
+            FotoapparatOOP.Start();
             
         }
     }
