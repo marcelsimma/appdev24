@@ -14,8 +14,9 @@ namespace OliverBedogg.Week06
             // fahrzeug.fahren(40);
 
             Console.WriteLine("\nAuto -------------");
-            Auto auto = new Auto(400);
+            Auto auto = new Auto(400, 7.5);
             auto.fahren();
+            auto.verbrauchProKilometer();
 
             Console.WriteLine("\nEinrad -------------");
             Einrad einrad = new Einrad(4);
@@ -24,6 +25,10 @@ namespace OliverBedogg.Week06
             Console.WriteLine("\nMotorrad -------------");
             Motorrad motorrad = new Motorrad(300);
             motorrad.fahren(10);
+
+            Console.WriteLine($"Motorrad ist ein Fahrzeug: " + (motorrad is Fahrzeug));
+            Console.WriteLine($"Motorrad ist ein Motorrad: " + (motorrad is Motorrad));
+
         }
     }
 }

@@ -2,8 +2,8 @@ using System;
 
 namespace OliverBedogg.Week06
 {
-    // Klasse
-    public class Motorrad : Fahrzeug
+    // Sub-Klasse von Fahrzeug
+    public class Motorrad : Fahrzeug, IVerbraucher
     {
 
         public Motorrad(int kmStand) : base(kmStand)
@@ -22,6 +22,12 @@ namespace OliverBedogg.Week06
         public override void service()
         {
             Console.WriteLine($"Motorrad-Service");
+        }
+
+        // von Interface vorgegebene Methode
+        public void verbrauchProKilometer()
+        {
+            Console.WriteLine($"Das Motorrad verbraucht x Liter pro Kilometer.");
         }
     }
 }

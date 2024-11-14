@@ -2,7 +2,7 @@ using System;
 
 namespace OliverBedogg.Week06
 {
-    // Klasse
+    // Sub-Klasse von Fahrzeug
     public class Einrad : Fahrzeug
     {
         protected new int anzahlRaeder = 1;
