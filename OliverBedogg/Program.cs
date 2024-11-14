@@ -15,8 +15,10 @@ namespace OliverBedogg
             // weitere: https://learn.microsoft.com/de-de/cpp/c-language/escape-sequences
 
             // Woche 6 ------------------
+            TicketsystemMain.Start();
+            // QueueExample.Start();
             // ListExample.Start();
-            DictionaryExample.Start();
+            // DictionaryExample.Start();
             // FahrzeugMain.Start();
 
             // Woche 5 ------------------
