@@ -21,8 +21,9 @@ namespace FlorianBaier
             //Objektorientierung.StartPerson();
             //Objektorientierung.StartCar();
             //Datenklasse.Print();
-            Fotoapparat.Print();
+            //Fotoapparat.Print();
             //Bankaccount.Start();
+            Start.Launch();
         }
 
     }
