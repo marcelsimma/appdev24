@@ -25,7 +25,7 @@ namespace JonasWehinger
         //Buchstaben.Zaehler();
         //Tabele_Ordner.ordner();
         //Geburtstag.Tag();
-        Teilnehmerliste1.Streams();
+        //Teilnehmerliste1.Streams();
 
   
     }

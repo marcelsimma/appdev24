@@ -3,6 +3,7 @@ using MagdalenaMueller.Week01;
 using MagdalenaMueller.Week02;
 using MagdalenaMueller.Week03;
 using MagdalenaMueller.Week04;
+using MagdalenaMueller.Week05;
 
 
 namespace MagdalenaMueller
@@ -12,7 +13,7 @@ namespace MagdalenaMueller
     {
         static void Main()
         {
-            Calendar2024.CalenderProgramm();
+            WriteInventarListe.WriteInventarListeTabelle();
         }
         
     }
