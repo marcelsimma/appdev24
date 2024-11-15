@@ -66,7 +66,7 @@ namespace BerkantAkinci
             //Objektorientierung.PrintObjektorientierung();
             //Bankomat.PrintBakomat();
             //PKWMain.Start();
-            ZooMain.Start();
+            //ZooMain.Start();
             
             
             
