@@ -38,11 +38,19 @@ namespace Zoo
             // Somit wird der ListenInhalt wie gewuenscht ausgegeben.
             // Die 'StringBuilder-Klasse wird verwendet, um effizient eine Zeichenkette zu erstellen, die alle Tier-Objekte auflistet.
             StringBuilder tierDetails = new StringBuilder();
-            foreach (Tier tier in tierList)
+            // Es wird noch definiert was ausgegeben werden soll, wenn keine Tiere im Gehege sind.
+            if (tierList.Count == 0)
             {
-                tierDetails.AppendLine($"|       |- {tier}");
+                tierDetails.AppendLine($"|       |-- (leer)");
             }
-
+            else
+            {
+                // Alle Tiere im Gehege werden ausgegeben.
+                foreach (Tier tier in tierList)
+                {
+                    tierDetails.AppendLine($"|       |- {tier}");
+                }
+            }
             return String.Format(
             @"|   |- Gehege: {0}
 {1}"
