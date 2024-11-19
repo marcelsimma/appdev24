@@ -1,4 +1,5 @@
 using System;
+using System.IO.Pipes;
 
 namespace OliverBedogg.Week05
 {
@@ -26,6 +27,9 @@ namespace OliverBedogg.Week05
             // Attribut über getter abfragen:
             Console.WriteLine("Person 2 heißt " + p2._Name);
             Console.WriteLine($"Person 2 ist {p2.Height} cm groß.");
+
+p2.Height=170;
+            p2.getHeight();
 
             // Attribut über setter schreiben:
             p2.Height += 2;
