@@ -1,6 +1,6 @@
 namespace Ticketsystem
 {
-    public class Program
+    public class Start
     {
         /*
 
