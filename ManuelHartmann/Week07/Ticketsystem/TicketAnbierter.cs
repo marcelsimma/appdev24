@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ticketsystem
+namespace ManuelHartmann.Week07.Ticketsystem
 {
     public class TicketAnbieter
     {

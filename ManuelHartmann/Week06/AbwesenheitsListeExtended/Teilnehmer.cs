@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AbwesenheitslisteExtended
+namespace ManuelHartmann.Week06.AbwesenheitslisteExtended
 {
     public class Teilnehmer
     {

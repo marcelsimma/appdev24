@@ -1,4 +1,4 @@
-namespace Ticketsystem
+namespace ManuelHartmann.Week07.Ticketsystem
 {
     public class Start
     {

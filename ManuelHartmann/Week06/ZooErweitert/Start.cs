@@ -1,4 +1,4 @@
-namespace Zoo
+namespace ManuelHartmann.Week06.ZooErweitert
 {
     public class Program
     {
