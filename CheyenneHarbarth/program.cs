@@ -11,6 +11,7 @@ using CheyenneHarbarth.Week05.OOP;
 using CheyenneHarbarth.Week05.OOP.Fotoapparat;
 using CheyenneHarbarth.Week05.OOP.FahrzeugVererbung;
 using OverrideAndNew;
+using CheyenneHarbarth.Week05.OOP.Zoo;
 
 namespace CheyenneHarbarth
 {
@@ -69,9 +70,10 @@ namespace CheyenneHarbarth
             //Start.Launch();
             //AufgabeMotorrad.Start();
 
-            TestNewOverride.Start();
+            //TestNewOverride.Start();
             //FahrzeugStart.Launch();
 
+            ZooMain.Start();
         }
     }
 }
