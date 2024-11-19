@@ -24,7 +24,7 @@ namespace BarbaraMarte.Week01
 
             // Schule
             // ContactsArray.Start(); 
-            // ContactsList.Start();
+            ContactsList.Start();
             // ContactsNewList.Start();
 
             // Week06
@@ -33,7 +33,7 @@ namespace BarbaraMarte.Week01
             // Print.Start();
             // Start.Launch();
             // OutPut.Print();
-            PrintZoo.Print();
+            // PrintZoo.Print();
 
 
             // Week 05

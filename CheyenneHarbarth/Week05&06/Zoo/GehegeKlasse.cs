@@ -17,14 +17,14 @@ namespace CheyenneHarbarth.Week05.OOP.Zoo
             Name = name;
         }
 
-        public void TierHinzufügen(Tier __name)
+        public void TierHinzufügen(Tier _name)
         {
-            Tiere.Add(__name);
+            Tiere.Add(_name);
         }
 
-        public void TierWegbringen(Tier __name)
+        public void TierWegbringen(Tier _name)
         {
-            Tiere.Remove(__name);
+            Tiere.Remove(_name);
         }
     }
 }
