@@ -2,6 +2,7 @@
 using OliverBedogg.Week01;
 using OliverBedogg.Week02;
 using OliverBedogg.Week05;
+using OliverBedogg.Week06;
 
 namespace OliverBedogg
 {
@@ -13,8 +14,15 @@ namespace OliverBedogg
             Console.WriteLine("\n");
             // weitere: https://learn.microsoft.com/de-de/cpp/c-language/escape-sequences
 
+            // Woche 6 ------------------
+            TicketsystemMain.Start();
+            // QueueExample.Start();
+            // ListExample.Start();
+            // DictionaryExample.Start();
+            // FahrzeugMain.Start();
+
             // Woche 5 ------------------
-            Objektorientierung.Start();
+            // Objektorientierung.Start();
 
             // Woche 4 ------------------
             // Calendar.Start();

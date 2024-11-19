@@ -8,6 +8,11 @@ using CheyenneHarbarth.Week04;
 using CheyenneHarbarth.Week05;
 using CheyenneHarbarth.Week05.Streams;
 using CheyenneHarbarth.Week05.OOP;
+using CheyenneHarbarth.Week05.OOP.Fotoapparat;
+using CheyenneHarbarth.Week05.OOP.FahrzeugVererbung;
+using OverrideAndNew;
+using CheyenneHarbarth.Week05.OOP.Zoo;
+using CheyenneHarbarth.Week07.Callcenter;
 
 namespace CheyenneHarbarth
 {
@@ -17,7 +22,9 @@ namespace CheyenneHarbarth
 
         static void Main(string[] args)
         {
-
+            //Testaufgabe.Start();
+            //RBStart.Start();
+            //LoL.Start(30, 120);
             //ChristmasTree.PrintTree('*', 15);
             //Calculator.CalcSum(21, 50);
 
@@ -57,12 +64,20 @@ namespace CheyenneHarbarth
 
             //Streams.Aufgabe1();
             //Streams.Aufgabe2();
-            //Streams.Aufgabe3();
+            //Quadrieren.Start();
             //Streams.Aufgabe4();
+            //Artikelliste.Start();
             //Arraywiederholung.PrintSortiment();
             //Datenklassen.Start();
-            AufgabeMotorrad.Start();
+            //Start.Launch();
+            //AufgabeMotorrad.Start();
 
+            //TestNewOverride.Start();
+            //FahrzeugStart.Launch();
+
+            //ZooMain.Start();
+
+            Callcenter.Start();
         }
     }
 }
