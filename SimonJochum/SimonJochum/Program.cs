@@ -1,13 +1,20 @@
 ﻿using System;
-using OliverBedogg.Week02;
+using System.Text.Unicode;
 using SimonJochum.Week01;
 using SimonJochum.Week02;
 using SimonJochum.Week03;
 using SimonJochum.Week04;
 using SimonJochum.Week05;
+using SimonJochum.Week06;
+using SimonJochum.Week06.Camera;
+using SimonJochum.Week06.AttendanceListOOP;
+using SimonJochum.Week06.Vehicles;
+using SimonJochum.Week06.Zoo;
+using SimonJochum.Week06.Ticketsystem;
+using SimonJochum.Week07;
 
 namespace SimonJochum;
- 
+
 class Program
 {
     public static void Main()
@@ -24,7 +31,7 @@ class Program
         // Rewind.Start();
         // Schleifen.Start();
         // SelfSquare.Start();
-        
+
         // Week02
         // BubbleSort.Start();
         // ConsoleInput.Start();
@@ -71,6 +78,18 @@ class Program
         // DirectoryValueTest.Start();
         // DirectoryValue.Start();
         // OutputSortedCSV.Start();
-        ExerciseOOP.Start();
+        // ExerciseOOP.Start();
+
+        //Week06
+        // PruefungDigitalCampus.Start();
+        // Start.StartNow();
+        // Start.PrintInventarliste();
+        // AttendanceList2.StartNow();
+        // StartVehicle.StartNowVehicle();
+        // StartZoo.Start();
+        // StartConcert.Start();
+
+        //Week07
+        BrowserHistory.Start();
     }
 }
