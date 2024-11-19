@@ -6,6 +6,7 @@ class ContactsNewList
     public static List<string> firstName = new List<string>();
     public static List<string> lastName = new List<string>();
     public static List<string> phoneNumber = new List<string>();
+    public static List<string> category = new List<string>();
     public static int count = 0;
 
     /// <summary>
@@ -13,11 +14,12 @@ class ContactsNewList
     /// </summary>
     public static void Start()
     {
+        Console.Clear();
         Console.WriteLine(@"
         Add Contact => 1
         Search Contact => 2
         Delete Contact => 3
-        Print out al your contacts => 4
+        Print out all your contacts => 4
         Leave the Program => E
         ");
         string? choice = Console.ReadLine();
@@ -54,13 +56,64 @@ class ContactsNewList
         {
             Console.WriteLine($"First name: {firstName[i]}, family name: {lastName[i]}, phone number: {phoneNumber[i]}");
         }
+
+        /*
+        Console.WriteLine();
+        // Combine all lists in a single structure for sorting
+        var contacts = firstName
+        .Select((fName, index) => new
+        {
+            FirstName = fName,
+            LastName = lastName[index],
+            PhoneNumber = phoneNumber[index]
+        })
+        .OrderBy(contact => contact.LastName)   // Sort by last name
+        .ThenBy(contact => contact.FirstName)   // Optional if the last name accurse mort than once: Sort by first name
+        .ToList();
+        foreach (var contact in contacts)
+        {
+            Console.WriteLine($"First name: {contact.FirstName}, Family name: {contact.LastName}, Phone number: {contact.PhoneNumber}.");
+        }
+
+
+        .Sort() saves the sort and the lists don't match after you did that!!
+
+        lastName.Sort();
+        for (int x = 0; x < lastName.Count; x++)
+        {
+            Console.WriteLine($"Family name: {lastName[x]}");
+        }
+        */
+
+
         Start();
     }
+
+
     /// <summary>
     /// Adding contacts
     /// </summary>
     public static void AddContact()
     {
+        Console.WriteLine("Is the following contact in your 'Friend', 'Family' or 'Work' List?");
+        string? input = Console.ReadLine().ToLower();
+        if (input == "friend")
+        {
+            category.Add("Friend");
+        }
+        else if (input == "family")
+        {
+            category.Add("Family");
+        }
+        else if (input == "work")
+        {
+            category.Add("Work");
+        }
+        else
+        {
+            Console.WriteLine("Not valid input");
+        }
+
         Console.WriteLine("Please enter your first name:");
         firstName.Add(Console.ReadLine());
 
@@ -71,6 +124,7 @@ class ContactsNewList
         phoneNumber.Add(Console.ReadLine());
         Start();
     }
+
     /// <summary>
     /// You put in the search for your contact
     /// </summary>
@@ -80,6 +134,7 @@ class ContactsNewList
         Console.WriteLine(SearchInList());
         Start();
     }
+
     /// <summary>
     /// you search in here the contact list
     /// </summary>
@@ -92,15 +147,19 @@ class ContactsNewList
         {
             if (firstName[i] == input)
             {
-                foundContacts.Add($"{firstName[i]} {lastName[i]} - Phone number: {phoneNumber}");
+                foundContacts.Add($"{firstName[i]} {lastName[i]} - Phone number: {phoneNumber[i]}, Category: {category}");
             }
             else if (lastName[i] == input)
             {
-                foundContacts.Add($"{firstName[i]} {lastName[i]} - Phone number: {phoneNumber}");
+                foundContacts.Add($"{firstName[i]} {lastName[i]} - Phone number: {phoneNumber[i]}, Category: {category}");
             }
             else if (phoneNumber[i] == input)
             {
-                return ($"{firstName[i]} {lastName[i]} - Phone number: {phoneNumber}");
+                foundContacts.Add($"{firstName[i]} {lastName[i]} - Phone number: {phoneNumber[i]}, Category: {category}");
+            }
+            else if (category[i] == input)
+            {
+                foundContacts.Add($"{firstName[i]} {lastName[i]} - Phone number: {phoneNumber[i]}, Category: {category}");
             }
         }
         if (foundContacts.Count == 0)
@@ -140,8 +199,6 @@ class ContactsNewList
         {
             Console.WriteLine($"The name you entered is not in your contact list.");
         }
-
         Start();
     }
-
 }
