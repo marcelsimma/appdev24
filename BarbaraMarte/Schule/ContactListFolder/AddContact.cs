@@ -2,7 +2,7 @@ using System;
 
 namespace BarbaraMarte.Schule.ContactsListFolder;
 
-class AddContact : ContactsNewList
+class AddContact : ContactListFolder
 {
     public static void AddContacts()
     {
@@ -33,7 +33,6 @@ class AddContact : ContactsNewList
 
         Console.WriteLine("Please enter a phone number:");
         phoneNumber.Add(Console.ReadLine());
-        Start();
     }
 
 }

@@ -1,8 +1,9 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
+using System.Reflection.Metadata.Ecma335;
 namespace BarbaraMarte.Schule.ContactsListFolder;
 
-class ContactsNewList
+class ContactListFolder
 {
     public static List<string> firstName = new List<string>();
     public static List<string> lastName = new List<string>();
@@ -15,9 +16,9 @@ class ContactsNewList
     /// </summary>
     public static void Start()
     {
-        while (true)
+        bool running = true;
+        while (running)
         {
-
             Console.Clear();
             Console.WriteLine(@"
             Add Contact => 1
@@ -27,7 +28,6 @@ class ContactsNewList
             Leave the Program => E
             ");
             string? choice = Console.ReadLine();
-
             switch (choice)
             {
                 case "1":
@@ -49,13 +49,12 @@ class ContactsNewList
                 case "E":
                 case "e":
                     Console.WriteLine("You are leaving the program now. Have a lovely day!");
+                    running = false;
                     break;
                 default:
                     Console.WriteLine("Invalid Input. Please try again");
                     break;
-
             }
-
         }
     }
 }

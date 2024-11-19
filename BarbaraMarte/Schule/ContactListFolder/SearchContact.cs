@@ -1,6 +1,6 @@
 namespace BarbaraMarte.Schule.ContactsListFolder;
 
-class SearchContact : ContactsNewList
+class SearchContact : ContactListFolder
 {
     public static string SearchInList()     //  use a string instead a void that I can use a return in the if part. Makes it easier to return value
     {

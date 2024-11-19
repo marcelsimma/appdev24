@@ -1,6 +1,6 @@
 namespace BarbaraMarte.Schule.ContactsListFolder;
 
-class DeleteContact : ContactsNewList
+class DeleteContact : ContactListFolder
 {
     public static void DeleteContacts()
     {
