@@ -5,6 +5,8 @@ using JonasWehinger.Week02;
 using JonasWehinger.Week03;
 using JonasWehinger.Week04;
 using JonasWehinger.Week05;
+using JonasWehinger.Week06;
+using JonasWehinger.Week07;
 namespace JonasWehinger
 {
     public class Program
