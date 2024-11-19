@@ -23,7 +23,8 @@ namespace FlorianBaier
             //Datenklasse.Print();
             //Fotoapparat.Print();
             //Bankaccount.Start();
-            Start.Launch();
+            //Start.Launch();
+            PrintTicketsales.Start();
         }
 
     }
