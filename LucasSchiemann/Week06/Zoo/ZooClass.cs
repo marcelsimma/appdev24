@@ -1,17 +1,11 @@
 using System;
 
-public class Zoo
+public interface Zoo
 {
     
     public string ZooName{get;set;}
 
-    public int GründungsJahr{get;set;}    
+    public int GruendungsJahr{get;set;}    
 
-    public Zoo(string _zooName,int _gründungJahr)
-    {
-        ZooName = _zooName;
-
-        GründungsJahr = _gründungJahr;
-
-    }
+   
 }

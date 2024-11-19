@@ -25,11 +25,10 @@ public class AlgorythmChooser
                 sortedArray = InsertionSort.DoInsertionSort(ArrayToUse,lengthArray);
                 break;
             case 4:
-                //sortedArray = MergeSort.DoMergeSort(ArrayToUse,0,lengthArray-1,lengthArray);
-                //sortedArray = MergeSort.SoLauftDesHoschGhört(ArrayToUse,0,lengthArray-1,lengthArray); 
+                sortedArray = MergeSort.DoMergeSort(ArrayToUse,0,lengthArray-1,lengthArray);
                 break;
             case 5:
-                sortedArray = QuickSort.DoQuickSort(ArrayToUse,0,lengthArray-1,ArrayAccesses);
+                sortedArray = QuickSort.DoQuickSort(ArrayToUse,0,lengthArray-1,ArrayAccesses,lengthArray);
                 break;
             case 6:
                 sortedArray = HeapSort.DoHeapSort(ArrayToUse,lengthArray);
@@ -126,5 +125,20 @@ public class AlgorythmChooser
         Console.WriteLine("best:              " + best);
         Console.WriteLine("worst:             " + worst);
         Console.WriteLine("your Arrayaccses:  " + Onotation);
+    }
+    
+    public static float logNCalculator(int lengthOfArray)
+    {
+        int TempLength = lengthOfArray; 
+
+            try {
+                lengthOfArray = lengthOfArray /2;
+                
+            }
+            catch{
+
+            }
+            return 0;
+
     }
 }

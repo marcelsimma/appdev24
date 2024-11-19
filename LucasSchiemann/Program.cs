@@ -12,8 +12,8 @@ namespace LucasSchiemann;
     {
     static void Main()
     {
-        Bankkonto.Start();
-        //AlgorythmChooser.ChoseSortAlgorythm();
+        //Bankkonto.Start();
+        AlgorythmChooser.ChoseSortAlgorythm();
         //Teilnehmerliste.Start();
         //AlgorithmTester.ChoseSortAlgorythm();
         //Tabellensorter.Start();

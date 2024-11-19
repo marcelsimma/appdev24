@@ -52,7 +52,7 @@ public class InsertionSort
                 }
 
             }
-            //ArrayAceesses++;
+            ArrayAceesses++;
         }
         AlgorythmChooser.PrintArrayAccesses(ArrayAceesses, best, worst, "Insetion Sort");
         //Returns the Sorted Array

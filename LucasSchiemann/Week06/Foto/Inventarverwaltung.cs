@@ -6,7 +6,6 @@ public interface InventarVerwaltung
 {
 
     public string InventarNummer{get;set;}
-    public string PrintInventarnummer();
 
     public string PrintInventarnummer()
     {

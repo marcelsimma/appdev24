@@ -1,23 +1,33 @@
 using System;
 using System.Security;
 using System.Xml.Serialization;
+using LucasSchiemann.Week02;
 
 namespace LucasSchiemann.SortAlgorithmChooser;
 
 public class MergeSort
 {
 
-    private  static int ArrayAccesses = 0 ;
+    public  static int ArrayAccesses = 0 ;
     private static double bestONotation;
     private static double worstONotation;       
     
     public static int [] DoMergeSort (int[] array, int left, int right,int arraylength)
     {
-        bestONotation = (double)arraylength;
-        worstONotation = Math.Pow(arraylength, 2);
-        MergeSortMethod(array, left,right,arraylength);
-        AlgorythmChooser.PrintArrayAccesses(ArrayAccesses, bestONotation, worstONotation, "bubble Sort");
+
+        ArrayAccesses = 0;  
+
+        bestONotation =Math.Log10(arraylength) * arraylength;
+
+        worstONotation = bestONotation;
+                                                    
+        
+        MergeSortMethod(array,left,right,arraylength);
+        
+        AlgorythmChooser.PrintArrayAccesses(ArrayAccesses, bestONotation, worstONotation, "Merge Sort");
+        
         return array;
+    
     }
     public static int[] MergeSortMethod( int[] array, int left, int right,int arraylength)
     {
@@ -58,11 +68,11 @@ public class MergeSort
         Fill those two temp Arrays with the Numbers from the Array  
         */
         for (i = 0; i < leftArrayLength; ++i){
-            countArrayaccesses(ArrayAccesses);
+            ArrayAccesses++;
             leftTempArray[i] = array[left + i];
             }
         for (j = 0; j < rightArrayLength; ++j){
-            countArrayaccesses(ArrayAccesses);
+            ArrayAccesses++;
             rightTempArray[j] = array[middle + 1 + j];
             }
         i = 0;
@@ -75,7 +85,7 @@ public class MergeSort
         */
         while (i < leftArrayLength && j < rightArrayLength)
         {
-            countArrayaccesses(ArrayAccesses);
+            ArrayAccesses++;
             if (leftTempArray[i] <= rightTempArray[j])
             {
                 array[k++] = leftTempArray[i++];
@@ -90,21 +100,23 @@ public class MergeSort
         */
         while (i < leftArrayLength)
         {
-            countArrayaccesses(ArrayAccesses);
+            ArrayAccesses++;
             array[k++] = leftTempArray[i++];
         }
 
         while (j < rightArrayLength)
         {
-            countArrayaccesses(ArrayAccesses);
+            ArrayAccesses++;
             array[k++] = rightTempArray[j++];
         }
-        
+
         
     }
     public static void countArrayaccesses(int ArrayAccesses)
     {
+
         ArrayAccesses++;
+    
     }
     
 }
