@@ -4,10 +4,13 @@ namespace LucasSchiemann.Week06.Foto;
 
 public interface InventarVerwaltung
 {
-    public float Preis {get;set;}
 
     public string InventarNummer{get;set;}
+    public string PrintInventarnummer();
 
-  
+    public string PrintInventarnummer()
+    {
+        return "Inventarnummer der Speicherkarte.";
+    }
 
 }

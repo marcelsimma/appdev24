@@ -1,12 +1,14 @@
 using System;
 using LucasSchiemann.Week06.Foto;
 
-namespace LucasSchiemann.Week06.Foto
-{
-public class FotoAparat:Hardware
+namespace LucasSchiemann.Week06.Foto;
+
+public class FotoAparat:Hardware,InventarVerwaltung
 {
 
         public string Bezeichnung { get; set; }
+
+        public string InventarNummer{ get; set; }
 
         public Speicher Speicher;
 
@@ -17,11 +19,11 @@ public class FotoAparat:Hardware
         }
 
         public override string PrintSeriennummer() {
-            return "Fotoapparat-" + base.WriteSeriennummer();
+            return "Fotoapparat-" + base.PrintSeriennummer();
         }
-        public override string ToString()
+        public override string PrintInventarnummer()
         {
-
+            return "Inventarnummer der Fotoapparates.";
             
         }
     }

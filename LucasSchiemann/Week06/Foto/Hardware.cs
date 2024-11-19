@@ -4,18 +4,17 @@ namespace LucasSchiemann.Week06.Foto
 {
     public class Hardware
     {
-    public int _Megapixel{get; set;}
+    public string _Publisher;
 
-    public string _Model{get; set;}
+    public string _Model;
 
-    public int _SerienNummer{get; set;}
+    public int _SerienNummer;
 
-    public Hardware(int serienNummer)
+    public Hardware(int serienNummer,string model,string publisher)
     {
-        _SerienNummer = serienNummer;
+        _SerienNummer = serienNummer; 
     }
     
-    public virtual 
 
 
     public virtual string WriteSeriennummer()

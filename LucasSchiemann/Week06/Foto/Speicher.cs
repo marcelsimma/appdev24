@@ -2,9 +2,11 @@ using System;
 
 namespace LucasSchiemann.Week06.Foto
 {
-    public class Speicher:Hardware
+    public class Speicher:Hardware,InventarVerwaltung
     {
         public float Speicherplatz{get;set;}
+        
+        public string Inventarnummer { get; set; }
 
         public string Bezeichnung;
         
