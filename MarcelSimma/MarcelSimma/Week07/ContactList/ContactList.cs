@@ -1,5 +1,7 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 
 namespace MarcelSimma.Week07.ContactList {
@@ -11,6 +13,7 @@ namespace MarcelSimma.Week07.ContactList {
         public static void Start() {
 
             List<ContactItem> contactList = new List<ContactItem>(18);
+            
 
             contactList.Add(new ContactItem("Barbara", "Marte", "+43....", "Bregenz"));
             contactList.Add(new ContactItem("Barbara", "Marte", "+43....", "Bregenz"));
@@ -33,7 +36,9 @@ namespace MarcelSimma.Week07.ContactList {
             contactList.Add(new ContactItem("Barbara", "Marte", "+43....", "Bregenz"));
             contactList.Add(new ContactItem("Barbara", "Marte", "+43....", "Bregenz"));
             contactList.Add(new ContactItem("Barbara", "Marte", "+43....", "Bregenz"));
-            contactList.Add(ContactItem.ReadContactItemFromConsole());
+            
+            // Element von der Console einlesen und hinten zur Liste hinzufügen
+            //contactList.Add(ContactItem.ReadContactItemFromConsole());
             
             // Element zwischen vorhandenen Elementen einfügen
             // contactList.Insert();
@@ -55,6 +60,10 @@ namespace MarcelSimma.Week07.ContactList {
             // Kontakt basierend auf Index auf der Console ausgeben
             Console.WriteLine(contactList[4]);
             // Console.WriteLine führt immer automatisch die .ToString() methode für jede Variable aus. 
+
+            System.Console.WriteLine(contactList.Find(item => item.Firstname == "Marcel"));
+
+            
 
             
             
