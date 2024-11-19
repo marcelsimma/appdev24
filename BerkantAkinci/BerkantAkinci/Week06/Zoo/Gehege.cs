@@ -2,22 +2,25 @@ using System;
 
 namespace BerkantAkinci.Week06.Zoo
 {
-
     public class Gehege
     {
+        public string _Name;
 
-        private string _name;
-
-        public string _Name
-        {
-            get => _name;
-            set => _name = value;
-        }
+        public List<Tier> Tiere = new List<Tier>();
 
         public Gehege(string name)
         {
-            _name = name;
+            _Name = name;
         }
-        
+
+        public void AddTier(Tier _Name)
+        {
+            Tiere.Add(_Name);
+        }
+
+        public void RemoveTier(Tier _Name)
+        {
+            Tiere.Remove(_Name);
+        }
     }
 }

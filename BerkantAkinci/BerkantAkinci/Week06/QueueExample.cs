@@ -35,6 +35,8 @@ namespace BerkantAkinci.Week06
 
             // Entferne Alle Einträge
             numbers.Clear();
+
+             Console.WriteLine("'five' existiert in der Queue: {0}", numbers.Contains("five"));
         }
     }
 }

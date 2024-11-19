@@ -2,29 +2,21 @@ using System;
 
 namespace BerkantAkinci.Week06.Zoo
 {
-
     public class Tier
     {
-        private string _name;
-        public string _Name
-        {
-            get => _name;
-            set => _name = value;
-        }
+        public string _Name;
 
-        private string _gattung;
-        public string _Gattung
-        {
-            get => _gattung;
-            set => _gattung = value;
-        }
+        public string _Gattung;
 
         public Tier(string name, string gattung)
         {
-            _name = name;
-            _gattung = gattung;
+            _Name = name;
+            _Gattung = gattung;
         }
 
-
+         public override string ToString()
+        {
+            return String.Format(_Name + ", " + _Gattung);
+        }
     }
 }

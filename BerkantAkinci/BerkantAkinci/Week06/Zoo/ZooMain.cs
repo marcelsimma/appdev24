@@ -2,49 +2,45 @@ using System;
 
 namespace BerkantAkinci.Week06.Zoo
 {
-
     class ZooMain
     {
-
         public static void Start()
         {
+            //HeadLine
+            ZooName meinZoo = new ZooName("Tierparadies Dornbirn", 1864);
+
+            //Liste mit den Gehegen erstellen
             Gehege gehege1 = new Gehege("Alpenwiese");
             Gehege gehege2 = new Gehege("Ried");
             Gehege gehege3 = new Gehege("Terrarium");
 
+            //Liste mit den Gehegen einfügen
+            meinZoo.AddGehege(gehege1);
+            meinZoo.AddGehege(gehege2);
+            meinZoo.AddGehege(gehege3);
+
+            //Liste mit Tieren erstellen
             Tier tier1 = new Tier("Rijska", "Kuh");
             Tier tier2 = new Tier("Garmond", "Storch");
             Tier tier3 = new Tier("Hugo", "Storch");
             Tier tier4 = new Tier("Idaxis", "Storch");
 
-            List<Gehege> zooStruktur = [gehege1, gehege2, gehege3];
-            List<Tier> tierNamen = [tier1, tier2, tier3, tier4];
+            //Liste mit Tieren einfügen
+            gehege1.AddTier(tier1);
+            gehege2.AddTier(tier2);
+            gehege2.AddTier(tier3);
+            gehege2.AddTier(tier4);
 
-            ZooName meinZoo = new ZooName("Tierparadies Mühlebach", 1864);
+            //Struktur einfügen, wie es ausgeben soll
+            meinZoo.ZooStruktur();
 
-            System.Console.WriteLine($"|----Zoo: {meinZoo._Name}, gegründet {meinZoo._Gruendungsjahr}");
+            //Entfernen von Gehege und Tier
+            meinZoo.RemoveGehege(gehege1);
+            gehege1.RemoveTier(tier1);
 
-            foreach (Gehege gehegen in zooStruktur)
-            {
-                System.Console.WriteLine($"|    |----Gehege: {gehegen._Name}");
-
-                if (gehegen == gehege1)
-                {
-                    System.Console.WriteLine($"|         |---- {tier1._Name}, {tier1._Gattung}");
-                }
-
-                if (gehegen == gehege2)
-                {
-                    System.Console.WriteLine($"|         |---- {tier2._Name}, {tier2._Gattung}");
-                    System.Console.WriteLine($"|         |---- {tier3._Name}, {tier3._Gattung}");
-                    System.Console.WriteLine($"|         |---- {tier4._Name}, {tier4._Gattung}");
-                }
-
-                if (gehegen == gehege3)
-                {
-                    System.Console.WriteLine($"|         |----(leer)");
-                }
-            }
+            //Erneute Ausgabe ohne die entfernten Sachen
+            System.Console.WriteLine("\nAbbildung nach dem Entfernen vom Gehege:");
+            meinZoo.ZooStruktur();
         }
     }
 }
