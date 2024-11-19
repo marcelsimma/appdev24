@@ -34,34 +34,5 @@ namespace SimonJochum.Week05
             }
             writer.WriteLine($"Im Pfad {directoryPath} befinden sich {countDirectorys} Ordner, in welchem sich wiederrum {countSubDirectorys} Unterordner befinden, sowie {countFiles} Dateien befinden.");
         }
-
-        // public static void Start2()
-        // {
-        //     string directoryPath = @"C:\Schule";
-
-
-        //     ListFilesAndDirectories(directoryPath);
-        // }
-
-        // // Rekursive Methode zum Auflisten von Dateien und Ordnern
-        // static void ListFilesAndDirectories(string path)
-        // {
-        //     // Alle Dateien im aktuellen Verzeichnis ausgeben
-        //     string[] files = Directory.GetFiles(path);
-        //     foreach (var file in files)
-        //     {
-        //         Console.WriteLine("Datei: " + file);
-        //     }
-
-        //     // Alle Unterordner im aktuellen Verzeichnis durchgehen
-        //     string[] directories = Directory.GetDirectories(path);
-        //     foreach (var directory in directories)
-        //     {
-        //         Console.WriteLine("Ordner: " + directory);
-
-        //         // Rekursiv in den Unterordner gehen
-        //         ListFilesAndDirectories(directory);
-        //     }
-        // }
     }
 }

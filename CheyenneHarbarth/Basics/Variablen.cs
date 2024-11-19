@@ -40,7 +40,7 @@ namespace CheyenneHarbarth.Basics
         public static void String()
         {
             string example = "Hallo, liebes Publikum!";
-            
+
             //Array erstellen aus String
             char[] exampleArray = example.ToCharArray();
 
@@ -49,15 +49,15 @@ namespace CheyenneHarbarth.Basics
             Console.WriteLine($"Länge des Strings: {stringLength}");
 
             //Klein oder Großschreibung
-            Console.WriteLine(example.ToUpper());
-            Console.WriteLine(example.ToLower());
+            Console.WriteLine(example.ToUpper());               //hallo, liebes Publikum
+            Console.WriteLine(example.ToLower());               //HALLO, LIEBES PUBLIKUM
 
             //Substring ausgeben
-            string substring = example.Substring(3,5);
+            string substring = example.Substring(3, 5);          //lo, l
             Console.WriteLine(substring);
 
             //Index finden
-            int index = example.IndexOf("lo");
+            int index = example.IndexOf("lo");                  //3
             Console.WriteLine(index);
 
             //Contains, um Inhalte zu finden
@@ -70,7 +70,8 @@ namespace CheyenneHarbarth.Basics
 
             //Split, auseinandertrennen
             string[] splitted = example.Split("l");
-            foreach(string elem in splitted) {
+            foreach (string elem in splitted)
+            {
                 Console.Write(elem);
             }
             Console.WriteLine();

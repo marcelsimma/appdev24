@@ -8,21 +8,13 @@ namespace OliverBedogg.Week05
         // Attribute
         public string _Name;
         public int _Age;
-        int _Height;
+        int _Height; //m
         int _Weight;
 
-<<<<<<< HEAD
-		public string Name 
-		{
-			get => "\"" + _Name + "\"";
-		}
-=======
-        // getter mit erweiterter Rückgabe des Attributwerts
         public string Name
         {
             get => "\"" + _Name + "\"";
         }
->>>>>>> c27633ddeb7e2d49e9a58bfe66df3378174ac678
 
         // getter und setter für die Größe
         public int Height
@@ -38,6 +30,11 @@ namespace OliverBedogg.Week05
             _Age = age;
             _Height = height;
             _Weight = weigth;
+        }
+
+        public int getHeight()
+        {
+            return _Height * 100;
         }
 
         // Methode

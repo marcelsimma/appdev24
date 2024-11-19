@@ -11,8 +11,8 @@ namespace BerkantAkinci.Week01
             Console.WriteLine("Hello, World!");
             Console.WriteLine(" ");
             Console.WriteLine("       __");
-            Console.WriteLine(@"      /  \");       //Das @ steht da weil ein Blackslash nicht ein so alleine stehen darf
-            Console.WriteLine("     / /\\ \\");         // somit kann es alleine stehen da es alle anderen Befele vom Backslash "ausschaltet"
+            Console.WriteLine(@"      /  \");       //Das @ steht da weil ein Backslash nicht ein so alleine stehen darf
+            Console.WriteLine("     / /\\ \\");    // somit kann es alleine stehen da es alle anderen Befele vom Backslash "ausschaltet"
             Console.WriteLine("    / /  \\ \\");
             Console.WriteLine("   / /    \\ \\");
             Console.WriteLine("  / /      \\ \\");
