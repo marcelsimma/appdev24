@@ -10,6 +10,8 @@ using MarcelSimma.Week05;
 using MarcelSimma.Week06.FotoapparatErweitert;
 using MarcelSimma.Week06.Datenklasse;
 using MarcelSimma.Week07.ContactList;
+using MarcelSimma.Week07.Callcenter;
+using MarcelSimma.Week07;
 
 namespace MarcelSimma
 {
@@ -56,7 +58,8 @@ namespace MarcelSimma
 
             //Datenklasse.Start();
 
-            ContactList.Start();
+            //Callcenter.Start();
+            ArrayListExample.Start();
 
         }
 
