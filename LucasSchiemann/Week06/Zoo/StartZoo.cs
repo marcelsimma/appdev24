@@ -1,9 +1,16 @@
 using System;
+using System.Security.Cryptography.X509Certificates;
 
-public class Start
+namespace LucasSchiemann.Week06.Zoo;
+
+public class StartOfZoo
 {
-    public void StartMethod()
+    public static void StartMethod()
     {
+        List<Gehege> GehegeZoo = new List<Gehege>();
+        GehegeZoo.Add(new Gehege("Berliner Zoo","1990","Affengehege"));
+
+
         
 
 

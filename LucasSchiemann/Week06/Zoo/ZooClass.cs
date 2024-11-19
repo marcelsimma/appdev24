@@ -1,11 +1,13 @@
 using System;
 
-public interface Zoo
+public class Zoo
 {
     
     public string ZooName{get;set;}
 
-    public int GruendungsJahr{get;set;}    
+    public string GruendungsJahr{get;set;}    
 
-   
+    
+
+
 }

@@ -6,14 +6,16 @@ using LucasSchiemann.Week04;
 using LucasSchiemann.Week05;
 using LucasSchiemann.SortAlgorithmChooser;
 using LucasSchiemann.Week06;
+using LucasSchiemann.Week06.Zoo;
 namespace LucasSchiemann;
 
     class Program
     {
     static void Main()
     {
+        StartOfZoo.StartMethod();
         //Bankkonto.Start();
-        AlgorythmChooser.ChoseSortAlgorythm();
+        //AlgorythmChooser.ChoseSortAlgorythm();
         //Teilnehmerliste.Start();
         //AlgorithmTester.ChoseSortAlgorythm();
         //Tabellensorter.Start();
