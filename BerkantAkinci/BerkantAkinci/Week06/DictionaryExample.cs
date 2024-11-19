@@ -36,7 +36,7 @@ namespace BerkantAkinci.Week06
 
             dict.Remove("UFO");
             Console.WriteLine(
-                "Es gibt {0} aktiv Trainer.",
+                "Es gibt {0} aktive Trainer.",
                 dict.Count
                 );
         }

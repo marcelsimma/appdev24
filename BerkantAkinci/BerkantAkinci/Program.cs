@@ -12,7 +12,6 @@ using BerkantAkinci.Week06;
 using BerkantAkinci.Week06.FOS;
 using BerkantAkinci.Week06.FotoapparatEinfach;
 using BerkantAkinci.Week06.FotoapparatErweitert;
-using BerkantAkinci.Week06.FotoapparatErweitert;
 using BerkantAkinci.Week06.PKW;
 using BerkantAkinci.Week06.Zoo;
 
@@ -68,7 +67,8 @@ namespace BerkantAkinci
             //PKWMain.Start();
             //ZooMain.Start();
             //QueueExample.Start();
-            ListExample.Start();
+            //ListExample.Start();
+            TicketsystemMain.Start();
             
             
             
