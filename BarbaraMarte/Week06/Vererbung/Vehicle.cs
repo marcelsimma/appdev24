@@ -4,9 +4,9 @@ namespace BarbaraMarte.Week06.Vererbung;
 
 public class Vehicle
 {
-    public int wheels = 4;
+    public int Tire = 4;
     public int maxSpeed = 200;
-
+    public int KM;
 
     public string _Name;
     public string _Color;

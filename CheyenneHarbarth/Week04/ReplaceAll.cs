@@ -33,7 +33,7 @@ namespace CheyenneHarbarth.Week04
                 }
                 if (char.IsWhiteSpace(elem))
                 {
-                    spaceresult += elem;                                        
+                    spaceresult += elem;
 
                 }
                 if (elem == '!')
