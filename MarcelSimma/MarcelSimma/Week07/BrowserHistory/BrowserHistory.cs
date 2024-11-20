@@ -58,13 +58,15 @@ namespace MarcelSimma.Week07.BrowserHistory {
             
             
             /*
+
+            // Lösungshilfe für User Input
             
             System.ConsoleKeyInfo key = Console.ReadKey();
 
             if(key.Key == ConsoleKey.LeftArrow) {
-                System.Console.WriteLine("Lesen");
+                // Element vom Stack entfernen
             } else {
-                System.Console.WriteLine("schreiben");
+                // Element zum Stack hinzufügen
             }
 
             */
