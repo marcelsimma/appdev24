@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zoo
+namespace ManuelHartmann.Week06.ZooErweitert
 {
     public class Zoo
     {
