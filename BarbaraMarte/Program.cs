@@ -12,7 +12,8 @@ using BarbaraMarte.Week06.CameraEasy;
 using BarbaraMarte.Week06.CameraExtended;
 using BarbaraMarte.Week06.Zoo;
 using BarbaraMarte.Week07.QueueCallCenter;
-using BarbaraMarte.Schule.ContactsListFolder;
+using BarbaraMarte.Week07.UMLAufgabe;
+using BarbaraMarte.Schule.ContactListFolder;
 
 
 namespace BarbaraMarte.Week01
@@ -27,7 +28,7 @@ namespace BarbaraMarte.Week01
             // Schule
             // ContactsArray.Start(); 
             // ContactsList.Start();
-            ContactsNewList.Start();
+            // ContactsNewList.Start();
             // ContactListFolder.Start();
 
 

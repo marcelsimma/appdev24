@@ -1,19 +1,24 @@
 using System;
 namespace BarbaraMarte.Schule;
 
+enum ContactCategory
+{
+    Friend = 1,
+    Family = 2,
+    Work = 3
+}
 class ContactsNewList
 {
     public static List<string> firstName = new List<string>();
     public static List<string> lastName = new List<string>();
     public static List<string> phoneNumber = new List<string>();
-    public static List<string> category = new List<string>();
+    public static List<ContactCategory> category = new List<ContactCategory>();
     public static int count = 0;
 
     /// <summary>
     /// Start position where you choice what you want to do
     /// </summary>
     public static void Start()
-
     {
         bool running = true;
         while (running == true)
@@ -26,7 +31,6 @@ class ContactsNewList
             Leave the Program => E
             ");
             string? choice = Console.ReadLine();
-
             switch (choice)
             {
                 case "1":
@@ -62,33 +66,36 @@ class ContactsNewList
         Console.WriteLine();
 
         List<string> tmp = new List<string>(lastName);
-
-        for (int x = 0; x < tmp.Count; x++)
+        tmp.Sort();
+        foreach (string name in tmp)
         {
-            tmp.Sort();
-            Console.WriteLine($"Family name: {tmp[x],-10}");
+            Console.WriteLine($"Sorted Family name: {name}");
         }
-        Start();
     }
     public static void AddContact()
     {
-        Console.WriteLine("Is the following contact in your Friend 1, Family 2 or Work List 3?");
+        Console.WriteLine("Is the following contact in your Family 1, Friend 2 or Work List 3?");
         char input = Convert.ToChar(Console.ReadLine());
         if (input == '1')
         {
-            category.Add("Friend");
+            category.Add(ContactCategory.Family);
         }
+        // else if (int.TryParse != null(input == Enum.IsDefined(typeof(ContactCategory))))
+        // {
+
+        // }
         else if (input == '2')
         {
-            category.Add("Family");
+            category.Add(ContactCategory.Friend);
         }
         else if (input == '3')
         {
-            category.Add("Work");
+            category.Add(ContactCategory.Work);
         }
         else
         {
             Console.WriteLine("Not valid input");
+            return;
         }
 
         Console.WriteLine("Please enter your first name:");
@@ -99,7 +106,6 @@ class ContactsNewList
 
         Console.WriteLine("Please enter a phone number:");
         phoneNumber.Add(Console.ReadLine());
-        Start();
     }
 
     /// <summary>
@@ -122,22 +128,15 @@ class ContactsNewList
         List<string> foundContacts = new List<string>();
         for (int i = 0; i < firstName.Count; i++)
         {
-            if (firstName[i] == input)
+            if (firstName[i] == input || lastName[i] == input || phoneNumber[i] == input)
             {
                 foundContacts.Add($"{firstName[i]} {lastName[i]} - Phone number: {phoneNumber[i]}, Category: {category}");
             }
-            else if (lastName[i] == input)
+            else if (Enum.TryParse<ContactCategory>(input, true, out var searchCategory) && category[i] == searchCategory)
             {
                 foundContacts.Add($"{firstName[i]} {lastName[i]} - Phone number: {phoneNumber[i]}, Category: {category}");
             }
-            else if (phoneNumber[i] == input)
-            {
-                foundContacts.Add($"{firstName[i]} {lastName[i]} - Phone number: {phoneNumber[i]}, Category: {category}");
-            }
-            else if (category[i] == input)
-            {
-                foundContacts.Add($"{firstName[i]} {lastName[i]} - Phone number: {phoneNumber[i]}, Category: {category}");
-            }
+
         }
         if (foundContacts.Count == 0)
         {
@@ -176,7 +175,6 @@ class ContactsNewList
         {
             Console.WriteLine($"The name you entered is not in your contact list.");
         }
-        Start();
     }
 }
 
