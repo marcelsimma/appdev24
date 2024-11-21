@@ -3,6 +3,7 @@ using OliverBedogg.Week01;
 using OliverBedogg.Week02;
 using OliverBedogg.Week05;
 using OliverBedogg.Week06;
+using OliverBedogg.Week07;
 
 namespace OliverBedogg
 {
@@ -14,8 +15,11 @@ namespace OliverBedogg
             Console.WriteLine("\n");
             // weitere: https://learn.microsoft.com/de-de/cpp/c-language/escape-sequences
 
+            // Woche 7 ------------------
+            PolymorphieMain.Start();
+
             // Woche 6 ------------------
-            TicketsystemMain.Start();
+            // TicketsystemMain.Start();
             // QueueExample.Start();
             // ListExample.Start();
             // DictionaryExample.Start();
