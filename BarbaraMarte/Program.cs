@@ -10,6 +10,10 @@ using BarbaraMarte.Week06;
 using BarbaraMarte.Week06.Vererbung;
 using BarbaraMarte.Week06.CameraEasy;
 using BarbaraMarte.Week06.CameraExtended;
+using BarbaraMarte.Week06.Zoo;
+using BarbaraMarte.Week07.QueueCallCenter;
+using BarbaraMarte.Week07.UMLAufgabe;
+using BarbaraMarte.Schule.ContactListFolder;
 
 
 namespace BarbaraMarte.Week01
@@ -25,13 +29,20 @@ namespace BarbaraMarte.Week01
             // ContactsArray.Start(); 
             // ContactsList.Start();
             // ContactsNewList.Start();
+            // ContactListFolder.Start();
+
+
+            // Week07
+            // QueueCallCenter.Start();
+
 
             // Week06
             // Test.Print();
             // PrintFotoObjekt.Print();
             // Print.Start();
             // Start.Launch();
-            OutPut.Print();
+            // OutPut.Print();
+            // PrintZoo.Print();
 
 
             // Week 05

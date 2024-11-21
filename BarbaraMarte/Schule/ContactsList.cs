@@ -4,99 +4,108 @@ using System.Security.Cryptography.X509Certificates;
 namespace BarbaraMarte.Schule;
 class ContactsList
 {
+    private static List<Contact> contactDetails = new List<Contact>();
     public static void Start()
     {
-        Console.WriteLine(@"Where do you want to save your contact? Family, Friends or Work?
-        If you are searching for someone press next. If you want to leave the program enter Break");
-        string? decition = Console.ReadLine();
+        while (true)
+        {
+            Console.Clear();
+            Console.WriteLine(@"
+            Add Contact => 1
+            Search Contact => 2
+            Delete Contact => 3
+            Print out all your contacts => 4
+            Leave the Program => E
+            ");
+            string? choice = Console.ReadLine();
 
+            switch (choice)
+            {
+                case "1":
+                    AddContact();
+                    break;
+                case "2":
+                    SearchContact();
+                    break;
+                case "3":
+                    DeleteContact();
+                    break;
+                case "4":
+                    PrintOutContacts();
+                    break;
+                case "E":
+                case "e":
+                    Console.WriteLine("You are leaving the program now. Have a lovely day!");
+                    break;
+                default:
+                    Console.WriteLine("Invalid Input. Please try again");
+                    break;
 
-        if (decition == "Family")
-        {
-            Family();
-        }
-        else if (decition == "Friends")
-        {
-            Friends();
-        }
-        else if (decition == "Work")
-        {
-            Work();
-        }
-        else if (decition == "Break")
-        {
-            return;
-        }
-        else
-        {
-           Search();
-            // Console.WriteLine("I don't understand you. Please try again");
+            }
+
         }
     }
+    public static void AddContact()
+    {
+        Console.WriteLine("Enter the Family name:");
+        string? familyN = Console.ReadLine();
+        Console.WriteLine("Enter the First name:");
+        string? firstN = Console.ReadLine();
+        Console.WriteLine("Enter the Phone number:");
+        string? phoneN = Console.ReadLine();
 
-    public static void Print()
-    {
-
-    }
-    public static void Search()
-    {
-        List<string> search = new List<string>();
-        Console.WriteLine("Which Person are you looking for? Friend (1), Family member (2) or a working friend (3?");
-        char number = Convert.ToChar(Console.ReadLine());
-        if (number == '1')
-        {
-            search.Contains(Console.ReadLine());
-            Family();
-            Console.WriteLine(search);
-        }
-        else if (number == '2')
-        {
-            search.Contains(Console.ReadLine());
-            Friends();
-        }
-        else if (number == '3')
-        {
-            search.Contains(Console.ReadLine());
-            Work();
-        }
-    }
-    public static void Family()
-    {
-        List<string> firstName = new List<string>();
-        List<string> lastName = new List<string>();
-        List<string> phoneNumber = new List<string>();
-        Console.WriteLine("Please enter the first Name");
-        firstName.Add(Console.ReadLine());
-        Console.WriteLine("Please enter the last Name");
-        lastName.Add(Console.ReadLine());
-        Console.WriteLine("Please enter the phone number");
-        phoneNumber.Add(Console.ReadLine());
+        contactDetails.Add(new Contact(familyN, firstN, phoneN));
         Start();
     }
-    public static void Friends()
+    public static void SearchContact()
     {
-        List<string> firstName = new List<string>();
-        List<string> lastName = new List<string>();
-        List<string> phoneNumber = new List<string>();
-        Console.WriteLine("Please enter the first Name");
-        firstName.Add(Console.ReadLine());
-        Console.WriteLine("Please enter the last Name");
-        lastName.Add(Console.ReadLine());
-        Console.WriteLine("Please enter the phone number");
-        phoneNumber.Add(Console.ReadLine());
+        Console.WriteLine("Which contact are you looking for?");
+        Console.WriteLine(SearchInList());
         Start();
     }
-    public static void Work()
+    public static void DeleteContact()
     {
-        List<string> firstName = new List<string>();
-        List<string> lastName = new List<string>();
-        List<string> phoneNumber = new List<string>();
-        Console.WriteLine("Please enter the first Name");
-        firstName.Add(Console.ReadLine());
-        Console.WriteLine("Please enter the last Name");
-        lastName.Add(Console.ReadLine());
-        Console.WriteLine("Please enter the phone number");
-        phoneNumber.Add(Console.ReadLine());
-        Start();
+
+    }
+    public static void PrintOutContacts()
+    {
+
+    }
+    public static string SearchInList()
+    {
+        string? input = Console.ReadLine();
+        List<string> foundContacts = new List<string>();
+        for (int i = 0; i < contactDetails.Count; i++)
+        {
+            if (i == 1)
+            {
+                foundContacts.Add($"The person you are searching for: {contactDetails[i]}");
+            }
+        }
+        if (contactDetails.Count == 0)
+        {
+            return "The contact detail you entered is not in your contact list.";
+        }
+        foreach (var contact in foundContacts)
+        {
+            Console.WriteLine(contact);
+        }
+        return "";
+    }
+    class Contact
+    {
+        public string FamilyName { get; }
+        public string FirstName { get; }
+        public string PhoneNumber { get; }
+        public Contact(string familyName, string firstName, string phoneNumber)
+        {
+            FamilyName = familyName;
+            FirstName = firstName;
+            PhoneNumber = phoneNumber;
+        }
+        public override string ToString()
+        {
+            return $"{FamilyName}, {FirstName} - {PhoneNumber}";
+        }
     }
 }

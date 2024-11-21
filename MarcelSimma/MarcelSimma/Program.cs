@@ -9,6 +9,10 @@ using MarcelSimma.Week06;
 using MarcelSimma.Week05;
 using MarcelSimma.Week06.FotoapparatErweitert;
 using MarcelSimma.Week06.Datenklasse;
+using MarcelSimma.Week07.ContactList;
+using MarcelSimma.Week07.Callcenter;
+using MarcelSimma.Week07;
+using MarcelSimma.Week07.BrowserHistory;
 
 namespace MarcelSimma
 {
@@ -51,9 +55,14 @@ namespace MarcelSimma
                     System.Console.WriteLine(vwpolo.ToString());
                     */
 
-            Start.Launch();
+            //Start.Launch();
 
             //Datenklasse.Start();
+
+            //Callcenter.Start();
+            //ArrayListExample.Start();
+
+            ParticipantsList.Start();
 
         }
 
