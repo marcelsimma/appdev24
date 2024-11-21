@@ -1,11 +1,8 @@
 using System;
 
-namespace FlorianBaier.Week07
-{
-    public class BrowserHistory
-    {
-        public static void Start()
-        {
+namespace MarcelSimma.Week07.BrowserHistory {
+    public class BrowserHistory {
+        public static void Start() {
 
             Stack<string> browserHistory = new Stack<string>();
 
@@ -24,17 +21,14 @@ namespace FlorianBaier.Week07
             System.Console.WriteLine(browserHistory.Count());
 
             // Vorschau
-            if (browserHistory.Peek() == "vol.at")
-            {
+            if (browserHistory.Peek() == "vol.at") {
                 System.Console.WriteLine("Beste Nachrichten aus Vorarlberg!");
-            }
-            else
-            {
+            } else {
                 System.Console.WriteLine("vol.at nicht besucht.");
             }
 
             System.Console.WriteLine(browserHistory.Count());
-
+            
             // Push entspricht Enqueue
             browserHistory.Push("tiktok.com");
             browserHistory.Push("instagram.com");
@@ -42,19 +36,40 @@ namespace FlorianBaier.Week07
             browserHistory.Push("digitalcampus.com");
 
             // Elemente nur ausgeben
-            foreach (string item in browserHistory)
-            {
+            foreach (string item in browserHistory) {
                 System.Console.WriteLine(item);
             }
 
             System.Console.WriteLine();
 
             // Elemente vom Stack entfernen und auf der Console ausgeben           
-            while (browserHistory.Count() > 0)
-            {
+            while (browserHistory.Count() > 0) {
                 System.Console.WriteLine(browserHistory.Pop());
             }
             System.Console.WriteLine(browserHistory.Count());
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            /*
+
+            // Lösungshilfe für User Input
+            
+            System.ConsoleKeyInfo key = Console.ReadKey();
+
+            if(key.Key == ConsoleKey.LeftArrow) {
+                // Element vom Stack entfernen
+            } else {
+                // Element zum Stack hinzufügen
+            }
+
+            */
         }
     }
 }

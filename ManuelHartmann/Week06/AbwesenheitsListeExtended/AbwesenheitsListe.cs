@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Channels;
 using System.Threading.Tasks;
 
-namespace AbwesenheitslisteExtended
+namespace ManuelHartmann.Week06.AbwesenheitslisteExtended
 {
     public class AbwesenheitsListe
     {
