@@ -80,10 +80,6 @@ class ContactsNewList
         {
             category.Add(ContactCategory.Family);
         }
-        // else if (int.TryParse != null(input == Enum.IsDefined(typeof(ContactCategory))))
-        // {
-
-        // }
         else if (input == '2')
         {
             category.Add(ContactCategory.Friend);

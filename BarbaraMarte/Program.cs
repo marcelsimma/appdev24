@@ -14,7 +14,8 @@ using BarbaraMarte.Week06.Zoo;
 using BarbaraMarte.Week07.QueueCallCenter;
 using BarbaraMarte.Week07.UMLAufgabe;
 using BarbaraMarte.Schule.ContactListFolder;
-
+using BarbaraMarte.Week07.Supermarket;
+using BarbaraMarte.Week07;
 
 namespace BarbaraMarte.Week01
 {
@@ -30,10 +31,12 @@ namespace BarbaraMarte.Week01
             // ContactsList.Start();
             // ContactsNewList.Start();
             // ContactListFolder.Start();
+            // StartSupermarket.Print();
 
 
             // Week07
             // QueueCallCenter.Start();
+            Hangman.Print();
 
 
             // Week06
