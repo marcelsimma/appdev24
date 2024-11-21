@@ -7,7 +7,6 @@ namespace OliverBedogg.Week07
     {
         public static void Start()
         {
-            // Polymorphie entspricht einer Gemeinsamkeit
             // Objekte vom Datentyp Buch und Elektronik sind beides Produkte,
             // weil sie von der Klasse Produkt erben
             Produkt produkt = new Produkt("Buch ohne Seiten", 10.5);
