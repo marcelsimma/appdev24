@@ -30,10 +30,13 @@ namespace OliverBedogg.Week07
 
             // Eindeutigkeit der Objekte
             List<Buch> buecher = new List<Buch>();
-            buecher.Add(buch);
+            Buch buch1 = new Buch("Handbuch", 39.9, 1200);
+            buecher.Add(buch1);
             Buch buch2 = new Buch("Handbuch", 39.9, 1200);
-            Console.WriteLine("Die Produkte-Liste beinhaltet buch: {0} {1}", buecher.Contains(buch));
-            Console.WriteLine("Die Produkte-Liste beinhaltet buch2: {0} {1}", buecher.Contains(buch2));
+            // Objekt-Instanzen sind eigenständig, 
+            // auch wenn die Attribute mit den gleichen Werten befüllt sind.
+            Console.WriteLine("Die Produkte-Liste beinhaltet buch1: {0}", buecher.Contains(buch1));
+            Console.WriteLine("Die Produkte-Liste beinhaltet buch2: {0}", buecher.Contains(buch2));
         }
     }
 }
