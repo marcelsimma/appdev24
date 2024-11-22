@@ -3,7 +3,7 @@ namespace JulianStroehle.Week7
 {
     internal class Hangman
     {
-        static int Mistakes = 9;
+        static int Mistakes = 0;
         internal static void WrongInput()
         {
             Mistakes++;
