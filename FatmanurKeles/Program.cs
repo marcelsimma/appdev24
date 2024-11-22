@@ -3,6 +3,8 @@ using FatmanurKeles.Week01;
 using FatmanurKeles.Week04;
 using FatmanurKeles.Week05;
 using FatmanurKeles.Week06;
+using FatmanurKeles.Week06.FotoappEinfach;
+using FatmanurKeles.Week06.ZOO;
 
 namespace FatmanurKeles.Week02
 {
@@ -28,7 +30,9 @@ namespace FatmanurKeles.Week02
             //  ArraySortiment.Start();
             //  Array2d.Start();
             //  Objektorientierung.Start();
-            // Bankomat.Start();
+            //  Bankomat.Start();
+            // FotoappEinfach.Launch();
+            ZooStart.Launch();
         }
     }
 }
