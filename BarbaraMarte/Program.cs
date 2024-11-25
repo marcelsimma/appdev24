@@ -29,14 +29,15 @@ namespace BarbaraMarte.Week01
             // Schule
             // ContactsArray.Start(); 
             // ContactsList.Start();
-            // ContactsNewList.Start();
+            ContactsNewList.Start();
             // ContactListFolder.Start();
             // StartSupermarket.Print();
+            // ContactListNew.Start();
 
 
             // Week07
             // QueueCallCenter.Start();
-            Hangman.Print();
+            // Hangman.Print();
 
 
             // Week06

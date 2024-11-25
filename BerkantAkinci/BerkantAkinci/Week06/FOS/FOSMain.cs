@@ -2,9 +2,8 @@
 using System.Diagnostics.Contracts;
 using System.Net.NetworkInformation;
 
-namespace BerkantAkinci.Week06
+namespace BerkantAkinci.Week06.FOS
 {
-
     /*
 
     Fotoapparat : Hardware
@@ -14,7 +13,7 @@ namespace BerkantAkinci.Week06
     
     */
 
-    public class Start
+    public class FOSMain
     {
 
         public static void Launch()

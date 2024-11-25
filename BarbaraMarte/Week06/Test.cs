@@ -44,7 +44,8 @@ class Test
     {
         Console.WriteLine("Please enter the amount of money you want to put in your account. (10,00)");
 
-        if (double.TryParse(Console.ReadLine(), out double amount) && amount > 0)
+        double amount;
+        if (double.TryParse(Console.ReadLine(), out amount) && amount > 0)  // https://learn.microsoft.com/de-de/dotnet/csharp/language-reference/keywords/method-parameters 
         {
             transactions.Add(amount);
             Console.WriteLine($"You deposited {amount} Euro.");
