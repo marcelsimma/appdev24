@@ -1,6 +1,7 @@
 using System;
 using System.ComponentModel;
 using BerkantAkinci;
+using BerkantAkinci.AForMe;
 using BerkantAkinci.Basics;
 using BerkantAkinci.Ubueng;
 using BerkantAkinci.Week01;
@@ -14,6 +15,11 @@ using BerkantAkinci.Week06.FotoapparatEinfach;
 using BerkantAkinci.Week06.FotoapparatErweitert;
 using BerkantAkinci.Week06.PKW;
 using BerkantAkinci.Week06.Zoo;
+using BerkantAkinci.Week07;
+using BerkantAkinci.Week07.Callcenter;
+using BerkantAkinci.Week07.ContactList;
+using BerkantAkinci.Week07.StackExample;
+using BerkantAkinci.Week07.Supermarket;
 
 
 namespace BerkantAkinci
@@ -68,7 +74,10 @@ namespace BerkantAkinci
             //ZooMain.Start();
             //QueueExample.Start();
             //ListExample.Start();
-            TicketsystemMain.Start();
+            //TicketsystemMain.Start();
+            //Callcenter.Start();
+            //ContactList.Start();
+            ArrayListExample.Start();
             
             
             

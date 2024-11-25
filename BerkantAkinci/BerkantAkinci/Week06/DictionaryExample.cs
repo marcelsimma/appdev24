@@ -29,8 +29,8 @@ namespace BerkantAkinci.Week06
                 dict["Sandro"]);
 
 
-            Console.WriteLine("Ist Jovo ein Trainer? {0}",
-                dict.ContainsKey("Jovo"));
+            Console.WriteLine($"Ist Jovo ein Trainer? {dict.ContainsKey("Jovo")}");
+                //dict.ContainsKey("Jovo"));
             Console.WriteLine("Ist Lukas ein Trainer? {0}",
                 dict.ContainsKey("Lukas"));
 

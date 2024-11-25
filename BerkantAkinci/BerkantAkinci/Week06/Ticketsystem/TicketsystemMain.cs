@@ -26,7 +26,6 @@ namespace BerkantAkinci.Week06
             Console.WriteLine("\nTicketkauf und speichern der gekauften Tickets -------------");
             ticketAnbieter.warteschlangeAbarbeiten();
             // ticketAnbieter.printTickets();
-
         }
     }
 }
