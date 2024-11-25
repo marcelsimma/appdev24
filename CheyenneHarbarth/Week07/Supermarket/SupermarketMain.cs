@@ -15,7 +15,7 @@ namespace CheyenneHarbarth.Week07.Supermarket
 
             TimeSpan OpenHours = OpenHour - ClosingHour;
 
-            MuehlebacherLaedele.OpeningHours.Add(OpenDay.DayOfWeek, );
+            //MuehlebacherLaedele.OpeningHours.Add(OpenDay.DayOfWeek, );
 
 
 
