@@ -26,7 +26,7 @@ namespace CheyenneHarbarth.Week04
         public static void AskBirthday()
         {
             Console.WriteLine("Wann hast du Geburtstag? Format: dd.mm.yyyy");
-            
+
 
             //DateTime.TryParse konvertiert die Eingabe in ein Datum, sollte es nicht zum konvertieren gehen, gibt es einen "false" Wert zurück
             while (true)
