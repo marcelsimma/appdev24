@@ -37,7 +37,7 @@ namespace MarcelSimma.Week07.ContactList {
             return new ContactItem(splittedName[0], splittedName[1], phonenumber, city);
         }
 
-
+    
     }
 
 }

@@ -29,7 +29,7 @@ namespace JonasWehinger
         //Tabele_Ordner.ordner();
         //Geburtstag.Tag();
         //Teilnehmerliste1.Streams();
-        Program2.PrintZoo();
+        Bankomat.Bank();
   
     }
 }
