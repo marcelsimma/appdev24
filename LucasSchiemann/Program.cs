@@ -7,13 +7,15 @@ using LucasSchiemann.Week05;
 using LucasSchiemann.SortAlgorithmChooser;
 using LucasSchiemann.Week06;
 using LucasSchiemann.Week06.Zoo;
+using LucasSchiemann.Week07.SuperMarkt;
 namespace LucasSchiemann;
 
     class Program
     {
     static void Main()
     {
-        StartOfZoo.StartMethod();
+        SuperMarktStarter.Start();
+        //StartOfZoo.StartMethod();
         //Bankkonto.Start();
         //AlgorythmChooser.ChoseSortAlgorythm();
         //Teilnehmerliste.Start();

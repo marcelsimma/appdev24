@@ -12,6 +12,8 @@ public static class Bankkonto
         ChooseAction(Kontostand,EndorNah);
         
 
+        
+
 
     }
     public static float Einzahlen(float KontoStand)
