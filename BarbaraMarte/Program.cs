@@ -17,8 +17,9 @@ using BarbaraMarte.Schule.ContactListFolder;
 using BarbaraMarte.Schule.Library;
 using BarbaraMarte.Week07.Supermarket;
 using BarbaraMarte.Week07;
+using BarbaraMarte.Week08.Test;
 
-namespace BarbaraMarte.Week01
+namespace BarbaraMarte.Week08.Test
 {
     class Program
     {
@@ -34,7 +35,7 @@ namespace BarbaraMarte.Week01
             // ContactListFolder.Start();
             // StartSupermarket.Print();
             // ContactListNew.Start();
-            BookInformation.BookInput();
+            // LetsGo.Start();
 
 
             // Week07
@@ -88,5 +89,4 @@ namespace BarbaraMarte.Week01
         }
     }
 }
-
 

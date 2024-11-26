@@ -4,10 +4,11 @@ using Microsoft.Win32.SafeHandles;
 
 namespace BarbaraMarte.Schule.Library;
 
-class LetsGo : BookInformation
+class LetsGo
 {
-    public static List<string> AllAboutBooks = new List<string>();
+    public static List<Book> AllAboutBooks = new List<Book>();
     public static List<string> User = new List<string>();
+    public static List<string> BorrowedBooks = new List<string>();
     public static void Start()
     {
         bool running = true;
@@ -37,13 +38,13 @@ class LetsGo : BookInformation
                     BorrowBook();
                     break;
                 case "4":
-                    // LeaveBookBack();
+                    LeaveBookBack();
                     break;
                 case "5":
-                    // SearchForBook();
+                    SearchForBook();
                     break;
                 case "6":
-                    // PrintOutAllBooks();
+                    PrintOutAllBooks();
                     break;
                 case "E":
 
@@ -53,6 +54,34 @@ class LetsGo : BookInformation
                     Console.Clear();
                     Console.WriteLine("Invalid Input. Please try again");
                     break;
+            }
+        }
+    }
+    public static void PrintOutAllBooks()
+    {
+        foreach (string print in AllAboutBooks)
+        {
+            System.Console.WriteLine(print);
+        }
+    }
+    public static void SearchForBook()
+    {
+
+    }
+    public static void LeaveBookBack()
+    {
+        string input = Console.ReadLine() ?? "";
+        for (int i = 0; i < BorrowedBooks.Count; i++)
+        {
+            if (input == BorrowedBooks[i])
+            {
+                AllAboutBooks.Add(BorrowedBooks[i]);
+                System.Console.WriteLine($"Thanks for bringing {input} back!");
+                BorrowedBooks.RemoveAt(i);
+            }
+            else
+            {
+                System.Console.WriteLine("I am sorry, this book is not from our Library.");
             }
         }
     }
@@ -68,16 +97,44 @@ class LetsGo : BookInformation
     }
     public static void BorrowBook()
     {
-        if (IsAvailable() == true)
+        System.Console.WriteLine("Which book are you looking for?");
+        string input = Console.ReadLine() ?? "";
+        for (int i = 0; i < AllAboutBooks.Count; i++)
         {
-
-        }
-        else
-        {
-            System.Console.WriteLine("The book you are looking for is at the moment not in our library!");
+            if (AllAboutBooks[i] == input)
+            {
+                BorrowedBooks.Add(AllAboutBooks[i]);
+                System.Console.WriteLine($"Have fun with {input}");
+                AllAboutBooks.RemoveAt(i);
+            }
+            else
+            {
+                System.Console.WriteLine("The book you are looking for is at the moment not in our library!");
+            }
         }
     }
-    private static bool isHere = true;
+    public static void AddBook()
+    {
+        Console.WriteLine("Title of the Book:");
+        string Title = Console.ReadLine() ?? "";
+        Console.WriteLine("Author:");
+        string Author = Console.ReadLine() ?? "";
+        Console.WriteLine("ISBN");
+        string Isbn = Console.ReadLine() ?? "";
+        AllAboutBooks.Add($"{Title}, {Author}, {Isbn}");
+    }
+    public static void BookInput()
+    {
+        Book book = new Book("The small prince", "Marge Simpson", "165484", true);
+        System.Console.WriteLine(book);
+        Book book1 = new Book(Title, Author, Isbn, false);
+    }
+}
+
+
+
+/*
+private static bool isHere = true;
     private static bool LeaveBookBack()
     {
         return isHere;
@@ -101,41 +158,4 @@ class LetsGo : BookInformation
         }
         return isHere;
     }
-    public static void AddBook()
-    {
-        Console.WriteLine("Title of the Book:");
-        string title = Console.ReadLine() ?? "";
-        Console.WriteLine("Author:");
-        string author = Console.ReadLine() ?? "";
-        Console.WriteLine("ISBN");
-        string isbn = Console.ReadLine() ?? "";
-        AllAboutBooks.Add($"{title}, {author}, {isbn}");
-    }
-}
-class BookInformation
-{
-    public static void BookInput()
-    {
-        Book book = new Book("The small prince", "Marge Simpson", "165484", true);
-        System.Console.WriteLine(book);
-    }
-}
-class Book
-{
-    private string Title { get; set; }
-    private string Author { get; set; }
-    private string ISBN { get; set; }
-    private bool IsAvailable { get; set; }
-
-    public Book(string title, string author, string isbn, bool isAvailable)
-    {
-        Title = title;
-        Author = author;
-        ISBN = isbn;
-        IsAvailable = isAvailable;
-    }
-    public override string ToString()
-    {
-        return string.Format($"Title: {Title} Author {Author} ISBN {ISBN} Is the book available? {IsAvailable}");
-    }
-}
+*/
