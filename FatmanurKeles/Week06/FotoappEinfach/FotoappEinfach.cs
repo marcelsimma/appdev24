@@ -1,21 +1,10 @@
+using FatmanurKeles.Week06.FotoappEinfach.FotoEinfach;
 
-namespace BerkantAkinci.Week06.FotoapparatEinfach
+namespace FatmanurKeles.Week06.FotoappEinfach
 {
-
-    public class Start
+    public class FotoappEinfach
     {
-
-
-        /*
-        1. Grundannahmen definieren und Context abstecken
-        Grundannahme: Speicher und Objektiv sind fix mit dem Fotoapparat verbunden und können nicht ausgetauscht werden.
-
-        2. Klassendiagramm erstellen mit allen Klassen(, Interfaces, Beziehungen, etc.)
-
-        3. Klassen programmieren
-        */
-
-        public static void Launch1()
+           public static void Launch()
         {
             System.Console.WriteLine("Hallo");
 
@@ -32,9 +21,6 @@ namespace BerkantAkinci.Week06.FotoapparatEinfach
             temu.TakePhoto();
             temu.TakePhoto();
             System.Console.WriteLine(temu.ToString());
-
-
-
         }
     }
 }

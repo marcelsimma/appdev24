@@ -1,5 +1,5 @@
 
-namespace BerkantAkinci.Week06
+namespace BerkantAkinci.Week06.FotoapparatErweitert
 {
     public class Objektiv : IObjekt
     {

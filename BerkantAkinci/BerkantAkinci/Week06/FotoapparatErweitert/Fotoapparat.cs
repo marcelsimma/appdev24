@@ -2,7 +2,7 @@ using System;
 using System.ComponentModel;
 using System.Data.Common;
 
-namespace BerkantAkinci.Week06.FotoapparatErwitert
+namespace BerkantAkinci.Week06.FotoapparatErweitert
 {
 
     public class Fotoapparat : IObjekt
