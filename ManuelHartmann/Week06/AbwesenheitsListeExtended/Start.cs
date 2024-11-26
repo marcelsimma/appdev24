@@ -1,4 +1,4 @@
-namespace AbwesenheitslisteExtended
+namespace ManuelHartmann.Week06.AbwesenheitslisteExtended
 {
     public class Start
     {

@@ -24,7 +24,7 @@ namespace CheyenneHarbarth
         {
             //Testaufgabe.Start();
             //RBStart.Start();
-            //LoL.Start(30, 120);
+            LoL.Start(30, 120);
             //ChristmasTree.PrintTree('*', 15);
             //Calculator.CalcSum(21, 50);
 
@@ -77,7 +77,7 @@ namespace CheyenneHarbarth
 
             //ZooMain.Start();
 
-            Callcenter.Start();
+            //Callcenter.Start();
         }
     }
 }
