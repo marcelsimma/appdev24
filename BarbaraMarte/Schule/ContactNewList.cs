@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks.Dataflow;
 namespace BarbaraMarte.Schule;
 
 enum ContactCategory
@@ -28,10 +29,11 @@ class ContactsNewList
             Search Contact => 2
             Delete Contact => 3
             Print out all your contacts => 4
+            Print out all contacts from one category => 5
             Leave the Program => E
             ");
             string? choice = Console.ReadLine();
-            switch (choice)
+            switch (choice.ToUpper())
             {
                 case "1":
                     AddContact();
@@ -45,8 +47,10 @@ class ContactsNewList
                 case "4":
                     PrintOutContacts();
                     break;
+                case "5":
+                    SearchCategory();
+                    break;
                 case "E":
-                case "e":
                     Console.WriteLine("You are leaving the program now. Have a lovely day!");
                     running = false;
                     break;
@@ -57,19 +61,29 @@ class ContactsNewList
             }
         }
     }
-    public static void PrintOutContacts()
+    public static void SearchCategory()
     {
+        var names = Enum.GetNames(typeof(ContactCategory));
+        Console.WriteLine(string.Join(", ", names));
+        Console.WriteLine("Please enter the category number, starting with 1:");
+        var input = Console.ReadLine() ?? "1";
+        PrintOutContacts(Enum.Parse<ContactCategory>(input));
+    }
+    public static void PrintOutContacts(ContactCategory? filter = null) // with the =(default parameter) after the filter you don't need to write it in on the call side. It becomes optional
+    {
+
+        List<string> tmp = new List<string>();
         for (int i = 0; i < firstName.Count; i++)
         {
-            Console.WriteLine($"First name: {firstName[i],-10}, family name: {lastName[i],-10}, phone number: {phoneNumber[i],-15}");
+            if (filter is null || category[i] == filter)    // you use "is" for null checks. Opposite == "is not" 
+            {
+                tmp.Add($"Family name: {lastName[i],-10} first name: {firstName[i],-10} phone number: {phoneNumber[i],-10} Category: {category[i]}");
+            }
         }
-        Console.WriteLine();
-
-        List<string> tmp = new List<string>(lastName);
         tmp.Sort();
-        foreach (string name in tmp)
+        foreach (string contact in tmp)
         {
-            Console.WriteLine($"Sorted Family name: {name}");
+            Console.WriteLine($"{contact}");
         }
     }
     public static void AddContact()
@@ -103,10 +117,6 @@ class ContactsNewList
         Console.WriteLine("Please enter a phone number:");
         phoneNumber.Add(Console.ReadLine());
     }
-
-    /// <summary>
-    /// You put in the search for your contact
-    /// </summary>
     public static void SearchContact()
     {
         Console.WriteLine("Which contact are you looking for?");
@@ -114,10 +124,6 @@ class ContactsNewList
         Start();
     }
 
-    /// <summary>
-    /// you search in here the contact list
-    /// </summary>
-    /// <returns></returns>
     public static string SearchInList()     //  use a string instead a void that I can use a return in the if part. Makes it easier to return value
     {
         string? input = Console.ReadLine();
