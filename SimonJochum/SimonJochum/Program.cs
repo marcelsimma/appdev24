@@ -12,6 +12,9 @@ using SimonJochum.Week06.Vehicles;
 using SimonJochum.Week06.Zoo;
 using SimonJochum.Week06.Ticketsystem;
 using SimonJochum.Week07;
+using SimonJochum.Week07.ParticipantList;
+using SimonJochum.Week07.SupermarketOOP;
+using SimonJochum.Week08.PrüfungOOP;
 
 namespace SimonJochum;
 
@@ -90,6 +93,11 @@ class Program
         // StartConcert.Start();
 
         //Week07
-        BrowserHistory.Start();
+        // BrowserHistory.Start();
+        // ParticipantsList.Start();
+        // StartSupermarket.Start();
+
+        //Week08
+        PruefungStart.Start();
     }
 }

@@ -8,7 +8,7 @@ namespace MagdalenaMueller.Week02
         {
             Console.WriteLine("Willkommen zum Reverse Programm");
             Console.WriteLine("Gibt ein Wort ein: ");
-            string word = Console.ReadLine();
+            string? word = Console.ReadLine();
 
             for(int i = word.Length - 1; i >= 0; i--)// beim letzten buchstaben anfangen um das wort falsch herum auszugeben
             {
@@ -19,7 +19,7 @@ namespace MagdalenaMueller.Week02
         {
             Console.WriteLine("Willkommen zum Ramdom Programm");
             Console.WriteLine("Gibt ein Wort ein: ");
-            string word = Console.ReadLine();
+            string? word = Console.ReadLine();
 
             char[] letters = word.ToCharArray();
             
