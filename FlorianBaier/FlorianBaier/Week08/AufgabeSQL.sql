@@ -38,3 +38,14 @@ AND geo_sea.country = country.code
 AND geo_island.Island = island.name
 AND geo_sea.sea LIKE 'Pacific'
 AND religion.name = 'Muslim' AND religion.Percentage > 50;
+
+SELECT m.name
+FROM mountain m, geo_mountain gm, province p, country cy, religion r
+WHERE cy.code = p.country
+AND gm.Country = p.country
+AND gm.Province = p.name
+AND m.name = gm.mountain
+AND r.country = cy.code
+AND m.Height > 3000
+AND r.name like 'Roman%' 
+AND r.percentage > 60;
