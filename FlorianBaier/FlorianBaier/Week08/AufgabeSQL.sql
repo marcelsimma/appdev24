@@ -53,16 +53,17 @@ AND r.name = 'Muslim'
 AND r.Percentage > 50;
 
 -- 10)Alle 3000er, welche in einem Land sind, welches zu mindestens 60% römisch Katholisch ist
-SELECT m.name
+SELECT DISTINCT m.name, m.Height
 FROM mountain m, geo_mountain gm, province p, country cy, religion r
-WHERE cy.code = p.country
-AND gm.Country = p.country
-AND gm.Province = p.name
+WHERE cy.code = p.Country
+AND gm.country = p.country
+AND gm.Province = p.Name
 AND m.name = gm.mountain
 AND r.country = cy.code
 AND m.Height > 3000
-AND r.name like 'Roman%' 
-AND r.percentage > 60;
+AND r.name LIKE 'Roman %'  
+AND r.Percentage > 60
+ORDER BY m.Height
 
 -- 11) Einwohnerzahl pro Religion
 SELECT r.name,
@@ -109,3 +110,26 @@ JOIN geo_mountain ON mountain.Name = geo_mountain.Mountain
 JOIN encompasses On geo_mountain.Country = encompasses.Country)
 SELECT * from maxMountains 
 WHERE mountainRank = 1;
+
+-- 17) Welche Organisationen haben deren Hauptsitz in Österreich? Wie viele Mitglieder haben diese Organisationen?
+SELECT organization.Name, COUNT(ismember.Organization) AS Members 
+FROM organization, ismember 
+WHERE ismember.Organization = organization.Abbreviation 
+AND organization.Country = 'A' 
+GROUP BY organization.Name 
+ORDER BY organization.Name;
+
+-- 18) Alle Länder mit mindestens einem See mit mindestens 100 Meter Tiefe und mindestens einem Berg mit mindestens 1500 Höhenmeter
+SELECT DISTINCT cy.name
+FROM lake l, geo_lake gl, mountain m, geo_mountain gm, country cy
+WHERE gl.Country = cy.code
+AND gl.Lake = l.Name
+AND l.Depth > 100
+AND gm.Country = cy.code
+AND gm.mountain = m.name
+AND m.Height > 1500;
+
+-- 19) Alle Länder, nur die Namen, und wenn sie haben, das Meer dazu
+SELECT DISTINCT country.name, geo_sea.sea
+FROM country
+LEFT JOIN geo_sea ON country.Code = geo_Sea.Country;
