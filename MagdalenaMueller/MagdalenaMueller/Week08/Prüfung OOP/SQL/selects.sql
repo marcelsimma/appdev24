@@ -55,6 +55,15 @@
 	AND religion.name = 'Muslim'
 	ORDER BY island.name;
 
+10. SELECT distinct mountain.name as mountainName, mountain.height, country.name as country
+	FROM mountain
+	JOIN geo_mountain ON mountain.name = geo_mountain.mountain
+	JOIN province ON geo_mountain.country = province.country
+	JOIN country ON province.country = country.code
+	JOIN religion ON country.code = religion.country
+	WHERE religion.Percentage >= 60 and religion.name = 'Roman Catholic' and mountain.height >= 3000
+	order by mountain.height desc;
+
 11. SELECT religion.name, ROUND(SUM((population * religion.percentage) / 100), 2) AS people
 	FROM religion
 	JOIN country ON religion.country = country.code
@@ -67,3 +76,49 @@
 	And continent.name = 'America'
 	order by area desc
 	Limit 0,3;
+
+13. SELECT continent.name, 
+       Round(SUM(country.population) * 100 / (SELECT SUM(country.population) FROM country),0) AS einwohnerProzent
+	FROM country
+	JOIN encompasses ON encompasses.country = country.code
+	JOIN continent ON continent.name = encompasses.continent
+	GROUP BY continent.name
+
+	UNION ALL
+
+	SELECT 'Total World Population', Round(SUM(population),0)
+	FROM country;
+
+-- 14 und 15 funktionieren nicht richtig
+
+14?. select country.name, politics.independence
+	from desert,geo_desert,province, country, politics, ethnicgroup
+	where desert.name = geo_desert.desert 
+	and geo_desert.country = province.country
+	and province.country = country.code
+	and country.code = politics.country 
+	and country.code = ethnicgroup.country
+	and ethnicgroup.name = 'African';
+
+15. WITH countProvinces AS (
+    SELECT 
+        province.country, 
+        province.name, 
+        COUNT(province.name) OVER (PARTITION BY province.country) AS staedteAnzahl,
+        RANK() OVER (PARTITION BY province.country ORDER BY province.name DESC) AS anzahl
+    FROM province
+)
+
+SELECT * 
+FROM countProvinces 
+WHERE anzahl = 3
+order by country;
+
+16. WITH maxMountains as (Select distinct continent.name AS continentName, mountain.name as mountainName, mountain.height,
+	RANK() OVER(PARTITION BY continent.name ORDER BY mountain.height DESC) as rang From mountain, geo_mountain, province, country, encompasses, continent
+	where mountain.name = geo_mountain.mountain
+	and geo_mountain.country = province.country
+	and province.country = country.code
+	and country.code = encompasses.country
+	and encompasses.continent = continent.name
+	) SELECT * from maxMountains WHERE rang = 1;
