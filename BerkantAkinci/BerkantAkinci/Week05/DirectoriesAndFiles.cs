@@ -18,7 +18,7 @@ namespace BerkantAkinci.Week05
         {
 
             // Arbeitsverzeichnis auf meiner Festplatte
-            string directoryPath = "\\Users\\BAU26336\\OneDrive - Julius Blum GmbH\\Allgemeines\\Dokumente\\input.txt",
+            string directoryPath = @"\Users\BAU26336\OneDrive - Julius Blum GmbH\Digitaler Campus\input.txt",
             fileName = "input.txt";
 
             /*
@@ -43,9 +43,7 @@ namespace BerkantAkinci.Week05
 
 
             // Neues Verzeichnis erstellen
-            Directory.CreateDirectory(directoryPath + "neu2/");
-
-
+            Directory.CreateDirectory(directoryPath + "neu2/"
             // Datei in das neue Verzeichnis verschieben und umbenennen
             File.Move(directoryPath + "input3.txt", directoryPath + "neu2/neu.txt");
 
@@ -74,7 +72,7 @@ namespace BerkantAkinci.Week05
             }
 
 */
-             directoryPath = "/Users/marcel/Documents/assets/neu/";
+             directoryPath = @"\Users\BAU26336\OneDrive - Julius Blum GmbH\Digitaler Campus\input.txt";
 
             // Übergeordnetes Verzeichnis
             DirectoryInfo str = Directory.GetParent(directoryPath + "../neu2/");
