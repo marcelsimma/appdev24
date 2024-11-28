@@ -1,6 +1,6 @@
 USE mondial;
 
-SELECT DISTINCT geo_desert.Country, politics.Independence
-FROM politics, geo_desert
-LEFT JOIN  ethnicgroup ON geo_desert.Country = ethnicgroup.Country
-WHERE ethnicgroup.Country = politics.Country AND ethnicgroup.Name = 'African';
+SELECT ROUND(SUM(country.Population/(SELECT SUM(country.Population) FROM country)*100), 2) AS PopulationPercent
+FROM country
+JOIN encompasses ON country.Code = encompasses.Country
+WHERE encompasses.Continent = 'Europe';
