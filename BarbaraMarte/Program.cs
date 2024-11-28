@@ -14,10 +14,12 @@ using BarbaraMarte.Week06.Zoo;
 using BarbaraMarte.Week07.QueueCallCenter;
 using BarbaraMarte.Week07.UMLAufgabe;
 using BarbaraMarte.Schule.ContactListFolder;
+using BarbaraMarte.Schule.Library;
 using BarbaraMarte.Week07.Supermarket;
 using BarbaraMarte.Week07;
+using BarbaraMarte.Week08.Test;
 
-namespace BarbaraMarte.Week01
+namespace BarbaraMarte.Week08.Test
 {
     class Program
     {
@@ -32,11 +34,14 @@ namespace BarbaraMarte.Week01
             // ContactsNewList.Start();
             // ContactListFolder.Start();
             // StartSupermarket.Print();
+            // ContactListNew.Start();
+            // LetsGo.Start();
 
 
             // Week07
             // QueueCallCenter.Start();
-            Hangman.Print();
+            // Hangman.Print();
+            // Hangman.Print();
 
 
             // Week06
@@ -84,5 +89,4 @@ namespace BarbaraMarte.Week01
         }
     }
 }
-
 

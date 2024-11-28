@@ -1,13 +1,11 @@
 
 using System.ComponentModel;
 
-namespace BerkantAkinci.Week06.FotoapparatErwitert
+namespace BerkantAkinci.Week06.FotoapparatErweitert
 {
 
-    public class Start
+    public class FotoErweitertMain
     {
-
-
         /*
 
         1. Grundannahmen definieren und Context abstecken
@@ -50,17 +48,14 @@ namespace BerkantAkinci.Week06.FotoapparatErwitert
             inventarliste[1] = memory2;
             inventarliste[2] = lense2;
 
-            System.Console.WriteLine("Inventarnummer      Preis");
+            System.Console.WriteLine(@"{0,-20}  {1,8}", "Inventarnummer", "Preis");
 
-            foreach (IObjekt gegenstand in inventarliste) {
-                System.Console.WriteLine($"{gegenstand.Inventorynumber, -20}  {gegenstand.Price, 8:F2}");
+            foreach (IObjekt gegenstand in inventarliste)
+            {
+                System.Console.WriteLine($"{gegenstand.Inventorynumber,-20}  {gegenstand.Price,8:F2}");
             }
 
 
-        }
-
-        public static int add(int a, int b) {
-            return a + b;
         }
     }
 }

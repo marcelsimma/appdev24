@@ -51,7 +51,6 @@ namespace MarcelSimma.Week06.FotoapparatErweitert
         }
 
 
-
         public string Inventorynumber { get; }
         public double Price { get; set; }
 
@@ -79,8 +78,6 @@ namespace MarcelSimma.Week06.FotoapparatErweitert
             Brennweite Max: {3}
 
             ", _model, Manufacturer, _focalWidthMin, _focalWidthMax);
-
         }
-
     }
 }
