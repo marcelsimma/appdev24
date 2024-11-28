@@ -89,7 +89,6 @@
 	SELECT 'Total World Population', Round(SUM(population),0)
 	FROM country;
 
--- 14 und 15 funktionieren nicht richtig
 
 14?. select country.name, politics.independence
 	from desert,geo_desert,province, country, politics, ethnicgroup
@@ -99,6 +98,11 @@
 	and country.code = politics.country 
 	and country.code = ethnicgroup.country
 	and ethnicgroup.name = 'African';
+
+-- city tabelle A:
+SELECT * FROM mondial.city
+-- city tabelle B:
+SELECT * FROM mondial.city order by 2;
 
 15. SELECT city.country, city.name, COUNT(city.country) AS staedteAnzahl
 	FROM city
