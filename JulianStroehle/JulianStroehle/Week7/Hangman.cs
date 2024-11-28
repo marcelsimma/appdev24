@@ -10,51 +10,51 @@ namespace JulianStroehle.Week7
             Console.Clear();
             if (Mistakes > 3)
             {
-                Console.WriteLine("   _____________________");
+                Console.WriteLine("   ┌───────────────────┐");
             }
             if (Mistakes > 4)
             {
-                Console.WriteLine("   |   /               |\n   |  /                |\n   | /                 |\n   |/                 _|_");
+                Console.WriteLine("   │   ⁄               │\n   │  ⁄                │\n   │ ⁄                 │\n   │⁄                 _│_");
             }
             else if (Mistakes > 2)
             {
-                Console.WriteLine("   |   /\n   |  /\n   | /\n   |/");
+                Console.WriteLine("   │   ⁄\n   │  ⁄\n   │ ⁄\n   │⁄");
             }
             if (Mistakes > 9)
             {
-                Console.WriteLine("   |                 (°-°)");
+                Console.WriteLine("   │                 (°-°)");
             }
             else if (Mistakes > 5)
             {
-                Console.WriteLine("   |                 (^-^)");
+                Console.WriteLine("   │                 (^-^)");
             }
             if (Mistakes > 9)
             {
-                Console.WriteLine("   |                ~~~|~~~\n   |                   |\n   |                   |\n   |                  / \\\n   |                 /   \\\n   |           /\\  /\\  /\\  /\\  /\\  \n   |          /  \\/  \\/  \\/  \\/  \\");
+                Console.WriteLine("   │                ~~~│~~~\n   │                   │\n   │                   │\n   │                  ⁄ \\\n   │                 ⁄   \\\n   │           ⁄\\  ⁄\\  ⁄\\  ⁄\\  ⁄\\  \n   │          ⁄  \\⁄  \\⁄  \\⁄  \\⁄  \\");
             }
             else if (Mistakes > 8)
             {
-                Console.WriteLine("   |                ~~~|~~~\n   |                   |\n   |                   |\n   |                  / \\\n   |                 /   \\\n   |\n   |");
+                Console.WriteLine("   │                ~~~│~~~\n   │                   │\n   │                   │\n   │                  ⁄ \\\n   │                 ⁄   \\\n   │\n   │");
             }
             else if (Mistakes > 7)
             {
-                Console.WriteLine("   |                ~~~|~~~\n   |                   |\n   |\n   |\n   |\n   |\n   |");
+                Console.WriteLine("   │                ~~~│~~~\n   │                   │\n   │\n   │\n   │\n   │\n   │");
             }
             else if (Mistakes > 6)
             {
-                Console.WriteLine("   |                   |\n   |                   |\n   |\n   |\n   |\n   |\n   |");
+                Console.WriteLine("   │                   │\n   │                   │\n   │\n   │\n   │\n   │\n   │");
             }
             else if (Mistakes > 1)
             {
-                Console.WriteLine("   |\n   |\n   |\n   |\n   |\n   |");
+                Console.WriteLine("   │\n   │\n   │\n   │\n   │\n   │");
             }
             if (Mistakes > 9)
             {
-                Console.WriteLine(" __|__       (    (°)      (°)    )\n/_____\\~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                Console.WriteLine(" __│__       (       (°)(°)       )\n⁄_____\\~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
             }
             else if (Mistakes > 0)
             {
-                Console.WriteLine(" __|__ \n/_____\\~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                Console.WriteLine(" __│__ \n⁄_____\\~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
             }
         }
     }
