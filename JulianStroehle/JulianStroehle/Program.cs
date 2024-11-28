@@ -13,6 +13,7 @@ using JulianStroehle.Week7;
 using JulianStroehle.Week7.Callcenter;
 using JulianStroehle.Week7.Supermarket;
 using JulianStroehle.Week7.Telefonbuch;
+using JulianStroehle.Week8.OOP_Test_Aufgabe;
 namespace JulianStroehle
 {
     class Program
@@ -97,7 +98,8 @@ namespace JulianStroehle
             // Telefonbuch.Start();
             // Callcenter.Start();
             // SupermarketMain.Start();
-            Hangman.WrongInput();
+            // Hangman.WrongInput();
+            // LibraryMain.Start();
         }
     }
 }

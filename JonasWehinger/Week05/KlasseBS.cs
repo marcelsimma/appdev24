@@ -15,7 +15,7 @@ namespace JonasWehinger.Week05
             Address = address;
         }
 
-        public string GName()
+        public string GetName()
         {
             return Name;
         }
@@ -53,7 +53,7 @@ namespace JonasWehinger.Week05
             Balance = balance;
         }
 
-        public double GBalance()
+        public double GetBalance()
         {
             return Balance;
         }
