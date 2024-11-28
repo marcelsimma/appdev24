@@ -2,6 +2,7 @@ using System;
 using System.ComponentModel;
 using BerkantAkinci;
 using BerkantAkinci.AForMe;
+using BerkantAkinci.ATest;
 using BerkantAkinci.Basics;
 using BerkantAkinci.Ubueng;
 using BerkantAkinci.Week01;
@@ -77,8 +78,8 @@ namespace BerkantAkinci
             //TicketsystemMain.Start();
             //Callcenter.Start();
             //ContactList.Start();
-            ArrayListExample.Start();
-            
+        
+           
             
             
             
