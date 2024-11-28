@@ -100,14 +100,10 @@
 	and country.code = ethnicgroup.country
 	and ethnicgroup.name = 'African';
 
-15. WITH countProvinces AS (
-    SELECT 
-        province.country, 
-        province.name, 
-        COUNT(province.name) OVER (PARTITION BY province.country) AS staedteAnzahl,
-        RANK() OVER (PARTITION BY province.country ORDER BY province.name DESC) AS anzahl
-    FROM province
-)
+15. SELECT city.country, city.name, COUNT(city.country) AS staedteAnzahl
+	FROM city
+	GROUP BY city.country, city.name
+	HAVING staedteAnzahl = 3;
 
 SELECT * 
 FROM countProvinces 
