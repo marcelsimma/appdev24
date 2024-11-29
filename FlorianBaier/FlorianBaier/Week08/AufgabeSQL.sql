@@ -124,6 +124,7 @@ SELECT DISTINCT cy.name
 FROM lake l, geo_lake gl, mountain m, geo_mountain gm, country cy
 WHERE gl.Country = cy.code
 AND gl.Lake = l.Name
+
 AND l.Depth > 100
 AND gm.Country = cy.code
 AND gm.mountain = m.name
@@ -133,3 +134,55 @@ AND m.Height > 1500;
 SELECT DISTINCT country.name, geo_sea.sea
 FROM country
 LEFT JOIN geo_sea ON country.Code = geo_Sea.Country;
+
+--20.1) Erstelle eine neue “Organization” mit dem Namen “DCV-Grundkurs”. 
+INSERT INTO mondial.organization VALUES ('DCV', 'DCV-Grundkurs', 'Bregenz', 'A', 'Vorarlberg', '2024-11-28');
+
+--20.2) Suche dir ein paar Länder aus, die Mitglied in dieser "Organization" sind und speichere die Mitgliedschaft in die Datenbank.
+INSERT INTO ismember VALUES ('A', 'DCV', 'member'), ('CH', 'DCV', 'member'), ('D', 'DCV', 'member');
+
+--21)  Gib alle Mitglieder der neuen Organization aus. Sind alle Mitglieder dabei, die du hinzugefügt hast?
+SELECT * FROM ismember WHERE Organization = 'DCV';
+
+-- 22.1) Wir gehen 2 Monate in die Zukunft: Der Kurs ist vorbei. Jetzt gibt es eine neue internationale Organisation: “Alumni DCV-Grundkurs”.
+INSERT INTO organization VALUES ('ALDCV', 'Alumni DCV-Grundkurs', 'Bregenz', 'A', 'Vorarlberg', '2025-01-29');
+
+-- 22.2) Alle Mitglieder von “DCV-Grundkurs” werden nun automatisch Mitglied in der Organisation “Alumni DCV Grundkurs”. Die Mitgliedschaft bei "DCV-Grundkurs" endet im selben Moment.
+SET SQL_SAFE_UPDATES = 0;
+UPDATE ismember SET Organization = 'ALDCV' 
+WHERE Organization = 'DCV';
+
+-- 23)Nachdem die Organisation “DCV-Grundkurs” keine Mitglieder mehr hat, soll diese gelöscht werden.
+DELETE FROM organization 
+WHERE Abbreviation = 'DCV'
+
+-- 24) Großglockner Größe updaten
+UPDATE mondial.mountain 
+SET Height = 3798 
+WHERE mountain.Name = 'Grossglockner';
+
+-- 25.1) Erstelle das Land Transnistrien. Es liegt in Europa.
+INSERT INTO country VALUES ('Transnistria', 'PMR', 'Tiraspol', 'Tiraspol', 4163, 465200)
+
+-- 25.2) Wenn du anschließend einen alle europäischen Staaten inkl. Namen selektierst, soll auch Transnistrien in der Ergebnisliste sein.
+INSERT INTO encompasses VALUES ('PMR', 'Europe', 100);
+
+--26) Hat keine nennenswerte Berge oder Erhöhungen, Hauptstadt von Transnistrien
+INSERT INTO city VALUES ('Tiraspol', 'PMR', 'Transnistria', 347251, null, null);
+
+--27) Ändere den Namen der Türkei auf "Türkiye".
+UPDATE country
+SET Name = 'Turkiye'
+WHERE Name = 'Turkey'
+AND Code = 'TR'
+AND Capital ='Ankara';
+
+--28)  Ändere die Einwohnerzahl der Deutschen Bundesländer: In jedem Bundesland wohnt zukünftig jeweils 1/16 der Gesamtbevölkerung Deutschlands
+UPDATE province  
+SET Population = (SELECT Population FROM country WHERE Code = 'D') / 16 
+WHERE Country = 'D';
+
+--29)  Thailand hat eine neue Hauptstadt: Nusantara. Speichere das in die Datenbank.
+UPDATE country 
+SET Capital = 'Nusantara' 
+WHERE Name = 'Thailand';
