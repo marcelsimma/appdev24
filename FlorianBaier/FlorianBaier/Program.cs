@@ -7,6 +7,7 @@ using FlorianBaier.Week04;
 using FlorianBaier.Week05;
 using FlorianBaier.Week06;
 using FlorianBaier.Week07;
+using FlorianBaier.Week08;
 
 namespace FlorianBaier
 {
@@ -26,7 +27,8 @@ namespace FlorianBaier
             //Bankaccount.Start();
             //Start.Launch();
             //PrintTicketsales.Start();
-            Output.Launch();
+            //Output.Launch();
+            LibraryLaunch.StartLibrary();
         }
 
     }
