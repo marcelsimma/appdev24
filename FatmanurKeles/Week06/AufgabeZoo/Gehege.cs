@@ -4,28 +4,32 @@ namespace FatmanurKeles.Week06.ZOO
 {
     public class Gehege
     {
-        private string _name;
+        public string Gehegename {get; set;}
 
-        public string Name
+        public Gehege(string gehegename)
         {
-            get
-            {
-                return _name;
-            }
-            set
-            {
-                _name = value;
-            }
-        }
-        public Gehege(string name)
-        {
-            _name = Name;
+            Gehegename = gehegename;
         }
 
         public override string ToString()
         {
             return 
-            String.Format("Gehege:" + _name);
+            String.Format("Gehege:" + Gehegename);
         }
+
+
+
+        List<Gehege> gehegen = new List<Gehege>();
+
+        public void AddGehege(Gehege gehege)
+        {
+            gehegen.Add(gehege);
+        }
+        
+        public void DeleteGehege(Gehege gehege)
+        {
+            gehegen.Remove(gehege);
+        }
+        
     } 
 }

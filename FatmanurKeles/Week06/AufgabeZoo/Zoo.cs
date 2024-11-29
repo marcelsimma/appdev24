@@ -5,32 +5,17 @@ namespace FatmanurKeles.Week06.AufgabeZoo
 {
     public class Zoo
     {
-        private string _name;
+        public string Zooname {get; set;}
+        public string Gruendungsjahr {get; set;}
+        public Gehege Gehegename {get; set;}
+        public string Ort {get; set;}
 
-        public string Name
+        public Zoo(string zooname, string gruendungsjahr, Gehege gehegename, string ort)
         {
-            get
-            {
-                return _name;
-            }
-            set
-            {
-                _name = value;
-            }
-        }
-
-        public int Gruendungsjahr;
-
-        public Gehege Bereich;
-        
-        public string Place;
-
-        public Zoo(string name, int gruendungsjahr, Gehege bereich, string place)
-        {
-            _name = name;
+            Zooname = zooname;
             Gruendungsjahr = gruendungsjahr;
-            Bereich = bereich;
-            Place = place;
+            Gehegename = gehegename;
+            Ort = ort;
         }
 
         public override string ToString()
@@ -42,13 +27,11 @@ namespace FatmanurKeles.Week06.AufgabeZoo
             
             Name: {0}
             Gruendungsjahr: {1}
-            Gehege: {2}
-            Ort:  {3}
-
+            Ort:  {2}
+            Gehege: {3}
             "
-            , _name, Gruendungsjahr, Bereich, Place );
+            , Zooname, Gruendungsjahr, Ort );
             
         }
-        
     }
 }
