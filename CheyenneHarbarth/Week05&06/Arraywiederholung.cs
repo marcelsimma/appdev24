@@ -1,13 +1,14 @@
 using System;
+using CheyenneHarbarth.Week07.Supermarket;
 
 namespace CheyenneHarbarth.Week05
 {
 
-    class Arraywiederholung
+    internal class Arraywiederholung
     {
-
         public static void PrintSortiment()
         {
+            Checkout checkout = new Checkout("31614645");
             string[] Sortiment = {
                 "Dinkelflocken",
                 "Haferflocke",
@@ -29,7 +30,7 @@ namespace CheyenneHarbarth.Week05
             for (int i = 0; i < Sortiment.Length; i++)
             {
                 SortimentNeu[i] = Sortiment[i];
-                Console.WriteLine($"{Sortiment[i], 20}");
+                Console.WriteLine($"{Sortiment[i],20}");
             }
 
             SortimentNeu[10] = "Eier";
@@ -42,7 +43,7 @@ namespace CheyenneHarbarth.Week05
 
             for (int i = 0; i < SortimentNeu.Length; i++)
             {
-                Console.WriteLine($"{SortimentNeu[i], 20}");
+                Console.WriteLine($"{SortimentNeu[i],20}");
             }
         }
     }
