@@ -7,7 +7,7 @@ namespace BarbaraMarte.Schule.Library;
 class Library
 {
     public List<Book> AllAboutBooks = new List<Book>();
-    public List<User> Users = new List<User>();
+    public List<User> Users = new List<User>();         // would be a perfect case for a 
     public List<Book> BorrowedBooks = new List<Book>();
     public void Start()
     {
@@ -24,7 +24,7 @@ class Library
         Print out all books = 6
         Exit = E
         ");
-            string? input = Console.ReadLine() ?? "";
+            string input = Console.ReadLine() ?? "";
 
             switch (input.ToUpper())
             {
@@ -105,6 +105,7 @@ class Library
         {
             User library = new User(firstName, lastName, idNumber);
             Users.Add(library);
+            System.Console.WriteLine("User is Added");
         }
         else if (SearchUserById(idNumber) is not null)
         {
@@ -185,7 +186,7 @@ class Library
             return;
         }
         // check wether book is available
-        else if (book.IsAvailable)
+        else if (!book.IsAvailable)
         {
             UserBookBack(book, currentUser);
         }
@@ -234,4 +235,3 @@ class Library
         }
     }
 }
-
