@@ -89,7 +89,6 @@
 	SELECT 'Total World Population', Round(SUM(population),0)
 	FROM country;
 
--- 14 und 15 funktionieren nicht richtig
 
 14?. select country.name, politics.independence
 	from desert,geo_desert,province, country, politics, ethnicgroup
@@ -100,14 +99,15 @@
 	and country.code = ethnicgroup.country
 	and ethnicgroup.name = 'African';
 
-15. WITH countProvinces AS (
-    SELECT 
-        province.country, 
-        province.name, 
-        COUNT(province.name) OVER (PARTITION BY province.country) AS staedteAnzahl,
-        RANK() OVER (PARTITION BY province.country ORDER BY province.name DESC) AS anzahl
-    FROM province
-)
+-- city tabelle A:
+SELECT * FROM mondial.city
+-- city tabelle B:
+SELECT * FROM mondial.city order by 2;
+
+15. SELECT city.country, city.name, COUNT(city.country) AS staedteAnzahl
+	FROM city
+	GROUP BY city.country, city.name
+	HAVING staedteAnzahl = 3;
 
 SELECT * 
 FROM countProvinces 
@@ -122,3 +122,79 @@ order by country;
 	and country.code = encompasses.country
 	and encompasses.continent = continent.name
 	) SELECT * from maxMountains WHERE rang = 1;
+
+17.	SELECT COUNT(organization.name), organization.name, organization.country
+	FROM organization
+	where organization.country = 'A'
+	Group By organization.name;
+
+18. Select country.name, count(country.name) 
+	From country,province,geo_lake,lake,geo_mountain,mountain
+	where lake.Depth >= 100
+	and lake.name = geo_lake.lake
+	and geo_lake.country = province.country
+	and province.country = country.code
+	and mountain.height >= 1500 
+	and mountain.name = geo_mountain.mountain 
+	and geo_mountain.country = province.country
+	and province.country = country.code
+	Group by country.name;
+
+19.	SELECT country.name, sea.name AS sea_name
+	FROM country
+	LEFT JOIN province ON province.country = country.code
+	LEFT JOIN geo_sea ON geo_sea.country = province.country
+	LEFT JOIN sea ON sea.name = geo_sea.sea
+	GROUP BY country.name, sea.name;
+
+22?. 	UPDATE ismember
+	SET organization = 'ADCVG'
+	WHERE organization = 'DCVG';
+
+24. Update mountain
+	Set height = 3798
+	where name = 'Grossglockner';
+
+25. 
+Insert into country(name,code,capital,province,area,population)
+value ('Cisnistrien', 'PMR', 'Tiraspol', 'Tiraspol', 3576,347251);
+
+Insert Into province(name,country,population,area,capital,capprov)
+values('Cisnistrien', 'PMR',347251,3576, 'Tiraspol','Tiraspol' );
+
+Insert INTO encompasses(country,continent,Percentage)
+values('PMR', 'Europe', 100);
+
+Insert into city(name,country,province,population)
+values('Cisnistrien', 'PMR', 'Cisnistrien', '347251');
+
+26.
+Insert Into mountain(name,height)
+values('chervonka', 190);
+
+Insert Into mountain(name,height)
+value('4 Stolba', 10);
+
+27.
+Update country
+Set name = 'Tuerkiye'
+where name = 'Turkey';
+
+28.
+Update province
+Set population = 5221007
+where country = 'D';
+
+29.
+Update country
+set capital = 'Nusantara'
+where code = 'THA';
+
+30.
+SELECT ismember.Organization , country.name
+from ismember, country 
+where ismember.organization = 'EU' 
+and ismember.country = country.code;
+
+31.
+Delete From country where name = 'United Kingdom';

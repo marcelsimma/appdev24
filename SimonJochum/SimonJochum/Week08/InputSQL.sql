@@ -30,7 +30,7 @@ SELECT Name, MAX(mountain.Height) AS HighestMountain FROM mountain JOIN geo_moun
 SELECT islandin.Island, islandin.Sea, religion.Name AS Religion, religion.Percentage FROM islandin, religion JOIN geo_island ON religion.Country = geo_island.Country WHERE islandin.Sea = 'Pacific Ocean' AND islandin.Island = geo_island.Island AND religion.Name = 'Muslim' AND religion.Percentage > 50;
 
 -- 10)Alle 3000er, welche in einem Land sind, welches zu mindestens 60% römisch Katholisch ist
-SELECT DISTINCT mountain.Name, mountain.Height FROM mountain, religion, geo_mountain WHERE mountain.Name = geo_mountain.Mountain AND geo_mountain.Country = religion.Country AND mountain.Height > 3000 AND AND religion.Name = 'Roman Catholic' AND religion.Percentage >= 60 ORDER BY mountain.Height;
+SELECT DISTINCT mountain.Name, mountain.Height FROM mountain, religion, geo_mountain WHERE mountain.Name = geo_mountain.Mountain AND geo_mountain.Country = religion.Country AND mountain.Height > 3000 AND religion.Name = 'Roman Catholic' AND religion.Percentage >= 60 ORDER BY mountain.Height;
 
 -- 11) Einwohnerzahl pro Religion
 SELECT religion.Name, SUM(country.Population) AS Population FROM religion JOIN country ON religion.Country = country.Code GROUP BY religion.Name;
@@ -79,7 +79,7 @@ DELETE FROM organization WHERE Abbreviation = 'DCV';
 UPDATE mondial.mountain SET Height = 3798 WHERE mountain.Name = 'Grossglockner';
 
 -- 25.1) Erstelle das Land Transnistrien. Es liegt in Europa. 
-INSERT INTO country VALUES ('Transnistria', 'PMR', 'Tiraspol', 'Transnistria', 3567, 347251) & INSERT INTO encompasses VALUES ('PMR', 'Europe', 100)
+INSERT INTO country VALUES ('Transnistria', 'PMR', 'Tiraspol', 'Transnistria', 3567, 347251) & INSERT INTO encompasses VALUES ('PMR', 'Europe', 100);
 -- 25.2) Wenn du anschließend einen alle europäischen Staaten inkl. Namen selektierst, soll auch Transnistrien in der Ergebnisliste sein.
 SELECT country.Name, Country, Continent FROM encompasses LEFT JOIN country ON country.Code = encompasses.Country WHERE Continent = 'Europe';
 
@@ -89,15 +89,18 @@ INSERT INTO mountain VALUES ('4 Stolba', '4 Stolba', 10, null, null, null), ('Ch
 -- 26.1 Prüfung) 
 SELECT * FROM geo_mountain JOIN mountain ON mountain.Mountains = geo_mountain.Mountain WHERE Country = 'PMR';
 --26.2) sowie die Hauptstadt von Transnistrien in die Datenbank.
-INSERT INTO city VALUES ('Tiraspol', 'PMR', 'Transnistria', 347251, null, null)
+INSERT INTO city VALUES ('Tiraspol', 'PMR', 'Transnistria', 347251, null, null);
 
 -- 27) Ändere den Namen der Türkei auf "Türkiye".
 UPDATE mondial.country SET Name = 'Türkiye' WHERE Name = 'Turkey' AND Code = 'TR' AND Capital = 'Ankara';
 
 -- 28) Ändere die Einwohnerzahl der Deutschen Bundesländer: In jedem Bundesland wohnt zukünftig jeweils 1/16 der Gesamtbevölkerung Deutschlands
-UPDATE province  SET Population = (SELECT Population FROM country WHERE Code = 'D') / 16 WHERE Country = 'D'
+UPDATE province  SET Population = (SELECT Population FROM country WHERE Code = 'D') / 16 WHERE Country = 'D';
 
 -- 29) Thailand hat eine neue Hauptstadt: Nusantara. Speichere das in die Datenbank.
 UPDATE country SET Capital = 'Nusantara' WHERE Name = 'Thailand';
 
--- 30) 
+-- 30.1) Es gibt eine weitere "Organization", die nicht in unserer Datenbank vorhanden ist: die Visegrad Gruppe.
+INSERT INTO organization VALUES ('V4', 'Visegrád-Gruppe', 'Visegrad', 'H', 'Szentendre', '1991-02-15');
+-- 30.2) Erstelle die "Organization" und ordne ihr Mitglieder zu. Die Hauptstadt dieses Bündnisses ist die ungarische Stadt Visegrad.
+INSERT INTO ismember VALUES ('PL', 'V4', 'member'), ('CZ', 'V4', 'member'), ('SK', 'V4', 'member'), ('H', 'V4', 'member');
