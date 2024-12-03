@@ -18,6 +18,8 @@ using BarbaraMarte.Schule.Library;
 using BarbaraMarte.Week07.Supermarket;
 using BarbaraMarte.Week07;
 using BarbaraMarte.Week08.Test;
+using BarbaraMarte.AdventOfCode;
+using BarbaraMarte.Week09;
 
 namespace BarbaraMarte.Week08.Test
 {
@@ -25,6 +27,11 @@ namespace BarbaraMarte.Week08.Test
     {
         static void Main()
         {
+            // AdventOfCode
+
+
+
+
             //Work
             // PrimeNumber.Print();
 
@@ -35,8 +42,16 @@ namespace BarbaraMarte.Week08.Test
             // ContactListFolder.Start();
             // StartSupermarket.Print();
             // ContactListNew.Start();
+
+            /*
             Library libraryViktorsberg = new Library();
             libraryViktorsberg.Start();
+            */
+
+
+            // Week 09
+            EUMember.Start();
+            // SearchCountryByCode.Start();
 
 
             // Week07
