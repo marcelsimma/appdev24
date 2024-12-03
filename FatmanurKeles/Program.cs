@@ -32,7 +32,8 @@ namespace FatmanurKeles.Week02
             //  Objektorientierung.Start();
             //  Bankomat.Start();
             // FotoappEinfach.Launch();
-            ZooStart.Launch();
+            //  ZooStart.Launch();
+         
         }
     }
 }

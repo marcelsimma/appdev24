@@ -10,6 +10,8 @@ namespace CheyenneHarbarth.Week07.Supermarket
 
             DateTime OpenDay = new DateTime();
 
+            Checkout checkout = new Checkout("145314530");
+
             DateTime OpenHour = new DateTime();
             DateTime ClosingHour = new DateTime();
 
