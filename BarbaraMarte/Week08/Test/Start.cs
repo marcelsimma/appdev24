@@ -3,6 +3,7 @@ using System.Net;
 using BarbaraMarte.Schule.Library;
 
 namespace BarbaraMarte.Week08.Test;
+/*
 class Bibliothek
 {
     public static List<BookTest> HardShellBooks = new List<BookTest>();
@@ -143,3 +144,4 @@ class EBook
         return string.Format($"The EBook is in {OnlineFormat} format.");
     }
 }
+*/

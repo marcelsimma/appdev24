@@ -79,9 +79,8 @@
         AND r.percentage >50;
 
 
-
-    SELECT i.name, r.Percentage 
-    FROM island i , islandIn ii, geo_island gi, religion r 
+        SELECT i.name, r.Percentage 
+        FROM island i , islandIn ii, geo_island gi, religion r 
         -- Beziehung Island - islandIn
         WHERE i.name = ii.island
 
@@ -104,7 +103,7 @@
         AND religion.Percentage >50;
 
     --10. Alle 3000er, welche in einem Land sind, welches mindestens 60% römisch Katholisch ist
-        SELECT m.name
+        SELECT DISTINCT m.name, m.Height
         FROM mountain m, geo_mountain gm, province p, country cy, religion r
         WHERE cy.code = p.Country
         AND gm.country = p.country
@@ -114,6 +113,7 @@
         AND m.Height > 3000
         AND r.name LIKE 'Roman %'  
         AND r.Percentage > 60
+        ORDER BY m.Height
 
     --11. Einwohnerzahl pro religion
         SELECT r.name, 
@@ -155,18 +155,43 @@
 
     --16. Was ist der größte Berg pro Kontinent? Wie hoch sind diese?
     -- Schreibt alle Berge nach der Größe aus
-    SELECT DISTINCT encompasses.Continent, geo_mountain.Mountain, mountain.Height AS MaxHeight
-    FROM mountain
-    JOIN geo_mountain ON mountain.Name = geo_mountain.Mountain
-    JOIN encompasses ON geo_mountain.Country = encompasses.Country
-    WHERE mountain.Height = (SELECT MAX(mountain.Height))
-    ORDER BY MaxHeight
-    DESC  
+        SELECT DISTINCT encompasses.Continent, geo_mountain.Mountain, mountain.Height AS MaxHeight
+        FROM mountain
+        JOIN geo_mountain ON mountain.Name = geo_mountain.Mountain
+        JOIN encompasses ON geo_mountain.Country = encompasses.Country
+        WHERE mountain.Height = (SELECT MAX(mountain.Height))
+        ORDER BY MaxHeight
+        DESC  
 
-    WITH maxMountains as (SELECT DISTINCT encompasses.continent, geo_mountain.Mountain, mountain.height, RANK() over (
-    partition by encompasses.continent order by mountain.Height desc) AS mountainRank 
-    FROM mountain
-    JOIN geo_mountain ON mountain.Name = geo_mountain.Mountain
-    JOIN encompasses On geo_mountain.Country = encompasses.Country)
-    SELECT * from maxMountains 
-    WHERE mountainRank = 1;
+        WITH maxMountains as (SELECT DISTINCT encompasses.continent, geo_mountain.Mountain, mountain.height, RANK() over (
+        partition by encompasses.continent order by mountain.Height desc) AS mountainRank 
+        FROM mountain
+        JOIN geo_mountain ON mountain.Name = geo_mountain.Mountain
+        JOIN encompasses On geo_mountain.Country = encompasses.Country)
+        SELECT * from maxMountains 
+        WHERE mountainRank = 1;
+
+    -- 17. Welche Organisationen haben deren Hauptsitz in Österreich? Wie viele Mitglieder haben diese Organisationen?
+        SELECT organization.Name, COUNT(ismember.Organization) AS Members
+        FROM organization, ismember
+        WHERE ismember.Organization = organization.Abbreviation
+        AND organization.Country = 'A'
+        GROUP BY organization.Name
+        ORDER BY organization.Name;
+
+    -- 18. Alle Länder mit mindestens einem See mit mindestens 100 Meter Tiefe und mindestens einem Berg mit mindestens 1500 Höhenmeter
+        SELECT DISTINCT c.Name
+        FROM Lake, geo_lake gl, mountain, geo_mountain gm, country c
+        WHERE gl.Country = c.code
+        AND  gl. Lake = Lake.Name
+        AND Lake.Depth > 100
+        AND gm.Country = c.Code
+        AND gm.Mountain = Mountain.Name
+        AND Mountain.Height > 1500
+
+    -- 19. Alle Länder, nur die Namen, und wenn sie haben, das Meer dazu
+        SELECT DISTINCT country.Name, geo_sea.Sea
+        FROM country
+        LEFT JOIN geo_sea ON country.Code = geo_sea.Country
+
+    -- 20. Erstelle eine neue “Organization” mit dem Namen “DCV-Grundkurs”. 

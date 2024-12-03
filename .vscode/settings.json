@@ -5,6 +5,7 @@
         "Bibliothek",
         "Brennweite",
         "Objekt",
+<<<<<<< HEAD
         "Vererbung"
     ],
     "sqltools.connections": [
@@ -23,5 +24,7 @@
             "connectionTimeout": 30,
             "askForPassword": true
         }
+=======
+>>>>>>> 295db90b2c69c514398e647921e2acf08a12d409
     ]
 }

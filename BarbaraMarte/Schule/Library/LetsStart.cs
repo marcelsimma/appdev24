@@ -4,12 +4,12 @@ using Microsoft.Win32.SafeHandles;
 
 namespace BarbaraMarte.Schule.Library;
 
-class LetsGo
+class Library
 {
-    public static List<Book> AllAboutBooks = new List<Book>();
-    public static List<string> User = new List<string>();
-    public static List<string> BorrowedBooks = new List<string>();
-    public static void Start()
+    public List<Book> AllAboutBooks = new List<Book>();
+    public List<User> Users = new List<User>();         // would be a perfect case for a 
+    public List<Book> BorrowedBooks = new List<Book>();
+    public void Start()
     {
         bool running = true;
         while (running == true)
@@ -24,7 +24,7 @@ class LetsGo
         Print out all books = 6
         Exit = E
         ");
-            string? input = Console.ReadLine() ?? "";
+            string input = Console.ReadLine() ?? "";
 
             switch (input.ToUpper())
             {
@@ -35,19 +35,41 @@ class LetsGo
                     AddUser();
                     break;
                 case "3":
-                    BorrowBook();
-                    break;
+                    {
+                        var currentUser = AskUserForLogin();
+                        if (currentUser is null)
+                        {
+                            System.Console.WriteLine("User not found => please create a User");
+                            AddUser();
+                        }
+                        else
+                        {
+                            BorrowBook(currentUser);
+                        }
+                        break;
+                    }
+
                 case "4":
-                    LeaveBookBack();
-                    break;
+                    {
+                        var currentUser = AskUserForLogin();
+                        if (currentUser is null)
+                        {
+                            System.Console.WriteLine("User not found => please create a User");
+                            AddUser();
+                        }
+                        else
+                        {
+                            LeaveBookBack(currentUser);
+                        }
+                        break;
+                    }
                 case "5":
-                    SearchForBook();
+                    AskUserForBook();
                     break;
                 case "6":
                     PrintOutAllBooks();
                     break;
                 case "E":
-
                     running = false;
                     break;
                 default:
@@ -57,35 +79,21 @@ class LetsGo
             }
         }
     }
-    public static void PrintOutAllBooks()
+    public void AddBook()
     {
-        foreach (string print in AllAboutBooks)
-        {
-            System.Console.WriteLine(print);
-        }
-    }
-    public static void SearchForBook()
-    {
+        System.Console.WriteLine("Title:");
+        string title = Console.ReadLine() ?? "";
+        System.Console.WriteLine("Author:");
+        string author = Console.ReadLine() ?? "";
+        System.Console.WriteLine("ISBN:");
+        string isbn = Console.ReadLine() ?? "";
+        bool isAvailable = true;
 
+        Book book1 = new Book(title, author, isbn, isAvailable);
+        AllAboutBooks.Add(book1);
+        System.Console.WriteLine(book1);
     }
-    public static void LeaveBookBack()
-    {
-        string input = Console.ReadLine() ?? "";
-        for (int i = 0; i < BorrowedBooks.Count; i++)
-        {
-            if (input == BorrowedBooks[i])
-            {
-                AllAboutBooks.Add(BorrowedBooks[i]);
-                System.Console.WriteLine($"Thanks for bringing {input} back!");
-                BorrowedBooks.RemoveAt(i);
-            }
-            else
-            {
-                System.Console.WriteLine("I am sorry, this book is not from our Library.");
-            }
-        }
-    }
-    public static void AddUser()
+    public void AddUser()
     {
         Console.WriteLine("First Name");
         string firstName = Console.ReadLine() ?? "";
@@ -93,69 +101,137 @@ class LetsGo
         string lastName = Console.ReadLine() ?? "";
         Console.WriteLine("ID number");
         string idNumber = Console.ReadLine() ?? "";
-        User.Add($"Family name: {lastName} First name: {firstName} User ID: {idNumber}");
-    }
-    public static void BorrowBook()
-    {
-        System.Console.WriteLine("Which book are you looking for?");
-        string input = Console.ReadLine() ?? "";
-        for (int i = 0; i < AllAboutBooks.Count; i++)
+        if (SearchUserById(idNumber) is null)
         {
-            if (AllAboutBooks[i] == input)
-            {
-                BorrowedBooks.Add(AllAboutBooks[i]);
-                System.Console.WriteLine($"Have fun with {input}");
-                AllAboutBooks.RemoveAt(i);
-            }
-            else
-            {
-                System.Console.WriteLine("The book you are looking for is at the moment not in our library!");
-            }
+            User library = new User(firstName, lastName, idNumber);
+            Users.Add(library);
+            System.Console.WriteLine("User is Added");
+        }
+        else if (SearchUserById(idNumber) is not null)
+        {
+            System.Console.WriteLine("This user Id is already used. Please try again");
         }
     }
-    public static void AddBook()
-    {
-        Console.WriteLine("Title of the Book:");
-        string Title = Console.ReadLine() ?? "";
-        Console.WriteLine("Author:");
-        string Author = Console.ReadLine() ?? "";
-        Console.WriteLine("ISBN");
-        string Isbn = Console.ReadLine() ?? "";
-        AllAboutBooks.Add($"{Title}, {Author}, {Isbn}");
-    }
-    public static void BookInput()
-    {
-        Book book = new Book("The small prince", "Marge Simpson", "165484", true);
-        System.Console.WriteLine(book);
-        Book book1 = new Book(Title, Author, Isbn, false);
-    }
-}
 
-
-
-/*
-private static bool isHere = true;
-    private static bool LeaveBookBack()
+    public User? AskUserForLogin()
     {
-        return isHere;
+        System.Console.WriteLine("Please enter your user ID");
+        string inputID = Console.ReadLine() ?? "";
+        return SearchUserById(inputID);
     }
-    private static bool IsAvailable()
+    public User? SearchUserById(string inputID)
     {
-        if (LeaveBookBack() == true && BorrowBookBool() == false)
+        for (int m = 0; m < Users.Count; m++)
         {
-            return true;
+            if (inputID == Users[m].IdNumber)
+            {
+                return Users[m];
+            }
+        }
+        return null;
+    }
+    public void BorrowBook(User currentUser)
+    {
+        System.Console.WriteLine("Which book do you want to borrow?");
+        var book = AskUserForBook();
+
+        if (book is null)
+        {
+            // book not found
+            return;
+        }
+        // check wether book is available
+        else if (book.IsAvailable)
+        {
+            UserBorrowsBook(book, currentUser);
+            System.Console.WriteLine("You have successfully borrowed the book.");
         }
         else
         {
-            return false;
+            System.Console.WriteLine("The book is currently not available");
+            return;
         }
     }
-    private static bool BorrowBookBool()
+    public void UserBorrowsBook(Book book, User currentUser)
     {
-        if (IsAvailable() == true)
+        if (book.IsAvailable == false)
         {
-            isHere = false;
+            throw new ArgumentException("Must not be called for unavailable books.");
         }
-        return isHere;
+
+        book.IsAvailable = false;
+        this.BorrowedBooks.Add(book);
+        currentUser.UserBorrowedBooks.Add(book);
     }
-*/
+
+    public void UserBookBack(Book book, User currentUser)
+    {
+        if (book.IsAvailable == true)
+        {
+            throw new ArgumentException("Must only be called for unavailable books.");
+        }
+
+        book.IsAvailable = true;
+        this.BorrowedBooks.Remove(book);
+        currentUser.UserBorrowedBooks.Remove(book);
+    }
+
+    public void LeaveBookBack(User currentUser)
+    {
+        var book = AskUserForBook();
+
+        if (book is null)
+        {
+            // book not found
+            return;
+        }
+        // check wether book is available
+        else if (!book.IsAvailable)
+        {
+            UserBookBack(book, currentUser);
+        }
+        else
+        {
+            System.Console.WriteLine("I am sorry, this book is not from our Library.");
+            return;
+        }
+    }
+    public Book? AskUserForBook()   // is for the UserInput
+    {
+        System.Console.WriteLine("Please enter the book you are looking.");
+        string input = Console.ReadLine() ?? "";
+        Book? book = SearchForBook(input);
+
+        if (book is not null)
+        {
+            System.Console.WriteLine($"We have {input} in our Library:\n{book}.");
+        }
+        else
+        {
+            System.Console.WriteLine($"I am sorry, we do not have {input} in our Library.");
+        }
+
+        return book;
+    }
+
+    public Book? SearchForBook(string input)    // Checks if the book is in the System
+    {
+        for (int i = 0; AllAboutBooks.Count > i; i++)
+        {
+            if (input == AllAboutBooks[i].Author || input == AllAboutBooks[i].Title || input == AllAboutBooks[i].ISBN)
+            {
+                return AllAboutBooks[i];
+            }
+        }
+        return null;
+    }
+
+
+    public void PrintOutAllBooks()
+    {
+        foreach (Book book in AllAboutBooks)
+        {
+            System.Console.WriteLine(book);
+        }
+    }
+}
