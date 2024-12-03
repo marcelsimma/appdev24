@@ -6,5 +6,22 @@
         "Brennweite",
         "Objekt",
         "Vererbung"
+    ],
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "database": "mondial",
+            "username": "root",
+            "name": "MySQL Local",
+            "connectionTimeout": 30,
+            "password": "Arbeiten2024!"
+        }
     ]
 }
