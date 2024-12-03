@@ -44,12 +44,19 @@ namespace ManuelHartmann.Week09.EUMembers
                     // Resultate lesen
                     using (MySqlDataReader reader = command.ExecuteReader())
                     {
+                        // Überschrift
+                        Console.WriteLine("{0,-15} | {1,-5} | {2,-25} | {3,10}",
+                            "Continent", "Code", "Name", "Population");
+                        // Trenner
+                        Console.WriteLine(new string('-', 64));
+
                         while (reader.Read())
                         {
-                            Console.Write(reader.GetString("Continent"));
-                            Console.Write(" | " + reader.GetString("Code"));
-                            Console.Write(" | " + reader.GetString("Name"));
-                            Console.Write(" | " + reader.GetInt64("Population") + "\n");
+                            Console.WriteLine("{0,-15} | {1,-5} | {2,-25} | {3,10}",
+                                reader.GetString("Continent"),
+                                reader.GetString("Code"),
+                                reader.GetString("Name"),
+                                reader.GetInt64("Population"));
                         }
                     }
                 }

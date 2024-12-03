@@ -5,14 +5,15 @@ using MySql.Data.MySqlClient;
 using ZstdSharp.Unsafe;
 
 
-namespace ManuelHartmann.Week09.SeachCountryByCode
+namespace SeachCountryByCode
 {
-    public class SeachCountryByCode
+    public class Program
     {
         static void Main(string[] args)
         {
             Console.WriteLine("Please give me a country.Code");
             string respond = Console.ReadLine();
+            respond = respond.ToUpper();
 
             // Verbindungsinformation
             string databaseConnectionString = @"
