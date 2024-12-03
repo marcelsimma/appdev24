@@ -1,15 +1,18 @@
+
+
 using System.Reflection.Metadata;
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using Microsoft.Win32.SafeHandles;
 
 namespace BarbaraMarte.Schule.Library;
 
-class Library
+class Library1
 {
     public List<Book> AllAboutBooks = new List<Book>();
-    public List<User> Users = new List<User>();         // would be a perfect case for a 
+    public List<User> Users = new List<User>();
     public List<Book> BorrowedBooks = new List<Book>();
-    public List<string> SortedBooks = new List<string>();
+    public List<Book> MatchingBooks = new List<Book>();
     public void Start()
     {
         bool running = true;
@@ -108,7 +111,7 @@ class Library
             Users.Add(library);
             System.Console.WriteLine("User is Added");
         }
-        else if (SearchUserById(idNumber) is not null)
+        else
         {
             System.Console.WriteLine("This user Id is already used. Please try again");
         }
@@ -160,7 +163,7 @@ class Library
             throw new ArgumentException("Must not be called for unavailable books.");
         }
 
-        book.IsAvailable = false;
+        book.IsAvailable = true;
         this.BorrowedBooks.Add(book);
         currentUser.UserBorrowedBooks.Add(book);
     }
@@ -190,7 +193,6 @@ class Library
         else if (!book.IsAvailable)
         {
             UserBookBack(book, currentUser);
-            System.Console.WriteLine("Thank you for leaving the book back!");
         }
         else
         {
@@ -204,12 +206,13 @@ class Library
         string input = Console.ReadLine() ?? "";
         Book? book = SearchForBook(input);
 
-        if (book is not null)
+        if (book is null)
         {
-            System.Console.WriteLine($"We have {input} in our Library:\n{book}.");
+            System.Console.WriteLine($"We have {input} in our Library:\n{book}");
         }
-        else
+        else if (book is not null)
         {
+            // does not work properly. You get always that first if as a response. Work with that on Friday with Johannes!
             System.Console.WriteLine($"I am sorry, we do not have {input} in our Library.");
         }
 
@@ -222,26 +225,22 @@ class Library
         {
             if (input == AllAboutBooks[i].Author || input == AllAboutBooks[i].Title || input == AllAboutBooks[i].ISBN)
             {
-                return AllAboutBooks[i];
+                // return AllAboutBooks[i] ;     //returns only one book and not the others
+                System.Console.WriteLine(AllAboutBooks[i]);     // returns all the books 
+                // Liste an Büchern befüllen
+
             }
         }
+        // Erste Stelle der Liste zurückgeben 
+        // Wenn Liste mehr als ein Eintrag hat, null.
         return null;
     }
 
-
     public void PrintOutAllBooks()
     {
-        for (int i = 0; i < AllAboutBooks.Count; i++)
-        {
-            // is missing a exception that old contacts are not supposed to be added to the sorting list.
-            // foreach PrintOutAllBooks, one book is added to the list.  
-            SortedBooks.Add($"Author: {AllAboutBooks[i].Author,-10} Title: {AllAboutBooks[i].Title,-10} ISBN : {AllAboutBooks[i].ISBN,-10} The book is Available: {AllAboutBooks[i].IsAvailable,-6}");
-        }
-        SortedBooks.Sort();
-        foreach (var book in SortedBooks)
+        foreach (Book book in AllAboutBooks)
         {
             System.Console.WriteLine(book);
         }
-
     }
 }
