@@ -35,7 +35,8 @@ namespace BarbaraMarte.Week08.Test
             // ContactListFolder.Start();
             // StartSupermarket.Print();
             // ContactListNew.Start();
-            // LetsGo.Start();
+            Library libraryViktorsberg = new Library();
+            libraryViktorsberg.Start();
 
 
             // Week07
