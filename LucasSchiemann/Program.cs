@@ -10,7 +10,8 @@ namespace LucasSchiemann;
     {
     static void Main()
     {
-        EmailRecogniser.Start();
+
+        Teilnehmerliste.Start();
         //AlgorithmTester.ChoseSortAlgorythm();
         //Tabellensorter.Start();
         //AlgorithmTester.excecuteSelectionSort();

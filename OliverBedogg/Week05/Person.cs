@@ -8,10 +8,9 @@ namespace OliverBedogg.Week05
         // Attribute
         public string _Name;
         public int _Age;
-        int _Height;
+        int _Height; //m
         int _Weight;
 
-        // getter mit erweiterter Rückgabe des Attributwerts
         public string Name
         {
             get => "\"" + _Name + "\"";
@@ -31,6 +30,11 @@ namespace OliverBedogg.Week05
             _Age = age;
             _Height = height;
             _Weight = weigth;
+        }
+
+        public int getHeight()
+        {
+            return _Height * 100;
         }
 
         // Methode

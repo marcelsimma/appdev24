@@ -7,6 +7,15 @@ using CheyenneHarbarth.Week03;
 using CheyenneHarbarth.Week04;
 using CheyenneHarbarth.Week05;
 using CheyenneHarbarth.Week05.Streams;
+using CheyenneHarbarth.Week05.OOP;
+using CheyenneHarbarth.Week05.OOP.Fotoapparat;
+using CheyenneHarbarth.Week05.OOP.FahrzeugVererbung;
+using OverrideAndNew;
+using CheyenneHarbarth.Week05.OOP.Zoo;
+using CheyenneHarbarth.Week07.Callcenter;
+using CheyenneHarbarth.Week07;
+using CheyenneHarbarth.Week07.Supermarket;
+using CheyenneHarbarth.Week08.Test;
 
 namespace CheyenneHarbarth
 {
@@ -16,26 +25,37 @@ namespace CheyenneHarbarth
 
         static void Main(string[] args)
         {
+            //Testaufgabe.Start();
+            LibraryMain.Start();
+            //RBStart.Start();
+            //LoL.Start(30, 120);
             //ChristmasTree.PrintTree('*', 15);
             //Calculator.CalcSum(21, 50);
+            //ÜbenTest.Start();
+
+
+            //Bubblesort.SortBubble();
+            //ConsoleInput.Start();
+            //Einkaufsliste.PrintList();
             //Faktorial.Fakultät(1, 20);
-            //Zähler.CountTo100();
             //Führerschein.Check();
             //Generationen.CheckGeneration();
-            //Reverse.Reverseprogramm();
-            //Randomize.start("Hallo");
-            //ConsoleInput.Start();
-            //Zahlenraten.StartGame(0, 100);
-            //Einkaufsliste.PrintList();
-            //RandomNumberArray.PrintArray();
             //Kommazahl.PrintKommazahl();
-            //Bubblesort.SortBubble();
-            //MehrdimensArray.PrintArrays();
-            //TikTakToe.StartGame();
+            //Randomize.start("Hallo");
+            //RandomNumberArray.PrintArray();
+            //Reverse.Reverseprogramm();
+            //Zahlenraten.StartGame(0, 100);
+            //Zähler.CountTo100();
+
+
             //Abwesenheitsliste.PrintList();
+            //ArraySearch.Start();  
+            //MehrdimensArray.PrintArrays();
             //StringHesse.BuchstabenZaehlen();
             //StringHesse.BuchstabenZaehlenMarcel();
-            //ArraySearch.Start();
+            //TikTakToe.StartGame();
+
+
             //Datatabelle.Start();
             //ASCITabelle.Start();
             //ReplaceAll.Start();
@@ -46,18 +66,29 @@ namespace CheyenneHarbarth
             //Zeitspielchen.Practice();
             //Workdays.Start();
             //Calendar.PrintCalendar(2024, 11);
+
+
             //Streams.Aufgabe1();
             //Streams.Aufgabe2();
-            //Streams.Aufgabe3();
-            Streams.Aufgabe4();
+            //Quadrieren.Start();
+            //Streams.Aufgabe4();
+            //Artikelliste.Start();
             //Arraywiederholung.PrintSortiment();
+            //Datenklassen.Start();
+            //Start.Launch();
+            //AufgabeMotorrad.Start();
 
+            //TestNewOverride.Start();
+            //FahrzeugStart.Launch();
 
-            //Basics
-            //Arrays.ArrayMethoden();
+            //ZooMain.Start();
 
-            //MeProjects
-            //Rationsberechner.Start();
+            //Callcenter.Start();
+
+            //BrowseHistory.Start();
+
+            //Teilnehmerliste.Start();
+            //SupermarektMain.Start();
         }
     }
 }

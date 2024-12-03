@@ -5,6 +5,9 @@ using FlorianBaier.Week02;
 using FlorianBaier.Week03;
 using FlorianBaier.Week04;
 using FlorianBaier.Week05;
+using FlorianBaier.Week06;
+using FlorianBaier.Week07;
+using FlorianBaier.Week08;
 
 namespace FlorianBaier
 {
@@ -16,7 +19,16 @@ namespace FlorianBaier
             //Teilnehmerliste2.Start();
             //Quadrieren.Start();
             //Formatierung.Start();
-            Inventur.Start();
+            //Inventur.Start();
+            //Objektorientierung.StartPerson();
+            //Objektorientierung.StartCar();
+            //Datenklasse.Print();
+            //Fotoapparat.Print();
+            //Bankaccount.Start();
+            //Start.Launch();
+            //PrintTicketsales.Start();
+            //Output.Launch();
+            LibraryLaunch.StartLibrary();
         }
 
     }
