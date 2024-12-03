@@ -5,7 +5,7 @@ using MySql.Data.MySqlClient;
 using ZstdSharp.Unsafe;
 
 
-namespace SeachCountryByCode
+namespace ManuelHartmann.Week09.SearchCountryByCode
 {
     public class Program
     {
@@ -31,26 +31,32 @@ namespace SeachCountryByCode
                     connection.Open();
 
                     // Datenbank Abfrage erstellen
-                    string query = @"SELECT country.Code, country.Name, country.Population 
+                    string query = @"SELECT *
                                     FROM country
-                                    WHERE country.Code = @platzhalter;";
+                                    WHERE country.Code like @platzhalter;";
 
                     // Befehl erstellen, der auf der Datenbank ausgeführt werden kann
                     MySqlCommand command = new MySqlCommand(query, connection);
 
                     // Variablen austauschen
-                    command.Parameters.AddWithValue("@platzhalter", respond);
+                    command.Parameters.AddWithValue("@platzhalter", $"{respond}%");
 
                     // Resultate lesen
                     using (MySqlDataReader reader = command.ExecuteReader())
                     {
                         Console.Clear();
+                        Console.WriteLine("{0,-8} | {1,-20} | {2,-25}",
+                                             "Code", "Name", "Population"); // Überschrift
+                        Console.WriteLine(new string('-', 45)); // Trenner
+
                         while (reader.Read())
                         {
-                            Console.Write(reader.GetString("Code"));
-                            Console.Write(" | " + reader.GetString("Name"));
-                            Console.Write(" | " + reader.GetInt64("Population") + "\n");
+                            Console.WriteLine("{0,-8} | {1,-20} | {2,-25}",
+                                reader.GetString("Code"),
+                                reader.GetString("Name"),
+                                reader.GetInt64("Population"));
                         }
+
                     }
                 }
                 catch (MySqlException ex)
