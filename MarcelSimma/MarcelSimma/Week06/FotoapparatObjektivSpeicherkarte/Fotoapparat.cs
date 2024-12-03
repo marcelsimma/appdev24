@@ -19,7 +19,6 @@ namespace MarcelSimma.Week06.FotoapparatObjektivSpeicherkarte
 
         public int Megapixel { get; set; }
 
-
         public Fotoapparat(string seriennummer, int brennweite, string hersteller) : base(seriennummer)
         {
             _MinBrennweite = brennweite;
@@ -27,12 +26,10 @@ namespace MarcelSimma.Week06.FotoapparatObjektivSpeicherkarte
 
         }
 
-
         public override string ToString()
         {
             return ("Geiler Fotoapparat mit Brennweite + " + _MinBrennweite + " und " + _Hersteller + " und Seriennummer " + Seriennummer);
 
         }
-
     }
 }

@@ -13,6 +13,7 @@ using MarcelSimma.Week07.ContactList;
 using MarcelSimma.Week07.Callcenter;
 using MarcelSimma.Week07;
 using MarcelSimma.Week07.BrowserHistory;
+using MarcelSimma.Week09;
 
 namespace MarcelSimma
 {
@@ -62,7 +63,10 @@ namespace MarcelSimma
             //Callcenter.Start();
             //ArrayListExample.Start();
 
-            ParticipantsList.Start();
+            //ParticipantsList.Start();
+            //Bankaccount.Start();
+            // RepetitionStreams.Start();
+            MysqlConnectExample.Start();
 
         }
 

@@ -13,6 +13,9 @@ using CheyenneHarbarth.Week05.OOP.FahrzeugVererbung;
 using OverrideAndNew;
 using CheyenneHarbarth.Week05.OOP.Zoo;
 using CheyenneHarbarth.Week07.Callcenter;
+using CheyenneHarbarth.Week07;
+using CheyenneHarbarth.Week07.Supermarket;
+using CheyenneHarbarth.Week08.Test;
 
 namespace CheyenneHarbarth
 {
@@ -23,10 +26,13 @@ namespace CheyenneHarbarth
         static void Main(string[] args)
         {
             //Testaufgabe.Start();
+            LibraryMain.Start();
             //RBStart.Start();
-            LoL.Start(30, 120);
+            //LoL.Start(30, 120);
             //ChristmasTree.PrintTree('*', 15);
             //Calculator.CalcSum(21, 50);
+            //ÜbenTest.Start();
+
 
             //Bubblesort.SortBubble();
             //ConsoleInput.Start();
@@ -78,6 +84,11 @@ namespace CheyenneHarbarth
             //ZooMain.Start();
 
             //Callcenter.Start();
+
+            //BrowseHistory.Start();
+
+            //Teilnehmerliste.Start();
+            //SupermarektMain.Start();
         }
     }
 }

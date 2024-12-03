@@ -1,7 +1,11 @@
 {
     "dotnet.defaultSolution": "MarcelSimma.sln",
     "cSpell.words": [
+        "Aufgabe",
+        "Bibliothek",
         "Brennweite",
-        "Vererbung"
+        "Objekt",
+        "Vererbung",
+        "Viktorsberg"
     ]
 }

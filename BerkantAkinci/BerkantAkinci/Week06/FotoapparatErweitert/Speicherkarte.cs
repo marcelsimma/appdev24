@@ -1,5 +1,5 @@
 
-namespace BerkantAkinci.Week06.FotoapparatErwitert
+namespace BerkantAkinci.Week06.FotoapparatErweitert
 {
     public class Speicherkarte : IObjekt
     {

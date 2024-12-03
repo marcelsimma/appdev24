@@ -11,7 +11,9 @@ using JulianStroehle.Week6.Ticketsystem;
 using JulianStroehle.Week6.Zoo;
 using JulianStroehle.Week7;
 using JulianStroehle.Week7.Callcenter;
+using JulianStroehle.Week7.Supermarket;
 using JulianStroehle.Week7.Telefonbuch;
+using JulianStroehle.Week8.OOP_Test_Aufgabe;
 namespace JulianStroehle
 {
     class Program
@@ -94,7 +96,10 @@ namespace JulianStroehle
             // System.оut.println("Hello World!");
             // PYTHONBLYAT.Start();
             // Telefonbuch.Start();
-            Callcenter.Start();
+            // Callcenter.Start();
+            // SupermarketMain.Start();
+            // Hangman.WrongInput();
+            // LibraryMain.Start();
         }
     }
 }

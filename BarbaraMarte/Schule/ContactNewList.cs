@@ -1,12 +1,19 @@
 using System;
+using System.Threading.Tasks.Dataflow;
 namespace BarbaraMarte.Schule;
 
+enum ContactCategory
+{
+    Friend = 1,
+    Family = 2,
+    Work = 3
+}
 class ContactsNewList
 {
     public static List<string> firstName = new List<string>();
     public static List<string> lastName = new List<string>();
     public static List<string> phoneNumber = new List<string>();
-    public static List<string> category = new List<string>();
+    public static List<ContactCategory> category = new List<ContactCategory>();
     public static int count = 0;
 
     /// <summary>
@@ -14,104 +21,91 @@ class ContactsNewList
     /// </summary>
     public static void Start()
     {
-        Console.Clear();
-        Console.WriteLine(@"
-        Add Contact => 1
-        Search Contact => 2
-        Delete Contact => 3
-        Print out all your contacts => 4
-        Leave the Program => E
-        ");
-        string? choice = Console.ReadLine();
-
-        if (choice == "1")
+        bool running = true;
+        while (running == true)
         {
-            AddContact();
-        }
-        else if (choice == "2")
-        {
-            SearchContact();
-        }
-        else if (choice == "3")
-        {
-            DeleteContact();
-        }
-        else if (choice == "4")
-        {
-            PrintOutContacts();
-        }
-        else if (choice == "E" || choice == "e")
-        {
-            Console.WriteLine("You are leaving the program now. Have a lovely day!");
-            return;
-        }
-        else
-        {
-            Start();
+            Console.WriteLine(@"
+            Add Contact => 1
+            Search Contact => 2
+            Delete Contact => 3
+            Print out all your contacts => 4
+            Print out all contacts from one category => 5
+            Leave the Program => E
+            ");
+            string? choice = Console.ReadLine();
+            switch (choice.ToUpper())
+            {
+                case "1":
+                    AddContact();
+                    break;
+                case "2":
+                    SearchContact();
+                    break;
+                case "3":
+                    DeleteContact();
+                    break;
+                case "4":
+                    PrintOutContacts();
+                    break;
+                case "5":
+                    SearchCategory();
+                    break;
+                case "E":
+                    Console.WriteLine("You are leaving the program now. Have a lovely day!");
+                    running = false;
+                    break;
+                default:
+                    Console.Clear();
+                    Console.WriteLine("Invalid Input. Please try again");
+                    break;
+            }
         }
     }
-    public static void PrintOutContacts()
+    public static void SearchCategory()
     {
+        var names = Enum.GetNames(typeof(ContactCategory));
+        Console.WriteLine(string.Join(", ", names));
+        Console.WriteLine("Please enter the category number, starting with 1:");
+        var input = Console.ReadLine() ?? "1";
+        PrintOutContacts(Enum.Parse<ContactCategory>(input));
+    }
+    public static void PrintOutContacts(ContactCategory? filter = null) // with the =(default parameter) after the filter you don't need to write it in on the call side. It becomes optional
+    {
+
+        List<string> tmp = new List<string>();
         for (int i = 0; i < firstName.Count; i++)
         {
-            Console.WriteLine($"First name: {firstName[i]}, family name: {lastName[i]}, phone number: {phoneNumber[i]}");
+            if (filter is null || category[i] == filter)    // you use "is" for null checks. Opposite == "is not" 
+            {
+                tmp.Add($"Family name: {lastName[i],-10} first name: {firstName[i],-10} phone number: {phoneNumber[i],-10} Category: {category[i]}");
+            }
         }
-
-        /*
-        Console.WriteLine();
-        // Combine all lists in a single structure for sorting
-        var contacts = firstName
-        .Select((fName, index) => new
+        tmp.Sort();
+        foreach (string contact in tmp)
         {
-            FirstName = fName,
-            LastName = lastName[index],
-            PhoneNumber = phoneNumber[index]
-        })
-        .OrderBy(contact => contact.LastName)   // Sort by last name
-        .ThenBy(contact => contact.FirstName)   // Optional if the last name accurse mort than once: Sort by first name
-        .ToList();
-        foreach (var contact in contacts)
-        {
-            Console.WriteLine($"First name: {contact.FirstName}, Family name: {contact.LastName}, Phone number: {contact.PhoneNumber}.");
+            Console.WriteLine($"{contact}");
         }
-
-
-        .Sort() saves the sort and the lists don't match after you did that!!
-
-        lastName.Sort();
-        for (int x = 0; x < lastName.Count; x++)
-        {
-            Console.WriteLine($"Family name: {lastName[x]}");
-        }
-        */
-
-
-        Start();
     }
-
-
-    /// <summary>
-    /// Adding contacts
-    /// </summary>
     public static void AddContact()
     {
-        Console.WriteLine("Is the following contact in your 'Friend', 'Family' or 'Work' List?");
-        string? input = Console.ReadLine().ToLower();
-        if (input == "friend")
+        Console.WriteLine("Is the following contact in your Family 1, Friend 2 or Work List 3?");
+        char input = Convert.ToChar(Console.ReadLine());
+        if (input == '1')
         {
-            category.Add("Friend");
+            category.Add(ContactCategory.Family);
         }
-        else if (input == "family")
+        else if (input == '2')
         {
-            category.Add("Family");
+            category.Add(ContactCategory.Friend);
         }
-        else if (input == "work")
+        else if (input == '3')
         {
-            category.Add("Work");
+            category.Add(ContactCategory.Work);
         }
         else
         {
             Console.WriteLine("Not valid input");
+            return;
         }
 
         Console.WriteLine("Please enter your first name:");
@@ -122,12 +116,7 @@ class ContactsNewList
 
         Console.WriteLine("Please enter a phone number:");
         phoneNumber.Add(Console.ReadLine());
-        Start();
     }
-
-    /// <summary>
-    /// You put in the search for your contact
-    /// </summary>
     public static void SearchContact()
     {
         Console.WriteLine("Which contact are you looking for?");
@@ -135,32 +124,21 @@ class ContactsNewList
         Start();
     }
 
-    /// <summary>
-    /// you search in here the contact list
-    /// </summary>
-    /// <returns></returns>
     public static string SearchInList()     //  use a string instead a void that I can use a return in the if part. Makes it easier to return value
     {
         string? input = Console.ReadLine();
         List<string> foundContacts = new List<string>();
         for (int i = 0; i < firstName.Count; i++)
         {
-            if (firstName[i] == input)
+            if (firstName[i] == input || lastName[i] == input || phoneNumber[i] == input)
             {
                 foundContacts.Add($"{firstName[i]} {lastName[i]} - Phone number: {phoneNumber[i]}, Category: {category}");
             }
-            else if (lastName[i] == input)
+            else if (Enum.TryParse<ContactCategory>(input, true, out var searchCategory) && category[i] == searchCategory)
             {
                 foundContacts.Add($"{firstName[i]} {lastName[i]} - Phone number: {phoneNumber[i]}, Category: {category}");
             }
-            else if (phoneNumber[i] == input)
-            {
-                foundContacts.Add($"{firstName[i]} {lastName[i]} - Phone number: {phoneNumber[i]}, Category: {category}");
-            }
-            else if (category[i] == input)
-            {
-                foundContacts.Add($"{firstName[i]} {lastName[i]} - Phone number: {phoneNumber[i]}, Category: {category}");
-            }
+
         }
         if (foundContacts.Count == 0)
         {
@@ -199,6 +177,28 @@ class ContactsNewList
         {
             Console.WriteLine($"The name you entered is not in your contact list.");
         }
-        Start();
     }
 }
+
+
+/*
+        Console.WriteLine();
+        // Combine all lists in a single structure for sorting
+        var contacts = firstName
+        .Select((fName, index) => new
+        {
+            FirstName = fName,
+            LastName = lastName[index],
+            PhoneNumber = phoneNumber[index]
+        })
+        .OrderBy(contact => contact.LastName)   // Sort by last name
+        .ThenBy(contact => contact.FirstName)   // Optional if the last name accurse mort than once: Sort by first name
+        .ToList();
+        foreach (var contact in contacts)
+        {
+            Console.WriteLine($"First name: {contact.FirstName}, Family name: {contact.LastName}, Phone number: {contact.PhoneNumber}.");
+        }
+
+
+        .Sort() saves the sort and the lists don't match after you did that!!
+        */
