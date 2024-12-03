@@ -1,4 +1,4 @@
-// get MySQL Package: dotnet add package MySql.Data --version 9.1.0
+// get MySQL Package: 'dotnet add package MySql.Data --version 9.1.0'
 
 using System;
 using MySql.Data.MySqlClient;
