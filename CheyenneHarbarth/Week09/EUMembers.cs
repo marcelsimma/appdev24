@@ -35,9 +35,6 @@ namespace CheyenneHarbarth.Week09
                         while (reader.Read())
                         {
                             Console.Write($"{reader.GetString("country"),-5} | {reader.GetString("name"),-15} | {reader.GetInt32("population")} \n");
-                            //Console.Write(reader.GetString("name") + " | ");
-                            //Console.Write(" | ");
-                            //Console.WriteLine(reader.GetInt32("population"));
                         }
                     }
                 }
