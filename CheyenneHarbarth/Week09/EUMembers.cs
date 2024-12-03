@@ -11,7 +11,7 @@ namespace CheyenneHarbarth.Week09
             string databaseConnectionString = @"        
             server=127.0.0.1;
             uid=root;
-            pwd=...;
+            pwd=QRUP369_purq;
             database=mondial";
             //dieser String connected uns zum Server, dafür brauchen wir IP-Adresse, Benutzername, Passwort, zu verwendende Datenbank
 
@@ -23,18 +23,19 @@ namespace CheyenneHarbarth.Week09
 
                     string query = @"                                                                   
                         SELECT ismember.Country, country.Name, country.Population
-                        FROM organization
-                        JOIN ismember ON organization.Abbreviation = ismember.Organization
+                        FROM ismember
                         JOIN country ON ismember.Country = country.Code
-                        WHERE organization.Abbreviation = 'EU';";                                       //unser SQL-Code denn wir zur Abfrage nutzen werden
+                        WHERE ismember.Organization = 'EU';";                                       //unser SQL-Code denn wir zur Abfrage nutzen werden
 
                     MySqlCommand command = new MySqlCommand(query, connection);                         //hier wird die Abfrage erstellt, als neues Objekt, die Parameter sind die Verbindung und der SQL-Code
 
                     using (MySqlDataReader reader = command.ExecuteReader())                            //um die Daten auszulesen
                     {
+                        int counter = 1;
                         while (reader.Read())
                         {
-                            Console.Write($"{reader.GetString("country"),-5} | {reader.GetString("name"),-15} | {reader.GetInt32("population")} \n");
+                            Console.Write($"{counter,3}. | {reader.GetString("country"),-5} | {reader.GetString("name"),-15} | {reader.GetInt32("population"),12} \n");
+                            counter++;
                         }
                     }
                 }
