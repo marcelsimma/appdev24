@@ -27,7 +27,7 @@ namespace ManuelHartmann.Week09.CountriesAndProvinces.Country
             return
 
             String.Format(
-            @"'{0}', '{1}', '{2}', '{3}'", 
+            @"|- {0}, {1}, {2}, {3}", 
             CountryName, Continent, CountryCapital, CountryPopulation, Provinces.ToString());
             /* 'Alles in 'Teilnehmer.ToString()' definiert wird in dieser Ausgabe mitausgegeben.
                Somit muss lediglich eine ToString()-Methode aufgerufen werden und man kann die Teilnehmer mit
