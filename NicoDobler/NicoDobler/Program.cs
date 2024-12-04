@@ -4,6 +4,10 @@ using NicoDobler.Week02;
 using NicoDobler.Week03;
 using NicoDobler.Week04;
 using NicoDobler.Week05;
+using NicoDobler.Week06;
+using NicoDobler.Week07;
+using NicoDobler.Week08;
+using NicoDobler.Week09;
 
 namespace NicoDobler
 {
@@ -29,6 +33,9 @@ namespace NicoDobler
       //TabelleOrdner.Ordner();
       //Hesse.HesseToUpper();
       // Teilnehmerliste1.ReadFile();
+      //Bankomat.Start();
+      // Start.SelfStart();
+      SearchCountrybyCode.Start();
       
 
 
