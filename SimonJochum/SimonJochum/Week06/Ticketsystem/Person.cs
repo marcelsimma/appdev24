@@ -1,5 +1,4 @@
 using System;
-using SimonJochum.Week05;
 
 namespace SimonJochum.Week06.Ticketsystem
 {

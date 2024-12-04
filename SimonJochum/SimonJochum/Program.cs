@@ -15,6 +15,9 @@ using SimonJochum.Week07;
 using SimonJochum.Week07.ParticipantList;
 using SimonJochum.Week07.SupermarketOOP;
 using SimonJochum.Week08.PrüfungOOP;
+using SimonJochum.Week09;
+using SimonJochum.Week09.CountriesAndProvinces;
+using SimonJochum.Week09.CountriesAndProvincesChanged;
 
 namespace SimonJochum;
 
@@ -98,6 +101,11 @@ class Program
         // StartSupermarket.Start();
 
         //Week08
-        PruefungStart.Start();
+        // PruefungStart.Start();
+
+        //Week09
+        // SQLQuery.Start();
+        // InitialiseFile.Start();
+        InitialiseStart.Start();
     }
 }
