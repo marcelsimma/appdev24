@@ -89,14 +89,14 @@ AND rele.Name LIKE 'Roman Catholic'
 AND Height >3000
 AND rele.Percentage > 60
 --Aufgabe 11
-/*USE Mondial;
+USE Mondial;
 SELECT SUM(Population) AS Population, Rele.name 
 FROM religion rele, country cy, encompasses ec, Continent ct
 WHERE ct.name = ec.continent
 AND ec.country  = cy.code
 AND cy.code =  rele.country
 Group by rele.name
-*/--Aufgabe 12
+--Aufgabe 12
 USE mondial;
 SELECT ct.name , ty.country,ty.name,ty.population
 From continent ct , encompasses en, Country cy, City ty
