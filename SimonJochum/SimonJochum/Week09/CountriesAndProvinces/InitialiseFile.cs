@@ -1,5 +1,4 @@
 using System;
-using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
 
 namespace SimonJochum.Week09.CountriesAndProvinces
@@ -8,7 +7,6 @@ namespace SimonJochum.Week09.CountriesAndProvinces
     {
         public static void Start()
         {
-
             string connectionString = "";
             using (StreamReader str = new StreamReader("C:/Users/SIJO/Documents/Testaufgaben/connectionstring.txt"))
             {
@@ -22,7 +20,7 @@ namespace SimonJochum.Week09.CountriesAndProvinces
             {
                 Console.WriteLine("Bitte gib ein Länderkürzel ein, oder tippe 'Stop' um die Ausgabe zu starten.");
                 input = Console.ReadLine();
-                 if (input == "Stop")
+                if (input == "Stop")
                 {
                     check = false;
                 }
