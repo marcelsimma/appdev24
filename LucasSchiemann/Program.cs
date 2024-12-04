@@ -8,13 +8,14 @@ using LucasSchiemann.SortAlgorithmChooser;
 using LucasSchiemann.Week06;
 using LucasSchiemann.Week06.Zoo;
 using LucasSchiemann.Week07.SuperMarkt;
+using LucasSchiemann.Week10;
 namespace LucasSchiemann;
 
     class Program
     {
     static void Main()
     {
-        SuperMarktStarter.Start();
+        MysqlConnectExample.Start();
         //StartOfZoo.StartMethod();
         //Bankkonto.Start();
         //AlgorythmChooser.ChoseSortAlgorythm();
