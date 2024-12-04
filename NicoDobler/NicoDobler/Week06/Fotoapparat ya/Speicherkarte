@@ -1,0 +1,8 @@
+using System;
+namespace NicoDobler.Week06{
+
+    public class Speicherkarte{
+
+        
+    }
+}

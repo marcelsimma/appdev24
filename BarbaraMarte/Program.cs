@@ -50,7 +50,8 @@ namespace BarbaraMarte.Week08.Test
 
 
             // Week 09
-            EUMember.Start();
+            // EUMember.Start();
+            CountriesAndProvinces.Start();
             // SearchCountryByCode.Start();
 
 

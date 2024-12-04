@@ -1,0 +1,24 @@
+using System;
+namespace NicoDobler.Week06
+{
+
+    public class Objektiv
+    {
+
+        private string _model
+
+        public string model
+        {
+            get
+            {
+
+                return_model
+            }
+
+            set{
+                
+                model = value
+            }
+        }
+    }
+}

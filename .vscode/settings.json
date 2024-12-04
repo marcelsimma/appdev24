@@ -5,7 +5,26 @@
         "Bibliothek",
         "Brennweite",
         "Objekt",
-        "Vererbung",
-        "Viktorsberg"
+<<<<<<< HEAD
+        "Vererbung"
+    ],
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "xprotocol",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 33060,
+            "driver": "MySQL",
+            "name": "MySQL Local",
+            "database": "mondial",
+            "username": "root",
+            "connectionTimeout": 30,
+            "askForPassword": true
+        }
+=======
+>>>>>>> 295db90b2c69c514398e647921e2acf08a12d409
     ]
 }

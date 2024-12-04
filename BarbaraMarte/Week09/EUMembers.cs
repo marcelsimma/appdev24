@@ -16,17 +16,13 @@ namespace BarbaraMarte.Week09
                 {
                     try
                     {
-                        System.Console.WriteLine("Enter a Country code:");
-                        string input = Console.ReadLine() ?? "";
                         connection.Open();
                         string query = @$"
-                        SELECT DISTINCT Country.code, country.name, country.population, province.name, province.capital, province.population
-                        FROM Country, Province
-                        WHERE Country.code = province.country
-                        AND country.code
-                        like '{input}'
-                        ORDER BY country.code ASC
-
+                        SELECT country.Code, country.name, Country.population 
+                        FROM country, ismember
+                        WHERE ismember.Country = Country.code
+                        AND ismember.Type = 'member'
+                        AND ismember.Organization LIKE 'EU'
                         ;";
 
                         MySqlCommand command = new MySqlCommand(query, connection);
@@ -36,12 +32,9 @@ namespace BarbaraMarte.Week09
                         {
                             while (reader.Read())
                             {
-                                Console.Write(reader.GetString("name") + " ");
-                                Console.Write(reader.GetString("code") + " ");
-                                Console.Write(reader.GetUInt32("population") + " ");
-                                Console.Write(reader.GetString("name") + " ");
-                                Console.Write(reader.GetString("capital") + " ");
-                                Console.WriteLine(reader.GetUInt32("population"));
+                                Console.Write(reader.GetString("code") + "   ");
+                                Console.Write(reader.GetString("name") + "   ");
+                                Console.WriteLine(reader.GetUInt32("population") + " ");
                                 count++;
                             }
                             if (count == 1)
