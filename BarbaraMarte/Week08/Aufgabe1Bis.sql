@@ -30,7 +30,7 @@
         AND encompasses.Continent = 	'Europe';
 
     --6.	Alle Flüsse die durch Europa fließen, sortiert bei deren länge
-        SELECT DISTINCTgeo_river.River, river.Length 
+        SELECT DISTINCT geo_river.River, river.Length 
         FROM encompasses, 	geo_river, river 	
         WHERE geo_river.River = river.Name 
         AND	encompasses.Country = geo_river.Country 
@@ -195,3 +195,33 @@
         LEFT JOIN geo_sea ON country.Code = geo_sea.Country
 
     -- 20. Erstelle eine neue “Organization” mit dem Namen “DCV-Grundkurs”. 
+        INSERT INTO mondial.organization VALUES ('DCV', 'DCV-Grundkurs', 'Bregenz', 'A', 'Vorarlberg', '2024-11-28');
+        INSERT INTO ismember VALUES ('A', 'DCV', 'member'), ('B', 'DCV', 'member'), ('AUS', 'DCV', 'member');
+
+    -- 21. SELECT: Gib alle Mitglieder der neuen Organization aus. Sind alle Mitglieder dabei die du hinzugefügt hast?
+        SELECT * FROM ismember WHERE Organization = 'DCV';
+
+    -- 22. UPDATE: Wir gehen 2 Monate in die Zukunft. Der Kurs ist vorbei. Jetzt gibt es eine neue internationale Organisation: "Alumni DCV-Grundkurs". 
+        INSERT INTO organization VALUES ('ADCV', 'Alumni DCV-Grundkurs', 'Bregenz', 'A', 'Vorarlberg', '2025-01-28');
+
+    --    Alle mitglieder von "DCV-Grundkurs" werden nun automatisch Mitglied in der Organisation "Alumni DCV Grundkurs". Die Mitgliedschaft bei "DCV-Grundkurs" endet im selben Moment.
+        UPDATE ismember SET Organization = 'ADCV' WHERE Organization = 'DCV' AND Country = 'A';
+
+    -- 23. DELETE: Nachdem die Organisation "DCV-Grundkurs" keine Mitglieder mehr gat, soll diese gelöscht werden.
+
+    -- 24. UPDATE: Aktualisiere die Höhe des Großglocknder. Durch einen Vermessungsfehler wurde dieser bisher zu klein angegeben. Aktuelle Höhe 3798m
+        UPDATE mondial.mountain SET Height = 3798 WHERE mountain.Name = 'Grossglockner'
+
+    -- 25. INSERT: Erstelled das Land Transnistrien. Es liegt in Europa. Wenn du anschließend einen alle europäische Staaten inkl. Namen selektierst, soll auch Transnistrien in der Ergebnisliste sein.
+        INSERT INTO mondial.Country VALUES ('Transnistria', 'PMR', 'Tirsapol', 'Transnistria', 3567, 347251); 
+        INSERT INTO encompasses VALUES ('PMR', 'Europe',100);
+    
+    -- 26. INSERT: Speidhere die höchsten drei Berge sowie die Hauptstadt von Transnistrien in die Datenbank. Prüfe die Ergebnisse mit einem SELECT.
+        INSERT INTO geo_mountain VALUES ('4 Stolba', 'PMR', 'Transnistria'),('Chervonak', 'PMR', 'Transnistria'); 
+        INSERT INTO mountain VALUES ('4 Stolba', '4 Stolba', 10, null, null, null),('Chervonak', 'Chervonak', 190, null, null, null);
+
+    -- 27. UPDATE: Ändere den Namen der Türkei auf "Türkiye"
+
+    -- 28. UPDATE: Ändere den Namen der Einwohnerzahl der Deutschen Bundesländer: In jedm BUndesland wohnt zukünftig jeweils 1/16 der Gesamtbevölkerung Deutschlands.
+
+    

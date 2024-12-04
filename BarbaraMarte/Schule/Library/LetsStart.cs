@@ -9,6 +9,7 @@ class Library
     public List<Book> AllAboutBooks = new List<Book>();
     public List<User> Users = new List<User>();         // would be a perfect case for a 
     public List<Book> BorrowedBooks = new List<Book>();
+    public List<string> SortedBooks = new List<string>();
     public void Start()
     {
         bool running = true;
@@ -189,6 +190,7 @@ class Library
         else if (!book.IsAvailable)
         {
             UserBookBack(book, currentUser);
+            System.Console.WriteLine("Thank you for leaving the book back!");
         }
         else
         {
@@ -229,9 +231,17 @@ class Library
 
     public void PrintOutAllBooks()
     {
-        foreach (Book book in AllAboutBooks)
+        for (int i = 0; i < AllAboutBooks.Count; i++)
+        {
+            // is missing a exception that old contacts are not supposed to be added to the sorting list.
+            // foreach PrintOutAllBooks, one book is added to the list.  
+            SortedBooks.Add($"Author: {AllAboutBooks[i].Author,-10} Title: {AllAboutBooks[i].Title,-10} ISBN : {AllAboutBooks[i].ISBN,-10} The book is Available: {AllAboutBooks[i].IsAvailable,-6}");
+        }
+        SortedBooks.Sort();
+        foreach (var book in SortedBooks)
         {
             System.Console.WriteLine(book);
         }
+
     }
 }

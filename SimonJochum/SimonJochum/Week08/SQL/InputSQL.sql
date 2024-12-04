@@ -23,7 +23,7 @@ SELECT country.Name, city.Name, city.Population FROM country LEFT JOIN city ON c
 -- 7.2) Alle Länder die mit einem A anfangen und deren Bundesländer mit Einwohnerzahl, sortiert nach Einwohnerzahl 
 SELECT country.Name, city.Province, city.Population FROM country LEFT JOIN city ON country.Code = city.Country WHERE country.Name LIKE 'A%' ORDER BY city.Population;
 
--- 8 & 13) Was ist der größte Berg von Österreich? Wie hoch ist er?
+-- 8) Was ist der größte Berg von Österreich? Wie hoch ist er?
 SELECT Name, MAX(mountain.Height) AS HighestMountain FROM mountain JOIN geo_mountain ON mountain.Name = geo_mountain.Mountain WHERE geo_mountain.Country = 'A' GROUP BY Name LIMIT 1;
 
 -- 9) Alle Inseln im Pazifik mit >50% islamischem Bekenntnis
