@@ -18,8 +18,8 @@ public class SearchCountryByCode
 
             while (true)
             {
-                Console.WriteLine("Use the Countrycode to search for results");
-                string input = Console.ReadLine();
+                Console.WriteLine("Use the CountryCode to search for results");
+                string input = Console.ReadLine() ?? "";
 
                 using (MySqlConnection connection = new MySqlConnection(databaseConnectionString))
                 {
@@ -28,7 +28,7 @@ public class SearchCountryByCode
                         connection.Open();
 
                         string query = @"
-                                                SELECT country.Name AS Countryname, country.Population AS CountryPopulation, province.Name AS Provincename, province.Capital 
+                                                SELECT country.Name AS CountryName, country.Population AS CountryPopulation, province.Name AS ProvinceName, province.Capital 
                                                 FROM country
                                                 JOIN province ON country.Code = province.Country
                                                 WHERE Code = @code;";
@@ -44,7 +44,7 @@ public class SearchCountryByCode
                             {
                                 while (reader.Read())
                                 {
-                                    string Province = reader.GetString("Provincename");
+                                    string Province = reader.GetString("ProvinceName");
                                     string ProvinceCapital = reader.GetString("Capital");
 
                                     if (Province is not null)
@@ -52,7 +52,7 @@ public class SearchCountryByCode
                                         ProvincesInCountry.Add(Province, ProvinceCapital);
                                     }
                                 }
-                                Console.Write($"Country: {reader.GetString("Countryname"),-15} | Population: {reader.GetInt32("CountryPopulation"),-15}\n");
+                                Console.Write($"Country: {reader.GetString("CountryName"),-15} | Population: {reader.GetInt32("CountryPopulation"),-15}\n");
                                 Console.WriteLine("\nProvince:       | Capital: ");
                                 Console.WriteLine("--------------------------------");
                                 foreach (KeyValuePair<string, string> pic in ProvincesInCountry)
@@ -63,7 +63,7 @@ public class SearchCountryByCode
                             }
                             else
                             {
-                                Console.Write("No valid Countrycode!");
+                                Console.Write("No valid Country Code!");
                             }
                         }
                     }
