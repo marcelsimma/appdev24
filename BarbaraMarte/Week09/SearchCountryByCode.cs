@@ -5,69 +5,74 @@ using MySql.Data.MySqlClient;
 
 // get MySQL Package: dotnet add package MySql.Data --version 9.1.0
 
-namespace BarbaraMarte.Week09
+namespace BarbaraMarte.Week09;
+
+public class SearchCountryByCode
 {
-    public class SearchCountryByCode
+    public static void Start()
     {
-        public static void Start()
+        using (StreamReader streamReader = new StreamReader("C:/AttendingList1/SqlId.txt"))
         {
-            using (StreamReader streamReader = new StreamReader("C:/AttendingList1/SqlId.txt"))
+            // string input = streamReader.ReadLine() ?? "";
+            string databaseConnectionString = streamReader.ReadToEnd();
+
+            while (true)
             {
-                // string input = streamReader.ReadLine() ?? "";
-                string databaseConnectionString = streamReader.ReadToEnd();
+                Console.WriteLine("Use the Countrycode to search for results");
+                string input = Console.ReadLine();
 
                 using (MySqlConnection connection = new MySqlConnection(databaseConnectionString))
                 {
                     try
                     {
-                        System.Console.WriteLine("Enter a Country code:");
-                        string input = Console.ReadLine() ?? "";
                         connection.Open();
-                        string query = @$"
-                        SELECT DISTINCT 
-                        Country.code AS CountryCode, 
-                        country.name AS CountryName, 
-                        country.population AS CountryPopulation, 
-                        province.name AS ProvinceName, 
-                        province.capital AS ProvinceCapital, 
-                        province.population AS ProvincePopulation
-                        FROM Country
-                        LEFT JOIN Province ON Country.Code = Province.country                        
-                        AND country.code = '{input}'
-                        ORDER BY country.code ASC
-                        ;";
+
+                        string query = @"
+                                                SELECT country.Name AS Countryname, country.Population AS CountryPopulation, province.Name AS Provincename, province.Capital 
+                                                FROM country
+                                                JOIN province ON country.Code = province.Country
+                                                WHERE Code = @code;";
 
                         MySqlCommand command = new MySqlCommand(query, connection);
-                        // command.Parameters.AddWithValue("@code", "A");   is for the placeholder
-                        int count = 1;
+                        command.Parameters.AddWithValue("@code", input);
+
                         using (MySqlDataReader reader = command.ExecuteReader())
                         {
-                            // List<string>
-                            if (reader.HasRows)
+                            Dictionary<string, string> ProvincesInCountry = new Dictionary<string, string>();
+
+                            if (reader.HasRows)                     //sucht nach dem vorgegebene Wert und liefert einen bool zurück
                             {
-                                reader.Read();
-                                Console.WriteLine($"     | {reader.GetString("CountryName"),-15} | {reader.GetString("CountryCode"),-15} | {reader.GetUInt32("CountryPopulation"),10}");
-                                System.Console.WriteLine("-------------------------------------------------------");
-                                Console.WriteLine($"{count,3}. | {reader.GetString("ProvinceName"),-15} | {reader.GetString("ProvinceCapital"),-15} | {reader.GetUInt32("ProvincePopulation"),10}");
                                 while (reader.Read())
                                 {
-                                    count++;
-                                    Console.WriteLine($"{count,3}. | {reader.GetString("ProvinceName"),-15} | {reader.GetString("ProvinceCapital"),-15} | {reader.GetUInt32("ProvincePopulation"),10}");
+                                    string Province = reader.GetString("Provincename");
+                                    string ProvinceCapital = reader.GetString("Capital");
+
+                                    if (Province is not null)
+                                    {
+                                        ProvincesInCountry.Add(Province, ProvinceCapital);
+                                    }
                                 }
+                                Console.Write($"Country: {reader.GetString("Countryname"),-15} | Population: {reader.GetInt32("CountryPopulation"),-15}\n");
+                                Console.WriteLine("\nProvince:       | Capital: ");
+                                Console.WriteLine("--------------------------------");
+                                foreach (KeyValuePair<string, string> pic in ProvincesInCountry)
+                                {
+                                    Console.Write($"{pic.Key,-15} | {pic.Value,-15}\n");
+                                }
+                                break;
                             }
                             else
                             {
-                                System.Console.WriteLine("Wrong Input");
+                                Console.Write("No valid Countrycode!");
                             }
                         }
                     }
                     catch (MySqlException ex)
                     {
-                        Console.WriteLine(ex.Message);
+                        Console.Write(ex.Message);
                     }
-
                 }
-            };
+            }
         }
     }
 }
