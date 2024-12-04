@@ -1,0 +1,35 @@
+using System;
+ 
+namespace NicoDobler.Week02{
+
+
+ 
+public class ShoppingList
+{
+    public static void ReadList()
+    {
+        int counter = 0;
+        while (counter >4)
+        {
+            counter ++;
+        Console.WriteLine("Geb ein was du als "+counter+". einkaufen willst");
+        string einKauf = Console.ReadLine();
+        Console.WriteLine("Gib die anzahl an");
+        int AnzahlKauf = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Geb ein was du als "+counter+". einkaufen willst");
+        if (counter == 1)
+        {
+            string ersterEinkauf = "";
+            int erste;
+            einKauf = ersterEinkauf;
+           
+ 
+           // AnzahlKauf =
+ 
+ 
+        }
+ 
+        }
+    }
+}
+}
