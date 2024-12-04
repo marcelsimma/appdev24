@@ -1,22 +1,18 @@
-// get MySQL Package: 'dotnet add package MySql.Data --version 9.1.0'
-
 using System;
 using MySql.Data.MySqlClient;
 
 
-namespace MarcelSimma.Week09
+namespace BerkantAkinci.Week09
 {
-
-    public class MysqlConnectExample
+    public class EUMembers
     {
-
         public static void Start()
         {
             // Verbindungsinformation
             string databaseConnectionString = @"
             server=127.0.0.1;
             uid=root;
-            pwd=Abcd1234!;
+            pwd=BAULAN;
             database=mondial
             ";
 
@@ -25,35 +21,39 @@ namespace MarcelSimma.Week09
             {
                 try
                 {
-
                     connection.Open();
 
                     // Datenbank Abfrage erstellen
-                    string query = "SELECT * FROM country WHERE code like @code;";
+                    string query = @"SELECT country.Name AS Country, country.Code, country.Population 
+                                    FROM ismember
+                                    JOIN country ON ismember.Country = country.Code
+                                    WHERE ismember.Organization = 'EU' AND ismember.Type = 'member'
+                                    ORDER BY country.Name ASC";
 
                     // Befehl erstellen, der auf der Datenbank ausgeführt werden kann
                     MySqlCommand command = new MySqlCommand(query, connection);
 
-                    // Variablen austauschen
-                    command.Parameters.AddWithValue("@code", "A%");
-
                     // Resultate lesen
                     using (MySqlDataReader reader = command.ExecuteReader())
                     {
+                        int i = 1;
+
                         while (reader.Read())
                         {
-                            Console.WriteLine(reader.GetString("name"));
+                            Console.Write(@"{0,3}. {1,-20}", i, reader.GetString("country"));
+                            Console.Write(@"{0,-10}", reader.GetString("code"));
+                            Console.WriteLine(@"{0,10}", reader.GetInt32("population"));
+                            i++;
                         }
                     }
-
                 }
+
                 catch (MySqlException ex)
                 {
                     Console.Write(ex.Message);
 
                 }
             }
-
         }
     }
 }
