@@ -79,7 +79,7 @@ namespace BerkantAkinci
             //TicketsystemMain.Start();
             //Callcenter.Start();
             //ContactList.Start();
-            SearchCountryByCode.Start();
+            MainCountryProvinces.PrintMain();
         
            
             
