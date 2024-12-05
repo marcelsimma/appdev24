@@ -9,40 +9,53 @@ namespace OliverBedogg.Week09
 
     public class CRUDsample
     {
-
-        public static void Start()
-        {
-            // Verbindungsinformation
-            string databaseConnectionString = @"
+        // Verbindungsinformation
+        static string databaseConnectionString = @"
             server=127.0.0.1;
             uid=root;
             pwd=root;
             database=Mondial
             ";
 
+        public static void Start()
+        {
+            List<string> entry = read("AMSA", "Tongan");
+            Console.WriteLine(string.Join("| ", entry));
+            // read("AMSA", "Samoan");
+            // read("AMSA", "English");
+        }
+
+        public static List<string> read(string code, string name)
+        {
+            List<string> entry = new List<string>();
+
             // Erstellung der Verbindung zur Datenbank
             using (MySqlConnection connection = new MySqlConnection(databaseConnectionString))
             {
                 try
                 {
-
                     connection.Open();
 
                     // Datenbank Abfrage erstellen
-                    string query = "SELECT * FROM country WHERE code like @code;";
+                    string query = "SELECT * FROM language WHERE country = @code AND name = @name;";
 
                     // Befehl erstellen, der auf der Datenbank ausgeführt werden kann
                     MySqlCommand command = new MySqlCommand(query, connection);
 
                     // Variablen austauschen
-                    command.Parameters.AddWithValue("@code", "A%");
+                    command.Parameters.AddWithValue("@code", code);
+                    command.Parameters.AddWithValue("@name", name);
 
                     // Resultate lesen
                     using (MySqlDataReader reader = command.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            Console.WriteLine(reader.GetString("name"));
+                            entry.Add(reader.GetString("country"));
+                            entry.Add(reader.GetString("name"));
+                            entry.Add(Convert.ToString(reader.GetFloat("percentage")));
+
+                            Console.WriteLine(string.Join(", ", entry));
                         }
                     }
 
@@ -54,6 +67,7 @@ namespace OliverBedogg.Week09
                 }
             }
 
+            return entry;
         }
     }
 }
