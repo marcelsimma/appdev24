@@ -55,6 +55,8 @@ namespace OliverBedogg.Week09
                             entry.Add(reader.GetString("name"));
                             entry.Add(Convert.ToString(reader.GetFloat("percentage")));
 
+                            // Alternative: new Language(country, name, percentage)
+
                             Console.WriteLine(string.Join(", ", entry));
                         }
                     }
