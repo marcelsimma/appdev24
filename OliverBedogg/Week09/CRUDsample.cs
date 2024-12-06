@@ -46,6 +46,8 @@ namespace OliverBedogg.Week09
                     command.Parameters.AddWithValue("@code", code);
                     command.Parameters.AddWithValue("@name", name);
 
+                    // command.ExecuteNonQuery für andere Statements
+
                     // Resultate lesen
                     using (MySqlDataReader reader = command.ExecuteReader())
                     {
