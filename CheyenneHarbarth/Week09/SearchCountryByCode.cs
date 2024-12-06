@@ -39,14 +39,14 @@ namespace CheyenneHarbarth.Week09
                         {
                             Dictionary<string, string> ProvincesInCountry = new Dictionary<string, string>();
 
-                            if (reader.HasRows)                     //sucht nach dem vorgegebene Wert und liefert einen bool zurück
+                            if (reader.HasRows)                                         //sucht nach dem vorgegebene Wert und liefert einen bool zurück
                             {
                                 while (reader.Read())
                                 {
                                     string Province = reader.GetString("Provincename");
                                     string ProvinceCapital = reader.GetString("Capital");
 
-                                    if (Province is not null)
+                                    if (Province is not null)                           //solange Provinzen vorhanden sind, soll das Dictionary erweitert werden
                                     {
                                         ProvincesInCountry.Add(Province, ProvinceCapital);
                                     }

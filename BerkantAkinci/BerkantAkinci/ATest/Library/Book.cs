@@ -7,7 +7,7 @@ namespace BerkantAkinci.ATest
     {
         public string Bonding;
 
-        public Book(string title, string author, DateTime releaseYear, string isbn, string bonding) : base (title, author, releaseYear,isbn)
+        public Book(string title, string author, DateTime releaseYear, string isbn, string bonding) //: base (title, author, releaseYear, isbn) brauch ich nur bei einem Konstruktor
         {
             Title = title;
             Author = author;
@@ -18,7 +18,7 @@ namespace BerkantAkinci.ATest
 
         public override string ToString()
         {
-            return $"{Title, -20} {Author, -10} {ReleaseYear, -20} {ISBN, -15} {Bonding, -15}";
+            return $"{Title,-20} {Author,-10} {ReleaseYear,-20} {ISBN,-15} {Bonding,-15}"; // formatierung genauer machen
         }
     }
 }

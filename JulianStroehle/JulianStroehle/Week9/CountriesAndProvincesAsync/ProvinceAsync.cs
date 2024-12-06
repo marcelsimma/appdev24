@@ -1,7 +1,7 @@
 using System;
-namespace JulianStroehle.Week9.CountriesAndProvincesP2
+namespace JulianStroehle.Week9.CountriesAndProvincesAsync
 {
-    internal class ProvinceP2
+    internal class ProvinceAsync
     {
         internal string Name;
         internal string Capital;
@@ -9,7 +9,7 @@ namespace JulianStroehle.Week9.CountriesAndProvincesP2
         internal string Country;
         internal string Continent;
         internal string Organization { get; set; }
-        internal ProvinceP2(string name, string capital, int population, string country, string continent)
+        internal ProvinceAsync(string name, string capital, int population, string country, string continent)
         {
             Name = name;
             Capital = capital;

@@ -1,7 +1,7 @@
 using System;
-namespace JulianStroehle.Week9.CountriesAndProvincesP2
+namespace JulianStroehle.Week9.CountriesAndProvincesAsync
 {
-    internal class CountryP2
+    internal class CountryAsync
     {
         internal string Name;
         internal string Code;
@@ -9,20 +9,20 @@ namespace JulianStroehle.Week9.CountriesAndProvincesP2
         internal string Continent;
         internal int Population;
         internal string Organization { get; set; }
-        internal List<ProvinceP2> Provinces;
-        internal CountryP2(string name, string code, string capital, string continent, string organization)
+        internal List<ProvinceAsync> Provinces;
+        internal CountryAsync(string name, string code, string capital, string continent, string organization)
         {
             Name = name;
             Code = code;
             Capital = capital;
             Continent = continent;
             Organization = organization;
-            Provinces = new List<ProvinceP2>();
+            Provinces = new List<ProvinceAsync>();
         }
         internal string ToString(int count)
         {
             Population = 0;
-            foreach (ProvinceP2 p in Provinces)
+            foreach (ProvinceAsync p in Provinces)
             {
                 Population += p.Population;
             }

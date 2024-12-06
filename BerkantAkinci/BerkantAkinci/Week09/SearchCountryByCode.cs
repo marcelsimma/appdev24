@@ -56,7 +56,7 @@ namespace BerkantAkinci.Week09
                                 }
                             }
                         }
-                        if (!found)                                                                //else setzt nie ein
+                        if (!found)
                         {
                             System.Console.WriteLine("Dies ist kein Länderkürzel");
                         }
