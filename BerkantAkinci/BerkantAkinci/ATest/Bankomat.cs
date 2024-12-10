@@ -49,7 +49,7 @@ namespace BerkantAkinci.Week05
 
                     if (double.TryParse(tmp, out double tmp2))
                     {
-                        if (kontostand < tmp2)
+                        if (kontostand <= tmp2)
                         {
                             System.Console.WriteLine("Das ist leider nicht möglich.\nKontostand zu gering!");
                         }

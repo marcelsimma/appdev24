@@ -18,6 +18,10 @@ using BarbaraMarte.Schule.Library;
 using BarbaraMarte.Week07.Supermarket;
 using BarbaraMarte.Week07;
 using BarbaraMarte.Week08.Test;
+using BarbaraMarte.AdventOfCode;
+using BarbaraMarte.Week09;
+using BarbaraMarte.Week09.CountryAndProvince;
+using BarbaraMarte.Zoo.Part1;
 
 namespace BarbaraMarte.Week08.Test
 {
@@ -25,8 +29,19 @@ namespace BarbaraMarte.Week08.Test
     {
         static void Main()
         {
+            // Zoo
+            ZooMain.Start();
+
+
+
+            // AdventOfCode
+            // Day1Part1.Print();
+
+
+
             //Work
             // PrimeNumber.Print();
+            // PiDecember.Print();
 
             // Schule
             // ContactsArray.Start(); 
@@ -35,7 +50,18 @@ namespace BarbaraMarte.Week08.Test
             // ContactListFolder.Start();
             // StartSupermarket.Print();
             // ContactListNew.Start();
-            // LetsGo.Start();
+
+            /*
+            Library libraryViktorsberg = new Library();
+            libraryViktorsberg.Start();
+            */
+
+
+            // Week 09
+            // EUMember.Start();
+            // CountriesAndProvinces.Start();
+            // SearchCountryByCode.Start();
+            // InteractiveCountriesStart.Start();
 
 
             // Week07

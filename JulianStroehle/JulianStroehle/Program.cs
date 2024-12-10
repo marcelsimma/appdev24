@@ -14,6 +14,11 @@ using JulianStroehle.Week7.Callcenter;
 using JulianStroehle.Week7.Supermarket;
 using JulianStroehle.Week7.Telefonbuch;
 using JulianStroehle.Week8.OOP_Test_Aufgabe;
+using JulianStroehle.Week8;
+using JulianStroehle.Week9;
+using JulianStroehle.Week9.CountriesAndProvinces;
+using JulianStroehle.Week9.CountriesAndProvincesP2;
+using JulianStroehle.Week9.CountriesAndProvincesAsync;
 namespace JulianStroehle
 {
     class Program
@@ -99,7 +104,17 @@ namespace JulianStroehle
             // Callcenter.Start();
             // SupermarketMain.Start();
             // Hangman.WrongInput();
+
+            // Woche 8
             // LibraryMain.Start();
+
+            // Woche 9
+            // EUMembers.Start();
+            // SearchCountryByCode.Start();
+            // CountriesAndProvinces.Start();
+            // CountriesAndProvincesP2.Start();
+            // await CountriesAndProvincesAsync.Start();
+            CRUD.Start();
         }
     }
 }
