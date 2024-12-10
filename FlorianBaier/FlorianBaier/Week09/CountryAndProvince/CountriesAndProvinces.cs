@@ -1,6 +1,6 @@
-using System;
+/*using System;
 using MySql.Data.MySqlClient;
-//unvollständig
+
 
 
 namespace FlorianBaier.Week09
@@ -8,64 +8,116 @@ namespace FlorianBaier.Week09
 
     class CountriesAndProvinces
     {
-        public static void Start()
+       public static void Start()
         {
-            using (StreamReader streamReader = new StreamReader("C:/Users/flori/Desktop/DigitalCampus/MySqlZugang.txt"))
+            string connectionString = "";
+
+            // Liest die Verbindungseinstellungen aus einer Textdatei
+            using (StreamReader str = new StreamReader("C:/Users/flori/Desktop/DigitalCampus/MySqlZugang.txt"))
             {
-                // string input = streamReader.ReadLine() ?? "";
-                string databaseConnectionString = streamReader.ReadToEnd();
+                connectionString = str.ReadToEnd();
+            }
 
-                using (MySqlConnection connection = new MySqlConnection(databaseConnectionString))
+            bool check = true;
+            string input = "";
+            List<string> inputs = new List<string>(); // List der Länderkürzel
+            int count = 0;
+
+            // Abfrage nach Länderkürzeln, bis "Stop" eingegeben wird
+            do
+            {
+                Console.WriteLine("Bitte gib ein Länderkürzel ein, oder tippe 'Stop' um die Ausgabe zu starten.");
+                input = Console.ReadLine();
+                if (input == "Stop")
                 {
-                    try
-                    {
-                        System.Console.WriteLine("Enter a Country code:");
-                        string input = Console.ReadLine() ?? "";
-                        connection.Open();
-                        string query = @$"
-                        SELECT DISTINCT Country.code, country.name, country.population, province.name, province.capital, province.population
-                        FROM Country, Province
-                        WHERE Country.code = province.country
-                        AND country.code
-                        like '{input}'
-                        ORDER BY country.code ASC
-                        ;";
+                    check = false;
+                }
+                else
+                {
+                    inputs.Add(input);
+                }
+            }
+            while (check);
 
-                        MySqlCommand command = new MySqlCommand(query, connection);
-                        // command.Parameters.AddWithValue("@code", "A");   is for the placeholder
-                        int count = 1;
-                        using (MySqlDataReader reader = command.ExecuteReader())
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    Console.WriteLine("Verbindung zur Datenbank hergestellt.");
+
+                    // Abfrage für jedes Land
+                    foreach (string inp in inputs)
+                    {
+                        string query = @$"
+                            SELECT 
+                                country.Name, 
+                                country.Continent, 
+                                country.Capital 
+                            FROM 
+                                mondial.country 
+                            WHERE 
+                                country.code = '{inp}';
+                        ";
+
+                        using (MySqlCommand command = new MySqlCommand(query, connection))
                         {
-                            while (reader.Read())
-                            {
-                                Console.Write(reader.GetString("name") + " ");
-                                Console.Write(reader.GetString("code") + " ");
-                                Console.Write(reader.GetUInt32("population") + " ");
-                                Console.Write(reader.GetString("name") + " ");
-                                Console.Write(reader.GetString("capital") + " ");
-                                Console.WriteLine(reader.GetUInt32("population"));
-                                count++;
-                            }
-                            if (count == 1)
-                            {
-                                System.Console.WriteLine("Not found");
-                            }
-                            else
+                            using (MySqlDataReader reader = command.ExecuteReader())
                             {
                                 while (reader.Read())
                                 {
-                                    System.Console.WriteLine();
+                                    string name = reader.GetString("Name");
+                                    string continent = reader.GetString("Continent");
+                                    string capital = reader.GetString("Capital");
+                                    
+                                    // Erstellen eines neuen Country-Objekts
+                                    Country country = new Country(capital, name, continent);
+                                    Console.WriteLine(country.ToString());
+
+                                    // Provinzen des Landes abfragen
+                                    string query2 = @$"
+                                        SELECT 
+                                            province.Name, 
+                                            province.Capital, 
+                                            province.Population 
+                                        FROM 
+                                            mondial.province 
+                                        WHERE 
+                                            province.country = '{inp}';
+                                    ";
+
+                                    using (MySqlCommand provinceCommand = new MySqlCommand(query2, connection))
+                                    {
+                                        using (MySqlDataReader provinceReader = provinceCommand.ExecuteReader())
+                                        {
+                                            while (provinceReader.Read())
+                                            {
+                                                string provinceName = provinceReader.GetString("Name");
+                                                string provinceCapital = provinceReader.GetString("Capital");
+                                                int population = provinceReader.GetInt32("Population");
+
+                                                // Erstellen eines neuen Province-Objekts und Hinzufügen zum Land
+                                                Province province = new Province(population, provinceCapital, provinceName);
+                                                country.AddProvince(province);
+                                            }
+                                        }
+                                    }
+
+                                    // Gesamtbevölkerung und Provinzen anzeigen
+                                    Console.WriteLine($"Total Population: {country.GetTotalPopulation()}");
+                                    country.DisplayProvinces();
+                                    Console.WriteLine();
                                 }
                             }
                         }
                     }
-                    catch (MySqlException ex)
-                    {
-                        Console.WriteLine(ex.Message);
-                    }
-
                 }
-            };
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine($"Fehler: {ex.Message}");
+                }
+            }
         }
     }
-}
+}*/
+//unvollständig wird gefixed

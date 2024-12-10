@@ -22,6 +22,8 @@ using BerkantAkinci.Week07.ContactList;
 using BerkantAkinci.Week07.StackExample;
 using BerkantAkinci.Week07.Supermarket;
 using BerkantAkinci.Week09;
+using BerkantAkinci.Week10;
+using MySqlX.XDevAPI.CRUD;
 
 
 namespace BerkantAkinci
@@ -79,7 +81,9 @@ namespace BerkantAkinci
             //TicketsystemMain.Start();
             //Callcenter.Start();
             //ContactList.Start();
-            MainCountryProvinces.PrintMain();
+            //CRUD.Start();
+            //CRUD.Start();
+            ZooMain.Start();
         
            
             
