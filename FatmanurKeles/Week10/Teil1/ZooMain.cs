@@ -1,11 +1,10 @@
-using FatmanurKeles.Week06.AufgabeZoo;
-using FatmanurKeles.Week06.ZOO;
+using System;
 
-namespace FatmanurKeles.Week06.ZOO
+namespace FatmanurKeles.Week10.Teil1
 {
-    public class ZooStart
+    public class ZooMain
     {
-        public static void Launch()
+        public static void Start()
         {
             List<Gehege> alleGehegen = new List<Gehege>();
             Gehege alpenwiese = new Gehege("Alpenwiese Montafon");
@@ -15,12 +14,12 @@ namespace FatmanurKeles.Week06.ZOO
             alleGehegen.Add(alpenwiese);
             alleGehegen.Add(ried);
             alleGehegen.Add(terrarium);
-            Zoo beschreibung = new Zoo("Tiergarten Feldkirch", "2018", ried, "Gisingen");
+            Zoo beschreibung = new Zoo("Tiergarten Feldkirch", "2014");
             
         
-            foreach (Gehege gehegen in alleGehegen)
+            foreach (Gehege GehegeListe in alleGehegen)
             {
-                Console.WriteLine(gehegen.ToString());
+                Console.WriteLine(GehegeListe.ToString());
             }
             Console.WriteLine(new string('-', 32));
         }
