@@ -1,5 +1,6 @@
 using System;
 using System.Globalization;
+using System.Runtime.Serialization;
 using BerkantAkinci.Week02;
 
 namespace BerkantAkinci.Week04
@@ -14,6 +15,7 @@ namespace BerkantAkinci.Week04
             DayOfWeek heuteMonatsTag = heute.DayOfWeek;                         // heutiges Datum in den Tag umwandeln
             CultureInfo austrian = new CultureInfo("de-AT");                    // Übersetzen auf Deutsch
             string tag = austrian.DateTimeFormat.GetDayName(heuteMonatsTag);    // Zeile 13 und 14 verknüpfen
+            System.Console.WriteLine(heute.ToLongDateString());
             string heuteTagString = heute.ToString("dd");                       //  deutige Datum abgekürt nur das es die Zahl vom heutigen Tag anzeigt
             int heuteTag = Convert.ToInt32(heuteTagString);                     // den string zu einem integer konvertieren dass es auch als Zahl wahrnimmt
             DateTime monat = new DateTime(year, month, 1);
