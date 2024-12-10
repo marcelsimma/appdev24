@@ -16,3 +16,10 @@ namespace BarbaraMarte.Week09.CountryAndProvince
         }
     }
 }
+/*
+SELECT country.code, country.name, country.capital, encompasses.Continent
+FROM country, encompasses
+WHERE country.code = encompasses.Country
+-- AND country.code = 'S'
+AND encompasses.Continent LIKE 'Asia%'
+*/
