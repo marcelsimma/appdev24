@@ -4,14 +4,22 @@ using System;
 using LucasSchiemann.Week03;
 using LucasSchiemann.Week04;
 using LucasSchiemann.Week05;
+using LucasSchiemann.SortAlgorithmChooser;
+using LucasSchiemann.Week06;
+using LucasSchiemann.Week06.Zoo;
+using LucasSchiemann.Week07.SuperMarkt;
+using LucasSchiemann.Week10;
 namespace LucasSchiemann;
 
     class Program
     {
     static void Main()
     {
-
-        Teilnehmerliste.Start();
+        MysqlConnectExample.Start();
+        //StartOfZoo.StartMethod();
+        //Bankkonto.Start();
+        //AlgorythmChooser.ChoseSortAlgorythm();
+        //Teilnehmerliste.Start();
         //AlgorithmTester.ChoseSortAlgorythm();
         //Tabellensorter.Start();
         //AlgorithmTester.excecuteSelectionSort();

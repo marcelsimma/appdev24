@@ -11,6 +11,7 @@ namespace OliverBedogg.Week06
         public Auto(int kmStand, double verbrauchProKilometer) : base(kmStand)
         {
             _verbrauchProKilometer = verbrauchProKilometer;
+            _tankinhalt = 100;
         }
 
         // Methoden

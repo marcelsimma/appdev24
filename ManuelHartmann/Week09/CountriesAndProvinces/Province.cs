@@ -23,7 +23,7 @@ namespace ManuelHartmann.Week09.CountriesAndProvinces.Provinces
             return
 
             String.Format(
-            @"  - {0}, {1}, {2}", 
+            @" |--- {0,-20} | {1, -15} | {2, -15}", 
             PronviceName, ProvinceCapital, ProvincePopulation);
         }
     }

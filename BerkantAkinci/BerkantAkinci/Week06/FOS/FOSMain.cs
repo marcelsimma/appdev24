@@ -35,11 +35,6 @@ namespace BerkantAkinci.Week06.FOS
             s1.Speicherplatz = 1000;
             System.Console.WriteLine(f1.Speicher.Speicherplatz);
 
-            int a = 5, b = 7;
-            int c = add(a, b);
-            System.Console.WriteLine(c);
-            a = 50;
-            System.Console.WriteLine(c);
 
             // Ziel: Eine Liste mit allen Inventargegenständen
             // liste[0] = f1;
