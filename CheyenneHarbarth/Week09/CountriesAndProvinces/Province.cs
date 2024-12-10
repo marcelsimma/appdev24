@@ -16,7 +16,7 @@ namespace CheyenneHarbarth.Week09.CountriesAndProvinces
         }
         public override string ToString()
         {
-            return $"{Provincename,-15} | {Provincecapital,-15} | {Provincepopulation,13}\n";
+            return $"{Provincename,-25} | {Provincecapital,-15} | {Provincepopulation,13}";
         }
     }
 }

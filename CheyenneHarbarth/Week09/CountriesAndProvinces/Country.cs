@@ -22,7 +22,7 @@ namespace CheyenneHarbarth.Week09.CountriesAndProvinces
 
         public override string ToString()
         {
-            return $"{CountryName,-15} | {CountryCapital,-15} | {Continent,-10}\nBundesländer    | Hauptstadt      | Einwohneranzahl";
+            return $"\n{CountryName,-25} | {CountryCapital,-15} | {Continent,-10}\nBundesländer              | Hauptstadt      | Einwohneranzahl\n-------------------------------------------------------------------------------------------";
         }
 
         internal int CountPopulation()
