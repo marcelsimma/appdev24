@@ -1,6 +1,6 @@
 using System;
 
-namespace FlorianBaier.Week10
+namespace FlorianBaier.Week10.ZooPart1
 {
 
     public class Enclosure

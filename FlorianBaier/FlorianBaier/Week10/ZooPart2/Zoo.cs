@@ -1,6 +1,6 @@
 using System;
 
-namespace FlorianBaier.Week10.ZooPart1
+namespace FlorianBaier.Week10.ZooPart2
 {
 
     internal class Zoo
@@ -40,6 +40,7 @@ namespace FlorianBaier.Week10.ZooPart1
             foreach (var enclosure in Enclosures)
             {
                 Console.WriteLine($"│   ├── Gehege: {enclosure.Name}");
+                enclosure.DisplayAnimals();
             }
         }
     }
