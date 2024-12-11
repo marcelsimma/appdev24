@@ -12,7 +12,7 @@ namespace CheyenneHarbarth.Basics
             DateTime Today = DateTime.Now;
             DateTime test = DateTime.MaxValue;
 
-            System.Console.WriteLine();
+            Console.WriteLine();
             Console.WriteLine(test);
 
 
@@ -24,7 +24,7 @@ namespace CheyenneHarbarth.Basics
 
             Console.WriteLine($"Aktuelle Uhrzeit: {Today.ToShortTimeString()}");                //Alternativer 
 
-            Console.WriteLine($"Datum und Uhrzeit: {Today.ToString(new CultureInfo("de-AT"))}");            //CultureInfo liefert nur die richtige Schreibweise mit, gibt nicht die Zeitzone mit
+            Console.WriteLine($"Datum und Uhrzeit: {Today.ToString(austrian)}");            //CultureInfo liefert nur die richtige Schreibweise mit, gibt nicht die Zeitzone mit
 
             System.Console.WriteLine();
             Console.WriteLine($"Zeitzone: {Austria.DisplayName}");                  //Zeitunterschied + Namen der Städte wo diese Zeitzone gültig ist
@@ -45,7 +45,7 @@ namespace CheyenneHarbarth.Basics
             Console.WriteLine(Today.ToString("T"));                     //lange zeit: 10:01:43
             Console.WriteLine(Today.ToString("f"));                     //Datum und Zeit: Montag, 25.11.2024 10:01
             Console.WriteLine(Today.ToString("M"));                     //Tag und Monat: 25. Nov
-            Console.WriteLine(Today.ToString("Y"));                       //Monat und Jahr: November 2024
+            Console.WriteLine(Today.ToString("Y"));                     //Monat und Jahr: November 2024
             Console.WriteLine(Today.ToString("dd" + "ddd" + "dddd"));   //Tag: 25 Mon Montag
             Console.WriteLine(Today.ToString("MM" + "MMM" + "MMMM"));   //Monat: 11 Nov November
             Console.WriteLine(Today.ToString("yy" + "yyyy"));           //jahr: 24 2024

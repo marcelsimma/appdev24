@@ -13,7 +13,6 @@ namespace BarbaraMarte.Week09
         {
             using (StreamReader streamReader = new StreamReader("C:/AttendingList1/SqlId.txt"))
             {
-                // string input = streamReader.ReadLine() ?? "";
                 string databaseConnectionString = streamReader.ReadToEnd();
 
                 using (MySqlConnection connection = new MySqlConnection(databaseConnectionString))
@@ -25,12 +24,14 @@ namespace BarbaraMarte.Week09
                         connection.Open();
                         string query = @$"
                         SELECT DISTINCT 
+                        
                         Country.code AS CountryCode, 
                         country.name AS CountryName, 
                         country.population AS CountryPopulation, 
                         province.name AS ProvinceName, 
                         province.capital AS ProvinceCapital, 
                         province.population AS ProvincePopulation
+
                         FROM Country
                         LEFT JOIN Province ON Country.Code = Province.country                        
                         AND country.code = '{input}'

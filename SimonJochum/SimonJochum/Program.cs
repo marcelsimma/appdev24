@@ -17,7 +17,9 @@ using SimonJochum.Week07.SupermarketOOP;
 using SimonJochum.Week08.PrüfungOOP;
 using SimonJochum.Week09;
 using SimonJochum.Week09.CountriesAndProvinces;
-using SimonJochum.Week09.CountriesAndProvincesChanged;
+using SimonJochum.Week09.CountriesAndProvincesAsync;
+using SimonJochum.Week09.CRUD;
+using SimonJochum.Week10.Zoo.Zoo_Part1;
 
 namespace SimonJochum;
 
@@ -106,6 +108,11 @@ class Program
         //Week09
         // SQLQuery.Start();
         // InitialiseFile.Start();
-        InitialiseStart.Start();
+        // InitialiseStart.StartAsync().GetAwaiter().GetResult();
+        // Init_Start.Start();
+
+        //Week10
+        InitialiseZoo.StartZoo();
+
     }
 }
