@@ -19,13 +19,13 @@ namespace BarbaraMarte.Zoo.Part1
                 switch (input.ToLower())
                 {
                     case "1":
-                        AddEnclosure();
+                        AddEnclosure1();
                         break;
                     case "2":
                         RemoveEnclosure();
                         break;
                     case "3":
-                        PrintOutEnclosures();
+                        PrintOutEnclosures1();
                         break;
                     case "e":
                         decision = false;
@@ -33,14 +33,14 @@ namespace BarbaraMarte.Zoo.Part1
                 }
             }
         }
-        public void PrintOutEnclosures()
+        public void PrintOutEnclosures1()
         {
             foreach (var tmp in EnclosureList)
             {
                 System.Console.WriteLine(tmp);
             }
         }
-        public void AddEnclosure()
+        public void AddEnclosure1()
         {
             System.Console.WriteLine("Which Enclosure do you want to add?");
             string inputEnclosure = Console.ReadLine() ?? "";
