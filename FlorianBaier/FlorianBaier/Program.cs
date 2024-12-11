@@ -9,7 +9,8 @@ using FlorianBaier.Week06;
 using FlorianBaier.Week07;
 using FlorianBaier.Week08;
 using FlorianBaier.Week09;
-using FlorianBaier.Week10;
+using FlorianBaier.Week10.ZooPart1;
+using FlorianBaier.Week10.ZooPart2;
 
 namespace FlorianBaier
 {
@@ -35,8 +36,10 @@ namespace FlorianBaier
             //CountriesAndProvinces.Start();
             //SearchCountryByCode.Start();
             //CRUDChoice.Start();
-            ZooStart.Start();
-            
+            //ZooStart.Start();
+            //Week10.ZooPart2.ZooStart.Start();
+            //Week10.ZooPart3.ZooStart.Start();
+            Week10.ZooPart4.ZooStart.Start();
         }
 
     }
