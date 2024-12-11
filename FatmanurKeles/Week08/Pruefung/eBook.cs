@@ -7,15 +7,11 @@ namespace FatmanurKeles.Week08
         public List<eBook> eBooks {get; set;}
         public string Dateiformat { get; set; }
 
-        public eBook(string titel, string autor, int veroeffentlichungsjahr, string isbn, string dateiformat)
+        public eBook(string titel, string autor, int veroeffentlichungsjahr, string isbn, string dateiformat) : base( titel,  autor,  veroeffentlichungsjahr,  isbn)
         {
             Dateiformat = dateiformat;
         }
 
-        public override void Ausgabe()
-        {
-            base.Ausgabe();
-            Console.WriteLine($"Dateiformat: {Dateiformat}");
-        }
+
     }
 }
