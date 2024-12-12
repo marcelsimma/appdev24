@@ -20,6 +20,12 @@ using BarbaraMarte.Week07;
 using BarbaraMarte.Week08.Test;
 using BarbaraMarte.AdventOfCode;
 using BarbaraMarte.Week09;
+using BarbaraMarte.Week09.CountryAndProvince;
+using BarbaraMarte.Zoo.Part1;
+using BarbaraMarte.Zoo.Part2;
+using BarbaraMarte.Zoo.Part3;
+using BarbaraMarte.Zoo.Part4;
+using BarbaraMarte.Week10.Test;
 
 namespace BarbaraMarte.Week08.Test
 {
@@ -27,13 +33,23 @@ namespace BarbaraMarte.Week08.Test
     {
         static void Main()
         {
-            // AdventOfCode
+            // Week10
+            // CountriesAndRivers.Start();
 
+
+            // Zoo
+            ZooMain4.Start();
+
+
+
+            // AdventOfCode
+            // Day1Part1.Print();
 
 
 
             //Work
             // PrimeNumber.Print();
+            // PiDecember.Print();
 
             // Schule
             // ContactsArray.Start(); 
@@ -51,8 +67,9 @@ namespace BarbaraMarte.Week08.Test
 
             // Week 09
             // EUMember.Start();
-            CountriesAndProvinces.Start();
+            // CountriesAndProvinces.Start();
             // SearchCountryByCode.Start();
+            // InteractiveCountriesStart.Start();
 
 
             // Week07

@@ -65,7 +65,6 @@ AND country.code = @code
                         foreach (KeyValuePair<string, string> p in provinces)
                         {
 
-
                             Console.Write(" ");
                             Console.Write(p.Key);
                             Console.Write(" ");

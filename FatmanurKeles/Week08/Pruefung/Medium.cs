@@ -17,7 +17,7 @@ namespace FatmanurKeles.Week08
             ISBN = isbn;
         }
 
-        public void Ausgabe()
+        public virtual void Ausgabe()
         {
             Console.WriteLine($"Titel: {Titel}");
             Console.WriteLine($"Autor: {Author}");
