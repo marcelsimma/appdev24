@@ -19,6 +19,7 @@ namespace OliverBedogg
 
             // Woche 10 ------------------
             ZooMain.Init();
+            ZooMain.Start();
 
             // Woche 9 ------------------
             // MysqlConnectExample.Start();
