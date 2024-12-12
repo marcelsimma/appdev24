@@ -88,7 +88,7 @@ namespace CheyenneHarbarth.Zoo.Zoostructure
         {
             foreach (Zookeeper zooworker in Zookeepers)
             {
-                if (zooworker._Workername == zooworkername)
+                if (zooworker._Keepername == zooworkername)
                 {
                     Zookeepers.Remove(zooworker);
                     break;

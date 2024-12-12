@@ -28,7 +28,7 @@ CREATE TABLE Food (
 );
 
 CREATE TABLE Zookeeper (
-    ID INT PRIMARY KEY AUTO_INCREMENT,
+    KeeperID INT PRIMARY KEY AUTO_INCREMENT,
     Firstname VARCHAR(15) NOT NULL,
     Lastname VARCHAR(15) NOT NULL,
     Workplace VARCHAR(30) NOT NULL,
@@ -37,19 +37,19 @@ CREATE TABLE Zookeeper (
 );
 
 CREATE TABLE Foodlist (
-    Animal VARCHAR(15) NOT NULL,
+    Animalname VARCHAR(15) NOT NULL,
     Food INT NOT NULL,
     Amount FLOAT NOT NULL,
     CONSTRAINT Amount CHECK (Amount > 0),
-    FOREIGN KEY (Animal) REFERENCES Animal(Animalname),
+    FOREIGN KEY (Animalname) REFERENCES Animal(Animalname),
     FOREIGN KEY (Food) REFERENCES Food(InventoryNr),
-    PRIMARY KEY(Animal, Food)
+    PRIMARY KEY(Animalname, Food)
 );
 
 CREATE TABLE Carelist (
-    Caretaker INT NOT NULL,
-    Assigned INT NOT NULL,
-    FOREIGN KEY (Caretaker) REFERENCES Zookeeper(ID),
-    FOREIGN KEY (Assigned) REFERENCES Enclosure(EnclosureNr),
-    PRIMARY KEY(Caretaker, Assigned)
+    KeeperID INT NOT NULL,
+    EnclosureNr INT NOT NULL,
+    FOREIGN KEY (KeeperID) REFERENCES Zookeeper(KeeperID),
+    FOREIGN KEY (EnclosureNr) REFERENCES Enclosure(EnclosureNr),
+    PRIMARY KEY(KeeperID, EnclosureNr)
 );
