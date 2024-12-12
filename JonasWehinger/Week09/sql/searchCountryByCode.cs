@@ -16,7 +16,7 @@ namespace JonasWehinger.Week09
             string databaseConnectionString = @"
             server=127.0.0.1;
             uid=root;
-            pwd=#Tuma4016!;
+            pwd=#!;
             database=mondial
             ";
  
