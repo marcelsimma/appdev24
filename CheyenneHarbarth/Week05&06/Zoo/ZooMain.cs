@@ -15,11 +15,11 @@ namespace CheyenneHarbarth.Week05.OOP.Zoo
             Gehege nadelwald = new Gehege("Nadelwald");
             Gehege urwald = new Gehege("Urwald");
 
-            MeinZoo.Gehegehinzufügen(alpenwiese);
-            MeinZoo.Gehegehinzufügen(eissee);
-            MeinZoo.Gehegehinzufügen(ried);
-            MeinZoo.Gehegehinzufügen(nadelwald);
-            MeinZoo.Gehegehinzufügen(urwald);
+            MeinZoo.GehegeHinzufuegen(alpenwiese);
+            MeinZoo.GehegeHinzufuegen(eissee);
+            MeinZoo.GehegeHinzufuegen(ried);
+            MeinZoo.GehegeHinzufuegen(nadelwald);
+            MeinZoo.GehegeHinzufuegen(urwald);
 
             //Gehege befüllen
             Tier tier1 = new Tier("Quitschi", "Murmeltier");
@@ -43,7 +43,7 @@ namespace CheyenneHarbarth.Week05.OOP.Zoo
             urwald.TierHinzufügen(tier7);
 
             Gehege savanne = new Gehege("Savanne");
-            MeinZoo.Gehegehinzufügen(savanne);
+            MeinZoo.GehegeHinzufuegen(savanne);
             Tier tier8 = new Tier("Simba", "Löwe");
             Tier tier9 = new Tier("Nala", "Löwe");
             savanne.TierHinzufügen(tier8);

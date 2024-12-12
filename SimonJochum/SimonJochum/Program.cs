@@ -20,6 +20,7 @@ using SimonJochum.Week09.CountriesAndProvinces;
 using SimonJochum.Week09.CountriesAndProvincesAsync;
 using SimonJochum.Week09.CRUD;
 using SimonJochum.Week10.Zoo.Zoo_Part1;
+using SimonJochum.Week10.Pruefung3;
 
 namespace SimonJochum;
 
@@ -113,6 +114,7 @@ class Program
 
         //Week10
         InitialiseZoo.StartZoo();
+        // CountriesAndRivers.Start();
 
     }
 }
