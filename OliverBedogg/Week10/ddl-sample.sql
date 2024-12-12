@@ -22,3 +22,5 @@ CREATE TABLE `city` (
 
 ALTER TABLE `city`
   ADD PRIMARY KEY (`Name`,`Country`,`Province`);
+
+
