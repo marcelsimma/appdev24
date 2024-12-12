@@ -28,13 +28,15 @@ namespace FatmanurKeles.Week10.Teil1
         public void PrintZoo()
         {
             // Zoo
-            System.Console.WriteLine($"ZooName: {ZooName}: Gründungsjahr {Gruendungsjahr}");
+            Console.WriteLine($"\nZooName: {ZooName}: Gründungsjahr {Gruendungsjahr}\n");
 
             // alle Gehege aus der Liste ausgeben
             foreach (Gehege gehege in GehegeListe)
             {
-                System.Console.WriteLine($"+-- Gehege: {gehege.GehegeName}");
+                Console.WriteLine($"|-- Gehege: {gehege.GehegeName}");
+                gehege.PrintGehege();
             }
+          
         }
     }
 }
