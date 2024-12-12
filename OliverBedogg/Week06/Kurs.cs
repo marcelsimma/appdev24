@@ -12,6 +12,7 @@ namespace OliverBedogg.Week06
         public Kurs(Person Trainer)
         {
             _Trainer = Trainer;
+            _TeilnehmerInnen = new List<Person>();
         }
 
         public void plusTeilnehmerIn(Person TeilnehmerIn)

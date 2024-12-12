@@ -117,7 +117,7 @@ order by r.percentage DESC
 -- Aufgabe 10
 -- Alle 3000er, welche in einem Land sind, welches zu mindestens 60% römisch Katholisch ist
 
-SELECT m.name, c.name, r.name, r.percentage, m.height
+SELECT DISTINCT m.name, c.name, r.name, r.percentage, m.height
 FROM religion r, country c, province p, geo_mountain gm, mountain m
 WHERE r.country = c.code 
 AND c.code = p.country 
@@ -127,7 +127,8 @@ AND gm.mountain = m.name
 AND r.name Like '%Catholic'
 AND m.height > 3000
 AND r.percentage > 60
-order by r.percentage DESC
+order by m.height DESC
+
 
 
 -- Aufgabe 11
@@ -142,3 +143,14 @@ Order by anzahl desc;
 
 -- Aufgabe 12
 -- Welches sind die 3 größten Städte von Amerika (Kontinent)?
+
+
+
+-- Aufgabe 13
+-- Wie viel Prozent der Menschen leben im Kontinent Europa?
+
+-- Aufgabe 14
+-- Das Unabhängigkeitsdatum von Ländern die eine Wüste haben und die ethnische Gruppe African
+
+-- Aufgabe 15
+-- Welche Länder haben genau 3 Städte? Welche Länder sind dies?

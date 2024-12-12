@@ -17,7 +17,7 @@ namespace FatmanurKeles.Week06.ZOO
             alleGehegen.Add(terrarium);
             Zoo beschreibung = new Zoo("Tiergarten Feldkirch", "2018", ried, "Gisingen");
             
-            
+        
             foreach (Gehege gehegen in alleGehegen)
             {
                 Console.WriteLine(gehegen.ToString());

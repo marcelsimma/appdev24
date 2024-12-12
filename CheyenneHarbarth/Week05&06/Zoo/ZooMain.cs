@@ -2,7 +2,7 @@ using System;
 
 namespace CheyenneHarbarth.Week05.OOP.Zoo
 {
-    public class ZooMain
+    public class Zoomain
     {
         public static void Start()
         {
