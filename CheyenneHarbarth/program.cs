@@ -18,6 +18,8 @@ using CheyenneHarbarth.Week07.Supermarket;
 using CheyenneHarbarth.Week08.Test;
 using CheyenneHarbarth.Week09;
 using CheyenneHarbarth.Week09.CountriesAndProvinces;
+using CheyenneHarbarth.Zoo.Zoostructure;
+using CheyenneHarbarth.Week10.Test;
 
 namespace CheyenneHarbarth
 {
@@ -27,6 +29,11 @@ namespace CheyenneHarbarth
 
         static void Main(string[] args)
         {
+            CountriesAndRivers.Start();
+
+            //ZooMain.Start();
+
+
             //Testaufgabe.Start();
             //LibraryMain.Start();
             //RBStart.Start();
@@ -94,7 +101,7 @@ namespace CheyenneHarbarth
 
             //EUMembers.Start();
             //SearchCountryByCode.Start();
-            CAPMain.Start();
+            //CAPMain.Start();
         }
     }
 }

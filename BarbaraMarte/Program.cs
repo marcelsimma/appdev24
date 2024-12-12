@@ -22,6 +22,10 @@ using BarbaraMarte.AdventOfCode;
 using BarbaraMarte.Week09;
 using BarbaraMarte.Week09.CountryAndProvince;
 using BarbaraMarte.Zoo.Part1;
+using BarbaraMarte.Zoo.Part2;
+using BarbaraMarte.Zoo.Part3;
+using BarbaraMarte.Zoo.Part4;
+using BarbaraMarte.Week10.Test;
 
 namespace BarbaraMarte.Week08.Test
 {
@@ -29,8 +33,12 @@ namespace BarbaraMarte.Week08.Test
     {
         static void Main()
         {
+            // Week10
+            // CountriesAndRivers.Start();
+
+
             // Zoo
-            ZooMain.Start();
+            ZooMain4.Start();
 
 
 
