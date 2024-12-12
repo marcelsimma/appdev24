@@ -59,7 +59,8 @@ namespace JulianStroehle.Week9
             while (rdr.Read())
             {
                 count++;
-                Console.Write("\n│" + string.Format("{0,-17}", "  " + $"\x1b[1m{count}\x1b[0m") + "│" + string.Format("{0,-18}", "  " + $"\x1b[1m{rdr.GetString("Country")}\x1b[0m") + "│" + string.Format("{0,-43}", "  " + $"\x1b[1m{rdr.GetString("Name")}\x1b[0m") + "│" + string.Format("{0,-28}", "  " + $"\x1b[1m{rdr.GetFloat("Percentage")}\x1b[0m") + "│");
+                float percentage = rdr.GetFloat("Percentage")/100;
+                Console.Write("\n│" + string.Format("{0,-17}", "  " + $"\x1b[1m{count}\x1b[0m") + "│" + string.Format("{0,-18}", "  " + $"\x1b[1m{rdr.GetString("Country")}\x1b[0m") + "│" + string.Format("{0,-43}", "  " + $"\x1b[1m{rdr.GetString("Name")}\x1b[0m") + "│" + string.Format("{0,28}", $"\x1b[1m{percentage:P}\x1b[0m" + "        ") + "│");
                 Console.Write("\n├" + new string('─', 9) + "┼" + new string('─', 10) + "┼" + new string('─', 35) + "┼" + new string('─', 20) + "┤");
             }
             Console.WriteLine("\r└" + new string('─', 9) + "┴" + new string('─', 10) + "┴" + new string('─', 35) + "┴" + new string('─', 20) + "┘");

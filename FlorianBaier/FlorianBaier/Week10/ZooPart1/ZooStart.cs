@@ -1,6 +1,6 @@
 using System;
 
-namespace FlorianBaier.Week10
+namespace FlorianBaier.Week10.ZooPart1
 {
     internal class ZooStart
     {
@@ -18,7 +18,7 @@ namespace FlorianBaier.Week10
 
             zoo.StructureInfo();
 
-            zoo.DeleteEnclosure(ried);
+            zoo.DeleteEnclosure("Ried");
 
             Console.WriteLine("\nStructureinfo after deleting 'Ried':");
             zoo.StructureInfo();

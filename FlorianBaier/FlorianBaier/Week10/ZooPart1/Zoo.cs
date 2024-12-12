@@ -1,6 +1,6 @@
 using System;
 
-namespace FlorianBaier.Week10
+namespace FlorianBaier.Week10.ZooPart1
 {
 
     internal class Zoo
@@ -21,11 +21,19 @@ namespace FlorianBaier.Week10
             Enclosures.Add(zooEnclosure);
         }
 
-        public void DeleteEnclosure(Enclosure zooEnclosure)
+        public void DeleteEnclosure(string enclosureName)
         {
-            Enclosures.Remove(zooEnclosure);
+            Enclosure enclosureToRemove = Enclosures.Find(e => e.Name.Equals(enclosureName, StringComparison.OrdinalIgnoreCase));
+            if (enclosureToRemove != null)
+            {
+                Enclosures.Remove(enclosureToRemove);
+                Console.WriteLine($"Enclosure '{enclosureName}' removed.");
+            }
+            else
+            {
+                Console.WriteLine($"Enclosure '{enclosureName}' not found.");
+            }
         }
-
         public void StructureInfo()
         {
             Console.WriteLine($"├── Zoo: {Name}, gegründet {FoundingYear}");
