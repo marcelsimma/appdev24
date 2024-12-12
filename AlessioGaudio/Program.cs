@@ -1,4 +1,7 @@
-﻿using AlessioGaudio.Schule;
+﻿using System.Text;
+using AlessioGaudio.MeinZoo3;
+using AlessioGaudio.MeinZoo4;
+using AlessioGaudio.Schule;
 using AlessioGaudio.Week02;
 
 using AlessioGaudio.Week04;
@@ -12,7 +15,7 @@ namespace AlessioGaudio
     {
         public static void Main (string[] args)
         {
-           
+           Console.OutputEncoding = Encoding.UTF8;
           //  Datum.Start();
          // Sonntag.Start();
         // Regexx.Start();
@@ -24,7 +27,11 @@ namespace AlessioGaudio
       // SQLConnect.Start();
      // CodeCode.Start();
    //MysqlConnectExample.Start();
-         SearchCountry.Start();
+        //CountriesAndProvinces.Start();
+        //Zoo3Main.los();
+        //CountriesAndRivers.Start();
+        Zoo4Main.los();
+
         }
 
      

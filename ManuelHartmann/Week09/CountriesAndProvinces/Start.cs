@@ -1,3 +1,5 @@
+// get MySQL Package: 'dotnet add package MySql.Data --version 9.1.0'
+
 using System.ComponentModel;
 using System.Reflection.Emit;
 using System.Security.Cryptography.X509Certificates;
@@ -6,7 +8,7 @@ using MySql.Data.MySqlClient;
 using ZstdSharp.Unsafe;
 using Org.BouncyCastle.Ocsp;
 
-namespace ManuelHartmann.Week09.CountriesAndProvinces.Start
+namespace ManuelHartmann.Week09.CountriesAndProvinces
 {
     public class Start
     {
