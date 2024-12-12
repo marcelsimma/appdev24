@@ -1,5 +1,5 @@
-DROP DATABASE IF EXISTS Zoodatenbank
-CREATE DATABASE Zoodatenbank
+DROP DATABASE IF EXISTS Zoodatenbank;
+CREATE DATABASE Zoodatenbank;
 USE Zoodatenbank;
 
 CREATE TABLE Zoo (
@@ -17,14 +17,14 @@ CREATE TABLE Animal (
     Animalname VARCHAR(15) PRIMARY KEY,
     Animalrace VARCHAR(25) NOT NULL,
     Habitat INT NOT NULL,
-    FOREIGN KEY Habitat REFERENCES Enclosure (EnclosureNr)
+    FOREIGN KEY (Habitat) REFERENCES Enclosure (EnclosureNr)
 );
 
 CREATE TABLE Food (
     InventoryNr INT PRIMARY KEY AUTO_INCREMENT,
     Foodname VARCHAR(25) NOT NULL,
     Price DOUBLE(7,2) NOT NULL,
-    Measurement VARCHAR(3) DEFAULT kg
+    Measurement VARCHAR(3) DEFAULT 'kg'
 );
 
 CREATE TABLE Zookeeper (
@@ -32,7 +32,7 @@ CREATE TABLE Zookeeper (
     Firstname VARCHAR(15) NOT NULL,
     Lastname VARCHAR(15) NOT NULL,
     Workplace VARCHAR(30) NOT NULL,
-    FOREIGN KEY Workplace REFERENCES Zoo(Zooname),
+    FOREIGN KEY (Workplace) REFERENCES Zoo(Zooname),
     CONSTRAINT checkname UNIQUE (Firstname, Lastname)
 );
 
@@ -41,15 +41,15 @@ CREATE TABLE Foodlist (
     Food INT NOT NULL,
     Amount FLOAT NOT NULL,
     CONSTRAINT Amount CHECK (Amount > 0),
-    FOREIGN KEY Animal REFERENCES Animal(Animalname),
-    FOREIGN KEY Food REFERENCES Food(InventoryNr),
+    FOREIGN KEY (Animal) REFERENCES Animal(Animalname),
+    FOREIGN KEY (Food) REFERENCES Food(InventoryNr),
     PRIMARY KEY(Animal, Food)
 );
 
 CREATE TABLE Carelist (
     Caretaker INT NOT NULL,
     Assigned INT NOT NULL,
-    FOREIGN KEY Caretaker REFERENCES Zookeeper(ID),
-    FOREIGN KEY Assigned REFERENCES Enclosure(EnclosureNr),
+    FOREIGN KEY (Caretaker) REFERENCES Zookeeper(ID),
+    FOREIGN KEY (Assigned) REFERENCES Enclosure(EnclosureNr),
     PRIMARY KEY(Caretaker, Assigned)
 );
