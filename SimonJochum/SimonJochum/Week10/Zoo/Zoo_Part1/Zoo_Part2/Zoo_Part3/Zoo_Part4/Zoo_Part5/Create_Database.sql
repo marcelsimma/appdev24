@@ -33,15 +33,14 @@ CREATE TABLE IF NOT EXISTS food (
 CREATE TABLE IF NOT EXISTS animal_food (
     AnimalID INT, 
     EAN INT, 
-    Amount DOUBLE(3,1),
-    FOREIGN KEY (AnimalID) 
-    REFERENCES animal(AnimalID), 
-    FOREIGN KEY (EAN) 
-    REFERENCES food (EAN));
+    Amount DOUBLE(8,2) NOT NULL,
+    Unit VARCHAR(5) NOT NULL,
+    PRIMARY KEY (AnimalID, EAN),
+    FOREIGN KEY (AnimalID) REFERENCES animal(AnimalID), 
+    FOREIGN KEY (EAN) REFERENCES food (EAN));
 CREATE TABLE IF NOT EXISTS enclosure_zookeeper (
-    ZookeeperID INT, 
-    EnclosureID INT, 
-    FOREIGN KEY (ZookeeperID) 
-    REFERENCES zookeeper(ZookeeperID), 
-    FOREIGN KEY (EnclosureID) 
-    REFERENCES enclosure (EnclosureID));
+    ZookeeperID INT NOT NULL, 
+    EnclosureID INT NOT NULL,
+    PRIMARY KEY (ZookeeperID, EnclosureID), 
+    FOREIGN KEY (ZookeeperID) REFERENCES zookeeper(ZookeeperID), 
+    FOREIGN KEY (EnclosureID) REFERENCES enclosure (EnclosureID));
