@@ -4,7 +4,7 @@ using Pruefung;
 
 class Program
 {
-    static void Main()
+    static void Start()
     {
         Bibliothek meineBibliothek = new Bibliothek();
 
