@@ -12,9 +12,9 @@ namespace FatmanurKeles.Week08
             Bindung = bindung;
         }
 
-        public override void Ausgabe()
+        public override string ToString()
         {
-            base.Ausgabe();
+            base.ToString();
             Console.WriteLine($"Bindung: {Bindung}");
         }
     }

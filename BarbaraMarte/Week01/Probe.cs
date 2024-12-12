@@ -7,9 +7,9 @@ namespace BarbaraMarte.Week01
     {
 
 
-        public static void PrintProbe(){}
-        
-             public static void ArrayWork()
+        public static void PrintProbe() { }
+
+        public static void ArrayWork()
         {
             Console.WriteLine("Please enter the size of the Array");
             int i = Convert.ToInt32(Console.ReadLine());
@@ -17,7 +17,7 @@ namespace BarbaraMarte.Week01
             for (i = 0; i < arr.Length; i++)
             {
                 Console.WriteLine("Please enter words or names until the array is full");
-                arr[i] = Console.ReadLine();
+                arr[i] = Console.ReadLine() ?? "";
             }
             string[] arr2 = arr.Reverse().ToArray();
             foreach (string s in arr2)
@@ -30,14 +30,14 @@ namespace BarbaraMarte.Week01
         public static void ArrayWork2()
         {
             Console.WriteLine("Please enter a Sentence");
-            string? input = Console.ReadLine();
+            string input = Console.ReadLine() ?? "";
             string[] words = input.Split(' ', ',');
             foreach (string word in words)
             {
                 Console.Write(word);
             }
         }
-        
+
         /*{
             // Ansatz 1: + und - separat durchführen
             int loop = 1;

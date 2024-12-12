@@ -5,6 +5,7 @@ using FatmanurKeles.Week05;
 using FatmanurKeles.Week06;
 using FatmanurKeles.Week06.FotoappEinfach;
 using FatmanurKeles.Week06.ZOO;
+using FatmanurKeles.Week10.Teil1;
 
 namespace FatmanurKeles.Week02
 {
@@ -33,6 +34,7 @@ namespace FatmanurKeles.Week02
             //  Bankomat.Start();
             // FotoappEinfach.Launch();
             //  ZooStart.Launch();
+            ZooMain.Start();
          
         }
     }
