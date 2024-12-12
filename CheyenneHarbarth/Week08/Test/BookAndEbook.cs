@@ -16,7 +16,7 @@ namespace CheyenneHarbarth.Week08.Test
 
         public override string ToString()
         {
-            return $"Buch: {Titel, 20}, {Author, 15}\nVeröffentlichung: {ReleaseYear}\nISBN: {ISBN}\nBindung: {Bookcover}\n";
+            return $"Buch: {Titel,20}, {Author,15}\nVeröffentlichung: {ReleaseYear}\nISBN: {ISBN}\nBindung: {Bookcover}\n";
         }
     }
 
@@ -34,7 +34,7 @@ namespace CheyenneHarbarth.Week08.Test
         }
         public override string ToString()
         {
-            return $"Ebook: {Titel, 20}, {Author, 15}\nVeröffentlichung: {ReleaseYear}\nISBN: {ISBN}\nDateiformat: {Format}\n";
+            return $"Ebook: {Titel,20}, {Author,15}\nVeröffentlichung: {ReleaseYear}\nISBN: {ISBN}\nDateiformat: {Format}\n";
         }
     }
 }
