@@ -2,7 +2,7 @@ using System;
 
 namespace BerkantAkinci.Week06.Zoo
 {
-    class ZooMain
+    class ZMain
     {
         public static void Start()
         {
