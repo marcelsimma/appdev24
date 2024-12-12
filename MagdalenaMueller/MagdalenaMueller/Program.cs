@@ -1,4 +1,5 @@
 ﻿using System;
+using MagdalenaMueller.Weeek10;
 using MagdalenaMueller.Week01;
 using MagdalenaMueller.Week02;
 using MagdalenaMueller.Week03;
@@ -8,6 +9,7 @@ using MagdalenaMueller.Week06;
 using MagdalenaMueller.Week07;
 using MagdalenaMueller.Week08;
 using MagdalenaMueller.Week09;
+using MagdalenaMueller.Zoo;
 
 namespace MagdalenaMueller
 {
@@ -16,7 +18,7 @@ namespace MagdalenaMueller
     {
         static void Main()
         {
-            CRUD.Start();
+            StartZoo.Start();
         }
     }
 }
