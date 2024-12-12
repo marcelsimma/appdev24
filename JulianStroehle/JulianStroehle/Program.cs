@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using JulianStroehle.Week1;
 using JulianStroehle.Week2;
 using JulianStroehle.Week3;
@@ -19,6 +20,7 @@ using JulianStroehle.Week9;
 using JulianStroehle.Week9.CountriesAndProvinces;
 using JulianStroehle.Week9.CountriesAndProvincesP2;
 using JulianStroehle.Week9.CountriesAndProvincesAsync;
+using JulianStroehle.Week10;
 namespace JulianStroehle
 {
     class Program
@@ -26,6 +28,7 @@ namespace JulianStroehle
         // static async Task Main(string[] args)
         static void Main(string[] args)
         {
+            Console.OutputEncoding = Encoding.UTF8;
             // Woche 1
             // GrossesEinMalEins.Start();
             // Malreihe.Start();
@@ -114,7 +117,11 @@ namespace JulianStroehle
             // CountriesAndProvinces.Start();
             // CountriesAndProvincesP2.Start();
             // await CountriesAndProvincesAsync.Start();
-            CRUD.Start();
+            // CRUD.Start();
+
+            // Woche 10
+            Zoo_Main.Start();
+            // CountriesAndRivers.Start();
         }
     }
 }
