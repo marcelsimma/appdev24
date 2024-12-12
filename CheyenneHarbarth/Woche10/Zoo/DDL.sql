@@ -37,6 +37,7 @@ CREATE TABLE Foodlist (
     'Animal' VARCHAR(15) NOT NULL,
     'Food' INT NOT NULL,
     'Amount' FLOAT NOT NULL,
+    CONSTRAINT 'Amount' CHECK (Amount > 0),
     FOREIGN KEY 'Animal' REFERENCES Animal(Animalname),
     FOREIGN KEY 'Food' REFERENCES Food(InventoryNr)
 );
