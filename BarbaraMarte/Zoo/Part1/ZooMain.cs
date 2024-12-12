@@ -16,7 +16,7 @@ namespace BarbaraMarte.Zoo.Part1
             zooInfo1.AddEnclosure(ocean);
 
             zooInfo1.StructureInfo();
-            System.Console.WriteLine();
+            System.Console.WriteLine();           
 
         }
     }
