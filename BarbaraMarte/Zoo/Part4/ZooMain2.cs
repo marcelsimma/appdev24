@@ -38,7 +38,7 @@ namespace BarbaraMarte.Zoo.Part4
             forest.AddAnimal(forestAnimal1);
             forest.AddAnimal(forestAnimal2);
             forest.AddAnimal(forestAnimal3);
-            forest.AddAnimal(forestAnimal4);
+            forest.AddAnimal(forestAnimal4); 
             ocean.AddAnimal(oceanAnimal);
 
             zooInfo1.AddEnclosure(forest);

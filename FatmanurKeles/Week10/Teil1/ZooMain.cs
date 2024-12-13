@@ -6,22 +6,42 @@ namespace FatmanurKeles.Week10.Teil1
     {
         public static void Start()
         {
-            List<Gehege> alleGehegen = new List<Gehege>();
+            //List<Gehege> alleGehegen = new List<Gehege>();
+            Zoo tiergarten = new Zoo("Tiergarten Feldkirch", "2014");
             Gehege alpenwiese = new Gehege("Alpenwiese Montafon");
             Gehege ried = new Gehege("Ried");
             Gehege terrarium = new Gehege("Terrarium (warm)");
 
-            alleGehegen.Add(alpenwiese);
-            alleGehegen.Add(ried);
-            alleGehegen.Add(terrarium);
-            Zoo beschreibung = new Zoo("Tiergarten Feldkirch", "2014");
+            tiergarten.FuegeGehege(alpenwiese);
+            tiergarten.FuegeGehege(ried);
+            tiergarten.FuegeGehege(terrarium);
             
-        
-            foreach (Gehege GehegeListe in alleGehegen)
-            {
-                Console.WriteLine(GehegeListe.ToString());
-            }
-            Console.WriteLine(new string('-', 32));
+            Console.WriteLine(tiergarten);
+
+            Tier kuh = new Tier("Rijska", "Kuh"); 
+            Tier storch1 = new Tier("Garmond", "Storch");
+            Tier storch2 = new Tier ("Hugo", "Storch");
+            Tier storch3 = new Tier ( "Idaxis", "Storch");
+            Tier leer = new Tier("(leer)", "leer"); 
+
+            alpenwiese.FuegeTier(kuh);
+            ried.FuegeTier(storch1);
+            ried.FuegeTier(storch2);
+            ried.FuegeTier(storch3);
+            terrarium.FuegeTier(leer);
+
+            Futter heu = new Futter("Heu", "kg", 5);
+            Futter heuschrecke = new Futter("Heuschrecke", "kg", 10);
+            Futter wasser = new Futter("Wasser", "l", 2);
+            Futter fisch = new Futter("Fisch", "kg", 7);
+
+            kuh.FuegeFutter(heu, 2);
+            storch1.FuegeFutter(wasser, 50);
+            storch2.FuegeFutter(heuschrecke, 5);
+            storch3.FuegeFutter(fisch, 10);
+
+            tiergarten.PrintZoo();
+
         }
     }
 }

@@ -4,10 +4,10 @@ namespace FatmanurKeles.Week10.Teil1
 {
     public class Zoo
     {
-        public string ZooName {get; set;}
-        public string Gruendungsjahr {get; set;}
-        public List<Gehege> GehegeListe; 
-        
+        public string ZooName { get; set; }
+        public string Gruendungsjahr { get; set; }
+        public List<Gehege> GehegeListe;
+
         public Zoo(string zooname, string gruendungsjahr)
         {
             ZooName = zooname;
@@ -25,13 +25,18 @@ namespace FatmanurKeles.Week10.Teil1
             GehegeListe.Remove(gehege);
         }
 
-        public override string ToString()
+        public void PrintZoo()
         {
-            return 
-            String.Format(
-                @$"ZooName: {ZooName}
-                Gründungsjahr: {Gruendungsjahr}
-                Gehege: {GehegeListe}");
+            // Zoo
+            Console.WriteLine($"\nZooName: {ZooName}: Gründungsjahr {Gruendungsjahr}\n");
+
+            // alle Gehege aus der Liste ausgeben
+            foreach (Gehege gehege in GehegeListe)
+            {
+                Console.WriteLine($"|-- Gehege: {gehege.GehegeName}");
+                gehege.PrintGehege();
+            }
+          
         }
     }
 }

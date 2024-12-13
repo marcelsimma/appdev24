@@ -4,18 +4,18 @@ namespace CheyenneHarbarth.Zoo.Zoostructure.Worker
 {
     internal class Zookeeper
     {
-        private string Workername;
-        internal string _Workername
+        private string Keepername;
+        internal string _Keepername
         {
-            get => Workername;
-            set => Workername = value;
+            get => Keepername;
+            set => Keepername = value;
         }
 
         internal List<Enclosure> ResponsibleEnclosures = new List<Enclosure>();
 
         internal Zookeeper(string workername, Enclosure enclosure)
         {
-            Workername = workername;
+            Keepername = workername;
             ResponsibleEnclosures.Add(enclosure);
         }
         internal void Work()
