@@ -6,6 +6,8 @@ namespace JulianStroehle.Week10
         internal string Name;
         internal int ID;
         internal List<Animal> Animals;
+        internal int deletedAnimals { get; set; } = 0;
+
         internal Enclosure(string name, int id)
         {
             Name = name;
@@ -19,7 +21,7 @@ namespace JulianStroehle.Week10
             foreach (Animal animal in Animals)
             {
                 returnValue += "\n│     └── ";
-                returnValue += ID + "." + animal.GetInfo();
+                returnValue += animal.GetInfo();
                 empty = false;
             }
             if (empty)
@@ -34,7 +36,7 @@ namespace JulianStroehle.Week10
         }
         internal void RemoveAnimal(int id)
         {
-            Animals.RemoveAt(id);
+            Animals.RemoveAt(id-1);
         }
     }
 }

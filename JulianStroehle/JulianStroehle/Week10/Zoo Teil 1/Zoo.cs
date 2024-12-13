@@ -20,7 +20,7 @@ namespace JulianStroehle.Week10
         }
         internal void RemoveKeeper(int id)
         {
-            Zookeepers.RemoveAt(id);
+            Zookeepers.RemoveAt(id-1);
         }
         internal void AddEnclosure(Enclosure enclosure)
         {
