@@ -15,7 +15,35 @@ namespace OliverBedogg.Week10
 
         public static void Start()
         {
+            using (MySqlConnection connection = new MySqlConnection(databaseConnectionString))
+            {
+                try
+                {
+                    connection.Open();
 
+                    string query = "SELECT * FROM zoo";
+                    MySqlCommand command = new MySqlCommand(query, connection);
+
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int zooId = reader.GetInt32(0);
+                            string zooName = reader.GetString("Name");
+
+                            Zoo zoo = new Zoo(zooName);
+                            zoo.id = zooId;
+
+                            Console.WriteLine("Zoo: " + zooName + " id: " + zooId);
+                            zoo.ReadEnclosures(databaseConnectionString);
+                        }
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    Console.Write("MySQLConnection Error: " + ex.Message);
+                }
+            }
         }
 
         /* Muster für Init-Methode */

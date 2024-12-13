@@ -1,4 +1,5 @@
 using System;
+using Org.BouncyCastle.Asn1.Icao;
 
 namespace BerkantAkinci.Week10
 {
@@ -23,22 +24,21 @@ namespace BerkantAkinci.Week10
         {
             foreach (Enclosure enclosure in EnclosureList)
             {
-                foreach (Animal animalina in enclosure.Animals)
+                foreach (Animal animal in enclosure.Animals)
                 {
-                    /*  foreach (KeyValuePair<AnimalFood, double> animalfoodina in animalina.animalFoodList)
-                     {
-                         if (demandList.Contains > ) {
-
-                         }
-                         demandList.Add(animalfoodina.Key, animalfoodina.Value);
-                     } */
+                    foreach (KeyValuePair<AnimalFood, double> animalfood in animal.animalFoodList)
+                    {
+                        if(demandList.ContainsKey(animalfood.Key.FoodName))
+                        {
+                            demandList.Add(animalfood.Key, animalfood.Value);
+                        }
+                    }
                 }
             }
 
-            foreach (KeyValuePair<AnimalFood, double> demandlisterina in demandList)
+            foreach (KeyValuePair<AnimalFood, double> demandlist in demandList)
             {
-
-                System.Console.WriteLine($"{demandlisterina.Key}, {demandlisterina.Value}");
+                System.Console.WriteLine($"{demandlist.Key}, {demandlist.Value}");
             }
         }
 
@@ -57,9 +57,30 @@ namespace BerkantAkinci.Week10
             Console.WriteLine($"\n|---- Zoo: {ZooName}, gegründet {FoundingYear}");
             if (EnclosureList.Count > 0)
             {
+
                 foreach (Enclosure enclosure in EnclosureList)
                 {
-                    Console.WriteLine("|     |---- Gehege: " + enclosure.EnclosureName);
+                    int count = 0;
+
+                    Console.Write($"|     |---- Gehege: {enclosure.EnclosureName}, die zugehörigen sind ");
+                    foreach (ZooWorker workers in enclosure.WorkersList)
+                    {
+                        if (count == 0)
+                        {
+                            Console.Write($"{workers.WorkerName}");
+                            count++;
+                        }
+                        else
+                        {
+                            if (count > 0)
+                            {
+                                Console.Write($", {workers.WorkerName}");
+                                count++;
+                            }
+                        }
+                    }
+
+                    System.Console.WriteLine();
                     if (enclosure.Animals.Count > 0)
                     {
                         foreach (Animal animals in enclosure.Animals)
@@ -77,11 +98,6 @@ namespace BerkantAkinci.Week10
             {
                 Console.WriteLine("Es sind noch keine Gehege vorhanden!");
             }
-        }
-
-        public void CalculateFoodDemand()
-        {
-
         }
     }
 }
