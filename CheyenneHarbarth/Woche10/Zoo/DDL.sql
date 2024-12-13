@@ -4,20 +4,22 @@ USE Zoodatenbank;
 
 CREATE TABLE Zoo (
     Zooname VARCHAR(30) PRIMARY KEY,
-    FoundingYear DATE
+    FoundingYear INT
     -- Founding Year darf nicht in der Zukunft liegen
 );
 
 CREATE TABLE Enclosure (
     EnclosureNr INT PRIMARY KEY AUTO_INCREMENT,
-    Area VARCHAR(20) NOT NULL
+    Area VARCHAR(20) NOT NULL,
+    Zooname VARCHAR(30) NOT NULL,
+    FOREIGN KEY (Zooname) REFERENCES Zooname(Zooname)
 );
 
 CREATE TABLE Animal (
     Animalname VARCHAR(15) PRIMARY KEY,
     Animalrace VARCHAR(25) NOT NULL,
     Habitat INT NOT NULL,
-    FOREIGN KEY (Habitat) REFERENCES Enclosure (EnclosureNr)
+    FOREIGN KEY (Habitat) REFERENCES Enclosure(EnclosureNr)
 );
 
 CREATE TABLE Food (
