@@ -37,7 +37,7 @@ namespace ManuelHartmann.Week10.Zoo_Extended
         public override string ToString()
         {
             // Somit wird der ListenInhalt wie gewuenscht ausgegeben.
-            // Die 'StringBuilder-Klasse wird verwendet, um effizient eine Zeichenkette zu erstellen, die alle Cage-Objekte auflistet.
+            // Die 'StringBuilder-Klasse wird verwendet, um effizient eine Zeichenkette zu erstellen, die alle Tier-Objekte auflistet.
             StringBuilder CageDetails = new StringBuilder();
             if (Cages.Count == 0)
             {

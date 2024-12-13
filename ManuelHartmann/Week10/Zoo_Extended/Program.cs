@@ -66,6 +66,13 @@ namespace ManuelHartmann.Week10.Zoo_Extended
             zooSchoenbrunnen.AddCage(wolfCage);
             zooSchoenbrunnen.AddCage(jungleCage);
 
+            deer.MenuCard.Add(leavesFood, 2);
+            bunny.MenuCard.Add(dryFood, 3);
+            wolf.MenuCard.Add(steakFood, 5);
+            monkey.MenuCard.Add(banana, 3);
+            blackPanter.MenuCard.Add(meatPatties, 8);
+            orangUtan.MenuCard.Add(leavesFood, 4);
+
             zooSchoenbrunnen.FoodDemand.Add(dryFood, 3);
             zooSchoenbrunnen.FoodDemand.Add(leavesFood, 4);
             zooSchoenbrunnen.FoodDemand.Add(steakFood, 2);
