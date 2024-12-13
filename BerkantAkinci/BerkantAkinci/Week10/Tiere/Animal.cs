@@ -21,7 +21,8 @@ namespace BerkantAkinci.Week10
 
         public void PrintFood()
         {
-            System.Console.WriteLine($"{AnimalName}, {Species}:");
+            System.Console.WriteLine("Tier und seine Nahrung:");
+            System.Console.WriteLine($"{AnimalName}, {Species}");
             foreach (KeyValuePair<AnimalFood, double> food in animalFoodList)
             {
                 double price = food.Key.UnitPrice * food.Value;
