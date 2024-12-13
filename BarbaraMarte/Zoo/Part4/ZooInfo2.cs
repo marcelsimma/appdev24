@@ -103,7 +103,7 @@ namespace BarbaraMarte.Zoo.Part4
                     foreach (var enclosure in keeper._EnclosureKeeper)
                     {
                         System.Console.WriteLine($"│    ├── Enclosure: {enclosure._EnclosureType}");
-                        
+
                         foreach (var animal in enclosure._AnimalList)
                         {
                             System.Console.WriteLine($"│         ├── Animal Name: {animal._AnimalName}, Species: {animal._AnimalSpecies}");
@@ -116,7 +116,7 @@ namespace BarbaraMarte.Zoo.Part4
                 }
             }
             System.Console.WriteLine(new string('-', 52));
-            System.Console.WriteLine();
+            System.Console.WriteLine(); 
             PrintFoodRequirements();
             System.Console.WriteLine(new string('-', 42));
         }

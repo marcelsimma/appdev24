@@ -26,7 +26,7 @@ namespace CheyenneHarbarth.Week05.OOP.Zoo
             Gründungsjahr = gründungsjahr;
         }
 
-        public void Gehegehinzufügen(Gehege _name)
+        public void GehegeHinzufuegen(Gehege _name)
         {
             Zoostruktur.Add(_name);
         }

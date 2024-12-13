@@ -1,10 +1,12 @@
+// get MySQL Package: 'dotnet add package MySql.Data --version 9.1.0'
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ManuelHartmann.Week09.CountriesAndProvinces.Provinces
+namespace ManuelHartmann.Week09.CountriesAndProvinces
 {
     public class Province
     {

@@ -24,7 +24,7 @@ namespace CheyenneHarbarth.Zoo.Zoostructure
         }
         internal List<Enclosure> Zoostructure = new List<Enclosure>();
 
-        internal Dictionary<Food, int> FoodConsumption = new Dictionary<Food, int>();
+        internal Dictionary<Food, float> FoodConsumption = new Dictionary<Food, float>();
 
         internal List<Zookeeper> Zookeepers = new List<Zookeeper>();
 
@@ -88,7 +88,7 @@ namespace CheyenneHarbarth.Zoo.Zoostructure
         {
             foreach (Zookeeper zooworker in Zookeepers)
             {
-                if (zooworker._Workername == zooworkername)
+                if (zooworker._Keepername == zooworkername)
                 {
                     Zookeepers.Remove(zooworker);
                     break;
@@ -101,7 +101,7 @@ namespace CheyenneHarbarth.Zoo.Zoostructure
             {
                 foreach (Animal animal in enclosure.Animals)
                 {
-                    foreach (KeyValuePair<Food, int> Feed in animal.Requirement)
+                    foreach (KeyValuePair<Food, float> Feed in animal.Requirement)
                     {
                         if (FoodConsumption.ContainsKey(Feed.Key))
                         {
@@ -116,19 +116,19 @@ namespace CheyenneHarbarth.Zoo.Zoostructure
             }
 
             Console.WriteLine("Futterbedarf\n-------------------------");
-            foreach (KeyValuePair<Food, int> Feed in FoodConsumption)
+            foreach (KeyValuePair<Food, float> Feed in FoodConsumption)
             {
                 Console.WriteLine($"{Feed.Key._Foodname,-15}{Feed.Value,6} {Feed.Key._Measurement,-3}");
             }
             Console.WriteLine();
         }
-        internal void CalculateFoodBill(Dictionary<Food, int> foodconsumption)
+        internal void CalculateFoodBill(Dictionary<Food, float> foodconsumption)
         {
             double Sum = 0;
             double TempResult;
 
             Console.WriteLine("Futterbedarf\n--------------------------------------");
-            foreach (KeyValuePair<Food, int> Feed in foodconsumption)
+            foreach (KeyValuePair<Food, float> Feed in foodconsumption)
             {
                 TempResult = Feed.Value * Feed.Key._PricePerMeasurement;
                 Console.WriteLine($"{Feed.Key._Foodname,-15}{Feed.Value,6} {Feed.Key._Measurement,-3}{TempResult,10:F2} €");

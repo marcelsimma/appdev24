@@ -4,8 +4,7 @@ using System;
 using MySql.Data.MySqlClient;
 using ZstdSharp.Unsafe;
 
-
-namespace CountriesProvincesAndOrganizations
+namespace ManuelHartmann.Week09.CountriesProvincesAndOrganizations
 {
     public class Program
     {

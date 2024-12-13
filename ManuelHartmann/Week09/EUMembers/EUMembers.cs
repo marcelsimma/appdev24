@@ -1,9 +1,7 @@
 // get MySQL Package: 'dotnet add package MySql.Data --version 9.1.0'
 
-
 using System;
 using MySql.Data.MySqlClient;
-
 
 namespace ManuelHartmann.Week09.EUMembers
 {
@@ -48,7 +46,7 @@ namespace ManuelHartmann.Week09.EUMembers
                         Console.WriteLine("{0,-15} | {1,-5} | {2,-25} | {3,10}",
                             "Continent", "Code", "Name", "Population");
                         // Trenner
-                        Console.WriteLine(new string('-', 64));
+                        Console.WriteLine(new string('-', 6));
 
                         while (reader.Read())
                         {
