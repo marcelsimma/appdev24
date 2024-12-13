@@ -12,7 +12,7 @@ CREATE TABLE Enclosure (
     EnclosureNr INT PRIMARY KEY AUTO_INCREMENT,
     Area VARCHAR(20) NOT NULL,
     Zooname VARCHAR(30) NOT NULL,
-    FOREIGN KEY (Zooname) REFERENCES Zooname(Zooname)
+    FOREIGN KEY (Zooname) REFERENCES Zoo(Zooname)
 );
 
 CREATE TABLE Animal (
