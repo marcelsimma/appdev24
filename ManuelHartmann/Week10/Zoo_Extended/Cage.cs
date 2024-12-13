@@ -39,7 +39,7 @@ namespace ManuelHartmann.Week10.Zoo_Extended
         public override string ToString()
         {
             // Somit wird der ListenInhalt wie gewuenscht ausgegeben.
-            // Die 'StringBuilder-Klasse wird verwendet, um effizient eine Zeichenkette zu erstellen, die alle Tier-Objekte auflistet.
+            // Die 'StringBuilder-Klasse wird verwendet, um effizient eine Zeichenkette zu erstellen, die alle Animal-Objekte auflistet.
             StringBuilder AnimalsDetails = new StringBuilder();
             if (Animals.Count == 0)
             {
