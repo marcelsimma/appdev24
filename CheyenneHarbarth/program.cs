@@ -29,9 +29,9 @@ namespace CheyenneHarbarth
 
         static void Main(string[] args)
         {
-            CountriesAndRivers.Start();
+            //CountriesAndRivers.Start();
 
-            //ZooMain.Start();
+            ZooMain.Start();
 
 
             //Testaufgabe.Start();

@@ -21,16 +21,16 @@ namespace CheyenneHarbarth.Zoo.Zoostructure.Animals
             set => Animalrace = value;
         }
 
-        internal Dictionary<Food, int> Requirement = new Dictionary<Food, int>();
+        internal Dictionary<Food, float> Requirement = new Dictionary<Food, float>();
 
-        internal Animal(string animalname, string animalrace, Food food, int foodamount)
+        internal Animal(string animalname, string animalrace, Food food, float foodamount)
         {
             Animalname = animalname;
             Animalrace = animalrace;
             Requirement.Add(food, foodamount);
         }
 
-        internal void AddFood(Food food, int foodamount)
+        internal void AddFood(Food food, float foodamount)
         {
             Requirement.Add(food, foodamount);
         }
