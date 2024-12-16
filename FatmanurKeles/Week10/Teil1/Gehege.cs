@@ -23,11 +23,12 @@ namespace FatmanurKeles.Week10.Teil1
             TierListe.Remove(tier);
         }
 
-        public void PrintGehege()
+        public void PrintTier()
         {
             foreach (Tier tier in TierListe)
             {
                 Console.WriteLine($"\t|-- Tier: {tier.TierName}  \tGattung: {tier.Gattung}");
+                //fehler ausbessern .PrintFutter();            
             }
         }
     }

@@ -32,17 +32,17 @@ namespace FatmanurKeles.Week10.Teil1
             {
                 kosten += futter.Value * futter.Key.Einheitspreis;
             }
-            Console.WriteLine("Summe:"  );
+            Console.WriteLine("Summe:" );
         }
 
-        public void PrintTier()
+        public void PrintFutter() // wird nicht ausgegeben fehler ausbessern
         {
             Console.WriteLine("Futterbedarf:");
             Console.WriteLine(new string('_', 15));
 
             foreach (var futter in FutterListe)
             {
-                Console.WriteLine($"{futter.Name} \t {futter.Einheit} \t{futter.}");
+                Console.WriteLine($"{futter.Key.Name} \t {futter.Key.Einheit} \t{futter.Key.Einheitspreis}");
             }
         }
     }
