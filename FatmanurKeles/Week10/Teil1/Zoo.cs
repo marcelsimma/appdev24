@@ -1,4 +1,5 @@
 using System;
+using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 
 namespace FatmanurKeles.Week10.Teil1
@@ -66,9 +67,10 @@ namespace FatmanurKeles.Week10.Teil1
             {
                 Futter futter = eintrag.Key;
                 double einheitspreis = eintrag.Value;
-                double kosten = futter.KostenSumme //(einheitspreis); nicht notwendig?
+                //double kosten1 = futter.KostenSumme(); 
+                //summeFutter.Add((futter.Name, futter.Einheit, einheitspreis, kosten1));
 
-                summeFutter.Add((futter.Name, futter.Einheit, einheitspreis, kosten));
+                //Fehler wenn ich sie auskommentiere
             }
         }
         public void FutterAusgabe()
