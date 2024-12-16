@@ -6,7 +6,6 @@ namespace FatmanurKeles.Week10.Teil1
     {
         public static void Start()
         {
-            //List<Gehege> alleGehegen = new List<Gehege>();
             Zoo tiergarten = new Zoo("Tiergarten Feldkirch", "2014");
             Gehege alpenwiese = new Gehege("Alpenwiese Montafon");
             Gehege ried = new Gehege("Ried");
@@ -20,8 +19,8 @@ namespace FatmanurKeles.Week10.Teil1
 
             Tier kuh = new Tier("Rijska", "Kuh"); 
             Tier storch1 = new Tier("Garmond", "Storch");
-            Tier storch2 = new Tier ("Hugo", "Storch");
-            Tier storch3 = new Tier ( "Idaxis", "Storch");
+            Tier storch2 = new Tier("Hugo", "Storch");
+            Tier storch3 = new Tier( "Idaxis", "Storch");
             Tier leer = new Tier("(leer)", "leer"); 
 
             alpenwiese.FuegeTier(kuh);
@@ -39,9 +38,9 @@ namespace FatmanurKeles.Week10.Teil1
             storch1.FuegeFutter(wasser, 50);
             storch2.FuegeFutter(heuschrecke, 5);
             storch3.FuegeFutter(fisch, 10);
+            storch3.FuegeFutter(heu, 10);
 
-            tiergarten.PrintZoo();
-
+            tiergarten.PrintGehege();
         }
     }
 }
