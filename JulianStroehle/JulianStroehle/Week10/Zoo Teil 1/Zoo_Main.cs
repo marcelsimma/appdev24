@@ -5,35 +5,7 @@ namespace JulianStroehle.Week10
     internal class Zoo_Main
     {
         static Zoo zoo = new Zoo("Tirgardn", DateTime.Now);
-        static StreamReader str = new StreamReader("C:/Users/JUSR/Desktop/-/PW.txt");
-        static string databaseConnectionString = $"server=localhost;userid=root;password={str.ReadLine()}; database=dcvzoo";
-        static string query;
         internal static void Start()
-        {
-            using (MySqlConnection conn = new MySqlConnection(databaseConnectionString))
-            {
-                try
-                {
-                    conn.Open();
-                    query = @"
-CREATE TABLE IF NOT EXISTS zoo (Name VARCHAR(255) PRIMARY KEY, FoundingYear DATE);
-CREATE TABLE IF NOT EXISTS enclosure (EnclosureID INT PRIMARY KEY AUTO_INCREMENT, Name VARCHAR(255));
-CREATE TABLE IF NOT EXISTS animal (AnimalID INT PRIMARY KEY AUTO_INCREMENT, Name VARCHAR(255), Type VARCHAR(255));
-CREATE TABLE IF NOT EXISTS food (FoodNumber INT PRIMARY KEY AUTO_INCREMENT, Name VARCHAR(255), Unit VARCHAR(255), Price DOUBLE);
-CREATE TABLE IF NOT EXISTS zookeeper (ZookeeperID INT PRIMARY KEY AUTO_INCREMENT, FirstName VARCHAR(255), LastName VARCHAR(255));
-CREATE TABLE IF NOT EXISTS works_in (ZookeeperID INT, EnclosureID INT, PRIMARY KEY (`ZookeeperID`, `EnclosureID`));
-CREATE TABLE IF NOT EXISTS eats (AnimalID INT, FoodNr INT, PRIMARY KEY ('AnimalID', 'FoodNr'));";
-                    MySqlCommand cmd = new MySqlCommand(query, conn);
-                    cmd.ExecuteNonQuery();
-                    Continue();
-                }
-                catch (MySqlException ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
-            }
-        }
-        internal static void Continue()
         {
             string action = "";
             do
@@ -53,7 +25,6 @@ CREATE TABLE IF NOT EXISTS eats (AnimalID INT, FoodNr INT, PRIMARY KEY ('AnimalI
                         case "7": AddFood(); break;
                         case "8": RemoveFood(); break;
                         case "9": GetInfo(); break;
-                        default: break;
                     }
                 }
                 catch (Exception)

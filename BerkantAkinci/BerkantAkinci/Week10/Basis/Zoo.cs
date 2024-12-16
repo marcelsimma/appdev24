@@ -1,5 +1,6 @@
 using System;
 using Org.BouncyCastle.Asn1.Icao;
+using ZstdSharp.Unsafe;
 
 namespace BerkantAkinci.Week10
 {
@@ -28,18 +29,35 @@ namespace BerkantAkinci.Week10
                 {
                     foreach (KeyValuePair<AnimalFood, double> animalfood in animal.animalFoodList)
                     {
-                        if(demandList.ContainsKey(animalfood.Key.FoodName))
+                        if (demandList.ContainsKey(animalfood.Key))
                         {
-                            demandList.Add(animalfood.Key, animalfood.Value);
+                            demandList[animalfood.Key] += animalfood.Value;
+                        }
+
+                        else
+                        {
+                            demandList[animalfood.Key] = animalfood.Value;
                         }
                     }
                 }
             }
+            System.Console.WriteLine("Futterliste:");
+            System.Console.WriteLine("-------------------------------------------------");
 
-            foreach (KeyValuePair<AnimalFood, double> demandlist in demandList)
+            double sum = 0;
+            double sumAll = 0;
+
+
+            foreach (KeyValuePair<AnimalFood, double> food in demandList)
             {
-                System.Console.WriteLine($"{demandlist.Key}, {demandlist.Value}");
+                sum = food.Value * food.Key.UnitPrice;
+                sumAll += sum;
+
+
+                System.Console.WriteLine($"{food.Key.FoodName,-15} {food.Value,6:F2} {food.Key.Unit,-4} {sum,10:F2} €");
             }
+            System.Console.WriteLine("-------------------------------------------------");
+            System.Console.WriteLine($"{"Gesamtbetrag: ",-30}{sumAll,8:F2} €");
         }
 
         public void AddEnclosure(Enclosure EnclosureName)
