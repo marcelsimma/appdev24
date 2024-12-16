@@ -15,10 +15,5 @@ namespace FatmanurKeles.Week10.Teil1
             Einheit = einheit;
             Einheitspreis = einheitspreis;
         }
-
-        internal double KostenSumme()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

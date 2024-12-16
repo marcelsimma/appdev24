@@ -27,8 +27,17 @@ namespace FatmanurKeles.Week10.Teil1
         {
             foreach (Tier tier in TierListe)
             {
-                Console.WriteLine($"\t|-- Tier: {tier.TierName}  \tGattung: {tier.Gattung}");
-                //fehler ausbessern .PrintFutter();            
+                Console.WriteLine($"  |-- Tier: {tier.TierName}  \tGattung: {tier.Gattung}");
+                tier.PrintFutter();      
+            }
+        }
+
+        public void PrintFutter()
+        {
+            Console.WriteLine("Futterbedarf für dieses Gehege:");
+            foreach (var tier in TierListe)
+            {
+                tier.PrintFutter();
             }
         }
     }

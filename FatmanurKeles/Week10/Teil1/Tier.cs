@@ -25,20 +25,20 @@ namespace FatmanurKeles.Week10.Teil1
             FutterListe.Remove(futter);
         }
 
-        public void KostenSumme()
+        public double KostenSumme()
         {
             double kosten = 0;
             foreach (var futter in FutterListe)
             {
                 kosten += futter.Value * futter.Key.Einheitspreis;
             }
-            Console.WriteLine("Summe:" );
+            return kosten;
         }
 
-        public void PrintFutter() // wird nicht ausgegeben fehler ausbessern
+        public void PrintFutter() 
         {
-            Console.WriteLine("Futterbedarf:");
-            Console.WriteLine(new string('_', 15));
+           // Console.WriteLine("Futterbedarf:");
+            //Console.WriteLine(new string('_', 15));
 
             foreach (var futter in FutterListe)
             {
