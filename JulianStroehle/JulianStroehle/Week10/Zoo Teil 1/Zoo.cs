@@ -7,12 +7,14 @@ namespace JulianStroehle.Week10
         internal DateTime FoundingYear;
         internal List<Enclosure> Enclosures;
         internal List<Zookeeper> Zookeepers;
+        internal List<Food> Foods;
         internal Zoo(string name, DateTime foundingYear)
         {
             Name = name;
             FoundingYear = foundingYear;
             Enclosures = new List<Enclosure>();
             Zookeepers = new List<Zookeeper>();
+            Foods = new List<Food>();
         }
         internal void AddKeeper(Zookeeper keeper)
         {
@@ -30,18 +32,21 @@ namespace JulianStroehle.Week10
         {
             Enclosures.RemoveAt(id-1);
         }
+        internal void AddFood(Food food)
+        {
+            Foods.Add(food);
+        }
+        internal void RemoveFood(int id)
+        {
+            Foods.RemoveAt(id-1);
+        }
         internal string GetZooInfo()
         {
             double sumPrice = 0;
             string returnValue = string.Format("┌── Zoo: {0}, Founded: {1}", Name, FoundingYear.ToString("yyyy"));
             foreach (Enclosure enclosure in Enclosures)
             {
-                returnValue += "\n│  ├── ";
-                if (enclosure.ID == Enclosures.Count)
-                {
-                    returnValue += "\r│  └── ";
-                }
-                returnValue += enclosure.GetInfo();
+                returnValue += "\n│  └── " + enclosure.GetInfo();
                 foreach (Animal animal in enclosure.Animals)
                 {
                     foreach (Food food in animal.SumFood.Keys)

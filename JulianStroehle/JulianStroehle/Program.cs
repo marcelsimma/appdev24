@@ -121,7 +121,8 @@ namespace JulianStroehle
 
             // Woche 10
             // Zoo_Main.Start();
-            Zoo_Main2.Start();
+            // Zoo_Main2.Start();
+            Zoo_Main3.Start();
             // CountriesAndRivers.Start();
         }
     }
