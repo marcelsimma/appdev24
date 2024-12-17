@@ -11,7 +11,6 @@ class Day1Part2_2019
         List<int> numberList = new List<int>();
         int totalCount = 0;
         int tmp = 0;
-        int tmp2 = 0;
         try
         {
             using (StreamReader streamReader = new StreamReader("C:/Advent Of Code/2019Day1.txt"))
@@ -43,11 +42,9 @@ class Day1Part2_2019
                         // System.Console.WriteLine("tmp - 2 = " + tmp);
                         totalCount += tmp;
                         // System.Console.WriteLine("Step 2 = " + tmp);
-                        System.Console.WriteLine(totalCount);
+                        // System.Console.WriteLine(totalCount);
 
                     }
-                    // totalCount += tmp;
-
                 }
                 System.Console.WriteLine(totalCount);
             }

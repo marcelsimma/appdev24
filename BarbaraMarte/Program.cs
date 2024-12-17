@@ -42,7 +42,7 @@ namespace BarbaraMarte.Week08.Test
 
             // Zoo
             // ZooMain4.Start();
-            // LetsTry.Start();
+           
 
             // InputSQUALE.Start();
 
@@ -51,7 +51,7 @@ namespace BarbaraMarte.Week08.Test
             // Day1Part1_2024.Print();
             // Day1Part2_2024.Print();
             // Day2Part1_2024.Start();
-            Day1Part2_2019.Start();
+            // Day1Part2_2019.Start();
 
 
 
