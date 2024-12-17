@@ -129,7 +129,7 @@ namespace JulianStroehle.Week10
             Console.WriteLine("How much?");
             int count = Convert.ToInt32(Console.ReadLine());
             invoiceNumber++;
-            Food food = new Food(foodName, unit, price, invoiceNumber);
+            Food food = new Food(foodName, unit, count, price, invoiceNumber);
             foreach (Enclosure enclosure in zoo.Enclosures)
             {
                 foreach (Animal animal in enclosure.Animals)
