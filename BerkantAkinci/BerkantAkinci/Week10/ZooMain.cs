@@ -10,12 +10,18 @@ namespace BerkantAkinci.Week10
 
             //HeadLine
             Zoo myZoo = new Zoo("Tierparadies Dornbirn", 1864);
+            CreateInitialise.CreateZoo("Tierparadies Dornbirn", 1864);
 
             //Liste mit den Gehegen erstellen
             Enclosure Alpenwiese = new Enclosure("Alpenwiese");
             Enclosure Ried = new Enclosure("Ried");
             Enclosure Terrarium = new Enclosure("Terrarium");
             Enclosure Mix = new Enclosure("Mix");
+
+            CreateInitialise.CreateEnclosure("Alpenwiese", "Tierparadies Dornbirn");
+            CreateInitialise.CreateEnclosure("Ried", "Tierparadies Dornbirn");
+            CreateInitialise.CreateEnclosure("Terrarium", "Tierparadies Dornbirn");
+            CreateInitialise.CreateEnclosure("Mix", "Tierparadies Dornbirn");
 
             //Liste mit den Gehegen einfügen
             myZoo.AddEnclosure(Alpenwiese);
@@ -36,6 +42,19 @@ namespace BerkantAkinci.Week10
             Animal Barbara = new Animal("Barbara", "Flusspferd");
             Animal Cheyenne = new Animal("Cheyenne", "Schwarze Witwe");
             Animal Berkant = new Animal("Berkant", "Bulldoggenameisen");
+
+            CreateInitialise.CreateAnimal("Nico", "Kuh", 1);
+            CreateInitialise.CreateAnimal("Jonas", "Storch", 2);
+            CreateInitialise.CreateAnimal("Lucas", "Storch", 2);
+            CreateInitialise.CreateAnimal("Alessio", "Storch", 3);
+            CreateInitialise.CreateAnimal("Stefan", "Kalb", 3);
+            CreateInitialise.CreateAnimal("Florian", "Alpaka", 1);
+            CreateInitialise.CreateAnimal("Julian", "Bartvogel", 2);
+            CreateInitialise.CreateAnimal("Manuel", "Bonobo", 3);
+            CreateInitialise.CreateAnimal("Simon", "Brillenbär", 1);
+            CreateInitialise.CreateAnimal("Barbara", "Flusspferd", 4);
+            CreateInitialise.CreateAnimal("Cheyenne", "Schwarze Witwe", 4);
+            CreateInitialise.CreateAnimal("Berkant", "Bulldoggenameisen", 4);
 
             //Liste mit Tieren einfügen
             Alpenwiese.AddAnimal(Nico);
@@ -61,6 +80,15 @@ namespace BerkantAkinci.Week10
             AnimalFood insect = new AnimalFood("Insekten", "stk", 0.62);
             AnimalFood leaf = new AnimalFood("Blatt", "stk", 0.0);
 
+            CreateInitialise.CreateAnimalFood("Heu", "kg", 0.3);
+            CreateInitialise.CreateAnimalFood("Wasser", "l", 0.5);
+            CreateInitialise.CreateAnimalFood("Blut", "l", 0.54);
+            CreateInitialise.CreateAnimalFood("Stroh", "kg", 0.15);
+            CreateInitialise.CreateAnimalFood("Fleisch", "kg", 5.26);
+            CreateInitialise.CreateAnimalFood("Schlamm", "kg", 2.59);
+            CreateInitialise.CreateAnimalFood("Insekten", "stk", 0.62);
+            CreateInitialise.CreateAnimalFood("Blatt", "stk", 0.0);
+
             Nico.AddFood(meat, 15);
             Nico.AddFood(water, 20);
             Jonas.AddFood(straw, 15);
@@ -85,13 +113,42 @@ namespace BerkantAkinci.Week10
             Cheyenne.AddFood(blood, 0.89);
             Berkant.AddFood(leaf, 3);
             Berkant.AddFood(water, 0.6);
-            
+
+            CreateInitialise.CreateAllFood(1, 5, 15);
+            CreateInitialise.CreateAllFood(1, 2, 20);
+            CreateInitialise.CreateAllFood(2, 4, 15);
+            CreateInitialise.CreateAllFood(2, 2, 15);
+            CreateInitialise.CreateAllFood(3, 4, 25);
+            CreateInitialise.CreateAllFood(3, 2, 25);
+            CreateInitialise.CreateAllFood(4, 1, 15);
+            CreateInitialise.CreateAllFood(4, 2, 20);
+            CreateInitialise.CreateAllFood(5, 5, 25);
+            CreateInitialise.CreateAllFood(5, 2, 4);
+            CreateInitialise.CreateAllFood(6, 5, 40);
+            CreateInitialise.CreateAllFood(6, 2,60);
+            CreateInitialise.CreateAllFood(7, 1, 0.5);
+            CreateInitialise.CreateAllFood(7, 2, 2);
+            CreateInitialise.CreateAllFood(8, 4, 10);
+            CreateInitialise.CreateAllFood(8, 2, 15);
+            CreateInitialise.CreateAllFood(9, 1, 55);
+            CreateInitialise.CreateAllFood(9, 2, 70);
+            CreateInitialise.CreateAllFood(10, 6, 98);
+            CreateInitialise.CreateAllFood(10, 2, 150);
+            CreateInitialise.CreateAllFood(11, 7, 12);
+            CreateInitialise.CreateAllFood(11, 3, 0.89);
+            CreateInitialise.CreateAllFood(12, 8, 3);
+            CreateInitialise.CreateAllFood(12, 2, 0);
 
             // Liste mit Arbeitern erstellen
             ZooWorker stefan = new ZooWorker("Stefan", "05146");
             ZooWorker manuel = new ZooWorker("Manuel", "54856");
             ZooWorker cheyenne = new ZooWorker("Cheyenne", "78515");
             ZooWorker florian = new ZooWorker("Florian", "68541");
+
+            CreateInitialise.CreateWorker("05146", "Stefan", "Tierparadies Dornbirn");
+            CreateInitialise.CreateWorker("54856", "Manuel", "Tierparadies Dornbirn");
+            CreateInitialise.CreateWorker("78515", "Cheyenne", "Tierparadies Dornbirn");
+            CreateInitialise.CreateWorker("68541", "Florian", "Tierparadies Dornbirn");
 
             Alpenwiese.AddWorker(stefan);
             Alpenwiese.AddWorker(manuel);
@@ -105,6 +162,19 @@ namespace BerkantAkinci.Week10
             Mix.AddWorker(stefan);
             Mix.AddWorker(manuel);
             Mix.AddWorker(cheyenne);
+
+            CreateInitialise.CreateCarelist(05146, 1);
+            CreateInitialise.CreateCarelist(05146, 2);
+            CreateInitialise.CreateCarelist(05146, 4);
+            CreateInitialise.CreateCarelist(54856, 1);
+            CreateInitialise.CreateCarelist(54856, 3);
+            CreateInitialise.CreateCarelist(54856, 4);
+            CreateInitialise.CreateCarelist(78515, 1);
+            CreateInitialise.CreateCarelist(78515, 3);
+            CreateInitialise.CreateCarelist(78515, 4);
+            CreateInitialise.CreateCarelist(68541, 2);
+            CreateInitialise.CreateCarelist(68541, 3);
+            CreateInitialise.CreateCarelist(68541, 4);
 
             //Struktur einfügen, wie es ausgeben soll
             myZoo.ZooStructure();
@@ -133,9 +203,17 @@ namespace BerkantAkinci.Week10
 
             myZoo.PrintAll();
 
+            System.Console.WriteLine();
 
+            ReadInitialise.ReadZoo();
 
+            ReadInitialise.ReadEnclosure();
 
+            ReadInitialise.ReadAnimal();
+
+            ReadInitialise.ReadAnimalFood();
+
+            ReadInitialise.ReadWorker();
         }
     }
 }
