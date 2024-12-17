@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS animal (AnimalID INT, Name VARCHAR(50), Type VARCHAR(
 CREATE TABLE IF NOT EXISTS food (FoodNr INT PRIMARY KEY AUTO_INCREMENT, Name VARCHAR(50), Amount INT, Unit VARCHAR(5), Price DOUBLE);
 CREATE TABLE IF NOT EXISTS zookeeper (ZookeeperID INT PRIMARY KEY AUTO_INCREMENT, Name VARCHAR(20), LastName VARCHAR(40));
 CREATE TABLE IF NOT EXISTS works_in (ID INT PRIMARY KEY AUTO_INCREMENT, ZookeeperID INT, EnclosureID INT, FOREIGN KEY (ZookeeperID) REFERENCES zookeeper(ZookeeperID), FOREIGN KEY (EnclosureID) REFERENCES enclosure(EnclosureID));
-CREATE TABLE IF NOT EXISTS eats (ID INT PRIMARY KEY AUTO_INCREMENT, AnimalID INT, EnclosureID INT, FoodNr INT, FOREIGN KEY (AnimalID) REFERENCES animal(AnimalID), FOREIGN KEY (EnclosureID) REFERENCES enclosure(EnclosureID), FOREIGN KEY (FoodNr) REFERENCES food(FoodNr));";
+CREATE TABLE IF NOT EXISTS eats (ID INT PRIMARY KEY AUTO_INCREMENT, AnimalID INT, EnclosureID INT, FoodNr INT, FOREIGN KEY (AnimalID) REFERENCES animal(AnimalID), FOREIGN KEY (EnclosureID) REFERENCES animal(EnclosureID), FOREIGN KEY (FoodNr) REFERENCES food(FoodNr));";
                 MySqlCommand cmd = new(query, conn);
                 cmd.ExecuteNonQuery();
                 for (int i = 0; i < 7; i++)
@@ -306,7 +306,7 @@ CREATE TABLE IF NOT EXISTS eats (ID INT PRIMARY KEY AUTO_INCREMENT, AnimalID INT
                 if (zookeeper.EnclosureList[favEnclosure].Animals.Count > 0)
                 {
                     int favAnimal = rdm.Next(0, zookeeper.EnclosureList[favEnclosure].Animals.Count);
-                    Console.WriteLine("\n" + zookeeper.FirstName + " is watching over " + zookeeper.EnclosureList[favEnclosure].Animals[favAnimal].Name);
+                    Console.WriteLine("\n" + zookeeper.FirstName + " is watching over his favorite animal " + zookeeper.EnclosureList[favEnclosure].Animals[favAnimal].Name);
                     zookeeper.favAnimal = zookeeper.EnclosureList[favEnclosure].Animals[favAnimal];
                 }
                 else
@@ -316,7 +316,7 @@ CREATE TABLE IF NOT EXISTS eats (ID INT PRIMARY KEY AUTO_INCREMENT, AnimalID INT
             }
             else
             {
-                Console.WriteLine("\n" + zookeeper.FirstName + " is watching over " + zookeeper.favAnimal.Name);
+                Console.WriteLine("\n" + zookeeper.FirstName + " is watching over his favorite animal " + zookeeper.favAnimal.Name);
             }
         }
     }
