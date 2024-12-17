@@ -79,6 +79,16 @@ namespace BarbaraMarte.Zoo.InputDatenbank
                         ";
             */
         }
+        public static void ZookeeperAndEnclosure()
+        {
+            /*
+            INSERT INTO keeper_enclosure(task_id, keeper_id, enclosure_id)
+            VALUES(null, 1,4);
+
+            SELECT * FROM zoo_database.keeper_enclosure
+            ORDER BY Keeper_id;
+            */
+        }
         public static void RemovingZookeeper()
         {
             /*
