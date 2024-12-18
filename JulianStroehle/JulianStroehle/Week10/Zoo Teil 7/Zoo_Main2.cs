@@ -5,7 +5,7 @@ namespace JulianStroehle.Week10;
 
 internal class Zoo_Main2
 {
-    private static Zoo zoo = new("Tirgardn", DateTime.Now);
+    private static Zoo zoo = new Zoo(0, "Tirgardn", new DateTime(2024, 12, 11));
     private static StreamReader str = new("C:/Users/JUSR/Desktop/-/PW.txt");
     private static string databaseConnectionString = $"server=localhost;userid=root;password={str.ReadLine()};";
     private static string query = "";
@@ -226,7 +226,7 @@ CREATE TABLE IF NOT EXISTS eats (ID INT PRIMARY KEY AUTO_INCREMENT, AnimalID INT
 
     static void GetInfo()
     {
-        Console.WriteLine(zoo.GetZooInfo());
+        Console.WriteLine(zoo.GetInfo());
     }
 
     static void Init(string table, string values)

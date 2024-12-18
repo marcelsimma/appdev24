@@ -4,7 +4,7 @@ namespace JulianStroehle.Week10
 {
     internal class Zoo_Main
     {
-        static Zoo zoo = new Zoo("Tirgardn", DateTime.Now);
+        static Zoo zoo = new(0, "Animal Well", new DateTime(2024,12,11));
         internal static void Start()
         {
             string action = "";
@@ -173,7 +173,7 @@ namespace JulianStroehle.Week10
         }
         internal static void GetInfo()
         {
-            Console.WriteLine(zoo.GetZooInfo());
+            Console.WriteLine(zoo.GetInfo());
         }
     }
 }

@@ -5,6 +5,7 @@ namespace BerkantAkinci.Week10
     public class Enclosure
     {
         public string EnclosureName;
+    
 
         public List<Animal> Animals = new List<Animal>();
         public List<ZooWorker> WorkersList = new List<ZooWorker>();
@@ -12,6 +13,7 @@ namespace BerkantAkinci.Week10
         public Enclosure(string enclosureName)
         {
             EnclosureName = enclosureName;
+
         }
 
         public void AddAnimal(Animal AnimalName)
