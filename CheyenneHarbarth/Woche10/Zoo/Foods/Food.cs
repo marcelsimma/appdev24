@@ -22,11 +22,18 @@ namespace CheyenneHarbarth.Zoo.Zoostructure.Foods
             get => PricePerMeasurement;
             set => PricePerMeasurement = value;
         }
-        internal Food(string foodname, string measurement, double pricepermeas)
+        private int FoodNr;
+        internal int _FoodNr
+        {
+            get => FoodNr;
+            set => FoodNr = value;
+        }
+        internal Food(string foodname, double pricepermeas, string measurement, int foodnr)
         {
             Foodname = foodname;
             Measurement = measurement;
             PricePerMeasurement = pricepermeas;
+            FoodNr = foodnr;
         }
     }
 }

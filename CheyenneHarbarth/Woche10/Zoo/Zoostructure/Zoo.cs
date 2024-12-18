@@ -1,6 +1,7 @@
 using System;
 using System.Dynamic;
 using System.Xml.Serialization;
+using MySql.Data.MySqlClient;
 using CheyenneHarbarth.Zoo.Zoostructure.Animals;
 using CheyenneHarbarth.Zoo.Zoostructure.Foods;
 using CheyenneHarbarth.Zoo.Zoostructure.Worker;
@@ -16,27 +17,28 @@ namespace CheyenneHarbarth.Zoo.Zoostructure
             set => Zooname = value;
         }
 
-        private int FoundingYear;
-        internal int _FoundingYear
+        private DateTime FoundingYear;
+        internal DateTime _FoundingYear
         {
             get => FoundingYear;
             set => FoundingYear = value;
         }
         internal List<Enclosure> Zoostructure = new List<Enclosure>();
 
-        internal Dictionary<Food, float> FoodConsumption = new Dictionary<Food, float>();
+        internal Dictionary<Food, double> FoodConsumption = new Dictionary<Food, double>();
 
         internal List<Zookeeper> Zookeepers = new List<Zookeeper>();
 
-        internal Zoo(string zooname, int foundingyear)
+        internal Zoo(string zooname, DateTime foundingyear)
         {
             Zooname = zooname;
             FoundingYear = foundingyear;
         }
 
         internal void PrintZoo()
+        //Umschreiben zum Auslesen der Datenbank
         {
-            Console.WriteLine($"\n|--- Zoo: {Zooname}, gegründet {FoundingYear}");
+            Console.WriteLine($"\n|--- Zoo: {Zooname}, gegründet {FoundingYear.ToString("d")}");
             if (Zoostructure.Count > 0)
             {
                 foreach (Enclosure enclosure in Zoostructure)
@@ -80,28 +82,32 @@ namespace CheyenneHarbarth.Zoo.Zoostructure
                 }
             }
         }
+
         internal void AddZooworker(Zookeeper zookeeper)
         {
             Zookeepers.Add(zookeeper);
         }
-        internal void RemoveZooworker(string zooworkername)
+
+        internal void RemoveZooworker(int zookeeperID)
         {
             foreach (Zookeeper zooworker in Zookeepers)
             {
-                if (zooworker._Keepername == zooworkername)
+                if (zooworker._KeeperID == zookeeperID)
                 {
                     Zookeepers.Remove(zooworker);
                     break;
                 }
             }
         }
+
+        //sinnlos
         internal void CalculateFoodConsumption()
         {
             foreach (Enclosure enclosure in Zoostructure)
             {
                 foreach (Animal animal in enclosure.Animals)
                 {
-                    foreach (KeyValuePair<Food, float> Feed in animal.Requirement)
+                    foreach (KeyValuePair<Food, double> Feed in animal.Requirement)
                     {
                         if (FoodConsumption.ContainsKey(Feed.Key))
                         {
@@ -115,27 +121,28 @@ namespace CheyenneHarbarth.Zoo.Zoostructure
                 }
             }
 
-            Console.WriteLine("Futterbedarf\n-------------------------");
-            foreach (KeyValuePair<Food, float> Feed in FoodConsumption)
+            Console.WriteLine("\nFutterbedarf\n-------------------------");
+            foreach (KeyValuePair<Food, double> Feed in FoodConsumption)
             {
-                Console.WriteLine($"{Feed.Key._Foodname,-15}{Feed.Value,6} {Feed.Key._Measurement,-3}");
+                Console.WriteLine($"{Feed.Key._Foodname,-15}{Feed.Value,6:F1} {Feed.Key._Measurement,-3}");
             }
             Console.WriteLine();
         }
-        internal void CalculateFoodBill(Dictionary<Food, float> foodconsumption)
+
+        internal void CalculateFoodBill(Dictionary<Food, double> foodconsumption)
         {
             double Sum = 0;
             double TempResult;
 
-            Console.WriteLine("Futterbedarf\n--------------------------------------");
-            foreach (KeyValuePair<Food, float> Feed in foodconsumption)
+            Console.WriteLine("\nFutterbedarf\n-----------------------------------------");
+            foreach (KeyValuePair<Food, double> Feed in foodconsumption)
             {
                 TempResult = Feed.Value * Feed.Key._PricePerMeasurement;
-                Console.WriteLine($"{Feed.Key._Foodname,-15}{Feed.Value,6} {Feed.Key._Measurement,-3}{TempResult,10:F2} €");
+                Console.WriteLine($"{Feed.Key._Foodname,-18}{Feed.Value,6:F1} {Feed.Key._Measurement,-3}{TempResult,10:F2} €");
                 Sum += TempResult;
             }
-            Console.WriteLine("--------------------------------------");
-            Console.WriteLine($"Summe {Sum,29:F2} €");
+            Console.WriteLine("-----------------------------------------");
+            Console.WriteLine($"Summe {Sum,32:F2} €");
             Console.WriteLine();
         }
     }

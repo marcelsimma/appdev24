@@ -4,6 +4,8 @@ using CheyenneHarbarth.Zoo.Zoostructure.Animals;
 using CheyenneHarbarth.Zoo.Zoostructure.Foods;
 using Org.BouncyCastle.Tls;
 using CheyenneHarbarth.Zoo.Zoostructure.Worker;
+using CheyenneHarbarth.Week10.Zoo.Zoostructure;
+using System.Data;
 
 namespace CheyenneHarbarth.Zoo.Zoostructure
 {
@@ -25,7 +27,26 @@ namespace CheyenneHarbarth.Zoo.Zoostructure
                     try
                     {
                         connection.Open();
-                        CreateZookeeper("Riccardo Ceccon", connection);
+
+                        Zoo MyZoo = ReadZoo(connection);
+                        MyZoo.PrintZoo();
+
+                        /* foreach (Enclosure enclosure in MyZoo.Zoostructure)
+                        {
+                            foreach (Animal animal in enclosure.Animals)
+                            {
+                                animal.PrintAnimalAndFood();
+                            }
+                        } */
+
+                        foreach (Zookeeper zookeeper in MyZoo.Zookeepers)
+                        {
+                            zookeeper.PrintResponsibleList();
+                        }
+
+                        MyZoo.CalculateFoodBill(MyZoo.FoodConsumption);
+
+                        connection.Close();
                     }
                     catch (MySqlException ex)
                     {
@@ -35,120 +56,207 @@ namespace CheyenneHarbarth.Zoo.Zoostructure
                 break;
             }
         }
-        internal static void CreateZoo(string zooname, int foundingyear, MySqlConnection connection)
+
+        //Aus Datenbank lesen und ein Zoo-Objekt erstellen
+        internal static Zoo ReadZoo(MySqlConnection connection)
         {
-            Zoo MyZoo = new Zoo(zooname, foundingyear);
-
-            string query = @"INSERT INTO zoo
-                VALUES (@Zooname, @FoundingYear);";
-
-            MySqlCommand command = new MySqlCommand(query, connection);
-            command.Parameters.AddWithValue("@Zooname", zooname);
-            command.Parameters.AddWithValue("@FoundingYear", foundingyear);
-
-            command.ExecuteNonQuery();
-
-            Console.WriteLine("\nDer Zoo wurde erstellt!");
-        }
-        internal static void CreateEnclosure(string enclosurename, MySqlConnection connection)
-        {
-            string queryQuestion = @"SELECT Zooname
-                FROM zoo;";
-
-            MySqlCommand command = new MySqlCommand(queryQuestion, connection);
-            List<string> Zoos = new List<string>();
-
-            using (MySqlDataReader reader = command.ExecuteReader())
-            {
-                while (reader.Read())
-                {
-                    Zoos.Add(reader.GetString("Zooname"));
-                }
-            }
-
-            Console.WriteLine("\nZu welchem Zoo gehört das neue Gehege?");
-
-            foreach (string zoo in Zoos)
-            {
-                Console.WriteLine(zoo);
-            }
-
-            string zooname = Console.ReadLine();
-
-            Enclosure enclosure = new Enclosure(enclosurename);
-
-            string query = @"INSERT INTO enclosure(Area, Zooname)
-                VALUES (@Area, @Zooname);";
-
-            MySqlCommand commandEnclosure = new MySqlCommand(query, connection);
-            commandEnclosure.Parameters.AddWithValue("@Area", enclosurename);
-            commandEnclosure.Parameters.AddWithValue("@Zooname", zooname);
-
-            commandEnclosure.ExecuteNonQuery();
-
-            Console.WriteLine("\nDas Gehege wurde erstellt!");
-        }
-        internal static void CreateFood(string foodname, string measurement, double pricepermeas, MySqlConnection connection)
-        {
-            Food food = new Food(foodname, measurement, pricepermeas);
-
-            string query = @"INSERT INTO food (Foodname, Price, Measurement)
-                VALUES (@Foodname, @Price, @Measurement);";
-
-            MySqlCommand command = new MySqlCommand(query, connection);
-            command.Parameters.AddWithValue("@Foodname", foodname);
-            command.Parameters.AddWithValue("@Price", pricepermeas);
-            command.Parameters.AddWithValue("@Measurement", measurement);
-
-            command.ExecuteNonQuery();
-
-            Console.WriteLine("\nDas Futter wurde erstellt!");
-        }
-
-        internal static void CreateAnimal(string animalname, string animalrace, Food food, float amount, MySqlConnection connection)
-        {
-            string queryQuestion = @"SELECT EnclosureNr, Area
-                FROM enclosure;";
-
-            MySqlCommand command = new MySqlCommand(queryQuestion, connection);
-            Dictionary<int, Enclosure> enclosures = new Dictionary<int, Enclosure>();
-
-            using (MySqlDataReader reader = command.ExecuteReader())
-            {
-                while (reader.Read())
-                {
-                    enclosures.Add(reader.GetInt32("EnclosureNr"), new Enclosure(reader.GetString("Area")));
-                }
-            }
-
-            Console.WriteLine("\nIn welchem Gehege lebt das Tier? Bitte gib die Gehegenummer an!");
-
-            foreach (KeyValuePair<int, Enclosure> habitat in enclosures)
-            {
-                Console.WriteLine($"{habitat.Key,-4} | {habitat.Value}");
-            }
-            int enclosurenr = Convert.ToInt32(Console.ReadLine());
-
-            Animal animal = new Animal(animalname, animalrace, food, amount);
-
-            string query = @"INSERT INTO animal
-                VALUES (@Animalname, @Animalrace, @Habitat);
+            Zoo MyZoo = null;
+            string query = @"SELECT Zooname , FoundingYear
+                FROM zoo;
                 
-                INSERT INTO foodlist
-                VALUES (@Animalname, @Food, @Amount)";
+                SELECT EnclosureNr, Area
+                FROM enclosure;
+                
+                SELECT InventoryNr, Foodname, Price, Measurement, SUM(foodlist.Amount) AS Amount
+                FROM food
+                JOIN foodlist ON food.InventoryNr = foodlist.FoodNr
+                GROUP BY Foodname, Price, Measurement, InventoryNr;
+                
+                SELECT Animalname, Animalrace, Habitat, enclosure.Area AS EnclosureName
+                FROM animal
+                JOIN enclosure ON animal.Habitat = enclosure.EnclosureNr;
+                
+                SELECT Animalname, FoodNr, food.Foodname AS Foodname, Amount, Price, Measurement
+                FROM zoodatenbank.foodlist
+                JOIN food ON foodlist.FoodNr = food.InventoryNr;
+                
+                SELECT Firstname, Lastname, Workplace, carelist.KeeperID, carelist.EnclosureNr, enclosure.Area
+                FROM zoodatenbank.zookeeper
+                JOIN carelist ON zookeeper.KeeperID = carelist.KeeperID
+                JOIN enclosure ON carelist.EnclosureNr = enclosure.EnclosureNr;";
 
-            MySqlCommand commandAnimal = new MySqlCommand(query, connection);
-            commandAnimal.Parameters.AddWithValue("@Animalname", animalname);
-            commandAnimal.Parameters.AddWithValue("@Animalrace", animalrace);
-            commandAnimal.Parameters.AddWithValue("@Habitat", enclosurenr);
-            commandAnimal.Parameters.AddWithValue("@Food", food._Foodname);
-            commandAnimal.Parameters.AddWithValue("@Amount", amount);
+            MySqlCommand command = new MySqlCommand(query, connection);
 
-            commandAnimal.ExecuteNonQuery();
+            using (MySqlDataReader reader = command.ExecuteReader())
+            {
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        MyZoo = new Zoo(reader.GetString("Zooname"), reader.GetDateTime("FoundingYear"));
+                    }
+                }
+                //Gehege auslesen
+                if (reader.NextResult())
+                {
+                    while (reader.Read())
+                    {
+                        string Area = reader.GetString("Area");
+                        int EnclosureNr = reader.GetInt32("EnclosureNr");
 
-            Console.WriteLine("Ein neues Tier ist im Zoo eingezogen!");
+                        MyZoo.Zoostructure.Add(new Enclosure(EnclosureNr, Area));
+                    }
+
+                }
+                //Futter auslesen
+                if (reader.NextResult())
+                {
+                    while (reader.Read())
+                    {
+                        string Foodname = reader.GetString("Foodname");
+                        double Price = reader.GetDouble("Price");
+                        string Measurement = reader.GetString("Measurement");
+                        int InventoryNr = reader.GetInt32("InventoryNr");
+                        double Amount = reader.GetDouble("Amount");
+
+                        MyZoo.FoodConsumption.Add(new Food(Foodname, Price, Measurement, InventoryNr), Amount);
+                    }
+                }
+                //Tiere auslesen
+                if (reader.NextResult())
+                {
+                    while (reader.Read())
+                    {
+                        string Animalname = reader.GetString("Animalname");
+                        string Animalrace = reader.GetString("Animalrace");
+                        int Habitat = reader.GetInt32("Habitat");
+                        string Area = reader.GetString("EnclosureName");
+
+                        foreach (Enclosure enclosure in MyZoo.Zoostructure)
+                        {
+                            if (enclosure._EnclosureNr == Habitat)
+                            {
+                                enclosure.Animals.Add(new Animal(Animalname, Animalrace));
+                            }
+                        }
+                    }
+                }
+                //Futter auslesen und bei Tieren speichern
+                if (reader.NextResult())
+                {
+                    while (reader.Read())
+                    {
+                        string Animalname = reader.GetString("Animalname");
+                        int FoodNr = reader.GetInt32("FoodNr");
+                        string Foodname = reader.GetString("Foodname");
+                        double Amount = reader.GetDouble("Amount");
+                        double Price = reader.GetDouble("Price");
+                        string Measurement = reader.GetString("Measurement");
+
+                        foreach (Enclosure enclosure in MyZoo.Zoostructure)
+                        {
+                            foreach (Animal animal in enclosure.Animals)
+                            {
+                                if (Animalname == animal._Animalname)
+                                {
+                                    animal.AddFood(new Food(Foodname, Price, Measurement, FoodNr), Amount);
+                                }
+                            }
+                        }
+                    }
+                }
+                //Zoowärter auslesen und im Zoo speichern
+                if (reader.NextResult())
+                {
+                    while (reader.Read())
+                    {
+                        int KeeperID = reader.GetInt32("KeeperID");
+                        string Firstname = reader.GetString("Firstname");
+                        string Lastname = reader.GetString("Lastname");
+                        int EnclosureNr = reader.GetInt32("EnclosureNr");
+                        string Area = reader.GetString("Area");
+
+                        MyZoo.Zookeepers.Add(new Zookeeper(KeeperID, Firstname, Lastname));
+                        foreach (Zookeeper zookeeper in MyZoo.Zookeepers)
+                        {
+                            if (KeeperID == zookeeper._KeeperID)
+                            {
+                                zookeeper.ResponsibleEnclosures.Add(new Enclosure(EnclosureNr, Area));
+                            }
+                        }
+                    }
+                }
+            }
+            return MyZoo;
         }
-        internal static void CreateZookeeper(string keepername, MySqlConnection connection)
+    }
+}
+
+/* internal static Enclosure ReadEnclosure(Zoo MyZoo, string enclosurename, MySqlConnection connection)
+        {
+            Enclosure enclosure = null;
+
+            string getEnclosureQuery = @"SELECT Area
+                FROM enclosure
+                WHERE Zooname = @zooname AND Area = @Area";
+
+            MySqlCommand getEnclosurecommand = new MySqlCommand(getEnclosureQuery, connection);
+            getEnclosurecommand.Parameters.AddWithValue("@zooname", MyZoo._Zooname);
+            getEnclosurecommand.Parameters.AddWithValue("@Area", enclosurename);
+
+            using (MySqlDataReader reader = getEnclosurecommand.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    //enclosure = new Enclosure(reader.GetString("Area"));
+                }
+            }
+            return enclosure;
+        }
+
+        internal static Food ReadFood(string foodname, MySqlConnection connection)
+        {
+            Food food = null;
+
+            string getEnclosureQuery = @"SELECT Foodname, Price, Measurement
+                FROM food
+                WHERE Foodname LIKE @foodname;";
+
+            MySqlCommand getEnclosurecommand = new MySqlCommand(getEnclosureQuery, connection);
+            getEnclosurecommand.Parameters.AddWithValue("@foodname", foodname);
+
+            using (MySqlDataReader reader = getEnclosurecommand.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    //food = new Food(reader.GetString("Foodname"), reader.GetDouble("Price"), reader.GetString("Measurement"));
+                }
+            }
+            return food;
+        }
+
+        internal static Animal ReadAnimal(string animalname, Food food, MySqlConnection connection)
+        {
+            Animal animal = null;
+
+            string getAnimalQuery = @"SELECT animal.Animalname AS Name, animal.Animalrace AS Race, animal.Habitat, foodlist.Amount AS Amount
+                FROM animal
+                JOIN foodlist ON animal.Animalname = foodlist.Animalname
+                WHERE Animalname LIKE @animalname;";
+
+            MySqlCommand getAnimalcommand = new MySqlCommand(getAnimalQuery, connection);
+            getAnimalcommand.Parameters.AddWithValue("@Animalname", animalname);
+
+            using (MySqlDataReader reader = getAnimalcommand.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    //animal = new Animal(reader.GetString("Name"), reader.GetString("Race"), food, reader.GetDouble("Amount"));
+                }
+            }
+            return animal;
+        }
+        internal static void ReadZookeeper(string keepername, MySqlConnection connection)
         {
             string getzoonameQuery = @"SELECT Zooname
                 FROM zoo;";
@@ -227,9 +335,8 @@ namespace CheyenneHarbarth.Zoo.Zoostructure
             insertcarelistcommand.ExecuteNonQuery();
 
             Console.WriteLine("\nEin neuer Zoowärter wurde angestellt!");
-        }
-    }
-}
+        } */
+
 /* Enclosure AlpineMeadow = new Enclosure("Alpenwiese: neutral, offen und hügelig");
 Enclosure Icelake = new Enclosure("Eissee: sehr kalt");
 Enclosure Marsh = new Enclosure("Ried: kalt, matschig");
@@ -267,9 +374,42 @@ AlpineMeadow.AddAnimal(animal2);
 Icelake.AddAnimal(animal3);
 Icelake.AddAnimal(animal4);
 Jungle.AddAnimal(animal5);
-Jungle.AddAnimal(animal6);
+Jungle.AddAnimal(animal6); */
 
-MyZoo.PrintZoo();
 
-MyZoo.CalculateFoodConsumption();
-MyZoo.CalculateFoodBill(MyZoo.FoodConsumption); */
+//Methode wenn mehrer Zoos in der Datenbank sind
+/* internal static Zoo CreateZooObject(MySqlConnection connection)
+    {
+        Dictionary<string, DateTime> Zoos = new Dictionary<string, DateTime>();
+        string query = @"SELECT Zooname, FoundingYear
+            FROM zoo;";
+
+        MySqlCommand command = new MySqlCommand(query, connection);
+
+        using (MySqlDataReader reader = command.ExecuteReader())
+        {
+            while (reader.Read())
+            {
+                Zoos.Add(reader.GetString("Zooname"), reader.GetDateTime("FoundingYear"));
+            }
+        }
+        foreach (KeyValuePair<string, DateTime> zoos in Zoos)
+        {
+            Console.WriteLine($"{zoos.Key,-30} | Gründungsjahr: {zoos.Value,6}");
+        }
+
+        while (true)
+        {
+            Console.WriteLine("Mit welchem Zoo möchtest du arbeiten?");
+            string input = Console.ReadLine();
+            if (Zoos.ContainsKey(input))
+            {
+                Zoo MyZoo = new Zoo(input, Zoos[input]);
+                return MyZoo;
+            }
+            else
+            {
+                Console.WriteLine("Bitte gib einen gültigen Zoonamen ein!");
+            }
+        }
+    } */

@@ -4,7 +4,7 @@ namespace JulianStroehle.Week10
 {
     internal class Zoo_Main
     {
-        static Zoo zoo = new Zoo("Tirgardn", DateTime.Now);
+        static Zoo zoo = new(0, "Animal Well", new DateTime(2024,12,11));
         internal static void Start()
         {
             string action = "";
@@ -129,7 +129,7 @@ namespace JulianStroehle.Week10
             Console.WriteLine("How much?");
             int count = Convert.ToInt32(Console.ReadLine());
             invoiceNumber++;
-            Food food = new Food(foodName, unit, price, invoiceNumber);
+            Food food = new Food(foodName, unit, count, price, invoiceNumber);
             foreach (Enclosure enclosure in zoo.Enclosures)
             {
                 foreach (Animal animal in enclosure.Animals)
@@ -173,7 +173,7 @@ namespace JulianStroehle.Week10
         }
         internal static void GetInfo()
         {
-            Console.WriteLine(zoo.GetZooInfo());
+            Console.WriteLine(zoo.GetInfo());
         }
     }
 }

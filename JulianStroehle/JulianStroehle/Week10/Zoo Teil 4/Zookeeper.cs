@@ -6,6 +6,7 @@ namespace JulianStroehle.Week10
         internal int ID;
         internal string FirstName;
         internal string LastName;
+        internal Animal favAnimal { get; set; }
         internal List<Enclosure> EnclosureList;
         internal Zookeeper(int id, string firstName, string lastName)
         {

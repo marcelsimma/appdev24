@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS carelist (
 CREATE TABLE IF NOT EXISTS allFood (
     AnimalID INTEGER,
     AnimalFoodID INTEGER,
-    Amount INTEGER NOT NULL,
+    Amount DOUBLE NOT NULL,
     FOREIGN KEY (AnimalID) REFERENCES animal (AnimalID),
     FOREIGN KEY (AnimalFoodID) REFERENCES animalFood (AnimalFoodID),
     PRIMARY KEY (AnimalID, AnimalFoodID));

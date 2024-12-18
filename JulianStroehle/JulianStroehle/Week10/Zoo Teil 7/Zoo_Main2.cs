@@ -5,10 +5,10 @@ namespace JulianStroehle.Week10;
 
 internal class Zoo_Main2
 {
-    private static Zoo zoo = new("Tirgardn", DateTime.Now);
+    private static Zoo zoo = new Zoo(0, "Tirgardn", new DateTime(2024, 12, 11));
     private static StreamReader str = new("C:/Users/JUSR/Desktop/-/PW.txt");
     private static string databaseConnectionString = $"server=localhost;userid=root;password={str.ReadLine()};";
-    private static string query;
+    private static string query = "";
     private static MySqlConnection conn = new(databaseConnectionString);
 
     internal static void Start()
@@ -188,7 +188,7 @@ CREATE TABLE IF NOT EXISTS eats (ID INT PRIMARY KEY AUTO_INCREMENT, AnimalID INT
         Console.WriteLine("How much?");
         int count = Convert.ToInt32(Console.ReadLine());
         invoiceNumber++;
-        Food food = new(foodName, unit, price, invoiceNumber);
+        Food food = new(foodName, unit, count, price, invoiceNumber);
         string priceString = Regex.Replace(price.ToString("F"), ",", ".");
         Init("food", $"{invoiceNumber}, '{foodName}', {count}, '{unit}', {priceString}");
         foreach (Enclosure enclosure in zoo.Enclosures)
@@ -226,7 +226,7 @@ CREATE TABLE IF NOT EXISTS eats (ID INT PRIMARY KEY AUTO_INCREMENT, AnimalID INT
 
     static void GetInfo()
     {
-        Console.WriteLine(zoo.GetZooInfo());
+        Console.WriteLine(zoo.GetInfo());
     }
 
     static void Init(string table, string values)

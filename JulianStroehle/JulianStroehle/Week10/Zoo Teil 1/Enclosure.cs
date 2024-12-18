@@ -1,7 +1,7 @@
 using System;
 namespace JulianStroehle.Week10
 {
-    internal class Enclosure
+    internal class Enclosure: IOutput
     {
         internal string Name;
         internal int ID;
@@ -14,10 +14,15 @@ namespace JulianStroehle.Week10
             ID = id;
             Animals = new List<Animal>();
         }
-        internal string GetInfo()
+        public string GetInfo()
+        {
+            string returnValue = string.Format("Enclosure: {0}", Name);
+            return returnValue;
+        }
+        internal string GetAnimalsInfo()
         {
             bool empty = true;
-            string returnValue = string.Format("{0} Enclosure: {1}", ID, Name);
+            string returnValue = "";
             foreach (Animal animal in Animals)
             {
                 returnValue += "\n│     └── ";
@@ -30,13 +35,35 @@ namespace JulianStroehle.Week10
             }
             return returnValue;
         }
+        public string GetIDs()
+        {
+            string returnValue = "┌" + new string('─', 5) + "┬" + new string('─', 22) + "┐";
+            foreach (Animal animal in Animals)
+            {
+                returnValue += "\n│" + string.Format("{0,5}",animal.GetIDs() + " ") + "│" + string.Format("{0,-22}", " " + animal.Type + " " + animal.Name) + "│";
+            }
+            returnValue += "\n└" + new string('─', 5) + "┴" + new string('─', 22) + "┘";
+            return returnValue;
+        }
         internal void AddAnimal(Animal animal)
         {
             Animals.Add(animal);
         }
         internal void RemoveAnimal(int id)
         {
-            Animals.RemoveAt(id-1);
+            bool removed = false;
+            foreach (Animal animal in Animals)
+            {
+                if (animal.ID == id)
+                {
+                    removed = Animals.Remove(animal);
+                    break;
+                }
+            }
+            if (!removed)
+            {
+                RemoveAnimal(id);
+            }
         }
     }
 }
