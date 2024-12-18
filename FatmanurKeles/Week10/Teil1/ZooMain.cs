@@ -40,6 +40,15 @@ namespace FatmanurKeles.Week10.Teil1
             storch3.FuegeFutter(fisch, 10);
             storch3.FuegeFutter(heu, 10);
 
+            Pfleger Max = new Pfleger("Max");
+            Pfleger Peter = new Pfleger("Peter");
+            Pfleger Lisa = new Pfleger("Lisa");
+            Pfleger Paul = new Pfleger("Paul");
+
+            alpenwiese.FuegePfleger(Max);
+            ried.FuegePfleger(Lisa);
+            terrarium.FuegePfleger(Paul);
+
             tiergarten.PrintGehege();
         }
     }
