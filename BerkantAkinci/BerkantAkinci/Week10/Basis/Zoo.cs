@@ -42,7 +42,7 @@ namespace BerkantAkinci.Week10
                 }
             }
             System.Console.WriteLine("Futterliste:");
-            System.Console.WriteLine("-------------------------------------------------");
+            System.Console.WriteLine("-------------------------------------------");
 
             double sum = 0;
             double sumAll = 0;
@@ -56,7 +56,7 @@ namespace BerkantAkinci.Week10
 
                 System.Console.WriteLine($"{food.Key.FoodName,-15} {food.Value,6:F2} {food.Key.Unit,-4} {sum,10:F2} €");
             }
-            System.Console.WriteLine("-------------------------------------------------");
+            System.Console.WriteLine("-------------------------------------------");
             System.Console.WriteLine($"{"Gesamtbetrag: ",-30}{sumAll,8:F2} €");
         }
 
