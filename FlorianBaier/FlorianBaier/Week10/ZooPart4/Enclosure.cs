@@ -6,7 +6,7 @@ namespace FlorianBaier.Week10.ZooPart4
     public class Enclosure
     {
         public string Name { get; set; }
-        private List<Animal> Animals { get; set; }
+        public List<Animal> Animals { get; set; }
         public Enclosure(string name)
         {
             Name = name;

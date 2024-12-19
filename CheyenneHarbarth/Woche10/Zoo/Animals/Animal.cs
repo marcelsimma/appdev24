@@ -7,37 +7,66 @@ namespace CheyenneHarbarth.Zoo.Zoostructure.Animals
 {
     internal class Animal
     {
-        private string Animalname;
-        internal string _Animalname
+        private string _animalName;             //namenskonvention für private Instanzfelder mit _ und camelCase
+        internal string AnimalName              //namenskonvention für öffentliche oder interne Attribute mit PascalCase
         {
-            get => Animalname;
-            set => Animalname = value;
+            get => _animalName;
+            set => _animalName = value;
         }
 
-        private string Animalrace;
-        internal string _Animalrace
+        private string _animalRace;
+        internal string AnimalRace
         {
-            get => Animalrace;
-            set => Animalrace = value;
+            get => _animalRace;
+            set => _animalRace = value;
         }
 
-        internal Dictionary<Food, int> Requirement = new Dictionary<Food, int>();
+        internal Dictionary<Food, double> requirement = new Dictionary<Food, double>();
 
-        internal Animal(string animalname, string animalrace, Food food, int foodamount)
+        internal Animal(string animalName, string animalRace)
         {
-            Animalname = animalname;
-            Animalrace = animalrace;
-            Requirement.Add(food, foodamount);
+            _animalName = animalName;
+            _animalRace = animalRace;
         }
 
-        internal void AddFood(Food food, int foodamount)
+        internal void AddFood(Food food, double foodAmount)
         {
-            Requirement.Add(food, foodamount);
+            requirement.Add(food, foodAmount);
+
+            //Futter zur Liste und zur DB hinzufügen
+            /* Console.WriteLine("Wie heißt der neue Zoowärter? Vorname eingeben, Enter, Nachname eingeben");
+            zooKeepers.Add(new Zookeeper());
+
+            int index = zooKeepers.Count();
+
+            string addZookeeperQuery = @"INSERT INTO zookeeper (Firstname, Lastname, Workplace)
+                VALUES (@Firstname, @Lastname, @Workplace);";
+
+            MySqlCommand addZookeeperCommand = new MySqlCommand(addZookeeperQuery, connection);
+            addZookeeperCommand.Parameters.AddWithValue("Firstname", zooKeepers.ElementAt(index - 1).KeeperFirstname);
+            addZookeeperCommand.Parameters.AddWithValue("Lastname", zooKeepers.ElementAt(index - 1).KeeperLastname);
+            addZookeeperCommand.Parameters.AddWithValue("Workplace", ZooName);
+
+            int newRows = addZookeeperCommand.ExecuteNonQuery();
+
+            if (newRows > 0)
+            {
+                Console.WriteLine("\nEin neuer Zoowärter wurde eingestellt und in der DB erstellt!");
+            } */
         }
 
         public override string ToString()
         {
-            return String.Format(Animalrace + ", " + Animalname);
+            return $"{AnimalName}, {AnimalRace}";
+        }
+
+        public void PrintAnimalAndFood()
+        {
+            Console.WriteLine($"{AnimalName}, {AnimalRace}\nFutter: ");
+            foreach (KeyValuePair<Food, double> food in requirement)
+            {
+                Console.WriteLine($"   {food.Key.FoodName,-18}{food.Value,6:F1} {food.Key.Measurement,-3}");
+            }
         }
     }
 }

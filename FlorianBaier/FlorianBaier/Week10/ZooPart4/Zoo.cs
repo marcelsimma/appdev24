@@ -7,8 +7,8 @@ namespace FlorianBaier.Week10.ZooPart4
     {
         public string Name { get; set; }
         public DateTime FoundingYear { get; set; }
-        private List<Enclosure> Enclosures { get; set; }
-        private List<Zookeeper> Zookeepers { get; set; }
+        public List<Enclosure> Enclosures { get; set; }
+        public List<Zookeeper> Zookeepers { get; set; }
         private double TotalFoodCost { get; set; }
 
         public Zoo(string name, DateTime foundingYear)

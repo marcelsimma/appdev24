@@ -5,12 +5,14 @@ namespace JulianStroehle.Week10
     {
         internal string Name;
         internal string Unit;
+        internal int Amount;
         internal double PricePerUnit;
         internal int InvoiceNumber;
-        internal Food(string name, string unit, double pricePerUnit, int invoiceNumber)
+        internal Food(string name, string unit, int amount, double pricePerUnit, int invoiceNumber)
         {
             Name = name;
             Unit = unit;
+            Amount = amount;
             PricePerUnit = pricePerUnit;
             InvoiceNumber = invoiceNumber;
         }

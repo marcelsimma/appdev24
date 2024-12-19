@@ -2,22 +2,26 @@ namespace BarbaraMarte.Zoo.Part4;
 
 class Zookeeper
 {
-    public string _KeeperName { get; set; }
-    public List<Enclosure> _EnclosureKeeper { get; set; }
+    public string _KeeperFirstName { get; set; }
+    public string _KeeperLastName { get; set; }
+    public int _ID;
+    public List<Enclosure> _EnclosureList { get; set; }
+    public Animal _FavoriteAnimal { get; set; }
 
-    public Zookeeper(string keeperName)
+    public Zookeeper(int id, string keeperFirstName, string keeperLastName)
     {
-        _KeeperName = keeperName;
-        _EnclosureKeeper = new List<Enclosure>();
+        _KeeperLastName = keeperLastName;
+        _ID = id;
+        _KeeperFirstName = keeperFirstName;
+        _EnclosureList = new List<Enclosure>();
     }
-
     public void AddEnclosureZookeeper(Enclosure enclosure)
     {
-        _EnclosureKeeper.Add(enclosure);
+        _EnclosureList.Add(enclosure);
     }
     public void PrintKeeper()
     {
-        foreach (var keeper in _EnclosureKeeper)
+        foreach (var keeper in _EnclosureList)
         {
             System.Console.WriteLine(keeper);
         }

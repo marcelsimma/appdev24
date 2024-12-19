@@ -1,37 +1,53 @@
 using System;
 using System.Runtime.InteropServices.Marshalling;
 using CheyenneHarbarth.Zoo.Zoostructure.Animals;
+using Mysqlx.Crud;
 
 namespace CheyenneHarbarth.Zoo.Zoostructure
 {
     internal class Enclosure
     {
-        private string Enclosurename;
-        internal string _Enclosurename
+        private string _enclosureName;
+        internal string EnclosureName
         {
-            get => Enclosurename;
-            set => Enclosurename = value;
+            get => _enclosureName;
+            set => _enclosureName = value;
         }
 
-        internal List<Animal> Animals = new List<Animal>();
-
-        internal Enclosure(string enclosurename)
+        private int _enclosureNr;
+        internal int EnclosureNr
         {
-            Enclosurename = enclosurename;
-        }
-        internal void AddAnimal(Animal animalname)
-        {
-
-            Animals.Add(animalname);
+            get => _enclosureNr;
+            set => _enclosureNr = value;
         }
 
-        internal void RemoveAnimal(string animalname)
+        internal List<Animal> animals;
+
+        internal Enclosure(int enclosureNr, string enclosureName)
         {
-            foreach (Animal animal in Animals)
+            _enclosureName = enclosureName;
+            _enclosureNr = enclosureNr;
+            animals = new List<Animal>();
+        }
+
+        internal Enclosure()
+        {
+            _enclosureName = Console.ReadLine();
+        }
+
+        internal void AddAnimal(Animal animalName)
+        {
+
+            animals.Add(animalName);
+        }
+
+        internal void RemoveAnimal(string animalName)
+        {
+            foreach (Animal animal in animals)
             {
-                if (animal._Animalname == animalname)
+                if (animal.AnimalName == animalName)
                 {
-                    Animals.Remove(animal);
+                    animals.Remove(animal);
                     break;
                 }
             }

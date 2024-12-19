@@ -4,29 +4,36 @@ namespace CheyenneHarbarth.Zoo.Zoostructure.Foods
 {
     internal class Food
     {
-        private string Foodname;
-        internal string _Foodname
+        private string _foodName;
+        internal string FoodName
         {
-            get => Foodname;
-            set => Foodname = value;
+            get => _foodName;
+            set => _foodName = value;
         }
-        private string Measurement;
-        internal string _Measurement
+        private string _measurement;
+        internal string Measurement
         {
-            get => Measurement;
-            set => Measurement = value;
+            get => _measurement;
+            set => _measurement = value;
         }
-        private double PricePerMeasurement;
-        internal double _PricePerMeasurement
+        private double _pricePerMeasurement;
+        internal double PricePerMeasurement
         {
-            get => PricePerMeasurement;
-            set => PricePerMeasurement = value;
+            get => _pricePerMeasurement;
+            set => _pricePerMeasurement = value;
         }
-        internal Food(string foodname, string measurement, double pricepermeas)
+        private int _foodNr;
+        internal int FoodNr
         {
-            Foodname = foodname;
-            Measurement = measurement;
-            PricePerMeasurement = pricepermeas;
+            get => _foodNr;
+            set => _foodNr = value;
+        }
+        internal Food(string foodname, double pricepermeas, string measurement, int foodnr)
+        {
+            _foodName = foodname;
+            _measurement = measurement;
+            _pricePerMeasurement = pricepermeas;
+            _foodNr = foodnr;
         }
     }
 }
