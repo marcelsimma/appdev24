@@ -36,6 +36,7 @@ namespace FatmanurKeles.Week10.Teil1
 
             kuh.FuegeFutter(heu, 2);
             storch1.FuegeFutter(wasser, 50);
+            
             storch2.FuegeFutter(heuschrecke, 5);
             storch3.FuegeFutter(fisch, 10);
             storch3.FuegeFutter(heu, 10);
