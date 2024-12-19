@@ -10,7 +10,9 @@ CREATE TABLE IF NOT EXISTS zoo (
 
 CREATE TABLE IF NOT EXISTS enclosure (
     EnclosureID INT PRIMARY KEY AUTO_INCREMENT,
-    Name VARCHAR(50)
+    Name VARCHAR(50),
+    ZooID INT,
+    FOREIGN KEY (ZooID) REFERENCES zoo(ZooID)
 );
 
 CREATE TABLE IF NOT EXISTS animal (
@@ -18,7 +20,10 @@ CREATE TABLE IF NOT EXISTS animal (
     Name VARCHAR(50),
     Type VARCHAR(50),
     EnclosureID INT,
-    PRIMARY KEY (AnimalID, EnclosureID),
+    Health INT,
+    Attack VARCHAR(50),
+    Damage INT,
+    PRIMARY KEY (AnimalID),
     FOREIGN KEY (EnclosureID) REFERENCES enclosure(EnclosureID)
 );
 
@@ -52,26 +57,29 @@ CREATE TABLE IF NOT EXISTS eats (
     FOREIGN KEY (FoodNr) REFERENCES food(FoodNr)
 );
 
-INSERT INTO zoo VALUES (NULL, 'Animal World', 2024);
-INSERT INTO enclosure VALUES (NULL, 'Meadow');
-INSERT INTO enclosure VALUES (NULL, 'Field');
-INSERT INTO enclosure VALUES (NULL, 'Woods');
-INSERT INTO enclosure VALUES (NULL, 'Marsh');
-INSERT INTO enclosure VALUES (NULL, 'Terrarium');
-INSERT INTO enclosure VALUES (NULL, 'Aquarium');
-INSERT INTO enclosure VALUES (NULL, 'Terrarium (Warm)');
-INSERT INTO animal VALUES (NULL, 'Stefan', 'Sheep', 1);
-INSERT INTO animal VALUES (NULL, 'Safkiel', 'Sheep', 1);
-INSERT INTO animal VALUES (NULL, 'Kurt', 'Cow', 2);
-INSERT INTO animal VALUES (NULL, 'Karl', 'Cow', 2);
-INSERT INTO animal VALUES (NULL, 'Emil', 'Squirrel', 3);
-INSERT INTO animal VALUES (NULL, 'Friedolin', 'Sloth', 3);
-INSERT INTO animal VALUES (NULL, 'Samuel', 'Stork', 4);
-INSERT INTO animal VALUES (NULL, 'Sarah', 'Stork', 4);
-INSERT INTO animal VALUES (NULL, 'Finn', 'Fish', 6);
-INSERT INTO animal VALUES (NULL, 'Kevin', 'Pufferfish', 6);
-INSERT INTO animal VALUES (NULL, 'Lars', 'Salmon', 6);
-INSERT INTO animal VALUES (NULL, 'Helmut', 'Shark', 6);
+INSERT INTO zoo VALUES (1, 'Animal World', 2024);
+INSERT INTO enclosure VALUES (NULL, 'Meadow', 1);
+INSERT INTO enclosure VALUES (NULL, 'Field', 1);
+INSERT INTO enclosure VALUES (NULL, 'Woods', 1);
+INSERT INTO enclosure VALUES (NULL, 'Marsh', 1);
+INSERT INTO enclosure VALUES (NULL, 'Terrarium', 1);
+INSERT INTO enclosure VALUES (NULL, 'Aquarium', 1);
+INSERT INTO enclosure VALUES (NULL, 'Lions Gorge', 1);
+INSERT INTO animal VALUES (NULL, 'Stefan', 'G.o.a.T.', 1, 2000000000, 'Spit', 1000);
+INSERT INTO animal VALUES (NULL, 'Cheyenne', 'Sheep', 1, 100, 'Bite', 20);
+INSERT INTO animal VALUES (NULL, 'Barbara', 'Ram', 1, 350, 'Ram', 60);
+INSERT INTO animal VALUES (NULL, 'Berkant', 'Bull', 2, 500, 'Charge', 40);
+INSERT INTO animal VALUES (NULL, 'Manuel', 'Cow', 2, 200, 'Stomp', 35);
+INSERT INTO animal VALUES (NULL, 'Magdalena', 'Squirrel', 3, 40, 'Nut Throw', 10);
+INSERT INTO animal VALUES (NULL, 'Nico', 'Sloth', 3, 1000, 'Slow Hit', 5);
+INSERT INTO animal VALUES (NULL, 'Florian', 'Stork', 4, 80, 'Poke', 30);
+INSERT INTO animal VALUES (NULL, 'Simon', 'Stork', 4, 80, 'Poke', 30);
+INSERT INTO animal VALUES (NULL, 'Jonas', 'Chameleon', 5, 50, 'Hidden Attack', 20);
+INSERT INTO animal VALUES (NULL, 'Lucas', 'Fish', 6, 20, 'Blub', 3);
+INSERT INTO animal VALUES (NULL, 'Fatma', 'Pufferfish', 6, 40, 'Spike', 15);
+INSERT INTO animal VALUES (NULL, 'Oliver', 'Octopus', 6, 150, 'Tentacle Slap', 30);
+INSERT INTO animal VALUES (NULL, 'Marcel', 'Shark', 6, 350, 'Strong Bite', 40);
+INSERT INTO animal VALUES (NULL, 'Julian', 'Lion', 7, 450, 'Roar', 150);
 INSERT INTO food VALUES (NULL, 'Insect Mix', 5, 'g', 0.5);
 INSERT INTO food VALUES (NULL, 'Wheat', 17, 'kg', 2.45);
 INSERT INTO food VALUES (NULL, 'Nuts', 80, 'g', 0.01);
