@@ -14,6 +14,8 @@ using JonasWehinger.Week09;
 using JonasWehinger.Zoo;
 using JonasWehinger.A1;
 using JonasWehinger.A2;
+using JonasWehinger.JaMan;
+
 namespace JonasWehinger
 {
     public class Program
@@ -43,7 +45,8 @@ namespace JonasWehinger
         //CRUD.Start();
         //ZooStater.ZooStart();
         //StartOfTheZoo.StarterZoo();
-        CountriesAndRivers.Start();
+        //CountriesAndRivers.Start();
+        StartZoo.Start9();
 
     }
 }
