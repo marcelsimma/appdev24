@@ -5,12 +5,24 @@ using BarbaraMarte.Week05;
 
 namespace BarbaraMarte.AdventOfCode;
 
+class ForDictionary
+{
+    internal Dictionary<int, int> _position;
+    internal ForDictionary()
+    {
+        _position = new Dictionary<int, int>();
+    }
+}
 class Day3_2015
 {
-    private Dictionary<int, int> position = new Dictionary<int, int>();
+    Dictionary<int, int> _position;
+    private int _x = 5;
+    private int _y = 5;
+
     public static void Part1()
     {
         /*{
+
             {0 1,0 2,0 3,0 4,0 5,0 6,0 7,0 8,0 9},
             {1 1,1 2,1 3,1 4,1 5,1 6,1 7,1 8,1 9},
             {2 1, 2 2, 2 3,},
@@ -22,9 +34,6 @@ class Day3_2015
             {}
         }*/
 
-        int xPos = 5;
-        int yPos = 5;
-
         try
         {
             string input = File.ReadAllText("C:/Advent Of Code/2015Day2.txt");
@@ -32,7 +41,7 @@ class Day3_2015
             {
                 if (c == '<')
                 {
-                    CheckDictionary();
+                    // CheckDictionary(5, 5, _position);
                 }
                 else if (c == '>')
                 {
@@ -53,8 +62,16 @@ class Day3_2015
             System.Console.WriteLine("Error" + ex);
         }
     }
-    private static void CheckDictionary()
+    private static void CheckDictionary(Dictionary<int, int> _position)
     {
-        
+        for (int i = 0; i < _position.Count; i++)
+        {
+
+        }
+
+        foreach (var c in _position)
+        {
+
+        }
     }
 }
