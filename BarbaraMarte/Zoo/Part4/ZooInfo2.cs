@@ -6,8 +6,9 @@ namespace BarbaraMarte.Zoo.Part4
     {
         public string _ZooName { get; private set; }
         public DateTime _FoundingYear { get; private set; }
-        private List<Enclosure> EnclosureList { get; set; }
+        public List<Enclosure> _EnclosureList { get; set; }
         public List<Zookeeper> _ZookeeperList { get; set; }
+        public List<AnimalFood> _Food { get; set; }
 
         private List<(string foodName, string unit, double quantity, double totalCost)> _totalFood = new List<(string foodName, string unit, double quantity, double totalCost)>();
 
@@ -15,8 +16,9 @@ namespace BarbaraMarte.Zoo.Part4
         {
             _ZooName = zooName;
             _FoundingYear = foundingYear;
-            EnclosureList = new List<Enclosure>();
+            _EnclosureList = new List<Enclosure>();
             _ZookeeperList = new List<Zookeeper>();
+            _Food = new List<AnimalFood>();
         }
         public void AddZookeeper(Zookeeper zookeeper)
         {
@@ -25,19 +27,19 @@ namespace BarbaraMarte.Zoo.Part4
 
         public void AddEnclosure(Enclosure enclosure)
         {
-            int id = EnclosureList.Count + 1;
+            int id = _EnclosureList.Count + 1;
             enclosure._ID = id;
-            EnclosureList.Add(enclosure);
+            _EnclosureList.Add(enclosure);
         }
         public void DeleteEnclosure(Enclosure enclosure)
         {
-            EnclosureList.Remove(enclosure);
+            _EnclosureList.Remove(enclosure);
         }
 
         public void UpdateFoodRequirements()
         {
             var _AnimalFoodPrint = new Dictionary<AnimalFood, double>();
-            foreach (var enclosureList in EnclosureList)    // EnclosureList, AnimalList, FoodList
+            foreach (var enclosureList in _EnclosureList)    // EnclosureList, AnimalList, FoodList
             {
                 foreach (var animal in enclosureList._AnimalList)
                 {
@@ -69,8 +71,8 @@ namespace BarbaraMarte.Zoo.Part4
         {
             foreach (var keeper in _ZookeeperList)
             {
-                System.Console.WriteLine(keeper._KeeperName);
-                System.Console.WriteLine(keeper._EnclosureKeeper);
+                System.Console.WriteLine(keeper._KeeperFirstName);
+                System.Console.WriteLine(keeper._EnclosureList);
             }
         }
 
@@ -96,11 +98,11 @@ namespace BarbaraMarte.Zoo.Part4
 
             foreach (var keeper in _ZookeeperList)
             {
-                if (keeper._EnclosureKeeper.Any())
+                if (keeper._EnclosureList.Any())
                 {
-                    System.Console.WriteLine($"│ ├── {keeper._KeeperName}");
+                    System.Console.WriteLine($"│ ├── {keeper._KeeperFirstName}");
 
-                    foreach (var enclosure in keeper._EnclosureKeeper)
+                    foreach (var enclosure in keeper._EnclosureList)
                     {
                         System.Console.WriteLine($"│    ├── Enclosure: {enclosure._EnclosureType}");
 
@@ -116,7 +118,7 @@ namespace BarbaraMarte.Zoo.Part4
                 }
             }
             System.Console.WriteLine(new string('-', 52));
-            System.Console.WriteLine(); 
+            System.Console.WriteLine();
             PrintFoodRequirements();
             System.Console.WriteLine(new string('-', 42));
         }

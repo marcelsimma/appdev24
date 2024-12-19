@@ -28,6 +28,7 @@ using BarbaraMarte.Zoo.Part4;
 using BarbaraMarte.Week10.Test;
 using BarbaraMarte.Zoo.InputDatenbank;
 using BarbaraMarte.Zoo;
+using BarbaraMarte.Zoo.Simulation;
 
 namespace BarbaraMarte.Week08.Test
 
@@ -42,7 +43,8 @@ namespace BarbaraMarte.Week08.Test
 
             // Zoo
             // ZooMain4.Start();
-           
+            // Simulation.Start();
+
 
             // InputSQUALE.Start();
 
@@ -52,6 +54,10 @@ namespace BarbaraMarte.Week08.Test
             // Day1Part2_2024.Print();
             // Day2Part1_2024.Start();
             // Day1Part2_2019.Start();
+            // Day1Part1_2015.Part2();
+            // Day2_2015.Part1();
+            // Day2_2015.Part2();
+            Day3_2015.Part1();
 
 
 

@@ -10,24 +10,23 @@ namespace BarbaraMarte.Zoo.Part4
             System.Console.WriteLine();
             ZooInfo zooInfo1 = new ZooInfo("WildparkFeldkirch", DateTime.Now);
 
-            Enclosure forest = new Enclosure("Forest");
-            Enclosure ocean = new Enclosure("Ocean");
+            Enclosure forest = new Enclosure("Forest", 1);
+            Enclosure ocean = new Enclosure("Ocean", 2);
 
-            Animal forestAnimal1 = new Animal("Fox", "Fred");
-            Animal forestAnimal2 = new Animal("Fox", "Ida");
-            Animal forestAnimal3 = new Animal("Deer", "Ingo");
-            Animal forestAnimal4 = new Animal("Mosquito", "Asshole");
+            Animal forestAnimal1 = new Animal("Fox", "Fred", 1);
+            Animal forestAnimal2 = new Animal("Fox", "Ida", 2);
+            Animal forestAnimal3 = new Animal("Deer", "Ingo", 3);
+            Animal forestAnimal4 = new Animal("Mosquito", "Asshole", 4);
 
-            Animal oceanAnimal = new Animal("Orca", "Oscar");
+            Animal oceanAnimal = new Animal("Orca", "Oscar", 5);
 
-            AnimalFood meat = new AnimalFood("kg", "Meat", 6.0);
-            AnimalFood fish = new AnimalFood("kg", "Fish", 10.99);
-            AnimalFood gras = new AnimalFood("kg", "Gras", 1.5);
-            AnimalFood blood = new AnimalFood("l", "Blood", 9.90);
-            AnimalFood water = new AnimalFood("l", "Water", 1.5);
+            AnimalFood meat = new AnimalFood("Meat", "kg", 6.0, 1);
+            AnimalFood fish = new AnimalFood("Fish", "kg", 10.99, 1);
+            AnimalFood gras = new AnimalFood("Gras", "kg", 1.5, 1);
+            AnimalFood blood = new AnimalFood("Blood", "l", 9.90, 1);
 
-            Zookeeper Julian = new Zookeeper("Julian");
-            Zookeeper Lova = new Zookeeper("Lova");
+            Zookeeper Julian = new Zookeeper(2, "Julian", "Maier");
+            Zookeeper Lova = new Zookeeper(1, "Lova", "Karlsson");
 
             forestAnimal1.AddFood(meat, 10);
             forestAnimal2.AddFood(meat, 5);
@@ -38,7 +37,7 @@ namespace BarbaraMarte.Zoo.Part4
             forest.AddAnimal(forestAnimal1);
             forest.AddAnimal(forestAnimal2);
             forest.AddAnimal(forestAnimal3);
-            forest.AddAnimal(forestAnimal4); 
+            forest.AddAnimal(forestAnimal4);
             ocean.AddAnimal(oceanAnimal);
 
             zooInfo1.AddEnclosure(forest);
