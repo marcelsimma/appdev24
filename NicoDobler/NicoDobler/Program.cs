@@ -8,6 +8,7 @@ using NicoDobler.Week06;
 using NicoDobler.Week07;
 using NicoDobler.Week08;
 using NicoDobler.Week09;
+using NicoDobler.Week10;
 
 namespace NicoDobler
 {
@@ -35,8 +36,8 @@ namespace NicoDobler
       // Teilnehmerliste1.ReadFile();
       //Bankomat.Start();
       // Start.SelfStart();
-      SearchCountrybyCode.Start();
-      
+      //SearchCountrybyCode.Start();
+      ZooSimulation.Start();
 
 
 

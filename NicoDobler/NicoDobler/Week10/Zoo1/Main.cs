@@ -1,6 +1,4 @@
 using System;
- 
- 
 namespace NicoDobler.Week10;
  
 class Zoo1
