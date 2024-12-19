@@ -13,11 +13,19 @@ namespace CheyenneHarbarth.Zoo.Zoostructure
             set => Enclosurename = value;
         }
 
+        private int EnclosureNr;
+        internal int _EnclosureNr
+        {
+            get => EnclosureNr;
+            set => EnclosureNr = value;
+        }
+
         internal List<Animal> Animals = new List<Animal>();
 
-        internal Enclosure(string enclosurename)
+        internal Enclosure(int enclosurenr, string enclosurename)
         {
             Enclosurename = enclosurename;
+            EnclosureNr = enclosurenr;
         }
         internal void AddAnimal(Animal animalname)
         {

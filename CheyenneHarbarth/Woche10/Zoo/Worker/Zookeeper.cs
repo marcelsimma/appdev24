@@ -4,23 +4,40 @@ namespace CheyenneHarbarth.Zoo.Zoostructure.Worker
 {
     internal class Zookeeper
     {
-        private string Keepername;
-        internal string _Keepername
+        private int KeeperID;
+        internal int _KeeperID
         {
-            get => Keepername;
-            set => Keepername = value;
+            get => KeeperID;
+            set => KeeperID = value;
+        }
+        private string KeeperFirstname;
+        internal string _KeeperFirstname
+        {
+            get => KeeperFirstname;
+            set => KeeperFirstname = value;
+        }
+        private string KeeperLastname;
+        internal string _KeeperLastname
+        {
+            get => KeeperLastname;
+            set => KeeperLastname = value;
         }
 
         internal List<Enclosure> ResponsibleEnclosures = new List<Enclosure>();
 
-        internal Zookeeper(string workername, Enclosure enclosure)
+        internal Zookeeper(int keeperid, string keeperfirstname, string keeperlastname)
         {
-            Keepername = workername;
-            ResponsibleEnclosures.Add(enclosure);
+            KeeperID = keeperid;
+            KeeperFirstname = keeperfirstname;
+            KeeperLastname = keeperlastname;
         }
-        internal void Work()
+        internal void PrintResponsibleList()
         {
-
+            Console.WriteLine($"{_KeeperFirstname} {_KeeperLastname} ist für folgende Gehege zuständig:");
+            foreach (Enclosure enclosure in ResponsibleEnclosures)
+            {
+                Console.WriteLine($"{enclosure._EnclosureNr,5} | {enclosure._Enclosurename}");
+            }
         }
     }
 }
