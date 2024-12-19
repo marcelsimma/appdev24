@@ -1,5 +1,5 @@
 -- Create Database 
-CREATE DATABASE Zoo
+CREATE DATABASE IF NOT EXISTS Zoo
 USE Zoo
 
 -- Create Zoo Table
