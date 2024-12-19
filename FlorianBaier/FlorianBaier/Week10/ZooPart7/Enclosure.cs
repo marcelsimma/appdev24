@@ -1,12 +1,12 @@
 using System;
 
-namespace FlorianBaier.Week10.ZooPart4
+namespace FlorianBaier.Week10.ZooPart7
 {
 
     public class Enclosure
     {
         public string Name { get; set; }
-        public List<Animal> Animals { get; set; }
+        private List<Animal> Animals { get; set; }
         public Enclosure(string name)
         {
             Name = name;

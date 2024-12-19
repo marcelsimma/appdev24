@@ -1,12 +1,12 @@
 using System;
 using System.Collections.Generic;
 
-namespace FlorianBaier.Week10.ZooPart4
+namespace FlorianBaier.Week10.ZooPart7
 {
     public class Zookeeper
     {
         public string Name { get; set; }
-        public List<Enclosure> Enclosures { get; set; }
+        private List<Enclosure> Enclosures { get; set; }
 
         public Zookeeper(string name)
         {

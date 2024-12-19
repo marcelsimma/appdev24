@@ -1,13 +1,13 @@
 using System;
 
-namespace FlorianBaier.Week10.ZooPart4
+namespace FlorianBaier.Week10.ZooPart7
 {
 
     public class Animal
     {
         public string Name { get; set; }
         public string Species { get; set; }
-        public Dictionary<Food, double> Menu { get; set; }
+        private Dictionary<Food, double> Menu { get; set; }
 
         public Animal(string name, string species)
         {
