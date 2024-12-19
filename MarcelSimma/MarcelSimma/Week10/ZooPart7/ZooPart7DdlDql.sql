@@ -1,6 +1,8 @@
+-- Database and Records by Julian Ströhle
+
 CREATE DATABASE IF NOT EXISTS dcvzoo;
 
-USE dcvzoo;
+USE dcvzoo3;
 
 CREATE TABLE IF NOT EXISTS zoo (
     ZooID INT PRIMARY KEY AUTO_INCREMENT,
@@ -18,7 +20,7 @@ CREATE TABLE IF NOT EXISTS animal (
     Name VARCHAR(50),
     Type VARCHAR(50),
     EnclosureID INT,
-    PRIMARY KEY (AnimalID, EnclosureID),
+    PRIMARY KEY (AnimalID),
     FOREIGN KEY (EnclosureID) REFERENCES enclosure(EnclosureID)
 );
 
@@ -37,17 +39,17 @@ CREATE TABLE IF NOT EXISTS zookeeper (
 );
 
 CREATE TABLE IF NOT EXISTS works_in (
-    ID INT PRIMARY KEY AUTO_INCREMENT,
     ZookeeperID INT,
     EnclosureID INT,
+    PRIMARY KEY (ZookeeperID, EnclosureID),
     FOREIGN KEY (ZookeeperID) REFERENCES zookeeper(ZookeeperID),
     FOREIGN KEY (EnclosureID) REFERENCES enclosure(EnclosureID)
 );
 
 CREATE TABLE IF NOT EXISTS eats (
-    ID INT PRIMARY KEY AUTO_INCREMENT,
     AnimalID INT,
     FoodNr INT,
+    PRIMARY KEY (AnimalID, FoodNr),
     FOREIGN KEY (AnimalID) REFERENCES animal(AnimalID),
     FOREIGN KEY (FoodNr) REFERENCES food(FoodNr)
 );
@@ -79,24 +81,16 @@ INSERT INTO zookeeper VALUES (NULL, 'Alessio', 'Hawk Tuah Expert');
 INSERT INTO zookeeper VALUES (NULL, 'Alex', 'Gartenbauer');
 INSERT INTO zookeeper VALUES (NULL, 'Алексей', 'Градов');
 INSERT INTO zookeeper VALUES (NULL, 'アレッシオ', 'ガウディオ');
-INSERT INTO works_in VALUES (NULL, 1, 1);
-INSERT INTO works_in VALUES (NULL, 2, 2);
-INSERT INTO works_in VALUES (NULL, 3, 3);
-INSERT INTO works_in VALUES (NULL, 1, 4);
-INSERT INTO works_in VALUES (NULL, 2, 5);
-INSERT INTO works_in VALUES (NULL, 1, 6);
-INSERT INTO works_in VALUES (NULL, 4, 7);
-INSERT INTO eats VALUES (NULL, 9, 1);
-INSERT INTO eats VALUES (NULL, 3, 2);
-INSERT INTO eats VALUES (NULL, 4, 2);
-INSERT INTO eats VALUES (NULL, 5, 3);
+INSERT INTO works_in VALUES (1, 1);
+INSERT INTO works_in VALUES (2, 2);
+INSERT INTO works_in VALUES (3, 3);
+INSERT INTO works_in VALUES (1, 4);
+INSERT INTO works_in VALUES (2, 5);
+INSERT INTO works_in VALUES (1, 6);
+INSERT INTO works_in VALUES (4, 7);
+INSERT INTO eats VALUES (9, 1);
+INSERT INTO eats VALUES (3, 2);
+INSERT INTO eats VALUES (4, 2);
+INSERT INTO eats VALUES (5, 3);
 
 
--- Syntax
-INSERT INTO zoo VALUES ('Zoo Name', FoundingYear);
-INSERT INTO enclosure VALUES (NULL, 'Insert Name');
-INSERT INTO animal VALUES (NULL, 'Insert Name', 'Insert Type', EnclosureID);
-INSERT INTO food VALUES (NULL, 'Insert Name', InsertAmount, 'Insert Unit', Insert.Price);
-INSERT INTO zookeeper VALUES (NULL, 'Insert First Name', 'Insert Last Name');
-INSERT INTO works_in VALUES (NULL, ZookeeperID, EnclosureID);
-INSERT INTO eats VALUES (NULL, AnimalID, FoodNr);

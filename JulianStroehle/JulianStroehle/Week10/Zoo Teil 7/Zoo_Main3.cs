@@ -5,7 +5,7 @@ namespace JulianStroehle.Week10;
 
 internal class Zoo_Main3
 {
-    private static Zoo zoo;
+    private static Zoo? zoo;
     private static StreamReader str = new("C:/Users/JUSR/Desktop/-/PW.txt");
     private static string databaseConnectionString = $"server=localhost;userid=root;password={str.ReadLine()};";
     private static string query = "";
@@ -15,21 +15,62 @@ internal class Zoo_Main3
     {
         using (conn)
         {
-            try
-            {
+            // try
+            // {
                 conn.Open();
                 query = @"
 CREATE DATABASE IF NOT EXISTS dcvzoo;
+
 USE dcvzoo;
+
 DROP TABLE IF EXISTS zoo;
-CREATE TABLE zoo (Name VARCHAR(50) PRIMARY KEY, FoundingYear YEAR);
-INSERT INTO zoo VALUES ('Animal Well', 2024);
-CREATE TABLE IF NOT EXISTS enclosure (EnclosureID INT PRIMARY KEY AUTO_INCREMENT, Name VARCHAR(50));
-CREATE TABLE IF NOT EXISTS animal (AnimalID INT, Name VARCHAR(50), Type VARCHAR(50), EnclosureID INT, PRIMARY KEY (AnimalID, EnclosureID), FOREIGN KEY (EnclosureID) REFERENCES enclosure(EnclosureID));
-CREATE TABLE IF NOT EXISTS food (FoodNr INT PRIMARY KEY AUTO_INCREMENT, Name VARCHAR(50), Amount INT, Unit VARCHAR(5), Price DOUBLE);
-CREATE TABLE IF NOT EXISTS zookeeper (ZookeeperID INT PRIMARY KEY AUTO_INCREMENT, Name VARCHAR(20), LastName VARCHAR(40));
-CREATE TABLE IF NOT EXISTS works_in (ID INT PRIMARY KEY AUTO_INCREMENT, ZookeeperID INT, EnclosureID INT, FOREIGN KEY (ZookeeperID) REFERENCES zookeeper(ZookeeperID), FOREIGN KEY (EnclosureID) REFERENCES enclosure(EnclosureID));
-CREATE TABLE IF NOT EXISTS eats (ID INT PRIMARY KEY AUTO_INCREMENT, AnimalID INT, EnclosureID INT, FoodNr INT, FOREIGN KEY (AnimalID) REFERENCES animal(AnimalID), FOREIGN KEY (EnclosureID) REFERENCES animal(EnclosureID), FOREIGN KEY (FoodNr) REFERENCES food(FoodNr));";
+
+CREATE TABLE zoo (ZooID INT PRIMARY KEY AUTO_INCREMENT, Name VARCHAR(50), FoundingYear YEAR);
+INSERT INTO zoo VALUES (NULL, 'Animal Well', 2024);
+CREATE TABLE IF NOT EXISTS enclosure (
+    EnclosureID INT PRIMARY KEY AUTO_INCREMENT,
+    Name VARCHAR(50)
+);
+
+CREATE TABLE IF NOT EXISTS animal (
+    AnimalID INT AUTO_INCREMENT,
+    Name VARCHAR(50),
+    Type VARCHAR(50),
+    EnclosureID INT,
+    PRIMARY KEY (AnimalID, EnclosureID),
+    FOREIGN KEY (EnclosureID) REFERENCES enclosure(EnclosureID)
+);
+
+CREATE TABLE IF NOT EXISTS food (
+    FoodNr INT PRIMARY KEY AUTO_INCREMENT,
+    Name VARCHAR(50),
+    Amount INT,
+    Unit VARCHAR(5),
+    Price DOUBLE
+);
+
+CREATE TABLE IF NOT EXISTS zookeeper (
+    ZookeeperID INT PRIMARY KEY AUTO_INCREMENT,
+    Name VARCHAR(20),
+    LastName VARCHAR(40)
+);
+
+CREATE TABLE IF NOT EXISTS works_in (
+    ID INT PRIMARY KEY AUTO_INCREMENT,
+    ZookeeperID INT,
+    EnclosureID INT,
+    FOREIGN KEY (ZookeeperID) REFERENCES zookeeper(ZookeeperID),
+    FOREIGN KEY (EnclosureID) REFERENCES enclosure(EnclosureID)
+);
+
+CREATE TABLE IF NOT EXISTS eats (
+    ID INT PRIMARY KEY AUTO_INCREMENT,
+    AnimalID INT,
+    FoodNr INT,
+    FOREIGN KEY (AnimalID) REFERENCES animal(AnimalID),
+    FOREIGN KEY (FoodNr) REFERENCES food(FoodNr)
+);";
+
                 MySqlCommand cmd = new(query, conn);
                 cmd.ExecuteNonQuery();
                 for (int i = 0; i < 7; i++)
@@ -48,29 +89,84 @@ CREATE TABLE IF NOT EXISTS eats (ID INT PRIMARY KEY AUTO_INCREMENT, AnimalID INT
                     query = $"SELECT * FROM {table};";
                     MySqlCommand cmnd = new(query, conn);
                     MySqlDataReader rdr = cmnd.ExecuteReader();
+                    List<int> enclosureIDs = new List<int>();
+                    int animalID;
                     while (rdr.Read())
                     {
                         switch (table)
                         {
-                            case "zoo": zoo = new Zoo(rdr.GetString("Name"), DateTime.Now); break;
-                            case "enclosure": Enclosure enclosure = new Enclosure(rdr.GetString("Name"), rdr.GetInt32("EnclosureID")); zoo.Enclosures.Add(enclosure); break;
-                            case "animal": Animal animal = new Animal(rdr.GetString("Name"), rdr.GetString("Type"), rdr.GetInt32("AnimalID")); zoo.Enclosures[rdr.GetInt32("EnclosureID") - 1].AddAnimal(animal); break;
-                            case "food": Food food = new Food(rdr.GetString("Name"), rdr.GetString("Unit"), rdr.GetInt32("Amount"), rdr.GetDouble("Price"), rdr.GetInt32("FoodNr")); zoo.Foods.Add(food); break;
-                            case "zookeeper": Zookeeper keeper = new Zookeeper(rdr.GetInt32("ZookeeperID"), rdr.GetString("Name"), rdr.GetString("LastName")); zoo.Zookeepers.Add(keeper); break;
-                            case "works_in": zoo.Zookeepers[rdr.GetInt32("ZookeeperID") - 1].EnclosureList.Add(zoo.Enclosures[rdr.GetInt32("EnclosureID") - 1]); break;
-                            case "eats":; zoo.Enclosures[rdr.GetInt32("EnclosureID") - 1].Animals[rdr.GetInt32("AnimalID") - 1].SumFood.Add(zoo.Foods[rdr.GetInt32("FoodNr") - 1], zoo.Foods[rdr.GetInt32("FoodNr") - 1].Amount); break;
+                            case "zoo":
+                                zoo = new Zoo(
+                                    rdr.GetInt32("ZooID"),
+                                    rdr.GetString("Name"),
+                                    new DateTime(2024, 12, 11)
+                                );
+                                break;
+                            case "enclosure":
+                                Enclosure enclosure = new Enclosure(
+                                    rdr.GetString("Name"),
+                                    rdr.GetInt32("EnclosureID")
+                                );
+                                zoo.Enclosures.Add(enclosure);
+                                break;
+                            case "animal":
+                                Animal animal = new Animal(
+                                    rdr.GetString("Name"),
+                                    rdr.GetString("Type"),
+                                    rdr.GetInt32("AnimalID")
+                                );
+                                zoo.Enclosures[rdr.GetInt32("EnclosureID") - 1].
+                                AddAnimal(animal);
+                                break;
+                            case "food":
+                                Food food = new Food(
+                                    rdr.GetString("Name"),
+                                    rdr.GetString("Unit"),
+                                    rdr.GetInt32("Amount"),
+                                    rdr.GetDouble("Price"),
+                                    rdr.GetInt32("FoodNr")
+                                );
+                                zoo.Foods.Add(food);
+                                break;
+                            case "zookeeper":
+                                Zookeeper keeper = new Zookeeper(
+                                    rdr.GetInt32("ZookeeperID"),
+                                    rdr.GetString("Name"),
+                                    rdr.GetString("LastName")
+                                );
+                                zoo.Zookeepers.Add(keeper);
+                                break;
+                            case "works_in":
+                                zoo.Zookeepers[rdr.GetInt32("ZookeeperID") - 1].
+                                EnclosureList.Add(zoo.Enclosures[rdr.GetInt32("EnclosureID") - 1]);
+                                break;
+                            case "eats":
+                                animalID = rdr.GetInt32("AnimalID");
+                                foreach (Enclosure enclosure1 in zoo.Enclosures)
+                                {
+                                    foreach (Animal animal1 in enclosure1.Animals)
+                                    {
+                                        if (animal1.ID == animalID)
+                                        {
+                                            animal1.SumFood.Add(zoo.Foods[rdr.GetInt32("FoodNr") - 1],
+                                            zoo.Foods[rdr.GetInt32("FoodNr") - 1].
+                                            Amount);
+                                        }
+                                    }
+                                }
+                                break;
                         }
                     }
                     rdr.Close();
                 }
                 Continue();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                conn.Close();
-                Start();
-            }
+            // }
+            // catch (Exception ex)
+            // {
+            //     Console.WriteLine(ex.Message);
+            //     conn.Close();
+            //     Start();
+            // }
         }
     }
 
@@ -79,22 +175,62 @@ CREATE TABLE IF NOT EXISTS eats (ID INT PRIMARY KEY AUTO_INCREMENT, AnimalID INT
         string action;
         do
         {
-            Console.WriteLine(
-                "\nAction:\n\n1. Add Enclosure\n2. Remove Enclosure\n3. Add Zookeeper\n4. Remove Zookeeper\n5. Add Animal\n6. Remove Animal\n7. Add Food to Animal\n8. Remove Food from Animal\n9. Get Zoo Info\n10. Start Simulation\nE. Exit");
+            Console.WriteLine(@"
+Action:
+                
+1. Add Enclosure
+2. Remove Enclosure
+3. Add Zookeeper
+4. Remove Zookeeper
+5. Add Animal
+6. Remove Animal
+7. Add Food to Animal
+8. Remove Food from Animal
+9. Get Zoo Info
+10. Get IDs
+11. Start Simulation
+12. End Day
+E. Exit"
+);
             action = Console.ReadLine();
-            Console.Clear();
             switch (action)
             {
-                case "1": AddEnclosure(); break;
-                case "2": RemoveEnclosure(); break;
-                case "3": AddKeeper(); break;
-                case "4": RemoveKeeper(); break;
-                case "5": AddAnimal(); break;
-                case "6": RemoveAnimal(); break;
-                case "7": AddFood(); break;
-                case "8": RemoveFood(); break;
-                case "9": GetInfo(); break;
-                case "10": Simulation(); break;
+                case "1":
+                    AddEnclosure();
+                    break;
+                case "2":
+                    RemoveEnclosure();
+                    break;
+                case "3":
+                    AddKeeper();
+                    break;
+                case "4":
+                    RemoveKeeper();
+                    break;
+                case "5":
+                    AddAnimal();
+                    break;
+                case "6":
+                    RemoveAnimal();
+                    break;
+                case "7":
+                    AddFood();
+                    break;
+                case "8":
+                    RemoveFood();
+                    break;
+                case "9":
+                    GetInfo();
+                    break;
+                case "10":
+                    GetIDs();
+                    break;
+                case "11":
+                    Simulation();
+                    break;
+                case "12": 
+                    DayEnd();
+                    break;
             }
         } while (action.ToLower() != "e");
     }
@@ -114,7 +250,7 @@ CREATE TABLE IF NOT EXISTS eats (ID INT PRIMARY KEY AUTO_INCREMENT, AnimalID INT
     {
         Console.WriteLine("ID of Enclosure?");
         int id = int.Parse(Console.ReadLine());
-        zoo.RemoveEnclosure(id-1);
+        zoo.RemoveEnclosure(id - 1);
         Delete("works_in", "EnclosureID", id);
         Delete("enclosure", id);
     }
@@ -216,7 +352,7 @@ CREATE TABLE IF NOT EXISTS eats (ID INT PRIMARY KEY AUTO_INCREMENT, AnimalID INT
                 {
                     animal.SumFood.Add(food, count);
                     Console.WriteLine(food.Name + " added to " + animal.Name);
-                    Insert("eats", $"NULL, {animal.ID}, '{invoiceNumber}'");
+                    Insert("eats", $"NULL, {animal.ID}, {invoiceNumber}");
                 }
             }
     }
@@ -244,7 +380,11 @@ CREATE TABLE IF NOT EXISTS eats (ID INT PRIMARY KEY AUTO_INCREMENT, AnimalID INT
 
     static void GetInfo()
     {
-        Console.WriteLine(zoo.GetZooInfo());
+        Console.WriteLine(zoo.GetInfo());
+    }
+    static void GetIDs()
+    {
+        Console.WriteLine(zoo.GetIDs());
     }
 
     static void Insert(string table, string values)
@@ -269,10 +409,10 @@ CREATE TABLE IF NOT EXISTS eats (ID INT PRIMARY KEY AUTO_INCREMENT, AnimalID INT
         string sure = Console.ReadLine();
         if (sure == "yes")
             query = $"DELETE FROM {table} WHERE {table}ID = {ID}{more}";
-            Console.WriteLine("Successfully deleted " + name);
+        Console.WriteLine("Successfully deleted " + name);
         MySqlCommand cmnd = new(query, conn);
         cmnd.ExecuteNonQuery();
-        
+
     }
 
     static void Delete(string table, string col, int ID)
@@ -317,6 +457,87 @@ CREATE TABLE IF NOT EXISTS eats (ID INT PRIMARY KEY AUTO_INCREMENT, AnimalID INT
             else
             {
                 Console.WriteLine("\n" + zookeeper.FirstName + " is watching over his favorite animal " + zookeeper.favAnimal.Name);
+            }
+        }
+        Console.WriteLine();
+        foreach (Enclosure enclosure in zoo.Enclosures)
+        {
+            foreach (Animal animal in enclosure.Animals)
+            {
+                if (animal.Health > 0)
+                {
+                    Attack(animal, enclosure);
+                }
+                else
+                {
+                    Console.WriteLine(animal.Name + " can't attack cause it fainted.");
+                }
+                Random rdm = new Random();
+                int heal = rdm.Next(0, 100);
+                if (animal.Health < 20 && heal < 11)
+                {
+                    animal.Health = 100;
+                    Console.WriteLine("Ali Gökdemir the vet healed " + animal.Name + " to full health.");
+                }
+            }
+        }
+    }
+    static void Attack(Animal animal, Enclosure enclosure)
+    {
+        Random rdm = new Random();
+        int percent = rdm.Next(0, 101);
+        if (percent < 41)
+        {
+            int rand = rdm.Next(0, enclosure.Animals.Count);
+            if (animal.Name != enclosure.Animals[rand].Name)
+            {
+                Console.WriteLine(animal.Name + " bit " + enclosure.Animals[rand].Name + " for " + animal.Attack + " damage.");
+                enclosure.Animals[rand].Health -= animal.Attack;
+            }
+            else
+            {
+                Attack(animal, enclosure);
+            }
+        }
+        else
+        {
+            Console.WriteLine(animal.Name + " did not attack.");
+        }
+    }
+    static void DayEnd()
+    {
+        foreach (Enclosure enclosure in zoo.Enclosures)
+        {
+            List<int> ids = new List<int>();
+            foreach (Animal animal in enclosure.Animals)
+            {
+                if (animal.Health <= 0)
+                {
+                    ids.Add(animal.ID);
+                    Console.WriteLine("Removed " + animal.Name + " cause it was dead");
+                }
+            }
+            foreach (int id in ids)
+            {
+                enclosure.RemoveAnimal(id);
+            }
+        }
+        Random rdm = new Random();
+        foreach (Enclosure enclosure in zoo.Enclosures)
+        {
+            foreach (Animal animal in enclosure.Animals)
+            {
+                int regen = rdm.Next(0, 30);
+                if (animal.Health + regen < 100)
+                {
+                    animal.Health += regen;
+                    Console.WriteLine(animal.Name + " regenerated " + regen + " health");
+                }
+                else if (animal.Health + regen >= 100)
+                {
+                    animal.Health = 100;
+                    Console.WriteLine(animal.Name + " is on full health and cant regenerate at the moment");
+                }
             }
         }
     }

@@ -1,15 +1,17 @@
 using System;
 namespace JulianStroehle.Week10
 {
-    internal class Zoo
+    internal class Zoo: IOutput
     {
+        internal int ZooID;
         internal string Name;
         internal DateTime FoundingYear;
         internal List<Enclosure> Enclosures;
         internal List<Zookeeper> Zookeepers;
         internal List<Food> Foods;
-        internal Zoo(string name, DateTime foundingYear)
+        internal Zoo(int id, string name, DateTime foundingYear)
         {
+            ZooID = id;
             Name = name;
             FoundingYear = foundingYear;
             Enclosures = new List<Enclosure>();
@@ -22,7 +24,7 @@ namespace JulianStroehle.Week10
         }
         internal void RemoveKeeper(int id)
         {
-            Zookeepers.RemoveAt(id-1);
+            Zookeepers.RemoveAt(id - 1);
         }
         internal void AddEnclosure(Enclosure enclosure)
         {
@@ -30,7 +32,7 @@ namespace JulianStroehle.Week10
         }
         internal void RemoveEnclosure(int id)
         {
-            Enclosures.RemoveAt(id-1);
+            Enclosures.RemoveAt(id - 1);
         }
         internal void AddFood(Food food)
         {
@@ -38,27 +40,39 @@ namespace JulianStroehle.Week10
         }
         internal void RemoveFood(int id)
         {
-            Foods.RemoveAt(id-1);
+            Foods.RemoveAt(id - 1);
         }
-        internal string GetZooInfo()
+        public string GetInfo()
         {
             double sumPrice = 0;
             string returnValue = string.Format("┌── Zoo: {0}, Founded: {1}", Name, FoundingYear.ToString("yyyy"));
-            foreach (Enclosure enclosure in Enclosures)
+            foreach (Zookeeper zookeeper in Zookeepers)
             {
-                returnValue += "\n│  └── " + enclosure.GetInfo();
-                foreach (Animal animal in enclosure.Animals)
+                foreach (Enclosure enclosure in zookeeper.EnclosureList)
                 {
-                    foreach (Food food in animal.SumFood.Keys)
+                    returnValue += "\n│  └── " + enclosure.GetInfo() + $", Keeper: {zookeeper.FirstName} {zookeeper.LastName}" + enclosure.GetAnimalsInfo();
+                    foreach (Animal animal in enclosure.Animals)
                     {
-                        sumPrice += food.GetPrice(animal.SumFood[food]);
+                        foreach (Food food in animal.SumFood.Keys)
+                        {
+                            sumPrice += food.GetPrice(animal.SumFood[food]);
+                        }
                     }
                 }
             }
             returnValue += "\n└" + new string('─', 46);
             returnValue += "\n" + string.Format("{0,-19}", "Sum of price for food:") + string.Format("{0,24}", Math.Round(sumPrice, 2) + " €");
             return returnValue;
-
         }
+        public string GetIDs()
+        {
+            string returnValue = "";
+            foreach (Enclosure enclosure in Enclosures)
+            {
+                returnValue += "\n\n" + enclosure.Name + " " + enclosure.ID + "\n" + enclosure.GetIDs();
+            }
+            return returnValue;
+        }
+
     }
 }
