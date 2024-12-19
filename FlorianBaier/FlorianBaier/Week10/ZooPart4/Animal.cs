@@ -7,7 +7,7 @@ namespace FlorianBaier.Week10.ZooPart4
     {
         public string Name { get; set; }
         public string Species { get; set; }
-        private Dictionary<Food, double> Menu { get; set; }
+        public Dictionary<Food, double> Menu { get; set; }
 
         public Animal(string name, string species)
         {

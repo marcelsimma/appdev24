@@ -1,45 +1,53 @@
 using System;
 using System.Runtime.InteropServices.Marshalling;
 using CheyenneHarbarth.Zoo.Zoostructure.Animals;
+using Mysqlx.Crud;
 
 namespace CheyenneHarbarth.Zoo.Zoostructure
 {
     internal class Enclosure
     {
-        private string Enclosurename;
-        internal string _Enclosurename
+        private string _enclosureName;
+        internal string EnclosureName
         {
-            get => Enclosurename;
-            set => Enclosurename = value;
+            get => _enclosureName;
+            set => _enclosureName = value;
         }
 
-        private int EnclosureNr;
-        internal int _EnclosureNr
+        private int _enclosureNr;
+        internal int EnclosureNr
         {
-            get => EnclosureNr;
-            set => EnclosureNr = value;
+            get => _enclosureNr;
+            set => _enclosureNr = value;
         }
 
-        internal List<Animal> Animals = new List<Animal>();
+        internal List<Animal> animals;
 
-        internal Enclosure(int enclosurenr, string enclosurename)
+        internal Enclosure(int enclosureNr, string enclosureName)
         {
-            Enclosurename = enclosurename;
-            EnclosureNr = enclosurenr;
-        }
-        internal void AddAnimal(Animal animalname)
-        {
-
-            Animals.Add(animalname);
+            _enclosureName = enclosureName;
+            _enclosureNr = enclosureNr;
+            animals = new List<Animal>();
         }
 
-        internal void RemoveAnimal(string animalname)
+        internal Enclosure()
         {
-            foreach (Animal animal in Animals)
+            _enclosureName = Console.ReadLine();
+        }
+
+        internal void AddAnimal(Animal animalName)
+        {
+
+            animals.Add(animalName);
+        }
+
+        internal void RemoveAnimal(string animalName)
+        {
+            foreach (Animal animal in animals)
             {
-                if (animal._Animalname == animalname)
+                if (animal.AnimalName == animalName)
                 {
-                    Animals.Remove(animal);
+                    animals.Remove(animal);
                     break;
                 }
             }
