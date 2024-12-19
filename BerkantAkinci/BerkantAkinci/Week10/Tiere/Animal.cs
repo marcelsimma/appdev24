@@ -9,7 +9,6 @@ namespace BerkantAkinci.Week10
         public double Health;
         public double Bite;
 
-
         public Dictionary<AnimalFood, double> animalFoodList;
 
         public Animal(string animalName, string species, double health, double bite)
