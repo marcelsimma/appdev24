@@ -3,7 +3,7 @@ namespace JulianStroehle.Week7
 {
     internal class Hangman
     {
-        static int Mistakes = 0;
+        static int Mistakes = 10;
         internal static void WrongInput()
         {
             Mistakes++;
@@ -14,11 +14,11 @@ namespace JulianStroehle.Week7
             }
             if (Mistakes > 4)
             {
-                Console.WriteLine("   │   ⁄               │\n   │  ⁄                │\n   │ ⁄                 │\n   │⁄                 _│_");
+                Console.WriteLine("   │   /               │\n   │  /                │\n   │ /                 │\n   │/                 _│_");
             }
             else if (Mistakes > 2)
             {
-                Console.WriteLine("   │   ⁄\n   │  ⁄\n   │ ⁄\n   │⁄");
+                Console.WriteLine("   │   /\n   │  /\n   │ /\n   │/");
             }
             if (Mistakes > 9)
             {
@@ -30,11 +30,11 @@ namespace JulianStroehle.Week7
             }
             if (Mistakes > 9)
             {
-                Console.WriteLine("   │                ~~~│~~~\n   │                   │\n   │                   │\n   │                  ⁄ \\\n   │                 ⁄   \\\n   │           ⁄\\  ⁄\\  ⁄\\  ⁄\\  ⁄\\  \n   │          ⁄  \\⁄  \\⁄  \\⁄  \\⁄  \\");
+                Console.WriteLine("   │                ~~~│~~~\n   │                   │\n   │                   │\n   │                  / \\\n   │                 /   \\\n   │           /\\  /\\  /\\  /\\  /\\  \n   │          /  \\/  \\/  \\/  \\/  \\");
             }
             else if (Mistakes > 8)
             {
-                Console.WriteLine("   │                ~~~│~~~\n   │                   │\n   │                   │\n   │                  ⁄ \\\n   │                 ⁄   \\\n   │\n   │");
+                Console.WriteLine("   │                ~~~│~~~\n   │                   │\n   │                   │\n   │                  / \\\n   │                 /   \\\n   │\n   │");
             }
             else if (Mistakes > 7)
             {
@@ -50,11 +50,11 @@ namespace JulianStroehle.Week7
             }
             if (Mistakes > 9)
             {
-                Console.WriteLine(" __│__       (       (°)(°)       )\n⁄_____\\~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                Console.WriteLine(" __│__       (       (°)(°)       )\n/_____\\~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
             }
             else if (Mistakes > 0)
             {
-                Console.WriteLine(" __│__ \n⁄_____\\~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                Console.WriteLine(" __│__ \n/_____\\~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
             }
         }
     }

@@ -7,14 +7,12 @@ namespace BerkantAkinci.Week10
     public class Zoo
     {
         public string ZooName;
-
         public List<ZooWorker> WorkersList = new List<ZooWorker>();
-
+        public List<Animal> Animals;
         public int FoundingYear;
-
         public List<Enclosure> EnclosureList;
-
         public Dictionary<AnimalFood, double> DemandList;
+        public List<AnimalDoctor> DoctorList;
 
         public Zoo(string zooName, int foundingYear)
         {
@@ -22,6 +20,9 @@ namespace BerkantAkinci.Week10
             FoundingYear = foundingYear;
             DemandList = new Dictionary<AnimalFood, double>();
             EnclosureList = new List<Enclosure>();
+            DoctorList = new List<AnimalDoctor>();
+            Animals = new List<Animal>();
+
         }
 
         public void PrintAll()
@@ -79,6 +80,16 @@ namespace BerkantAkinci.Week10
         public void RemoveZooWorker(ZooWorker zooWorker)
         {
             WorkersList.Remove(zooWorker);
+        }
+
+        public void AddDoctor(AnimalDoctor animalDoctor)
+        {
+            DoctorList.Add(animalDoctor);
+        }
+
+        public void RemoveDoctor(AnimalDoctor animalDoctor)
+        {
+            DoctorList.Remove(animalDoctor);
         }
 
         public void ZooStructure()
@@ -142,22 +153,43 @@ namespace BerkantAkinci.Week10
             }
         }
 
-        public void ExtendendSimulation()
+        public void HealthAndBite()
         {
             foreach (Enclosure enclosure in EnclosureList)
             {
-                System.Console.WriteLine($"{enclosure.EnclosureName}");
+                System.Console.WriteLine($"{enclosure.EnclosureName}:");
 
                 foreach (Animal animal in enclosure.Animals)
                 {
                     double restHealth = animal.Health - animal.Bite;
                     System.Console.WriteLine($"{animal.AnimalName} ({animal.Species}) wurde gebissen, ihr/sein restliches Leben beträgt {restHealth}.");
 
+
                 }
                 System.Console.WriteLine();
             }
+        }
 
+        public void DoctorHelp()
+        {
+            foreach (AnimalDoctor animalDoctor in DoctorList)
+            {
+                foreach (Enclosure enclosure in animalDoctor.EnclosureList)
+                {
+                    foreach (Animal animal in enclosure.Animals)
+                    {
+                        double restHealth = animal.Health - animal.Bite;
+                        double newHealth = restHealth * 1.01;
 
+                    
+
+                        System.Console.Write($"{animalDoctor.DoctorName} geht zum Gehege ");
+                        System.Console.Write($"'{enclosure.EnclosureName}' und heilt das Tier , ");
+                        System.Console.WriteLine($"{animal.AnimalName} ({animal.Species}) von {restHealth} auf {newHealth}");
+                    }
+                }
+                System.Console.WriteLine();
+            }
         }
     }
 }

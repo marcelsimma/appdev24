@@ -7,14 +7,20 @@ namespace SimonJochum.Week10.Zoo.Zoo_Part1
         private string _name { get; set; }
         private DateTime _foundingYear { get; set; }
         private List<Enclosure> _enclosures { get; set; } = new List<Enclosure>();
+        private List<Food> _foods;
         private List<(string FoodName, string Unit, double Quantity, double TotalCost)> _totalFood
         = new List<(string FoodName, string Unit, double Quantity, double TotalCost)>();
-        private List<Zookeeper> _totalZookeepers = new List<Zookeeper>();
+        private List<Zookeeper> _totalZookeepers { get; set; } = new List<Zookeeper>();
+
+        public List<Zookeeper> TotalZookeepers => _totalZookeepers;
+        public List<Food> Foods => _foods;
+        public List<Enclosure> Enclosures => _enclosures;
 
         public Zoo(string name, DateTime foundingYear)
         {
             _name = name;
             _foundingYear = foundingYear;
+            _foods = new List<Food>();
         }
 
         public void AddEnclosure(Enclosure enclosure)
@@ -36,9 +42,19 @@ namespace SimonJochum.Week10.Zoo.Zoo_Part1
             }
         }
 
+        public void AddFood(Food food)
+        {
+            _foods.Add(food);
+        }
+
         public Enclosure GetEnclosure(string enclosureName)
         {
             return _enclosures.Find(enclosure => enclosure.Name == enclosureName);
+        }
+
+        public Zookeeper GetZookeeper(string zookeeperName)
+        {
+            return _totalZookeepers.Find(zookeeper => zookeeper.Name == zookeeperName);
         }
 
         public string PrintZoo()
@@ -116,6 +132,34 @@ namespace SimonJochum.Week10.Zoo.Zoo_Part1
         public void AddZookeeper(Zookeeper zookeeper)
         {
             _totalZookeepers.Add(zookeeper);
+        }
+
+        public void SimulateDay()
+        {
+            bool running = true;
+            Console.WriteLine($"Beginne die Tagessimulation für den Zoo {_name}.");
+            while (running)
+            {
+                HashSet<string> visitedEnclosures = new HashSet<string>();
+
+                foreach (var zookeeper in _totalZookeepers)
+                {
+                    zookeeper.SimulateDay(visitedEnclosures);
+                }
+
+                foreach (var enclosure in _enclosures)
+                {
+                    enclosure.SimulateDay();
+                }
+
+                Console.WriteLine("Möchtest du noch einen Tag simulieren? Ja/Nein");
+                string choice = Console.ReadLine().ToLower();
+                if (choice == "nein")
+                {
+                    running = false;
+                }
+            }
+            Console.WriteLine("Tagessimulation abgeschlossen.");
         }
     }
 }
