@@ -5,15 +5,15 @@ namespace BerkantAkinci.Week10
     public class Enclosure
     {
         public string EnclosureName;
-    
 
-        public List<Animal> Animals = new List<Animal>();
-        public List<ZooWorker> WorkersList = new List<ZooWorker>();
+        public List<Animal> Animals;
+        public List<ZooWorker> WorkersList;
 
         public Enclosure(string enclosureName)
         {
             EnclosureName = enclosureName;
-
+            Animals = new List<Animal>();
+            WorkersList = new List<ZooWorker>();
         }
 
         public void AddAnimal(Animal AnimalName)
