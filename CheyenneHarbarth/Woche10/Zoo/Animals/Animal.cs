@@ -21,23 +21,31 @@ namespace CheyenneHarbarth.Zoo.Zoostructure.Animals
             set => Animalrace = value;
         }
 
-        internal Dictionary<Food, int> Requirement = new Dictionary<Food, int>();
+        internal Dictionary<Food, double> Requirement = new Dictionary<Food, double>();
 
-        internal Animal(string animalname, string animalrace, Food food, int foodamount)
+        internal Animal(string animalname, string animalrace)
         {
             Animalname = animalname;
             Animalrace = animalrace;
-            Requirement.Add(food, foodamount);
         }
 
-        internal void AddFood(Food food, int foodamount)
+        internal void AddFood(Food food, double foodamount)
         {
             Requirement.Add(food, foodamount);
         }
 
         public override string ToString()
         {
-            return String.Format(Animalrace + ", " + Animalname);
+            return $"{Animalname}, {Animalrace}";
+        }
+
+        public void PrintAnimalAndFood()
+        {
+            Console.WriteLine($"{Animalname}, {Animalrace}\nFutter: ");
+            foreach (KeyValuePair<Food, double> food in Requirement)
+            {
+                Console.WriteLine($"   {food.Key._Foodname,-18}{food.Value,6:F1} {food.Key._Measurement,-3}");
+            }
         }
     }
 }

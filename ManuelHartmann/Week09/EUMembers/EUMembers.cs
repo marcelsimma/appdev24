@@ -2,8 +2,6 @@
 
 using System;
 using MySql.Data.MySqlClient;
-using ZstdSharp.Unsafe;
-
 
 namespace ManuelHartmann.Week09.EUMembers
 {

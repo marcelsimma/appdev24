@@ -15,6 +15,7 @@ using MarcelSimma.Week07;
 using MarcelSimma.Week07.BrowserHistory;
 using MarcelSimma.Week09;
 using MarcelSimma.Week10;
+using MarcelSimma.Week10.Kompetenznachweis3;
 
 namespace MarcelSimma
 {
@@ -68,7 +69,9 @@ namespace MarcelSimma
             //Bankaccount.Start();
             // RepetitionStreams.Start();
             //MysqlConnectExample.Start();
-            CountriesAndMountains.Start();
+           // CountriesAndMountains.Start();
+        //TaskExample.Start();
+        CountriesAndRivers.Start();
 
         }
 

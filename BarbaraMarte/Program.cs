@@ -26,8 +26,11 @@ using BarbaraMarte.Zoo.Part2;
 using BarbaraMarte.Zoo.Part3;
 using BarbaraMarte.Zoo.Part4;
 using BarbaraMarte.Week10.Test;
+using BarbaraMarte.Zoo.InputDatenbank;
+using BarbaraMarte.Zoo;
 
 namespace BarbaraMarte.Week08.Test
+
 {
     class Program
     {
@@ -38,12 +41,17 @@ namespace BarbaraMarte.Week08.Test
 
 
             // Zoo
-            ZooMain4.Start();
+            // ZooMain4.Start();
+           
 
+            // InputSQUALE.Start();
 
 
             // AdventOfCode
-            // Day1Part1.Print();
+            // Day1Part1_2024.Print();
+            // Day1Part2_2024.Print();
+            // Day2Part1_2024.Start();
+            // Day1Part2_2019.Start();
 
 
 

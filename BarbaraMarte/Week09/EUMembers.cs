@@ -28,7 +28,7 @@ namespace BarbaraMarte.Week09
                         MySqlCommand command = new MySqlCommand(query, connection);
                         // command.Parameters.AddWithValue("@code", "A");   is for the placeholder
                         int count = 1;
-                        using (MySqlDataReader reader = command.ExecuteReader())
+                        using (MySqlDataReader reader = command.ExecuteReader())        // command to insert data in the data bank ExecuteNonQuery
                         {
                             while (reader.Read())
                             {
