@@ -12,6 +12,18 @@ namespace BerkantAkinci.Week10
             Zoo myZoo = new Zoo("Tierparadies Dornbirn", 1864);
             CreateInitialise.CreateZoo("Tierparadies Dornbirn", 1864);
 
+            AnimalDoctor Hasan = new AnimalDoctor("Hasan");
+            AnimalDoctor Ali = new AnimalDoctor("Ali");
+            AnimalDoctor Hans = new AnimalDoctor("Hans");
+            AnimalDoctor Karsten = new AnimalDoctor("Karsten");
+
+            myZoo.AddDoctor(Hasan);
+            myZoo.AddDoctor(Ali);
+            myZoo.AddDoctor(Hans);
+            myZoo.AddDoctor(Karsten);
+
+            
+
             //Liste mit den Gehegen erstellen
             Enclosure Alpenwiese = new Enclosure("Alpenwiese");
             Enclosure Ried = new Enclosure("Ried");
@@ -22,6 +34,11 @@ namespace BerkantAkinci.Week10
             CreateInitialise.CreateEnclosure("Ried", "Tierparadies Dornbirn");
             CreateInitialise.CreateEnclosure("Terrarium", "Tierparadies Dornbirn");
             CreateInitialise.CreateEnclosure("Mix", "Tierparadies Dornbirn");
+
+            Hasan.AddEnclosure(Alpenwiese);
+            Ali.AddEnclosure(Ried);
+            Hans.AddEnclosure(Terrarium);
+            Karsten.AddEnclosure(Mix);
 
             //Liste mit den Gehegen einfügen
             myZoo.AddEnclosure(Alpenwiese);
@@ -35,13 +52,13 @@ namespace BerkantAkinci.Week10
             Animal Lucas = new Animal("Lucas", "Storch", 100, 5);
             Animal Alessio = new Animal("Alessio", "Storch", 100, 5);
             Animal Stefan = new Animal("Stefan", "Kalb", 100, 7);
-            Animal Florian = new Animal("Florian", "Alpaka", 100, 0.5);
+            Animal Florian = new Animal("Florian", "Alpaka", 100, 1.5);
             Animal Julian = new Animal("Julian", "Bartvogel", 100, 3);
             Animal Manuel = new Animal("Manuel", "Bonobo", 100, 2);
             Animal Simon = new Animal("Simon", "Brillenbär", 100, 35);
             Animal Barbara = new Animal("Barbara", "Flusspferd", 100, 60);
             Animal Cheyenne = new Animal("Cheyenne", "Schwarze Witwe", 100, 98);
-            Animal Berkant = new Animal("Berkant", "Bulldoggenameisen", 100, 0.01);
+            Animal Berkant = new Animal("Berkant", "Bulldoggenameisen", 100, 1);
 
             CreateInitialise.CreateAnimal("Nico", "Kuh", 1);
             CreateInitialise.CreateAnimal("Jonas", "Storch", 2);
@@ -220,10 +237,9 @@ namespace BerkantAkinci.Week10
 
             ReadInitialise.ReadWorker();
 
-
-
             myZoo.PrintSimulation1();
-            myZoo.ExtendendSimulation();
+            myZoo.HealthAndBite();
+            myZoo.DoctorHelp();
 
 
         }

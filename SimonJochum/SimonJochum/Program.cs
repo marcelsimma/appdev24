@@ -113,7 +113,10 @@ class Program
         // Init_Start.Start();
 
         //Week10
-        InitialiseZoo.StartZoo();
+        // InitialiseZoo.StartZoo();
+        // InitialiseZooWithDB.StartZooUserInput();
+        // InitialiseZooWithDB.StartZoo();
+        InitialiseZooFromDB.StartZooWithDB();
         // CountriesAndRivers.Start();
 
     }

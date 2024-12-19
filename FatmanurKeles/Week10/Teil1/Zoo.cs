@@ -10,7 +10,6 @@ namespace FatmanurKeles.Week10.Teil1
         public string Gruendungsjahr { get; set; }
         public List<Gehege> GehegeListe;
         public List<(string Name, string Einheit, double Einheitspreis, double kosten)> summeFutter = new List<(string Name, string Einheit, double Einheitspreis, double kosten)>();
-
         public Zoo(string zooname, string gruendungsjahr)
         {
             ZooName = zooname;
@@ -39,7 +38,7 @@ namespace FatmanurKeles.Week10.Teil1
                 Console.WriteLine($"\n|-- Gehege: {gehege.GehegeName}");
                 gehege.PrintTier();
                 FutterAusgabe();
-
+                gehege.PrintPfleger();
             }
         }
 
@@ -89,7 +88,7 @@ namespace FatmanurKeles.Week10.Teil1
 
             Console.WriteLine("_____________________________________________");
             Console.WriteLine($"Summe: {kosten,25} Euro");
-
+            
         }
     }
 }

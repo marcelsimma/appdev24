@@ -20,7 +20,9 @@ CREATE TABLE IF NOT EXISTS enclosure (
 CREATE TABLE IF NOT EXISTS animal (
     AnimalID INT AUTO_INCREMENT PRIMARY KEY, 
     Name VARCHAR(50) NOT NULL, 
-    Species VARCHAR(50)
+    Species VARCHAR(50),
+    EnclosureID INT,
+    FOREIGN KEY (EnclosureID) REFERENCES enclosure(EnclosureID)
     );
 CREATE TABLE IF NOT EXISTS food (
     EAN INT PRIMARY KEY, 
@@ -42,5 +44,5 @@ CREATE TABLE IF NOT EXISTS enclosure_zookeeper (
     ZookeeperID INT NOT NULL, 
     EnclosureID INT NOT NULL,
     PRIMARY KEY (ZookeeperID, EnclosureID), 
-    FOREIGN KEY (ZookeeperID) REFERENCES zookeeper(ZookeeperID), 
+    FOREIGN KEY (ZookeeperID) REFERENCES zookeeper (ZookeeperID), 
     FOREIGN KEY (EnclosureID) REFERENCES enclosure (EnclosureID));
