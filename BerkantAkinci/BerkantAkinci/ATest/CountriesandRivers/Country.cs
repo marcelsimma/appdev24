@@ -24,7 +24,6 @@ namespace BerkantAkinci.ATest
             {
                 try
                 {
-
                     connection.Open();
 
                     // Datenbank Abfrage erstellen
@@ -64,14 +63,14 @@ namespace BerkantAkinci.ATest
         {
             double sumLength = riversAndLength.Values.Sum();
             System.Console.WriteLine($"Flüsse in {Code}");
-            System.Console.WriteLine("---------------------------------------------------");
+            System.Console.WriteLine("-----------------------------------------------");
 
             foreach (KeyValuePair<string, double> riverAndLength in riversAndLength)
             {
-                System.Console.WriteLine($"{riverAndLength.Key,-10}{riverAndLength.Value,10:F2} km");
+                System.Console.WriteLine($"{riverAndLength.Key,-30}{riverAndLength.Value,10:F2} km");
             }
-            System.Console.WriteLine("---------------------------------------------------");
-            System.Console.WriteLine($"Gesamtlänge: {sumLength:F2} km");
+            System.Console.WriteLine("-----------------------------------------------");
+            System.Console.WriteLine($"{"Gesamtlänge:",-30} {sumLength,9:F2} km");
         }
     }
 }

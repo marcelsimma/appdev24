@@ -6,12 +6,19 @@ namespace BerkantAkinci.Week10
     {
         public string AnimalName;
         public string Species;
-        public Dictionary<AnimalFood, double> animalFoodList = new Dictionary<AnimalFood, double>();
+        public double Health;
+        public double Bite;
 
-        public Animal(string animalName, string species)
+
+        public Dictionary<AnimalFood, double> animalFoodList;
+
+        public Animal(string animalName, string species, double health, double bite)
         {
             AnimalName = animalName;
             Species = species;
+            Health = health;
+            Bite = bite;
+            animalFoodList = new Dictionary<AnimalFood, double>();
         }
 
         public void AddFood(AnimalFood animalFood, double amount)
@@ -21,7 +28,8 @@ namespace BerkantAkinci.Week10
 
         public void PrintFood()
         {
-            System.Console.WriteLine($"{AnimalName}, {Species}:");
+            System.Console.WriteLine("Tier und seine Nahrung:");
+            System.Console.WriteLine($"{AnimalName}, {Species}");
             foreach (KeyValuePair<AnimalFood, double> food in animalFoodList)
             {
                 double price = food.Key.UnitPrice * food.Value;

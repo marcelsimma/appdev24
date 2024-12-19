@@ -5,7 +5,7 @@ using BarbaraMarte.Week02;
 namespace BarbaraMarte.AdventOfCode;
 
 
-class Day1Part1
+class Day1Part1_2024
 {
     private static readonly List<int> _LeftSide = new List<int>();
     private static readonly List<int> _RightSide = new List<int>();
@@ -17,7 +17,7 @@ class Day1Part1
         string pattern = @"\d+";
         try
         {
-            using (StreamReader streamReader = new StreamReader("C:/Advent Of Code/Day1.txt"))
+            using (StreamReader streamReader = new StreamReader("C:/Advent Of Code/2024Day1.txt"))
             {
                 string line;
                 while ((line = streamReader.ReadLine()) != null)
