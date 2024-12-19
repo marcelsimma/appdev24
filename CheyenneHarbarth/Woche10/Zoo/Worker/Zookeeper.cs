@@ -1,40 +1,48 @@
 using System;
+using System.Runtime.CompilerServices;
 
 namespace CheyenneHarbarth.Zoo.Zoostructure.Worker
 {
     internal class Zookeeper
     {
-        private int KeeperID;
-        internal int _KeeperID
+        private int _keeperID;
+        internal int KeeperID
         {
-            get => KeeperID;
-            set => KeeperID = value;
+            get => _keeperID;
+            set => _keeperID = value;
         }
-        private string KeeperFirstname;
-        internal string _KeeperFirstname
+        private string _keeperFirstname;
+        internal string KeeperFirstname
         {
-            get => KeeperFirstname;
-            set => KeeperFirstname = value;
+            get => _keeperFirstname;
+            set => _keeperFirstname = value;
         }
-        private string KeeperLastname;
-        internal string _KeeperLastname
+        private string _keeperLastname;
+        internal string KeeperLastname
         {
-            get => KeeperLastname;
-            set => KeeperLastname = value;
+            get => _keeperLastname;
+            set => _keeperLastname = value;
         }
 
-        internal List<Enclosure> ResponsibleEnclosures = new List<Enclosure>();
+        internal List<Enclosure> responsibleEnclosures;
 
-        internal Zookeeper(int keeperid, string keeperfirstname, string keeperlastname)
+        internal Zookeeper(int keeperId, string keeperFirstname, string keeperLastname)
         {
-            KeeperID = keeperid;
-            KeeperFirstname = keeperfirstname;
-            KeeperLastname = keeperlastname;
+            _keeperID = keeperId;
+            _keeperFirstname = keeperFirstname;
+            _keeperLastname = keeperLastname;
+            responsibleEnclosures = new List<Enclosure>();
+        }
+
+        internal Zookeeper()
+        {
+            _keeperFirstname = Console.ReadLine();
+            _keeperLastname = Console.ReadLine();
         }
         internal void PrintResponsibleList()
         {
-            Console.WriteLine($"{_KeeperFirstname} {_KeeperLastname} ist für folgende Gehege zuständig:");
-            foreach (Enclosure enclosure in ResponsibleEnclosures)
+            Console.WriteLine($"{_keeperFirstname} {_keeperLastname} ist für folgende Gehege zuständig:");
+            foreach (Enclosure enclosure in responsibleEnclosures)
             {
                 Console.WriteLine($"{enclosure._EnclosureNr,5} | {enclosure._Enclosurename}");
             }

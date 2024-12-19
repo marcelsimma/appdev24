@@ -31,20 +31,24 @@ namespace CheyenneHarbarth.Zoo.Zoostructure
                         Zoo MyZoo = ReadZoo(connection);
                         MyZoo.PrintZoo();
 
+                        MyZoo.AddEnclosure(connection);
+
+                        MyZoo.PrintZoo();
+
                         /* foreach (Enclosure enclosure in MyZoo.Zoostructure)
                         {
                             foreach (Animal animal in enclosure.Animals)
                             {
                                 animal.PrintAnimalAndFood();
                             }
-                        } */
+                        }
 
                         foreach (Zookeeper zookeeper in MyZoo.Zookeepers)
                         {
                             zookeeper.PrintResponsibleList();
                         }
 
-                        MyZoo.CalculateFoodBill(MyZoo.FoodConsumption);
+                        MyZoo.CalculateFoodBill(MyZoo.FoodConsumption); */
 
                         connection.Close();
                     }
@@ -101,10 +105,10 @@ namespace CheyenneHarbarth.Zoo.Zoostructure
                 {
                     while (reader.Read())
                     {
-                        string Area = reader.GetString("Area");
-                        int EnclosureNr = reader.GetInt32("EnclosureNr");
+                        string area = reader.GetString("Area");
+                        int enclosureNr = reader.GetInt32("EnclosureNr");                   //Namenskonvention für lokale Variablen: camelCase
 
-                        MyZoo.Zoostructure.Add(new Enclosure(EnclosureNr, Area));
+                        MyZoo.zooStructure.Add(new Enclosure(enclosureNr, area));
                     }
 
                 }
@@ -113,13 +117,13 @@ namespace CheyenneHarbarth.Zoo.Zoostructure
                 {
                     while (reader.Read())
                     {
-                        string Foodname = reader.GetString("Foodname");
-                        double Price = reader.GetDouble("Price");
-                        string Measurement = reader.GetString("Measurement");
-                        int InventoryNr = reader.GetInt32("InventoryNr");
-                        double Amount = reader.GetDouble("Amount");
+                        string foodname = reader.GetString("Foodname");
+                        double price = reader.GetDouble("Price");
+                        string measurement = reader.GetString("Measurement");
+                        int inventoryNr = reader.GetInt32("InventoryNr");
+                        double amount = reader.GetDouble("Amount");
 
-                        MyZoo.FoodConsumption.Add(new Food(Foodname, Price, Measurement, InventoryNr), Amount);
+                        MyZoo.foodConsumption.Add(new Food(foodname, price, measurement, inventoryNr), amount);
                     }
                 }
                 //Tiere auslesen
@@ -127,16 +131,15 @@ namespace CheyenneHarbarth.Zoo.Zoostructure
                 {
                     while (reader.Read())
                     {
-                        string Animalname = reader.GetString("Animalname");
-                        string Animalrace = reader.GetString("Animalrace");
-                        int Habitat = reader.GetInt32("Habitat");
-                        string Area = reader.GetString("EnclosureName");
+                        string animalName = reader.GetString("Animalname");
+                        string animalRace = reader.GetString("Animalrace");
+                        int habitat = reader.GetInt32("Habitat");
 
-                        foreach (Enclosure enclosure in MyZoo.Zoostructure)
+                        foreach (Enclosure enclosure in MyZoo.zooStructure)
                         {
-                            if (enclosure._EnclosureNr == Habitat)
+                            if (enclosure.EnclosureNr == habitat)
                             {
-                                enclosure.Animals.Add(new Animal(Animalname, Animalrace));
+                                enclosure.animals.Add(new Animal(animalName, animalRace));
                             }
                         }
                     }
@@ -146,20 +149,20 @@ namespace CheyenneHarbarth.Zoo.Zoostructure
                 {
                     while (reader.Read())
                     {
-                        string Animalname = reader.GetString("Animalname");
-                        int FoodNr = reader.GetInt32("FoodNr");
-                        string Foodname = reader.GetString("Foodname");
-                        double Amount = reader.GetDouble("Amount");
-                        double Price = reader.GetDouble("Price");
-                        string Measurement = reader.GetString("Measurement");
+                        string animalName = reader.GetString("Animalname");
+                        int foodNr = reader.GetInt32("FoodNr");
+                        string foodName = reader.GetString("Foodname");
+                        double amount = reader.GetDouble("Amount");
+                        double price = reader.GetDouble("Price");
+                        string measurement = reader.GetString("Measurement");
 
-                        foreach (Enclosure enclosure in MyZoo.Zoostructure)
+                        foreach (Enclosure enclosure in MyZoo.zooStructure)
                         {
-                            foreach (Animal animal in enclosure.Animals)
+                            foreach (Animal animal in enclosure.animals)
                             {
-                                if (Animalname == animal._Animalname)
+                                if (animalName == animal.AnimalName)
                                 {
-                                    animal.AddFood(new Food(Foodname, Price, Measurement, FoodNr), Amount);
+                                    animal.AddFood(new Food(foodName, price, measurement, foodNr), amount);
                                 }
                             }
                         }
@@ -170,18 +173,18 @@ namespace CheyenneHarbarth.Zoo.Zoostructure
                 {
                     while (reader.Read())
                     {
-                        int KeeperID = reader.GetInt32("KeeperID");
-                        string Firstname = reader.GetString("Firstname");
-                        string Lastname = reader.GetString("Lastname");
-                        int EnclosureNr = reader.GetInt32("EnclosureNr");
-                        string Area = reader.GetString("Area");
+                        int keeperID = reader.GetInt32("KeeperID");
+                        string firstName = reader.GetString("Firstname");
+                        string lastName = reader.GetString("Lastname");
+                        int enclosureNr = reader.GetInt32("EnclosureNr");
+                        string area = reader.GetString("Area");
 
-                        MyZoo.Zookeepers.Add(new Zookeeper(KeeperID, Firstname, Lastname));
-                        foreach (Zookeeper zookeeper in MyZoo.Zookeepers)
+                        MyZoo.zooKeepers.Add(new Zookeeper(keeperID, firstName, lastName));
+                        foreach (Zookeeper zookeeper in MyZoo.zooKeepers)
                         {
-                            if (KeeperID == zookeeper._KeeperID)
+                            if (keeperID == zookeeper.KeeperID)
                             {
-                                zookeeper.ResponsibleEnclosures.Add(new Enclosure(EnclosureNr, Area));
+                                zookeeper.responsibleEnclosures.Add(new Enclosure(enclosureNr, area));
                             }
                         }
                     }
@@ -191,151 +194,6 @@ namespace CheyenneHarbarth.Zoo.Zoostructure
         }
     }
 }
-
-/* internal static Enclosure ReadEnclosure(Zoo MyZoo, string enclosurename, MySqlConnection connection)
-        {
-            Enclosure enclosure = null;
-
-            string getEnclosureQuery = @"SELECT Area
-                FROM enclosure
-                WHERE Zooname = @zooname AND Area = @Area";
-
-            MySqlCommand getEnclosurecommand = new MySqlCommand(getEnclosureQuery, connection);
-            getEnclosurecommand.Parameters.AddWithValue("@zooname", MyZoo._Zooname);
-            getEnclosurecommand.Parameters.AddWithValue("@Area", enclosurename);
-
-            using (MySqlDataReader reader = getEnclosurecommand.ExecuteReader())
-            {
-                while (reader.Read())
-                {
-                    //enclosure = new Enclosure(reader.GetString("Area"));
-                }
-            }
-            return enclosure;
-        }
-
-        internal static Food ReadFood(string foodname, MySqlConnection connection)
-        {
-            Food food = null;
-
-            string getEnclosureQuery = @"SELECT Foodname, Price, Measurement
-                FROM food
-                WHERE Foodname LIKE @foodname;";
-
-            MySqlCommand getEnclosurecommand = new MySqlCommand(getEnclosureQuery, connection);
-            getEnclosurecommand.Parameters.AddWithValue("@foodname", foodname);
-
-            using (MySqlDataReader reader = getEnclosurecommand.ExecuteReader())
-            {
-                while (reader.Read())
-                {
-                    //food = new Food(reader.GetString("Foodname"), reader.GetDouble("Price"), reader.GetString("Measurement"));
-                }
-            }
-            return food;
-        }
-
-        internal static Animal ReadAnimal(string animalname, Food food, MySqlConnection connection)
-        {
-            Animal animal = null;
-
-            string getAnimalQuery = @"SELECT animal.Animalname AS Name, animal.Animalrace AS Race, animal.Habitat, foodlist.Amount AS Amount
-                FROM animal
-                JOIN foodlist ON animal.Animalname = foodlist.Animalname
-                WHERE Animalname LIKE @animalname;";
-
-            MySqlCommand getAnimalcommand = new MySqlCommand(getAnimalQuery, connection);
-            getAnimalcommand.Parameters.AddWithValue("@Animalname", animalname);
-
-            using (MySqlDataReader reader = getAnimalcommand.ExecuteReader())
-            {
-                while (reader.Read())
-                {
-                    //animal = new Animal(reader.GetString("Name"), reader.GetString("Race"), food, reader.GetDouble("Amount"));
-                }
-            }
-            return animal;
-        }
-        internal static void ReadZookeeper(string keepername, MySqlConnection connection)
-        {
-            string getzoonameQuery = @"SELECT Zooname
-                FROM zoo;";
-            MySqlCommand getzoonamecommand = new MySqlCommand(getzoonameQuery, connection);
-            List<string> Zoos = new List<string>();
-
-            using (MySqlDataReader reader = getzoonamecommand.ExecuteReader())
-            {
-                while (reader.Read())
-                {
-                    Zoos.Add(reader.GetString("Zooname"));
-                }
-            }
-
-            Console.WriteLine("\nIn welchem Zoo arbeitet der neue Zoowärter?");
-            foreach (string zoo in Zoos)
-            {
-                Console.WriteLine(zoo);
-            }
-            string zooname = Console.ReadLine();
-
-            //Gehege abfragen
-            string getenclosurenrQuery = @"SELECT EnclosureNr, Area
-                    FROM enclosure;";
-            MySqlCommand getenclosurenrcommand = new MySqlCommand(getenclosurenrQuery, connection);
-            Dictionary<int, string> enclosures = new Dictionary<int, string>();
-
-            using (MySqlDataReader reader = getenclosurenrcommand.ExecuteReader())
-            {
-                while (reader.Read())
-                {
-                    enclosures.Add(reader.GetInt32("EnclosureNr"), reader.GetString("Area"));
-                }
-            }
-
-            Console.WriteLine("\nIn welchem Gehege arbeitet der neue Zoowärter? Bitte gib die Gehegenummer an!");
-            foreach (KeyValuePair<int, string> habitat in enclosures)
-            {
-                Console.WriteLine($"{habitat.Key,-4} | {habitat.Value}");
-            }
-            int enclosurenr = Convert.ToInt32(Console.ReadLine());
-            string[] Fullname = keepername.Split(" ");
-
-            string query = @"INSERT INTO zookeeper (Firstname, Lastname, Workplace)
-                VALUES (@Firstname, @Lastname, @Workplace);
-                ";
-
-            MySqlCommand InsertZookeepercommand = new MySqlCommand(query, connection);
-            InsertZookeepercommand.Parameters.AddWithValue("@Firstname", Fullname[0]);
-            InsertZookeepercommand.Parameters.AddWithValue("@Lastname", Fullname[1]);
-            InsertZookeepercommand.Parameters.AddWithValue("@Workplace", zooname);
-            InsertZookeepercommand.ExecuteNonQuery();
-
-            string getKeeperIDQuery = @"SELECT KeeperID
-                FROM zookeeper
-                WHERE Firstname = @Firstname AND Lastname = @Lastname;";
-
-            MySqlCommand getKeeperIDcommand = new MySqlCommand(getKeeperIDQuery, connection);
-            getKeeperIDcommand.Parameters.AddWithValue("@Firstname", Fullname[0]);
-            getKeeperIDcommand.Parameters.AddWithValue("@Lastname", Fullname[1]);
-            int tempID = 0;
-
-            using (MySqlDataReader reader = getKeeperIDcommand.ExecuteReader())
-            {
-                while (reader.Read())
-                {
-                    tempID = reader.GetInt32("KeeperID");
-                }
-            }
-
-            string insertcarelistQuery = @"INSERT INTO carelist (KeeperID, EnclosureNr)
-                VALUES (@KeeperID, @EnclosureNr);";
-            MySqlCommand insertcarelistcommand = new MySqlCommand(insertcarelistQuery, connection);
-            insertcarelistcommand.Parameters.AddWithValue("@KeeperID", tempID);
-            insertcarelistcommand.Parameters.AddWithValue("@EnclosureNr", enclosurenr);
-            insertcarelistcommand.ExecuteNonQuery();
-
-            Console.WriteLine("\nEin neuer Zoowärter wurde angestellt!");
-        } */
 
 /* Enclosure AlpineMeadow = new Enclosure("Alpenwiese: neutral, offen und hügelig");
 Enclosure Icelake = new Enclosure("Eissee: sehr kalt");

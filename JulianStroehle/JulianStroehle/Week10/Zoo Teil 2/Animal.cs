@@ -6,17 +6,21 @@ namespace JulianStroehle.Week10
         internal string Name;
         internal string Type;
         internal int ID;
-        internal int Health;
-        internal int Attack;
+        internal int Health { get; set; }
+        internal int MaxHealth;
+        internal string Attack;
+        internal int Damage;
         internal Dictionary<Food, int> SumFood;
-        internal Animal(string name, string type, int id)
+        internal Animal(string name, string type, int id, int maxHealth, string attack, int damage)
         {
             Random rdm = new Random();
             Name = name;
             Type = type;
             ID = id;
-            Health = 100;
-            Attack = rdm.Next(1, 31);
+            Health = maxHealth;
+            MaxHealth = maxHealth;
+            Attack = attack;
+            Damage = damage;
             SumFood = new Dictionary<Food, int>();
         }
         public string GetInfo()

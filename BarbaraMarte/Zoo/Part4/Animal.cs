@@ -4,13 +4,15 @@ namespace BarbaraMarte.Zoo.Part4
     {
         public string _AnimalName { get; set; }
         public string _AnimalSpecies { get; set; }
-        
+        internal int _Id;
+
         public Dictionary<AnimalFood, double> _AnimalFood { get; set; }
 
-        public Animal(string animalSpecies, string animalName)
+        public Animal(string animalSpecies, string animalName, int id)
         {
             _AnimalName = animalName;
             _AnimalSpecies = animalSpecies;
+            _Id = id;
             _AnimalFood = new Dictionary<AnimalFood, double>();
         }
         public void AddFood(AnimalFood nameOfFood, double foodQuantity)
