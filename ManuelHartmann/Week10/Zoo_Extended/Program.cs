@@ -20,6 +20,76 @@ namespace ManuelHartmann.Week10.Zoo_Extended
         3. Klassen programmieren
         */
 
+
+
+            //{ "7", () => CreateZooWithRelatedEntities(databaseConnectionString) }, // Neue Option
+
+            //Console.WriteLine($"7. To create a Zoo with Keeper and Cage.");
+
+
+
+        //public static void CreateZooWithRelatedEntities(string connectionString)
+        //{
+        //    Console.WriteLine("Geben Sie den Namen des Zoos ein:");
+        //    string zooName = Console.ReadLine();
+
+        //    Console.WriteLine("Geben Sie das Gründungsjahr des Zoos ein (YYYY-MM-DD):");
+        //    if (!DateTime.TryParse(Console.ReadLine(), out DateTime foundationYear))
+        //    {
+        //        Console.WriteLine("Ungültiges Datum. Bitte im Format YYYY-MM-DD eingeben.");
+        //        return;
+        //    }
+
+        //    Console.WriteLine("Geben Sie den Namen des Wärters ein:");
+        //    string keeperName = Console.ReadLine();
+
+        //    Console.WriteLine("Geben Sie den Namen des Geheges ein:");
+        //    string cageName = Console.ReadLine();
+
+        //    using (var connection = new MySqlConnection(connectionString))
+        //    {
+        //        connection.Open();
+        //        var transaction = connection.BeginTransaction();
+
+        //        try
+        //        {
+        //            // Zoo einfügen
+        //            string insertZooQuery = "INSERT INTO Zoo (Name, FoundationYear) VALUES (@Name, @FoundationYear);";
+        //            var zooCommand = new MySqlCommand(insertZooQuery, connection, transaction);
+        //            zooCommand.Parameters.AddWithValue("@Name", zooName);
+        //            zooCommand.Parameters.AddWithValue("@FoundationYear", foundationYear);
+        //            zooCommand.ExecuteNonQuery();
+        //            int zooId = (int)zooCommand.LastInsertedId;
+
+        //            // Wärter einfügen
+        //            string insertKeeperQuery = "INSERT INTO Keeper (Name, ZooID) VALUES (@Name, @ZooID);";
+        //            var keeperCommand = new MySqlCommand(insertKeeperQuery, connection, transaction);
+        //            keeperCommand.Parameters.AddWithValue("@Name", keeperName);
+        //            keeperCommand.Parameters.AddWithValue("@ZooID", zooId);
+        //            keeperCommand.ExecuteNonQuery();
+        //            int keeperId = (int)keeperCommand.LastInsertedId;
+
+        //            // Gehege einfügen
+        //            string insertCageQuery = "INSERT INTO Cage (Name, ZooID) VALUES (@Name, @ZooID);";
+        //            var cageCommand = new MySqlCommand(insertCageQuery, connection, transaction);
+        //            cageCommand.Parameters.AddWithValue("@Name", cageName);
+        //            cageCommand.Parameters.AddWithValue("@ZooID", zooId);
+        //            cageCommand.ExecuteNonQuery();
+        //            int cageId = (int)cageCommand.LastInsertedId;
+
+        //            // Transaktion abschließen
+        //            transaction.Commit();
+        //            Console.WriteLine($"Zoo '{zooName}' mit Wärter '{keeperName}' und Gehege '{cageName}' wurde erfolgreich erstellt!");
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            transaction.Rollback();
+        //            Console.WriteLine($"Fehler: {ex.Message}");
+        //        }
+        //    }
+        //}
+
+
         public static void Launch()
         {
             Zoo zooSchoenbrunnen = new Zoo("ZF1111", "Schoenbrunnen", "1966");
