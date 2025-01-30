@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabellenformatierung</title>
+    <style>
+        /* Stile für die ersten zwei Tabellen */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+            border: 4px solid black; /* Dicker Rahmen */
+        }
+        td, th {
+            border: 2px solid black; /* Dicke Zellränder */
+            padding: 10px;
+            text-align: left;
+            border-style: groove;
+        }
+        .gray {
+            background-color: gray;
+        }
+        .white {
+            background-color: lightgray;
+        }
+
+        /* Stile für die vorletzte Tabelle */
+        .no-border {
+            border: none;
+        }
+        .no-border td, 
+        .no-border th {
+            border: none;
+        }
+
+        /* Stile für die vorletzte Tabelle */
+        .transparent-border {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+            border: 4px solid white; /* Dicker Rahmen */
+        }
+        .transparent-border td, 
+        .transparent-border th {
+            border: 4px solid white; /* Dicke Zellränder */
+            padding: 20px;
+            text-align: left;
+            border-style: groove;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Erste Tabelle mit dickem Rahmen -->
+<table>
+    <tr>
+        <td colspan="3" class="white">A</td>
+    </tr>
+    <tr>
+        <td class="gray">1</td>
+        <td class="gray">2</td>
+        <td class="gray">3</td>
+    </tr>
+</table>
+
+<!-- Zweite Tabelle mit dickem Rahmen -->
+<table>
+    <tr>
+        <td class="white">A</td>
+        <td rowspan="2" class="white">B</td>
+        <td class="white">C</td>
+    </tr>
+    <tr>
+        <td class="gray">1</td>
+        <td class="gray">3</td>
+    </tr>
+</table>
+
+<!-- Dritte Tabelle ohne Rahmen -->
+<table class="no-border">
+    <tr>
+        <th></th>
+        <th colspan="2">Home starter hosting Premium business hosting</th>
+    </tr>
+    <tr>
+        <th style="text-align: center;">Disk space</th>
+        <td>250mb</td>
+        <td>1gb</td>
+    </tr>
+    <tr>
+        <th style="text-align: center;">Bandwidth</th>
+        <td>5gb per month</td>
+        <td>50gb per month</td>
+    </tr>
+    <tr>
+        <th style="text-align: center;">Email accounts</th>
+        <td>3</td>
+        <td>10</td>
+    </tr>
+    <tr>
+        <th style="text-align: center;">Server</th>
+        <td>Shared</td>
+        <td>VPS</td>
+    </tr>
+    <tr>
+        <th style="text-align: center;">Support</th>
+        <td>Email</td>
+        <td>Telephone and email</td>
+    </tr>
+    <tr>
+        <th style="text-align: center;">Setup</th>
+        <td>Free</td>
+        <td>Free</td>
+    </tr>
+    <tr>
+        <th style="text-align: center;">FTP accounts</th>
+        <td>1</td>
+        <td>5</td>
+    </tr>
+    <tr>
+        <th></th>
+        <td colspan="2">Sign up now and save 10%!</td>
+    </tr>
+</table>
+
+<!-- Vierte Tabelle mit transparentem Rahmen -->
+<table class="transparent-border">
+    <tr>
+        <th class="gray"></th>
+        <th class="gray" style="text-align: center;">Withdrawn</th>
+        <th class="gray"style="text-align: center;">Credit</th>
+        <th class="gray"style="text-align: center;">Balance</th>
+    </tr>
+    <tr>
+        <th class="gray"style="text-align: center;">January</th>
+        <td class="gray"style="text-align: left;">250.00</td>
+        <td class="gray"style="text-align: left;">660.50</td>
+        <td class="gray"style="text-align: left;">410.50</td>
+    </tr>
+    <tr>
+        <th class="gray"style="text-align: center;">February</th>
+        <td class="gray"style="text-align: left;">135.55</td>
+        <td class="gray"style="text-align: left;">895.20</td>
+        <td class="gray"style="text-align: left;">1170.15</td>
+    </tr>
+</table>
+
+</body>
+</html>

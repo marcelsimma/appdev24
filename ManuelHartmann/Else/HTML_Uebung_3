@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+          <meta charset="utf-8" />
+          <title>Recipes</title>
+     </head>
+     <body>
+          <h1>Recipes</h1>
+          <img src="C:\Users\harmanu\Downloads\web-frontend\Cocolate Cake.png" alt="Cocolate Cake">
+          <p>This recipe for individual chocolate cakes is so simple and so delectable!</p>
+     </body>
+</html>
