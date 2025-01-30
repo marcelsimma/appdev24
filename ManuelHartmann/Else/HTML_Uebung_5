@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="de">
+<body>
+  <p>Your Details:</p>
+  <form>
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name"><br>
+      <label for="email">Email:</label><br>
+      <input type="text" id="email" name="email">
+    </form>
+    <p></p>
+    <p>Your Review:</p>
+</body>
