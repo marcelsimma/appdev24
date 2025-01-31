@@ -118,5 +118,76 @@
 
 </div>
 
+<div class="container">
+
+      <!-- Neue Uebung: Login Data -->
+      <fieldset>
+        <legend>Login Data:</legend>
+
+        <!-- Namensfeld -->
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+        
+        <!-- Passwort (Mithilfe des 'br'-Elements können Zeilenumbrüche gemacht werden)-->
+        <br><label for="pwd">Password:</label>
+        <input type="password" id="pwd" name="pwd">
+    </fieldset>
+    
+</div>
+
+<div class="container">
+
+    <!-- Neue Uebung: Personal Data -->
+    <fieldset>
+        <legend>Personal Data:</legend>
+
+        <!-- Age-Feld -->
+        <label for="username">Age:</label>
+        <input type="number" id="username" name="username">
+      
+        <!-- Radiobuttons zur Auswahl der jeweiligen Gender -->
+        <label>Gender:</label>
+        <input type="radio" id="Femal" name="visit" value="Femal">
+        <label for="Femal" style="display: inline;">Femal</label>
+        
+        <input type="radio" id="Male" name="visit" value="Male">
+        <label for="Male" style="display: inline;">Male</label>
+
+        <!-- Dropdown-Menü zur Auswahl der Favorite vehicle brand -->
+        <label for="source">Favorite vehicle brand?</label>
+        <select id="source" name="source">
+            <option>Volvo</option>
+            <option>Saab</option>
+            <option>Fiat</option>
+            <option>Audi</option>
+            <option>BMW</option>
+            <option>Other</option>
+        </select>
+  </fieldset>
+  
+</div>
+
+
+<div class="container">
+
+    <!-- Neue Uebung: Contact details -->
+    <fieldset>
+        <legend>Contact details:</legend>
+
+        <!-- Email-Feld -->
+        <label for="username">Email:</label>
+        <input type="email" id="E-Mail-Feld" name="email">
+
+        <!-- MobilNumber-Feld -->
+        <label for="MobilNumber-Feld">Mobil:</label>
+        <input type="number" id="MobilNumber-Feld" name="MobilNumber-Feld">
+
+        <!-- TelephoneNumber-Feld -->
+        <label for="TelephoneNumber-Feld">Telephone:</label>
+        <input type="number" id="Telephone" name="Telephone">
+  </fieldset>
+  
+</div>
+
 </body>
 </html>
