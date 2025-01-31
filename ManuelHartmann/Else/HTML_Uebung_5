@@ -1,13 +1,122 @@
 <!DOCTYPE html>
 <html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review-Formular</title>
+    <style>
+        /* Allgemeine Schriftart für die Seite */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Container für das gesamte Formular mit Rahmen */
+        .container {
+            width: 400px;
+            border: 2px solid black;
+            padding: 10px;
+        }
+
+        /* Stile für Gruppen von Formularfeldern */
+        fieldset {
+            border: 1px solid black;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* Titel der Gruppen fett darstellen */
+        legend {
+            font-weight: bold;
+        }
+
+        /* Abstand zwischen Labels und Eingabefeldern */
+        label {
+            display: block;
+            margin-top: 5px;
+        }
+
+        /* Einheitliche Größe für Eingabefelder, Dropdown und Textbereich */
+        input[type="text"], input[type="email"], textarea, select {
+            width: 90%;
+            padding: 5px;
+            margin-top: 2px;
+        }
+
+        /* Höhe des Kommentarbereichs */
+        textarea {
+            height: 80px;
+        }
+
+        /* Checkbox und zugehöriger Text auf eine Linie bringen */
+        .checkbox {
+            display: flex;
+            align-items: center;
+        }
+
+        /* Stil für den Submit-Button */
+        button {
+            margin-top: 10px;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
 <body>
-  <p>Your Details:</p>
-  <form>
-      <label for="name">Name:</label><br>
-      <input type="text" id="name" name="name"><br>
-      <label for="email">Email:</label><br>
-      <input type="text" id="email" name="email">
-    </form>
-    <p></p>
-    <p>Your Review:</p>
+
+<!-- Hauptcontainer für das Formular -->
+<div class="container">
+
+    <!-- Erster Bereich: Benutzerdetails -->
+    <fieldset>
+        <legend>Your Details:</legend>
+
+        <!-- Namensfeld -->
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        
+        <!-- E-Mail-Feld -->
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+    </fieldset>
+
+    <!-- Zweiter Bereich: Nutzerbewertung -->
+    <fieldset>
+        <legend>Your Review:</legend>
+        
+        <!-- Dropdown-Menü zur Auswahl der Quelle -->
+        <label for="source">How did you hear about us?</label>
+        <select id="source" name="source">
+            <option>Google</option>
+            <option>Friend</option>
+            <option>Social Media</option>
+            <option>Other</option>
+        </select>
+
+        <!-- Radiobuttons zur Auswahl, ob der Nutzer wiederkommen würde -->
+        <label>Would you visit again?</label>
+        <input type="radio" id="yes" name="visit" value="Yes">
+        <label for="yes" style="display: inline;">Yes</label>
+        
+        <input type="radio" id="no" name="visit" value="No">
+        <label for="no" style="display: inline;">No</label>
+        
+        <input type="radio" id="maybe" name="visit" value="Maybe">
+        <label for="maybe" style="display: inline;">Maybe</label>
+
+        <!-- Kommentarbereich -->
+        <label for="comments">Comments:</label>
+        <textarea id="comments" name="comments"></textarea>
+
+        <!-- Checkbox für Newsletter-Anmeldung -->
+        <div class="checkbox">
+            <input type="checkbox" id="email-updates" name="email-updates">
+            <label for="email-updates" style="display: inline;">Sign me up for email updates</label>
+        </div>
+
+        <!-- Absenden-Button -->
+        <button type="submit">Submit review</button>
+    </fieldset>
+
+</div>
+
 </body>
+</html>
