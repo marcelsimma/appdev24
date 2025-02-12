@@ -5,18 +5,26 @@
      </head>
      <body>
           <h1>No header</h1>
-          <p>Die ARPA war Begründer und legte Strukturen des Internets. Der Vater des</p>
-          <p>WWW ist TI Bernes-Lee². Das Internet ist Anrieb und und C7H5N3O6³ für</p>
-          <p>den Informationsaustausch im ...</p>
+          <p>
+               Die ARPA<sup>1</sup> war Begründer und legte Strukturen des Internets. Der Vater des<br>WWW ist TI Bernes-Lee². Das Internet ist Anrieb und und C<sub>7</sub>H<sub>5</sub>N<sub>3</sub>O<sub>6</sub><sup>3</sup> für<br>den Informationsaustausch im ...
+          </p>
      </body>
 
-     <p><a href="https://www.google.com/">Google</a></p>
+     <p>
+          <a href="https://www.google.com/">Google</a>
+     </p>
 
      <button onclick="document.location='default.asp'">HTML Tutorial</button>
 
-     <p><a href="url">¹www.arpa.mil</a></p>
+     <p>
+          <a href="url"><sup>1</sup>www.arpa.mil</a>
+     </p>
 
-     <p>²www.vern.ch</p>
+     <p>
+          <sup>2</sup>www.vern.ch
+     </p>
 
-     <p>³Trinitrololuol</p>
+     <p>
+          <sup>3</sup>Trinitrololuol
+     </p>
 </html>

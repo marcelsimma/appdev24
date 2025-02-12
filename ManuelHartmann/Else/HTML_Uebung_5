@@ -106,7 +106,7 @@
         <label for="comments">Comments:</label>
         <textarea id="comments" name="comments"></textarea>
 
-        <!-- Checkbox für Newsletter-Anmeldung -->
+        <!-- Checkbox für Newsletter-Anmeldung (In 'div' paken, dass Comments schön darüber dargestellt wird)-->
         <div class="checkbox">
             <input type="checkbox" id="email-updates" name="email-updates">
             <label for="email-updates" style="display: inline;">Sign me up for email updates</label>

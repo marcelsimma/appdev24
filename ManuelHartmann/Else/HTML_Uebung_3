@@ -5,8 +5,12 @@
           <title>Recipes</title>
      </head>
      <body>
-          <h1>Recipes</h1>
-          <img src="C:\Users\harmanu\Downloads\web-frontend\Cocolate Cake.png" alt="Cocolate Cake">
-          <p>This recipe for individual chocolate cakes is so simple and so delectable!</p>
+          <h1 style="color:aquamarine">Recipes</h1>
+          <img style="padding-left: 25px;" src="C:\Users\harmanu\Downloads\web-frontend\Cocolate Cake.png" alt="Cocolate Cake">
+          <p style=" padding-left: 25px;">This recipe for individual chocolate cakes is so simple and so delectable!</p>
+     </body>
+     <body>
+        <h2>More recipes:</h2>
+        <img src="C:\Users\harmanu\Downloads\web-frontend\Recipe Cocolate Cake.png" alt="Recipe Cocolate Cake">
      </body>
 </html>

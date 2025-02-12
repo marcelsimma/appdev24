@@ -68,7 +68,7 @@
 <table>
     <tr>
         <td class="white">A</td>
-        <td rowspan="2" class="white">B</td>
+        <td rowspan="2" style="vertical-align: top;" class="white">B</td>
         <td class="white">C</td>
     </tr>
     <tr>
